@@ -3815,7 +3815,7 @@ function showNumbers5Rep(nums) {
     var aktivhint;
     var numElem = document.getElementById("zahl5Rep");
 //    numElem.innerHTML = nums[0];
-    var i = 01;
+    var i = 0;
 
     numsLoop(nums, aktivloop, aktivhint, numElem, i);
 

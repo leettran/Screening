@@ -6,12 +6,12 @@ and open the template in the editor.
 <html>
     <head>
         <title>NeuroCare-Screening</title>
-<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0b1.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0b1.min.css"/>
         <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
         <link rel="stylesheet" href="css/style.css" media="screen and (orientation: landscape)" type="text/css">  
         <link rel="stylesheet" href="css/style_none.css" media="screen and (orientation: portrait)" type="text/css">     
-        
+
         <script type="text/javascript" src="js/jsfunctions.js"></script>
         <script type="text/javascript" src="js/jstorage.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -27,10 +27,10 @@ and open the template in the editor.
 
 
     <body>
-        
-        
-      
-        
+
+
+
+
 
         <div data-role="page" id="test2Start" data-dom-cache=true class="introPage">
 
@@ -76,46 +76,46 @@ and open the template in the editor.
                 <div class="kreis"   style="top: 60%;left: 5%" >
                     <p>2</p> 
                 </div>
-                
-                 <script type="text/javascript">
-                    $(document).delegate('#test2Start', 'pageshow', function() {
-                        
-                        function showJustForWhile(){
-                            setTimeout(function (){
-                              $.mobile.changePage('#intro2v1a', {transition: "flip"});  
-                            },3000);
-                            
+
+                <script type="text/javascript">
+                    $(document).delegate('#test2Start', 'pageshow', function () {
+
+                        function showJustForWhile() {
+                            setTimeout(function () {
+                                $.mobile.changePage('#intro2v1a', {transition: "flip"});
+                            }, 3000);
+
                         }
-                        
+
                         // assign tap events instead of onclick in order to reduce interaction delay
 //                $links = $("div[data-group*='tmt4']");  use .one() instead of .bind() to avoid double click
 //                alert($links.length);
-                // first tmt
-                $("div[data-group*='tmt1']").bind("tap", function() {
-                    selectNumber(this);
-                });
-                // second tmt
-                   $("div[data-group*='tmt2']").bind("tap", function() {
-                    selectNumberOrLetter(this);
-                });
-                // third tmt
-                   $("div[data-group*='tmt3']").bind("tap", function() {
-                    selectOnlyNumber(this);
-                });
-                // fourth tmt
-                   $("div[data-group*='tmt4']").bind("tap", function() {
-                    selectNumberOrLetterV4(this);
-                });
-                
-                //test
-                
-          //
-                
-                
+                        // first tmt
+                        $("div[data-group*='tmt1']").bind("tap", function () {
+                            selectNumber(this);
+                        });
+                        // second tmt
+                        $("div[data-group*='tmt2']").bind("tap", function () {
+                            selectNumberOrLetter(this);
+                        });
+                        // third tmt
+                        $("div[data-group*='tmt3']").bind("tap", function () {
+                            selectOnlyNumber(this);
+                        });
+                        // fourth tmt
+                        $("div[data-group*='tmt4']").bind("tap", function () {
+                            selectNumberOrLetterV4(this);
+                        });
+
+                        //test
+
+                        //
+
+
                         showJustForWhile();
-                        
+
                     });
-                    
+
                 </script>
 
             </div>
@@ -129,21 +129,25 @@ and open the template in the editor.
             <div data-role="content">
                 <h1 class="instructionText1" >Was ist Ihre Aufgabe?</h1> 
 
-                <p class="instructionTextDescription">Gleich sehen Sie auf dem Bildschirm Zahlen. Bitte tippen Sie diese <b>in aufsteigender Reihenfolge</b> mit dem Finger
-                   an. Starten Sie mit der Zahl 1, dann die 2 usw. bis Sie das "Ziel" erreichen. Beispiel:</p>
-               
+                <p class="instructionTextDescription">Gleich sehen Sie Ziffern von 1 bis 20 auf dem Bildschirm verteilt. 
+                    Diese sollen Sie in aufsteigender Reihenfolge nacheinander antippen. Von der Zahl 1, zur 2, zur 3 usw. bis Sie das Ziel, die Zahl 20, erreichen. </br>
+
+                </p>
+
                 <center><div>
-                    <image src="img/tmtDemo1.png"/>
-                </div>
+                        <image src="img/tmtDemo1.png"/>
+                    </div>
                 </center>
                 <br>
 
-                <p class="instructionTextDescription">Versuchen Sie <b> so schnell wie möglich</b> und gleichzeitig <b>so fehlerlos wie möglich</b> zu arbeiten!<br>
-                    Tippen Sie ein Feld richtig an, färbt es sich grau. Tippen Sie ein Feld falsch an, so färbt es sich rot (dann korrigieren Sie sich bitte).
-                    Wenn Sie drei Fehler hintereinander machen, werden Sie zur nächsten Aufgabe weitergeleitet.</p>
+                <p class="instructionTextDescription">Arbeiten Sie dabei <b>so schnell und</b> gleichzeitig <b>so fehlerfrei wie möglich!</b>
+                    Zu Ihrer Orientierung: Das Feld, das sie zuletzt richtig angetippt haben, färbt sich grün, ein falsch getipptes rot – dann korrigieren Sie sich bitte. 
+
+                </p>
                 <br>
 
-                <a href="#version1a" data-role="button" data-inline="true" class="defaultButton" onclick=switchToFullscreen();"" style="float: right;">Aufgabe starten</a> 
+                <a href="#version1a" data-role="button" data-inline="true" class="defaultButton" onclick="switchToFullscreen();"
+                   style="float: right;">Aufgabe starten</a> 
             </div>
 
         </div>
@@ -229,21 +233,21 @@ and open the template in the editor.
             <div data-role="content">
                 <h1 class="instructionText1" >Ihre nächste Aufgabe...</h1> 
 
-                <p class="instructionTextDescription">Gleich sehen Sie auf dem Bildschirm wieder Zahlen aber auch Buchstaben. 
-                    Bitte tippen Sie die Zahlen und Buchstaben <b>abwechselnd und in aufsteigender Reihenfolge </b>mit dem Finger an.<br>
-                    Starten Sie mit der Zahl 1, dann Buchstabe A, danach die 2, dann B usw. bis Sie das "Ziel" erreichen. Beispiel:</p>
-               
+                <p class="instructionTextDescription">Gleich sehen Sie auf dem Bildschirm wieder Ziffern, aber diesmal auch Buchstaben. 
+                    Tippen Sie die Zahlen und Buchstaben abwechselnd und in aufsteigender Reihenfolge bzw. entsprechend des Alphabets an. 
+                    Von der Zahl 1, zum Buchstaben A, zur Zahl 2, zum Buchstaben B usw. bis Sie das Ziel erreichen.</p>
+
                 <center> <div>
-                    <image src="img/tmtDemo2.png"/>
-                </div>
-                    </center>
-                
+                        <image src="img/tmtDemo2.png"/>
+                    </div>
+                </center>
+
 
                 <br>
 
-                <p class="instructionTextDescription">Versuchen Sie <b>so schnell wie möglich </b>und gleichzeitig <b>so fehlerlos wie möglich</b> zu arbeiten!<br>
-                    Tippen Sie ein Feld richtig an, färbt es sich grau. Tippen Sie ein Feld falsch an, so färbt es sich rot (dann korrigieren Sie sich bitte).
-                    Wenn Sie drei Fehler hintereinander machen, werden Sie zur nächsten Aufgabe weitergeleitet. </p>
+                <p class="instructionTextDescription">Arbeiten Sie dabei <b>so schnell und</b> gleichzeitig <b>so fehlerfrei wie möglich!</b>
+                    Zu Ihrer Orientierung: Das Feld, das sie zuletzt richtig angetippt haben, färbt sich grün, das vorletzte Feld wird blasser.
+                    Ein falsch getipptes Feld färbt sich rot – dann korrigieren Sie sich bitte.</p>
                 <br>
 
                 <a href="#version2a" data-role="button" data-inline="true" class="defaultButton" style="float: right;">Aufgabe starten</a> 
@@ -253,7 +257,7 @@ and open the template in the editor.
         </div>
 
         <div data-role="page" id="version2a" data-dom-cache=true class="testPage">
-            
+
 
             <div data-role="content">
                 <!--<div id="timestampV2" >.-.</div>-->
@@ -338,20 +342,19 @@ and open the template in the editor.
             <div data-role="content">
                 <h1 class="instructionText1" >Ihre nächste Aufgabe...</h1> 
 
-                <p class="instructionTextDescription">Gleich sehen Sie auf dem Bildschirm wieder Zahlen, die Sie in <b>aufsteigender Reihenfolge </b>
-                    antippen sollen.<br> 
-                    Das Schwierige dabei: Es fehlen Zahlen dazwischen, sodass Sie <b>die nächst höhere Zahl</b> auswählen sollen. Beispiel:</p>
-                
+                <p class="instructionTextDescription">Gleich sehen Sie Ziffern auf dem Bildschirm verteilt. 
+                    Diese sollen Sie wieder in aufsteigender Reihenfolge nacheinander antippen.
+                    Das Schwierige dabei: Es fehlen Zahlen dazwischen. Wählen Sie daher immer die nächst höhere Zahl aus.</p>
+
                 <center><div>
-                    <image src="img/tmtDemo3.png"/>
-                </div>
+                        <image src="img/tmtDemo3.png"/>
+                    </div>
                 </center>
 
                 <br>
 
-                <p class="instructionTextDescription">Versuchen Sie <b>so schnell wie möglich </b>und gleichzeitig <b>so fehlerlos wie möglich</b> zu arbeiten!<br>
-                    Tippen Sie ein Feld richtig an, färbt es sich grau. Tippen Sie ein Feld falsch an, so färbt es sich rot (dann korrigieren Sie sich bitte).
-                    Wenn Sie drei Fehler hintereinander machen, werden Sie zur nächsten Aufgabe weitergeleitet. 
+                <p class="instructionTextDescription">Arbeiten Sie dabei <b>so schnell und</b> gleichzeitig <b>so fehlerfrei wie möglich!</b>
+                    Zu Ihrer Orientierung: Das Feld, das sie zuletzt richtig angetippt haben, färbt sich grün, ein falsch getipptes rot – dann korrigieren Sie sich bitte. 
                 </p>
                 <br>
 
@@ -363,7 +366,7 @@ and open the template in the editor.
         </div>
 
         <div data-role="page" id="version3a" data-dom-cache=true class="testPage">
-           
+
             <div data-role="content">
                 <!--<div id="timestampV3" >.-.</div>-->
                 <div class="starthintleft" >
@@ -419,26 +422,27 @@ and open the template in the editor.
 
         <!-- test version 4a-->
         <div data-role="page" id="intro2v4a" data-dom-cache=true class="introPage">
-            
+
             <div data-role="content">
                 <h1 class="instructionText1" >Ihre nächste Aufgabe...</h1> 
 
-                <p class="instructionTextDescription">Gleich sehen Sie auf dem Bildschirm Zahlen und Buchstaben,
-                    die sie <b>abwechselnd und in aufsteigender Reihenfolge</b> antippen sollen. Das Schwierige dabei: 
-                    Es fehlen Zahlen und Buchstaben dazwischen. Sie sollen daher <b>die nächst höhere Zahl
-                    bzw. den nächsten Buchstaben des Alphabets</b> auswählen. Beispiel:</p>
-               
+                <p class="instructionTextDescription">Gleich sehen Sie auf dem Bildschirm wieder Ziffern aber auch Buchstaben. 
+                    Tippen Sie die Zahlen und Buchstaben abwechselnd und in aufsteigender Reihenfolge bzw. entsprechend des Alphabets an. 
+                    Das Schwierige dabei: es fehlen Zahlen und Buchstaben dazwischen. 
+                    Starten Sie mit der kleinsten Zahl, dann den vordersten Buchstaben im Alphabet,
+                    dann die nächst höhere Zahl, dann den nächst höheren Buchstaben im Alphabet usw. bis Sie das Ziel erreichen.</p>
+
                 <center>
-                <div>
-                    <image src="img/tmtDemo4.png"/>
-                </div>
+                    <div>
+                        <image src="img/tmtDemo4.png"/>
+                    </div>
                 </center>
 
                 <br>
-                
-                <p class="instructionTextDescription">Versuchen Sie <b>so schnell wie möglich </b>und gleichzeitig <b>so fehlerlos wie möglich</b> zu arbeiten!<br>
-                    Tippen Sie ein Feld richtig an, färbt es sich grau. Tippen Sie ein Feld falsch an, so färbt es sich rot (dann korrigieren Sie sich bitte).
-                    Wenn Sie drei Fehler hintereinander machen, werden Sie zur nächsten Aufgabe weitergeleitet. 
+
+                <p class="instructionTextDescription">Arbeiten Sie dabei <b>so schnell und</b> gleichzeitig <b>so fehlerfrei wie möglich!</b>
+                    Zu Ihrer Orientierung: Das Feld, das sie zuletzt richtig angetippt haben, färbt sich grün, das vorletzte Feld wird blasser.
+                    Ein falsch getipptes Feld färbt sich rot – dann korrigieren Sie sich bitte. 
                 </p>
                 <br>
 
@@ -449,7 +453,7 @@ and open the template in the editor.
         </div>
 
         <div data-role="page" id="version4a" data-dom-cache=true class="testPage">
-           
+
             <div data-role="content">
                 <!--<div id="timestampV4" >.-.</div>-->
                 <div class="starthint" >
@@ -504,13 +508,13 @@ and open the template in the editor.
 
         </div>
 
-<!--transition page to the next task (mosaik test)-->
-<div data-role="page" id="TrailmakingtestTransit1" data-dom-cache=true class="testPage">
+        <!--transition page to the next task (mosaik test)-->
+        <div data-role="page" id="TrailmakingtestTransit1" data-dom-cache=true class="testPage">
 
 
             <div data-role="content">
-                 <h1 id="repeatitionHint" class="transitionPageText" >Die zweite Aufgabe haben Sie geschafft!</h1> 
-                
+                <h1 id="repeatitionHint" class="transitionPageText" >Die zweite Aufgabe haben Sie geschafft!</h1> 
+
                 <br>
                 <br>
                 <a data-role="button" data-inline="true" class="defaultButton" onclick="goToMosaiktest();"

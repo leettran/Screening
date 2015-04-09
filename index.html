@@ -136,45 +136,45 @@ and open the template in the editor.
 
 
             <script type="text/javascript">
-            $(document).delegate('#test1Start', 'pageshow', function() {
+                $(document).delegate('#test1Start', 'pageshow', function () {
 
 
-                function showJustForWhile() {
-                    setTimeout(function() {
-                        $.mobile.changePage('#test1Hint', {transition: "flip"});
-                    }, 5000);
+                    function showJustForWhile() {
+                        setTimeout(function () {
+                            $.mobile.changePage('#test1Hint', {transition: "flip"});
+                        }, 5000);
 
-                }
-                // assign tap events instead of onclick in order to reduce interaction delay
+                    }
+                    // assign tap events instead of onclick in order to reduce interaction delay
 //                (instead of: .bind() use .one() to avoid double clicks)
 //$links = $("td[data-group*='iteration3']");  
 //                alert($links.length);
-                // first iteration
+                    // first iteration
 //                $("td[data-group*='iteration1']").one("tap", function() {
 //                    choosed(this);
 //                });
-                $("td[data-group*='iteration1']").bind("tap", function() {
-                    highlightSelectedWord1(this);
-                });
+                    $("td[data-group*='iteration1']").bind("tap", function () {
+                        highlightSelectedWord1(this);
+                    });
 //                
-                // second iteratio
+                    // second iteratio
 //                $("td[data-group*='iteration2']").one("tap", function() {
 //                    choosedOrdered1(this);
 //                });
-                $("td[data-group*='iteration2']").bind("tap", function() {
-                    highlightSelectedWord2(this);
-                });
-                // third iteration
+                    $("td[data-group*='iteration2']").bind("tap", function () {
+                        highlightSelectedWord2(this);
+                    });
+                    // third iteration
 //                $("td[data-group*='iteration3']").one("tap", function() {
 //                    choosedOrdered2(this);
 //                });
-$("td[data-group*='iteration3']").bind("tap", function() {
-                    highlightSelectedWord3(this);
-                });
-                //
-                showJustForWhile();
+                    $("td[data-group*='iteration3']").bind("tap", function () {
+                        highlightSelectedWord3(this);
+                    });
+                    //
+                    showJustForWhile();
 
-            });
+                });
             </script>
 
 
@@ -186,25 +186,25 @@ $("td[data-group*='iteration3']").bind("tap", function() {
             <div data-role="content">
                 <h1 class="instructionText2" >Was ist Ihre Aufgabe?</h1> 
 
-                <p class="instructionTextDescription">Gleich werden ihnen kurz nacheinander 6 Wortpaare präsentiert. Ein Wortpaar besteht aus zwei Wörtern, 
-                    die aber in keiner bedeutungsvollen Verbindung zueinander stehen. Trotzdem sollen Sie sich die 2 Wörter als zusammengehöriges Paar merken. 
-                    Ein Beispiel für ein Wortpaar:</p>
-
-                <center> <div class="wordrectangle" style="font-size: 25px;font-weight: bold;">Uhr - Hase</div> </center>
-
-                <p class="instructionTextDescription">Im Anschluss sollen Sie die 6 Wortpaare wieder erinnern. Hierfür wird Ihnen das erste Wort eines Paares vorgegeben, 
-                    das zweite Wort sollen Sie erinnern. Sie erhalten eine Auswahl von möglichen Wörtern, bitte wählen Sie das richtige Wort mit dem Finger aus. 
-                    Wenn Sie sich nicht mehr an das Wort erinnern, raten Sie bitte!
-                    Unser Beispiel:
-                </p> 
-
-                <center> <div class="wordrectangle" style="font-size: 25px;font-weight: bold;">Uhr - ?</div> </center>
+                <p class="instructionTextDescription">Gleich werden Ihnen nacheinander Wortpaare gezeigt.
+                    Ein Wortpaar besteht aus zwei Wörtern. Diese stehen in keiner Beziehung zueinander, wie z.B. „Uhr – Hase“. 
+                    Trotzdem sollen Sie sich die gezeigten 2 Wörter zusammen als Paar merken. Insgesamt bekommen Sie 6 solcher Paare gezeigt.
+                    Im Anschluss findet eine Abfrage statt. 
+                    Dabei wird Ihnen das erste Wort eines Paares vorgegeben, das dazugehörige Wort sollen Sie aus einer Liste von möglichen Wörtern wiedererkennen und auswählen. 
+                    Wenn Sie sich nicht mehr an das Wort erinnern, raten Sie bitte.
+                    Zum Beispiel wurde zuvor das Paar „Uhr – Hase“ gezeigt. In der Abfrage heißt es nun…
+                </p>
 
                 <div class="divWithRoundedCorners">
                     <p class="instructionText2" >
                         Welches Wort wurde Ihnen zusammen mit dem Wort „Uhr“ gezeigt? 
                     </p>
                 </div>
+                
+               
+                <center> <div class="wordrectangle" style="font-size: 25px;font-weight: bold;">Uhr - ?</div> </center>
+
+                
 
                 <center><table>
                         <tr>
@@ -222,7 +222,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                     </table>
                 </center>
 
-                <p class="instructionTextDescription">Die richtige Antwort wäre „Hase“, denn das gelernte Wortpaar hieß „Uhr-Hase“.</p>
+                <p class="instructionTextDescription">Die richtige Antwort wäre das Wort „Hase“, das Sie dann auswählen.</p>
 
                 <p class="instructionTextDescription">Wenn Sie bereit sind, drücken Sie bitte auf „Start“.</p>
 
@@ -245,10 +245,10 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                 <br>
 
                 <script type="text/javascript">
-                    $(document).delegate('#test1Transit', 'pageshow', function() {
+                    $(document).delegate('#test1Transit', 'pageshow', function () {
 
                         function showJustForWhile() {
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 $.mobile.changePage('#wordpairs', {transition: "flip"});
                             }, 5000);
                         }
@@ -283,7 +283,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                     var aktivhint;
                     var delayLoop;
 
-                    $(document).delegate('#wordpairs', 'pageshow', function() {
+                    $(document).delegate('#wordpairs', 'pageshow', function () {
 
 //                $('#weiter').hide();
 
@@ -291,14 +291,14 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         var i = 0;
 
                         function wordsLoop() {
-                            aktivloop = setTimeout(function() {
+                            aktivloop = setTimeout(function () {
 
                                 if (i < pairsnumber) {
                                     $('#spacebetween').show();
                                     left.innerHTML = leftwords[i];
                                     right.innerHTML = rightwords[i];
                                     i++;
-                                    setTimeout(function() {
+                                    setTimeout(function () {
                                         left.innerHTML = "";
                                         right.innerHTML = "";
                                         $('#spacebetween').hide();
@@ -307,7 +307,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                                 }
                                 if (i === pairsnumber) {
                                     clearTimeout(aktivloop);
-                                    setTimeout(function() {
+                                    setTimeout(function () {
                                         $('#spacebetween').hide();
 //                                $('#weiter').show();
                                         left.innerHTML = "";
@@ -356,7 +356,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                     var aktivhintOrdered1;
                     var delayLoopOrdered1;
 
-                    $(document).delegate('#wordpairsOrdered1', 'pageshow', function() {
+                    $(document).delegate('#wordpairsOrdered1', 'pageshow', function () {
 
 //                $('#weiterOrdered1').hide();
 
@@ -364,14 +364,14 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         var i = 0;
 
                         function wordsLoopOrdered1() {
-                            aktivloopOrdered1 = setTimeout(function() {
+                            aktivloopOrdered1 = setTimeout(function () {
 
                                 if (i < pairsnumberOrdered1) {
                                     $('#spacebetweenOrdered1').show();
                                     leftOrdered1.innerHTML = leftwordsOrdered1[i];
                                     rightOrdered1.innerHTML = rightwordsOrdered1[i];
                                     i++;
-                                    setTimeout(function() {
+                                    setTimeout(function () {
                                         leftOrdered1.innerHTML = "";
                                         rightOrdered1.innerHTML = "";
                                         $('#spacebetweenOrdered1').hide();
@@ -380,7 +380,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                                 }
                                 if (i === pairsnumberOrdered1) {
                                     clearTimeout(aktivloopOrdered1);
-                                    setTimeout(function() {
+                                    setTimeout(function () {
                                         $('#spacebetweenOrdered1').hide();
 //                                $('#weiterOrdered1').show();
                                         leftOrdered1.innerHTML = "";
@@ -429,7 +429,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                     var aktivhintOrdered2;
                     var delayLoopOrdered2;
 
-                    $(document).delegate('#wordpairsOrdered2', 'pageshow', function() {
+                    $(document).delegate('#wordpairsOrdered2', 'pageshow', function () {
 
 //                $('#weiterOrdered2').hide();
 
@@ -437,14 +437,14 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         var i = 0;
 
                         function wordsLoopOrdered2() {
-                            aktivloopOrdered2 = setTimeout(function() {
+                            aktivloopOrdered2 = setTimeout(function () {
 
                                 if (i < pairsnumberOrdered2) {
                                     $('#spacebetweenOrdered2').show();
                                     leftOrdered2.innerHTML = leftwordsOrdered2[i];
                                     rightOrdered2.innerHTML = rightwordsOrdered2[i];
                                     i++;
-                                    setTimeout(function() {
+                                    setTimeout(function () {
                                         leftOrdered2.innerHTML = "";
                                         rightOrdered2.innerHTML = "";
                                         $('#spacebetweenOrdered2').hide();
@@ -453,7 +453,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                                 }
                                 if (i === pairsnumberOrdered2) {
                                     clearTimeout(aktivloopOrdered2);
-                                    setTimeout(function() {
+                                    setTimeout(function () {
                                         $('#spacebetweenOrdered2').hide();
 //                                $('#weiterOrdered2').show();
                                         leftOrdered2.innerHTML = "";
@@ -482,8 +482,8 @@ $("td[data-group*='iteration3']").bind("tap", function() {
 
 
             <div data-role="content">
-                <h1 id="repeatitionHint" class="transitionPageText" >Im Folgenden sehen Sie nochmal die eben gelernten Wortpaare.<br> Bitte prägen
-                    Sie sich die Paare noch einmal ein</h1> 
+                <h1 id="repeatitionHint" class="transitionPageText" >Gleich sehen Sie noch einmal die selben Wortpaare wie am Anfang.<br> Bitte prägen
+                    Sie sich die Paare noch einmal gut ein!</h1> 
 
                 <br>
                 <br>
@@ -491,10 +491,10 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                                    href="#wordpairsOrdered1">Weiter</a> -->
 
                 <script type="text/javascript">
-                    $(document).delegate('#wordpairsTransit1', 'pageshow', function() {
+                    $(document).delegate('#wordpairsTransit1', 'pageshow', function () {
 
                         function showJustForWhile() {
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 $.mobile.changePage('#wordpairsOrdered1', {transition: "flip"});
                             }, 5000);
                         }
@@ -511,8 +511,8 @@ $("td[data-group*='iteration3']").bind("tap", function() {
 
 
             <div data-role="content">
-                <h1 id="repeatitionHint" class="transitionPageText" >Im Folgenden sehen Sie ein letztes mal die eben gelernten Wortpaare.<br> Bitte prägen
-                    Sie sich die Paare gut ein</h1> 
+                <h1 id="repeatitionHint" class="transitionPageText" >Gleich sehen Sie ein letztes Mal die Wortpaare.<br> Bitte prägen
+                    Sie sich die Paare noch einmal gut ein!</h1> 
 
                 <br>
                 <br>
@@ -520,10 +520,10 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                                    href="#wordpairsOrdered2">Weiter</a>-->
 
                 <script type="text/javascript">
-                    $(document).delegate('#wordpairsTransit2', 'pageshow', function() {
+                    $(document).delegate('#wordpairsTransit2', 'pageshow', function () {
 
                         function showJustForWhile() {
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 $.mobile.changePage('#wordpairsOrdered2', {transition: "flip"});
                             }, 5000);
                         }
@@ -639,7 +639,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                     </table>
                 </center>
 
-                
+
                 <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosedOrdered1();">Weiter</a>
 
@@ -685,8 +685,8 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         </tr>
                     </table>
                 </center>
-                
-<a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+
+                <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosedOrdered2();">Weiter</a>
 
             </div>
@@ -731,7 +731,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         </tr>
                     </table>
                 </center>
-                
+
                 <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosed();">Weiter</a>
 
@@ -778,7 +778,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         </tr>
                     </table>
                 </center>
-                
+
                 <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosedOrdered1();">Weiter</a>
 
@@ -825,9 +825,9 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                     </table>
                 </center>
 
-<a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosedOrdered2();">Weiter</a>
-                
+
             </div>
         </div>
 
@@ -874,7 +874,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
 
                 <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosed();">Weiter</a>
-                
+
             </div>
         </div>
 
@@ -917,7 +917,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         </tr>
                     </table>
                 </center>
-                
+
                 <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosedOrdered1();">Weiter</a>
 
@@ -964,7 +964,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         </tr>
                     </table>
                 </center>
-                
+
                 <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosedOrdered2();">Weiter</a>
 
@@ -1012,7 +1012,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         </tr>
                     </table>
                 </center>
-                
+
                 <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosed();">Weiter</a>
 
@@ -1058,7 +1058,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         </tr>
                     </table>
                 </center>
-                
+
                 <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosedOrdered1();">Weiter</a>
 
@@ -1104,7 +1104,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         </tr>
                     </table>
                 </center>
-                
+
                 <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosedOrdered2();">Weiter</a>
 
@@ -1151,7 +1151,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         </tr>
                     </table>
                 </center>
-                
+
                 <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosed();">Weiter</a>
 
@@ -1197,7 +1197,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         </tr>
                     </table>
                 </center>
-                
+
                 <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosedOrdered1();">Weiter</a>
 
@@ -1292,7 +1292,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         </tr>
                     </table>
                 </center>
-                
+
                 <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosed();">Weiter</a>
 
@@ -1338,7 +1338,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         </tr>
                     </table>
                 </center>
-                
+
                 <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosedOrdered1();">Weiter</a>
 
@@ -1384,7 +1384,7 @@ $("td[data-group*='iteration3']").bind("tap", function() {
                         </tr>
                     </table>
                 </center>
-                
+
                 <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
                    onclick="choosedOrdered2();">Weiter</a>
 

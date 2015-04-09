@@ -26,7 +26,7 @@ and open the template in the editor.
 
     <body>
 
-      
+
 
         <!--start page to zahlensortieren test-->
         <div data-role="page" id="test4Start" data-dom-cache=true class="introPage">
@@ -40,25 +40,25 @@ and open the template in the editor.
             </div>
 
             <script type="text/javascript">
-                    $(document).delegate('#test4Start', 'pageshow', function() {
+                $(document).delegate('#test4Start', 'pageshow', function () {
 
-                        function showJustForWhile() {
-                            setTimeout(function() {
-                                $.mobile.changePage('#intro', {transition: "flip"});
-                            }, 3000);
-                        }
-                        
-                        // assign tap events instead of onclick in order to reduce interaction delay
+                    function showJustForWhile() {
+                        setTimeout(function () {
+                            $.mobile.changePage('#intro', {transition: "flip"});
+                        }, 3000);
+                    }
+
+                    // assign tap events instead of onclick in order to reduce interaction delay
 //                $links = $("div[data-group*='number']");
 //                alert($links.length);
-                // available for all rounds in this test  (use .one() instead of .bind() to avoid double clicks)
-                $("div[data-group*='number']").one("tap", function() {
-                    matchNumbers(this);
-                });
-                        
-                        showJustForWhile();
-
+                    // available for all rounds in this test  (use .one() instead of .bind() to avoid double clicks)
+                    $("div[data-group*='number']").one("tap", function () {
+                        matchNumbers(this);
                     });
+
+                    showJustForWhile();
+
+                });
 
             </script>
 
@@ -70,15 +70,20 @@ and open the template in the editor.
 
             <div data-role="content">
                 <h1 class="instructionText1" >Was ist Ihre Aufgabe?</h1> 
-                <p class="instructionTextDescription">Gleich werden in der Mitte des Bildschirms kurz nacheinander Ziffern eingeblendet. 
-                    Bitte merken Sie sich diese Ziffern. Direkt im Anschluss ist es Ihre Aufgabe, diese Ziffern wiederzugeben, jedoch in geordneter, 
-                    aufsteigender Reihenfolge. 
-                    Das heißt Sie beginnen mit der kleinsten Ziffern, dann die nächst höhere und so weiter.<br><br>
+                <p class="instructionTextDescription">Gleich werden auf dem Bildschirm kurz nacheinander Zahlen eingeblendet. 
+                    Ihre Aufgabe ist es, sich diese zu merken und im Anschluss wiederzugeben. 
+                    Das Schwierige dabei: Sie sollen die Zahlen <b>nach ihrer aufsteigenden Größe sortiert</b> wiedergeben. 
+                    Starten Sie mit der kleinsten Zahl, dann die nächst höhere usw. 
                     Zur Beantwortung steht Ihnen eine Zahlenreihe von 1 bis 9 zum Antippen zur Verfügung. 
-                    Wenn Sie meinen, sich nicht erinnern zu können, raten Sie bitte. Unten im Bild sehen Sie jeweils zu Ihrer Orientierung,
-                    wie viele Ziffern Sie noch antippen müssen. Beispiel:<br><br>
-                    Sie sehen nacheinander auf dem Bildschirm die Ziffern 3 – 4 – 1<br> 
-                    Die richtige Reihenfolge wäre: 1 – 3 – 4.
+                    Wenn Sie sich nicht mehr erinnern, raten Sie bitte! Es gibt mehrere Durchgänge.
+                    </br></br>
+                <u>Ein Beispiel:</u>  
+                </br></br>
+                Auf dem Bildschirm erscheinen nacheinander die Zahlen 3 – 4 – 1.
+                Sortiert nach ihrer aufsteigenden Größe wäre die richtige Antwort 1 – 3 – 4. 
+                Sie würden also die Ziffernfelder 1, 3 und 4 nacheinander antippen.
+
+
                 </p>
                 <br><br><br>
 
@@ -131,15 +136,15 @@ and open the template in the editor.
                 <script type="text/javascript">
 
                     var aktivLoop1;
-                    $(document).delegate('#countdown1', 'pageshow', function() {
+                    $(document).delegate('#countdown1', 'pageshow', function () {
                         function decrementCounter() {
-                            aktivLoop1 = setTimeout(function() {
+                            aktivLoop1 = setTimeout(function () {
 
-                                    $.mobile.changePage('#test1', {transition: "flip"});
-                                    clearTimeout(aktivLoop1);
+                                $.mobile.changePage('#test1', {transition: "flip"});
+                                clearTimeout(aktivLoop1);
 
                             }, 4000);
-                            
+
                         }
                         decrementCounter();
                     });
@@ -147,7 +152,7 @@ and open the template in the editor.
             </div>
 
         </div>
-        
+
         <!--countdown for test1Rep-->
         <div data-role="page" id="countdown1Rep" data-dom-cache=true class="testPage">
 
@@ -160,15 +165,15 @@ and open the template in the editor.
                 <script type="text/javascript">
 
                     var aktivLoop1;
-                    $(document).delegate('#countdown1Rep', 'pageshow', function() {
+                    $(document).delegate('#countdown1Rep', 'pageshow', function () {
                         function decrementCounter() {
-                            aktivLoop1 = setTimeout(function() {
+                            aktivLoop1 = setTimeout(function () {
 
-                                    $.mobile.changePage('#test1Rep', {transition: "flip"});
-                                    clearTimeout(aktivLoop1);
+                                $.mobile.changePage('#test1Rep', {transition: "flip"});
+                                clearTimeout(aktivLoop1);
 
                             }, 4000);
-                            
+
                         }
                         decrementCounter();
                     });
@@ -188,13 +193,13 @@ and open the template in the editor.
                 <script type="text/javascript">
 
                     var aktivLoop2;
-                    $(document).delegate('#countdown2', 'pageshow', function() {
+                    $(document).delegate('#countdown2', 'pageshow', function () {
                         function decrementCounter() {
-                            aktivLoop2 = setTimeout(function() {
+                            aktivLoop2 = setTimeout(function () {
 
-                                    
-                                    $.mobile.changePage('#test2', {transition: "flip"});
-                                    clearTimeout(aktivLoop2);
+
+                                $.mobile.changePage('#test2', {transition: "flip"});
+                                clearTimeout(aktivLoop2);
 
                             }, 4000);
                         }
@@ -204,7 +209,7 @@ and open the template in the editor.
             </div>
 
         </div>
-        
+
         <!--countdown for test2Rep-->
         <div data-role="page" id="countdown2Rep" data-dom-cache=true class="testPage">
 
@@ -216,13 +221,13 @@ and open the template in the editor.
                 <script type="text/javascript">
 
                     var aktivLoop2;
-                    $(document).delegate('#countdown2Rep', 'pageshow', function() {
+                    $(document).delegate('#countdown2Rep', 'pageshow', function () {
                         function decrementCounter() {
-                            aktivLoop2 = setTimeout(function() {
+                            aktivLoop2 = setTimeout(function () {
 
-                                    
-                                    $.mobile.changePage('#test2Rep', {transition: "flip"});
-                                    clearTimeout(aktivLoop2);
+
+                                $.mobile.changePage('#test2Rep', {transition: "flip"});
+                                clearTimeout(aktivLoop2);
 
                             }, 4000);
                         }
@@ -244,13 +249,13 @@ and open the template in the editor.
                 <script type="text/javascript">
 
                     var aktivLoop3;
-                    $(document).delegate('#countdown3', 'pageshow', function() {
+                    $(document).delegate('#countdown3', 'pageshow', function () {
                         function decrementCounter() {
-                            aktivLoop3 = setTimeout(function() {
+                            aktivLoop3 = setTimeout(function () {
 
-                                    
-                                    $.mobile.changePage('#test3', {transition: "flip"});
-                                    clearTimeout(aktivLoop3);
+
+                                $.mobile.changePage('#test3', {transition: "flip"});
+                                clearTimeout(aktivLoop3);
 
                             }, 3000);
                         }
@@ -273,13 +278,13 @@ and open the template in the editor.
                 <script type="text/javascript">
 
                     var aktivLoop3;
-                    $(document).delegate('#countdown3Rep', 'pageshow', function() {
+                    $(document).delegate('#countdown3Rep', 'pageshow', function () {
                         function decrementCounter() {
-                            aktivLoop3 = setTimeout(function() {
+                            aktivLoop3 = setTimeout(function () {
 
-                                    
-                                    $.mobile.changePage('#test3Rep', {transition: "flip"});
-                                    clearTimeout(aktivLoop3);
+
+                                $.mobile.changePage('#test3Rep', {transition: "flip"});
+                                clearTimeout(aktivLoop3);
 
                             }, 3000);
                         }
@@ -289,7 +294,7 @@ and open the template in the editor.
             </div>
 
         </div>
-        
+
         <!--countdown for test4-->
         <div data-role="page" id="countdown4" data-dom-cache=true class="testPage">
 
@@ -301,13 +306,13 @@ and open the template in the editor.
                 <script type="text/javascript">
 
                     var aktivLoop4;
-                    $(document).delegate('#countdown4', 'pageshow', function() {
+                    $(document).delegate('#countdown4', 'pageshow', function () {
                         function decrementCounter() {
-                            aktivLoop4 = setTimeout(function() {
+                            aktivLoop4 = setTimeout(function () {
 
-                                    
-                                    $.mobile.changePage('#test4', {transition: "flip"});
-                                    clearTimeout(aktivLoop4);
+
+                                $.mobile.changePage('#test4', {transition: "flip"});
+                                clearTimeout(aktivLoop4);
 
                             }, 3000);
                         }
@@ -317,8 +322,8 @@ and open the template in the editor.
             </div>
 
         </div>
-        
-        
+
+
         <!--countdown for test4Rep-->
         <div data-role="page" id="countdown4Rep" data-dom-cache=true class="testPage">
 
@@ -330,13 +335,13 @@ and open the template in the editor.
                 <script type="text/javascript">
 
                     var aktivLoop4;
-                    $(document).delegate('#countdown4Rep', 'pageshow', function() {
+                    $(document).delegate('#countdown4Rep', 'pageshow', function () {
                         function decrementCounter() {
-                            aktivLoop4 = setTimeout(function() {
+                            aktivLoop4 = setTimeout(function () {
 
-                                    
-                                    $.mobile.changePage('#test4Rep', {transition: "flip"});
-                                    clearTimeout(aktivLoop4);
+
+                                $.mobile.changePage('#test4Rep', {transition: "flip"});
+                                clearTimeout(aktivLoop4);
 
                             }, 3000);
                         }
@@ -359,13 +364,13 @@ and open the template in the editor.
                 <script type="text/javascript">
 
                     var aktivLoop5;
-                    $(document).delegate('#countdown5', 'pageshow', function() {
+                    $(document).delegate('#countdown5', 'pageshow', function () {
                         function decrementCounter() {
-                            aktivLoop5 = setTimeout(function() {
+                            aktivLoop5 = setTimeout(function () {
 
-                                   
-                                    $.mobile.changePage('#test5', {transition: "flip"});
-                                     clearTimeout(aktivLoop5);
+
+                                $.mobile.changePage('#test5', {transition: "flip"});
+                                clearTimeout(aktivLoop5);
 
                             }, 1000);
                         }
@@ -375,9 +380,9 @@ and open the template in the editor.
             </div>
 
         </div>
-        
-        
-       <!--countdown for test5Rep-->
+
+
+        <!--countdown for test5Rep-->
         <div data-role="page" id="countdown5Rep" data-dom-cache=true class="testPage">
 
             <div data-role="content" id="numsDivs">
@@ -388,13 +393,13 @@ and open the template in the editor.
                 <script type="text/javascript">
 
                     var aktivLoop5;
-                    $(document).delegate('#countdown5Rep', 'pageshow', function() {
+                    $(document).delegate('#countdown5Rep', 'pageshow', function () {
                         function decrementCounter() {
-                            aktivLoop5 = setTimeout(function() {
+                            aktivLoop5 = setTimeout(function () {
 
-                                   
-                                    $.mobile.changePage('#test5Rep', {transition: "flip"});
-                                     clearTimeout(aktivLoop5);
+
+                                $.mobile.changePage('#test5Rep', {transition: "flip"});
+                                clearTimeout(aktivLoop5);
 
                             }, 1000);
                         }
@@ -417,13 +422,13 @@ and open the template in the editor.
                 <script type="text/javascript">
 
                     var aktivLoop6;
-                    $(document).delegate('#countdown6', 'pageshow', function() {
+                    $(document).delegate('#countdown6', 'pageshow', function () {
                         function decrementCounter() {
-                            aktivLoop6 = setTimeout(function() {
+                            aktivLoop6 = setTimeout(function () {
 
-                                    
-                                    $.mobile.changePage('#test6', {transition: "flip"});
-                                    clearTimeout(aktivLoop6);
+
+                                $.mobile.changePage('#test6', {transition: "flip"});
+                                clearTimeout(aktivLoop6);
 
                             }, 3000);
                         }
@@ -433,8 +438,8 @@ and open the template in the editor.
             </div>
 
         </div>
-        
-        
+
+
         <!--countdown for test6Rep-->
         <div data-role="page" id="countdown6Rep" data-dom-cache=true class="testPage">
 
@@ -446,13 +451,13 @@ and open the template in the editor.
                 <script type="text/javascript">
 
                     var aktivLoop6;
-                    $(document).delegate('#countdown6Rep', 'pageshow', function() {
+                    $(document).delegate('#countdown6Rep', 'pageshow', function () {
                         function decrementCounter() {
-                            aktivLoop6 = setTimeout(function() {
+                            aktivLoop6 = setTimeout(function () {
 
-                                    
-                                    $.mobile.changePage('#test6Rep', {transition: "flip"});
-                                    clearTimeout(aktivLoop6);
+
+                                $.mobile.changePage('#test6Rep', {transition: "flip"});
+                                clearTimeout(aktivLoop6);
 
                             }, 3000);
                         }
@@ -475,13 +480,13 @@ and open the template in the editor.
                 <script type="text/javascript">
 
                     var aktivLoop7;
-                    $(document).delegate('#countdown7', 'pageshow', function() {
+                    $(document).delegate('#countdown7', 'pageshow', function () {
                         function decrementCounter() {
-                            aktivLoop7 = setTimeout(function() {
+                            aktivLoop7 = setTimeout(function () {
 
-                                   
-                                    $.mobile.changePage('#test7', {transition: "flip"});
-                                     clearTimeout(aktivLoop7);
+
+                                $.mobile.changePage('#test7', {transition: "flip"});
+                                clearTimeout(aktivLoop7);
 
                             }, 3000);
                         }
@@ -491,8 +496,8 @@ and open the template in the editor.
             </div>
 
         </div>
-        
-        
+
+
         <!--countdown for test7Rep-->
         <div data-role="page" id="countdown7Rep" data-dom-cache=true class="testPage">
 
@@ -504,13 +509,13 @@ and open the template in the editor.
                 <script type="text/javascript">
 
                     var aktivLoop7;
-                    $(document).delegate('#countdown7Rep', 'pageshow', function() {
+                    $(document).delegate('#countdown7Rep', 'pageshow', function () {
                         function decrementCounter() {
-                            aktivLoop7 = setTimeout(function() {
+                            aktivLoop7 = setTimeout(function () {
 
-                                   
-                                    $.mobile.changePage('#test7Rep', {transition: "flip"});
-                                     clearTimeout(aktivLoop7);
+
+                                $.mobile.changePage('#test7Rep', {transition: "flip"});
+                                clearTimeout(aktivLoop7);
 
                             }, 3000);
                         }
@@ -533,9 +538,9 @@ and open the template in the editor.
 //                    var nums = mydiv.getAttribute("data-numbers");
 //                    var numsArray = nums.split(",");
                     var nums1 = new Array("6", "3");
-                    $(document).delegate('#test1', 'pageshow', function() {
+                    $(document).delegate('#test1', 'pageshow', function () {
                         showNumbers1(nums1);
-                        
+
                     });
                 </script>
 
@@ -553,14 +558,14 @@ and open the template in the editor.
 //                    var nums = mydiv.getAttribute("data-numbers");
 //                    var numsArray = nums.split(",");
                     var nums1Rep = new Array("9", "2");
-                    $(document).delegate('#test1Rep', 'pageshow', function() {
+                    $(document).delegate('#test1Rep', 'pageshow', function () {
                         showNumbers1Rep(nums1Rep);
                         // rebind handler
                         $("div[data-group*='number']").unbind();
-                        $("div[data-group*='number']").one("tap", function() {
-                    matchNumbers(this);
-                });
-                        
+                        $("div[data-group*='number']").one("tap", function () {
+                            matchNumbers(this);
+                        });
+
                     });
                 </script>
 
@@ -579,14 +584,14 @@ and open the template in the editor.
 //                    var nums = mydiv.getAttribute("data-numbers");
 //                    var numsArray = nums.split(",");
                     var nums2 = new Array("9", "4", "7");
-                    $(document).delegate('#test2', 'pageshow', function() {
+                    $(document).delegate('#test2', 'pageshow', function () {
                         showNumbers2(nums2);
-                        
+
                         // rebind handler
                         $("div[data-group*='number']").unbind();
-                        $("div[data-group*='number']").one("tap", function() {
-                    matchNumbers(this);
-                });
+                        $("div[data-group*='number']").one("tap", function () {
+                            matchNumbers(this);
+                        });
                     });
                 </script>
 
@@ -604,14 +609,14 @@ and open the template in the editor.
 //                    var nums = mydiv.getAttribute("data-numbers");
 //                    var numsArray = nums.split(",");
                     var nums2Rep = new Array("8", "5", "1");
-                    $(document).delegate('#test2Rep', 'pageshow', function() {
+                    $(document).delegate('#test2Rep', 'pageshow', function () {
                         showNumbers2Rep(nums2Rep);
-                        
+
                         // rebind handler
                         $("div[data-group*='number']").unbind();
-                        $("div[data-group*='number']").one("tap", function() {
-                    matchNumbers(this);
-                });
+                        $("div[data-group*='number']").one("tap", function () {
+                            matchNumbers(this);
+                        });
                     });
                 </script>
 
@@ -630,14 +635,14 @@ and open the template in the editor.
 //                    var nums = mydiv.getAttribute("data-numbers");
 //                    var numsArray = nums.split(",");
                     var nums3 = new Array("2", "6", "5", "8");
-                    $(document).delegate('#test3', 'pageshow', function() {
+                    $(document).delegate('#test3', 'pageshow', function () {
                         showNumbers3(nums3);
-                        
+
                         // rebind handler
                         $("div[data-group*='number']").unbind();
-                        $("div[data-group*='number']").one("tap", function() {
-                    matchNumbers(this);
-                });
+                        $("div[data-group*='number']").one("tap", function () {
+                            matchNumbers(this);
+                        });
                     });
                 </script>
 
@@ -656,14 +661,14 @@ and open the template in the editor.
 //                    var nums = mydiv.getAttribute("data-numbers");
 //                    var numsArray = nums.split(",");
                     var nums3Rep = new Array("7", "9", "3", "8");
-                    $(document).delegate('#test3Rep', 'pageshow', function() {
+                    $(document).delegate('#test3Rep', 'pageshow', function () {
                         showNumbers3Rep(nums3Rep);
-                        
+
                         // rebind handler
                         $("div[data-group*='number']").unbind();
-                        $("div[data-group*='number']").one("tap", function() {
-                    matchNumbers(this);
-                });
+                        $("div[data-group*='number']").one("tap", function () {
+                            matchNumbers(this);
+                        });
                     });
                 </script>
 
@@ -682,14 +687,14 @@ and open the template in the editor.
 //                    var nums = mydiv.getAttribute("data-numbers");
 //                    var numsArray = nums.split(",");
                     var nums4 = new Array("3", "1", "8", "7", "4");
-                    $(document).delegate('#test4', 'pageshow', function() {
+                    $(document).delegate('#test4', 'pageshow', function () {
                         showNumbers4(nums4);
-                        
+
                         // rebind handler
                         $("div[data-group*='number']").unbind();
-                        $("div[data-group*='number']").one("tap", function() {
-                    matchNumbers(this);
-                });
+                        $("div[data-group*='number']").one("tap", function () {
+                            matchNumbers(this);
+                        });
                     });
                 </script>
 
@@ -707,14 +712,14 @@ and open the template in the editor.
 //                    var nums = mydiv.getAttribute("data-numbers");
 //                    var numsArray = nums.split(",");
                     var nums4Rep = new Array("4", "1", "5", "2", "6");
-                    $(document).delegate('#test4Rep', 'pageshow', function() {
+                    $(document).delegate('#test4Rep', 'pageshow', function () {
                         showNumbers4Rep(nums4Rep);
-                        
+
                         // rebind handler
                         $("div[data-group*='number']").unbind();
-                        $("div[data-group*='number']").one("tap", function() {
-                    matchNumbers(this);
-                });
+                        $("div[data-group*='number']").one("tap", function () {
+                            matchNumbers(this);
+                        });
                     });
                 </script>
 
@@ -732,14 +737,14 @@ and open the template in the editor.
 //                    var nums = mydiv.getAttribute("data-numbers");
 //                    var numsArray = nums.split(",");
                     var nums5 = new Array("1", "8", "4", "5", "3", "9");
-                    $(document).delegate('#test5', 'pageshow', function() {
+                    $(document).delegate('#test5', 'pageshow', function () {
                         showNumbers5(nums5);
-                        
+
                         // rebind handler
                         $("div[data-group*='number']").unbind();
-                        $("div[data-group*='number']").one("tap", function() {
-                    matchNumbers(this);
-                });
+                        $("div[data-group*='number']").one("tap", function () {
+                            matchNumbers(this);
+                        });
                     });
                 </script>
 
@@ -757,14 +762,14 @@ and open the template in the editor.
 //                    var nums = mydiv.getAttribute("data-numbers");
 //                    var numsArray = nums.split(",");
                     var nums5Rep = new Array("6", "2", "4", "1", "8", "5");
-                    $(document).delegate('#test5Rep', 'pageshow', function() {
+                    $(document).delegate('#test5Rep', 'pageshow', function () {
                         showNumbers5Rep(nums5Rep);
-                        
+
                         // rebind handler
                         $("div[data-group*='number']").unbind();
-                        $("div[data-group*='number']").one("tap", function() {
-                    matchNumbers(this);
-                });
+                        $("div[data-group*='number']").one("tap", function () {
+                            matchNumbers(this);
+                        });
                     });
                 </script>
 
@@ -782,14 +787,14 @@ and open the template in the editor.
 //                    var nums = mydiv.getAttribute("data-numbers");
 //                    var numsArray = nums.split(",");
                     var nums6 = new Array("7", "2", "4", "9", "6", "8", "1");
-                    $(document).delegate('#test6', 'pageshow', function() {
+                    $(document).delegate('#test6', 'pageshow', function () {
                         showNumbers6(nums6);
-                        
+
                         // rebind handler
                         $("div[data-group*='number']").unbind();
-                        $("div[data-group*='number']").one("tap", function() {
-                    matchNumbers(this);
-                });
+                        $("div[data-group*='number']").one("tap", function () {
+                            matchNumbers(this);
+                        });
                     });
                 </script>
 
@@ -807,14 +812,14 @@ and open the template in the editor.
 //                    var nums = mydiv.getAttribute("data-numbers");
 //                    var numsArray = nums.split(",");
                     var nums6Rep = new Array("5", "6", "3", "7", "1", "8", "9");
-                    $(document).delegate('#test6Rep', 'pageshow', function() {
+                    $(document).delegate('#test6Rep', 'pageshow', function () {
                         showNumbers6Rep(nums6Rep);
-                        
+
                         // rebind handler
                         $("div[data-group*='number']").unbind();
-                        $("div[data-group*='number']").one("tap", function() {
-                    matchNumbers(this);
-                });
+                        $("div[data-group*='number']").one("tap", function () {
+                            matchNumbers(this);
+                        });
                     });
                 </script>
 
@@ -832,14 +837,14 @@ and open the template in the editor.
 //                    var nums = mydiv.getAttribute("data-numbers");
 //                    var numsArray = nums.split(",");
                     var nums7 = new Array("5", "6", "3", "7", "4", "9", "8", "1");
-                    $(document).delegate('#test7', 'pageshow', function() {
+                    $(document).delegate('#test7', 'pageshow', function () {
                         showNumbers7(nums7);
-                        
+
                         // rebind handler
                         $("div[data-group*='number']").unbind();
-                        $("div[data-group*='number']").one("tap", function() {
-                    matchNumbers(this);
-                });
+                        $("div[data-group*='number']").one("tap", function () {
+                            matchNumbers(this);
+                        });
                     });
                 </script>
 
@@ -857,14 +862,14 @@ and open the template in the editor.
 //                    var nums = mydiv.getAttribute("data-numbers");
 //                    var numsArray = nums.split(",");
                     var nums7Rep = new Array("1", "5", "2", "7", "4", "6", "9", "3");
-                    $(document).delegate('#test7Rep', 'pageshow', function() {
+                    $(document).delegate('#test7Rep', 'pageshow', function () {
                         showNumbers7Rep(nums7Rep);
-                        
+
                         // rebind handler
                         $("div[data-group*='number']").unbind();
-                        $("div[data-group*='number']").one("tap", function() {
-                    matchNumbers(this);
-                });
+                        $("div[data-group*='number']").one("tap", function () {
+                            matchNumbers(this);
+                        });
                     });
                 </script>
 
