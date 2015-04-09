@@ -1,0 +1,80 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NeuroCare-Screening</title>
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0b1.min.css"/>
+        <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
+        <link rel="stylesheet" href="css/style.css" media="screen and (orientation: landscape)" type="text/css">  
+        <link rel="stylesheet" href="css/style_none.css" media="screen and (orientation: portrait)" type="text/css">               
+        <script type="text/javascript" src="js/jsfunctions.js"></script>
+        <script type="text/javascript" src="js/jstorage.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
+    </head>
+
+
+
+    <body>
+        <div data-role="page" id="resultsPageLogin" data-dom-cache=true class="introPage">
+
+            <div data-role="content">
+                
+  
+                <form  id="resultForm" method="post" accept-charset="utf-8">
+
+                    <center>
+                        
+                        <input type="text" class="inputSize" name="testId" placeholder="Testperson-ID" id="testId" required size="20">  
+                        <br><br><br>
+                        <input type="text" class="inputSize" name="passwort" placeholder="Passwort eingeben" id="passwort" required size="10"> 
+
+                    </center>
+                    <center>
+                        <input type="submit" data-role="button" data-inline="true" class="defaultButton" name="formSubmit" value="Submit" onclick="getResults();" >
+                    </center>
+                   
+                </form>
+                
+            </div>
+
+        </div> 
+
+<!--page to display results-->
+        <div data-role="page" id="displayResults" data-dom-cache=true class="introPage">
+
+            <div data-role="content" >
+                <h2 id="resultsText" class="resultTextStyle">
+                    
+                    
+                </h2> 
+                
+            </div>
+        </div>
+
+
+
+<!--when request has failed-->
+        <div data-role="page" id="requestFailed" data-dom-cache=true class="introPage">
+
+            <div data-role="content" >
+                <h1>Die Abfrage war leider nicht möglich!<br> Bitte stellen Sie sicher, dass Ihr Passwort bzw. die Testperson-ID richtig waren!</h1> 
+
+                <center> <a  data-role="button" data-inline="true" class="defaultButton" href="#resultsPageLogin" >Nochmal</a> </center>
+                
+            </div>
+        </div>
+
+
+
+
+    </body>
+</html>

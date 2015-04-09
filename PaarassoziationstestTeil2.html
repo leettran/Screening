@@ -1,0 +1,378 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NeuroCare-Screening</title>
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0b1.min.css"/>
+        <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
+        <link rel="stylesheet" href="css/style.css" media="screen and (orientation: landscape)" type="text/css">  
+        <link rel="stylesheet" href="css/style_none.css" media="screen and (orientation: portrait)" type="text/css">      
+        
+        <script type="text/javascript" src="js/jsfunctions.js"></script>
+        <script type="text/javascript" src="js/jstorage.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    </head>
+
+
+
+    <body>
+
+        <!--start page to paarassoziation part 2 test-->
+        <div data-role="page" id="test5Start" data-dom-cache=true class="introPage">
+
+            <div data-role="content">
+
+                <div class="testname">Aufgabe<br>Wortpaare<br>Teil2<br>
+                    <!--<a href="#intro" data-role="button" data-inline="true" class="defaultButton" >Zur Aufgabe</a>-->
+                </div>
+
+
+
+                <script type="text/javascript">
+                    $(document).delegate('#test5Start', 'pageshow', function() {
+                        
+                        function showJustForWhile(){
+                            setTimeout(function (){
+                              $.mobile.changePage('#intro', {transition: "flip"});  
+                            },5000);
+                        }
+                        
+                        // assign tap events instead of onclick in order to reduce interaction delay
+//                $links = $("td[data-group*='iterationDelayed']");
+//                alert($links.length);
+                // available for all rounds in this test
+//                $("td[data-group*='iterationDelayed']").bind("tap", function() {
+//                    choosedDelayed(this);
+//                });
+                     
+//                     $("td[data-group*='iterationDelayed']").one("tap", function() {
+//                    choosedDelayed(this);
+//                });
+                     $("td[data-group*='iterationDelayed']").bind("tap", function() {
+                    highlightSelectedWordDelayed(this);
+                });
+                     
+                        
+                        showJustForWhile();
+                        
+                       
+                        
+                    });
+                    
+                </script>
+                
+            </div>
+
+        </div> 
+
+
+        <!--instruction page--> 
+        <div data-role="page" id="intro" data-dom-cache=true class="introPage">
+
+            <div data-role="content">
+                <p class="instructionTextDescription">Erinnern Sie sich noch an die Wortpaare, die Sie am Anfang des Tests gelernt haben?</p>
+                <br>
+                <p class="instructionTextDescription">Ihre Aufgabe ist es, diese noch einmal richtig wieder zu erinnern. Ein Teil eines Paares 
+                 wird Ihnen vorgegeben. Den dazugehörigen Teil sollen Sie aus einer Auswahl von Wörtern wiedererkennen.<br>
+                 Wählen Sie mit dem Finger das fehlende Wort aus.<br>
+                 Wenn Sie sich nicht mehr an das Wort erinnern, raten Sie bitte.
+                </p>
+                
+               
+                <br><br><br>
+
+                <a href="#wordpair1" data-role="button" data-inline="true" class="defaultButton" 
+                   style="float: right;" onclick="switchToFullscreen();">Aufgabe starten</a> 
+            </div>
+
+        </div>
+        
+        
+        <!--invoke wordpairs-->
+        <div data-role="page" id="wordpair1" data-dom-cache=true class="testPage">
+
+            <div data-role="content" >
+                <center> <h1>Welches Wort wurde zusammen mit dem Wort „Wecker“ gezeigt?</h1> </center> 
+                <br>
+                <center><div class="firstword" id="word1" data-match="Gras">Wecker - <p class="questionMark">?</p></div></center>
+                <br> <br>
+                <center><table  id="tableid" border="5" class="wordstable" >
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Dose </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Rasen  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Nuss  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Brücke  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Zelt  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Palast </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Gras  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Tasse  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Krahn  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Chor </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Urwald  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Qualle  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Erbse  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Stift </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Feder  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Ozean  </td>
+                            
+                        </tr>
+                    </table>
+                </center>
+                
+                <a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                   onclick="choosedDelayed();">Weiter</a>
+
+            </div>
+        </div>
+        
+        
+        <div data-role="page" id="wordpair2" data-dom-cache=true class="testPage">
+
+            <div data-role="content" >
+                <center> <h1>Welches Wort wurde zusammen mit dem Wort „Kissen“ gezeigt?</h1> </center> 
+                <br>
+                <center><div class="firstword" id="word2" data-match="Tasche">Kissen - <p class="questionMark">?</p></div></center>
+                <br> <br>
+                <center><table  border="5" class="wordstable" >
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Dach </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Beutel  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Holz  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Motte  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Tasche  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Anker </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Ziffer  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Schloss  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Insel  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Reis </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Essig  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Flasche  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Gold  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Ufer </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Wolke  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Löffel  </td>
+                           
+                        </tr>
+                    </table>
+                </center>
+
+<a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                   onclick="choosedDelayed();">Weiter</a>
+
+
+            </div>
+        </div>
+
+        <div data-role="page" id="wordpair3" data-dom-cache=true class="testPage">
+
+            <div data-role="content" >
+                <center> <h1>Welches Wort wurde zusammen mit dem Wort „Fenster“ gezeigt?</h1> </center> 
+                <br>
+                <center><div class="firstword" id="word3" data-match="Krone">Fenster - <p class="questionMark">?</p></div></center>
+                <br> <br>
+                <center><table  border="5" class="wordstable" >
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Thron </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Jacke  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Pelz  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Esel  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Dorn  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Lupe </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Acker  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Wolle  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Richter  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Senf </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Glut  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Krone  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Nase  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Bohne </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Flöte  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Obst  </td>
+                            
+                        </tr>
+                    </table>
+                </center>
+
+
+<a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                   onclick="choosedDelayed();">Weiter</a>
+
+            </div>
+        </div>
+
+        <div data-role="page" id="wordpair4" data-dom-cache=true class="testPage">
+
+            <div data-role="content" >
+                <center> <h1>Welches Wort wurde zusammen mit dem Wort „Tafel“ gezeigt?</h1> </center> 
+                <br>
+                <center><div class="firstword" id="word4" data-match="Vogel">Tafel - <p class="questionMark">?</p></div></center>
+                <br> <br>
+                <center><table   border="5" class="wordstable" >
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Raupe </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Korb  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Ball  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Ente  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Tinte  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Zug </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Orgel  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Fell  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Muschel  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Wein </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Jäger  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Daumen  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Schaukel  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Nagel </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Vogel  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Gitter  </td>
+                            
+                        </tr>
+                    </table>
+                </center>
+
+<a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                   onclick="choosedDelayed();">Weiter</a>
+
+
+            </div>
+        </div>
+
+
+        <div data-role="page" id="wordpair5" data-dom-cache=true class="testPage">
+
+            <div data-role="content" >
+                <center> <h1>Welches Wort wurde zusammen mit dem Wort „Rahmen“ gezeigt?</h1> </center> 
+                <br>
+                <center><div class="firstword" id="word5" data-match="Baum">Rahmen - <p class="questionMark">?</p></div></center>
+                <br> <br>
+                <center><table   border="5" class="wordstable" >
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Wald </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Quark  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Vase  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Hotel  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Ofen  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Mantel </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Baum  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Dampfer  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Ampel  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Lachs </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Pfeife  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Faden  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Zaun  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Kaffee </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Teppich  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Stein  </td>
+                            
+                        </tr>
+                    </table>
+                </center>
+
+<a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                   onclick="choosedDelayed();">Weiter</a>
+
+
+            </div>
+        </div>
+
+        <div data-role="page" id="wordpair6" data-dom-cache=true class="testPage">
+
+            <div data-role="content" >
+                <center> <h1>Welches Wort wurde zusammen mit dem Wort „Knopf“ gezeigt?</h1> </center> 
+                <br>
+                <center><div class="firstword" id="word6" data-match="Regen">Knopf - <p class="questionMark">?</p></div></center>
+                <br> <br>
+                <center><table  border="5" class="wordstable" >
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Honig </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Regen  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Nest  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Wüste  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Vulkan  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Park </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Fels  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Eimer  </td>
+                           
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Brief  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Zeitung </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Mönch  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Degen  </td>
+                            
+                        </tr>
+                        <tr>
+                            <td data-group="iterationDelayed" class="secondWord"> Angel  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Tropfen </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Schere  </td>
+                            <td data-group="iterationDelayed" class="secondWord"> Igel  </td>
+                            
+                        </tr>
+                    </table>
+                </center>
+
+<a data-role="button" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                   onclick="choosedDelayed();">Weiter</a>
+
+
+            </div>
+        </div>
+
+
+    </body>
+</html>

@@ -1,0 +1,599 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NeuroCare-Screening</title>
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0b1.min.css"/>
+        <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
+        <link rel="stylesheet" href="css/style.css" media="screen and (orientation: landscape)" type="text/css">  
+        <link rel="stylesheet" href="css/style_none.css" media="screen and (orientation: portrait)" type="text/css">     
+        
+        <script type="text/javascript" src="js/jsfunctions.js"></script>
+        <script type="text/javascript" src="js/mosaiktestFunctions.js"></script>
+        <script type="text/javascript" src="js/jstorage.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
+
+
+    </head>
+
+
+
+    <body>
+        
+        
+
+        
+        <!--start page to mosaik test-->
+        <div data-role="page" id="test3Start" data-dom-cache=true class="introPage">
+
+            <div data-role="content">
+
+                <div class="testname">Aufgabe<br>Bilder bauen</div>
+
+                <script type="text/javascript">
+                    $(document).delegate('#test3Start', 'pageshow', function() {
+                        
+                        function showJustForWhile(){
+                            setTimeout(function (){
+                              $.mobile.changePage('#intro', {transition: "flip"});  
+                            },3000);
+                        }
+                        
+                        
+                        // assign tap events instead of onclick in order to reduce interaction delay
+//                $links = $("div[data-group*='tmt4']");  use .one() instead of .bind() to avoid double click
+//                alert($links.length);
+                // 1. puzzle
+                $("td[data-group*='puzzle1Target']").bind("tap", function() {
+                    selectTargetTile1(this);
+                });
+                $("td[data-group*='puzzle1Source']").bind("tap", function() {
+                    selectImageTile(this, document.getElementById('splittab1'));
+                });
+                // 2. puzzle
+                $("td[data-group*='puzzle2Target']").bind("tap", function() {
+                    selectTargetTile2(this);
+                });
+                $("td[data-group*='puzzle2Source']").bind("tap", function() {
+                    selectImageTile(this, document.getElementById('splittab2'));
+                });
+                // 3. puzzle
+                $("td[data-group*='puzzle3Target']").bind("tap", function() {
+                    selectTargetTile3(this);
+                });
+                $("td[data-group*='puzzle3Source']").bind("tap", function() {
+                    selectImageTile(this, document.getElementById('splittab3'));
+                });
+                // 4. puzzle
+                $("td[data-group*='puzzle4Target']").bind("tap", function() {
+                    selectTargetTile4(this);
+                });
+                $("td[data-group*='puzzle4Source']").bind("tap", function() {
+                    selectImageTile(this, document.getElementById('splittab4'));
+                });
+                // 5. puzzle
+                $("td[data-group*='puzzle5Target']").bind("tap", function() {
+                    selectTargetTile5(this);
+                });
+                $("td[data-group*='puzzle5Source']").bind("tap", function() {
+                    selectImageTile(this, document.getElementById('splittab5'));
+                });
+                // 6. puzzle
+                $("td[data-group*='puzzle6Target']").bind("tap", function() {
+                    selectTargetTile6(this);
+                });
+                $("td[data-group*='puzzle6Source']").bind("tap", function() {
+                    selectImageTile(this, document.getElementById('splittab6'));
+                });
+                        
+                        
+                        showJustForWhile();
+                        
+                    });
+                    
+                </script>
+                
+            </div>
+
+        </div>        
+
+        <!--intstruction to the task-->
+        <div data-role="page" id="intro" data-dom-cache=true class="introPage">
+           
+            <div data-role="content">
+                <h1 class="instructionText1" >Was ist Ihre Aufgabe?</h1> 
+
+                <p class="instructionTextDescription">Auf dem Bildschirm sehen Sie gleich ein Bild, das auf der rechten Seite in einzelne Bausteine unterteilt wurde. 
+                    Ihre Aufgabe ist es, im unteren Bereich des Bildschirms aus den einzelnen Bausteinen das Original-Bild nachzubauen. Beispiel:</p>
+               
+                <center> <div>
+                    <image src="img/mosaiktestDemo.jpeg"/>
+                </div>
+                </center>
+              
+                
+                <p class="instructionTextDescription">Um einen Baustein auszuwählen, tippen Sie ihn mit einem Finger an.
+                    Dadurch wird der Baustein optisch hervorgehoben. Dann tippen Sie das Zielfeld an,
+                    in das Sie den Baustein legen möchten. Wenn Sie ein falsches Feld auswählen, erscheint dieses rot, 
+                    so dass Sie sich durch die Auswahl eines anderen Feldes korrigieren können.<br> Bitte arbeiten Sie so 
+                    schnell und so fehlerlos wie möglich</p>
+                
+                <a href="#puzzle1" data-role="button" data-inline="true" class="defaultButton" style="float: right;" onclick="switchToFullscreen();">Aufgabe starten</a>
+                
+            </div>
+
+
+        </div>
+
+
+        <!--first puzzle-->
+        <div data-role="page" id="puzzle1" data-dom-cache=true class="testPage">
+            
+            <div data-role="content" >
+
+                
+                <!--muste be placed on the bottom right-->
+                <div id="wholeImage1" class="originalImage1">
+                    <image src="img/bike.jpeg" id="pic1"/>
+                </div>
+
+
+                <div id="splittedImage1" > 
+                    <table class="tableWithSplits1" id="splittab1">
+                        <tr> 
+                            
+                       <td class="imageTileStyle" id="p1t1x2" data-group="puzzle1Source" ><image class="imagetileAppearance" src="img/Splits/Bike2/bike_swap_part1x2.jpeg"/>   </td>
+                       <td class="imageTileStyle" id="p1t1x1" data-group="puzzle1Source" ><image class="imagetileAppearance" src="img/Splits/Bike2/bike_swap_part1x1.jpeg"/>   </td> 
+                       
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div id="emptySplits1">
+                    <table class="tableToFill1" cellpadding="0" border="0" cellspacing="0">
+                        <tr> 
+                            <td class="cellToFill1" id="p1z1x1" data-group="puzzle1Target"  >   </td> 
+                            <td class="cellToFill1" id="p1z1x2" data-group="puzzle1Target"  >   </td>
+                        </tr>
+
+                    </table>  
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!--second puzzle-->
+        <div data-role="page" id="puzzle2" data-dom-cache=true class="testPage">
+           
+            <div data-role="content" >
+
+                <div id="wholeImage2" class="originalImage1">
+                    <image src="img/globus.jpeg" id="pic2"/>
+                </div>
+
+
+                <div id="splittedImage2"> 
+                    <table class="tableWithSplits2" id="splittab2">
+                        <tr> 
+                            <td class="imageTileStyle" id="p2t1x2" data-group="puzzle2Source"><image class="imagetileAppearance" src="img/Splits/Globus/globus1_swap_part1x2.jpeg"/>   </td> 
+                            <td class="imageTileStyle" id="p2t2x2" data-group="puzzle2Source"><image class="imagetileAppearance" src="img/Splits/Globus/globus1_swap_part2x2.jpeg"/>   </td>
+                        </tr>
+                        <tr> 
+                            <td class="imageTileStyle" id="p2t1x1" data-group="puzzle2Source"><image class="imagetileAppearance" src="img/Splits/Globus/globus1_swap_part1x1.jpeg"/>   </td> 
+                            <td class="imageTileStyle" id="p2t2x1" data-group="puzzle2Source"><image class="imagetileAppearance" src="img/Splits/Globus/globus1_swap_part2x1.jpeg"/>   </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div id="emptySplits2">
+                    <table class="tableToFill2" cellpadding="0" border="0" cellspacing="0">
+                        <tr> 
+                            <td class="cellToFill2" id="p2z1x1" data-group="puzzle2Target" >   </td> 
+                            <td class="cellToFill2" id="p2z1x2" data-group="puzzle2Target" >   </td>
+                        </tr>
+                        <tr> 
+                            <td class="cellToFill2" id="p2z2x1" data-group="puzzle2Target" >   </td> 
+                            <td class="cellToFill2" id="p2z2x2" data-group="puzzle2Target" >   </td>
+                        </tr>
+
+                    </table>  
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!--third puzzle-->
+        <div data-role="page" id="puzzle3" data-dom-cache=true class="testPage">
+            
+            <div data-role="content" >
+
+                <div id="wholeImage3" class="originalImage1">
+                    <image src="img/space.jpeg" id="pic3"/>
+                </div>
+
+
+                <div id="splittedImage3"> 
+                    <table class="tableWithSplits3" id="splittab3">
+                        <tr> 
+                            <td class="imageTileStyle" id="p3t1x1" data-group="puzzle3Source"><image class="imagetileAppearance" src="img/Splits/Space/space_swap_part1x1.jpeg"/>   </td> 
+                            <td class="imageTileStyle" id="p3t2x1" data-group="puzzle3Source"><image class="imagetileAppearance" src="img/Splits/Space/space_swap_part2x1.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p3t1x3" data-group="puzzle3Source"><image class="imagetileAppearance" src="img/Splits/Space/space_swap_part1x3.jpeg"/>   </td>
+                        </tr>
+                        <tr> 
+                            <td class="imageTileStyle" id="p3t2x2" data-group="puzzle3Source"><image class="imagetileAppearance" src="img/Splits/Space/space_swap_part2x2.jpeg"/>   </td> 
+                            <td class="imageTileStyle" id="p3t1x2" data-group="puzzle3Source"><image class="imagetileAppearance" src="img/Splits/Space/space_swap_part1x2.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p3t2x3" data-group="puzzle3Source"><image class="imagetileAppearance" src="img/Splits/Space/space_swap_part2x3.jpeg"/>   </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div id="emptySplits3">
+                    <table class="tableToFill3" cellpadding="0" border="0" cellspacing="0">
+                        <tr>
+                            <td class="cellToFill3" id="p3z1x1" data-group="puzzle3Target" >   </td> 
+                            <td class="cellToFill3" id="p3z1x2" data-group="puzzle3Target" >   </td>
+                            <td class="cellToFill3" id="p3z1x3" data-group="puzzle3Target" >   </td>
+                        </tr>
+                        <tr> 
+                            <td class="cellToFill3" id="p3z2x1" data-group="puzzle3Target" >   </td> 
+                            <td class="cellToFill3" id="p3z2x2" data-group="puzzle3Target" >   </td>
+                            <td class="cellToFill3" id="p3z2x3" data-group="puzzle3Target" >   </td>
+                        </tr>
+
+                    </table>  
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        
+        <!--fourth puzzle-->
+        <div data-role="page" id="puzzle4" data-dom-cache=true class="testPage">
+           
+            <div data-role="content" >
+
+                <div id="wholeImage4" class="originalImage1">
+                    <image src="img/ei.jpeg" id="pic4"/>
+                </div>
+
+
+                <div id="splittedImage4"> 
+                    <table class="tableWithSplits4" id="splittab4">
+                        <tr>
+                            <td class="imageTileStyle" id="p4t2x1" data-group="puzzle4Source"><image class="imagetileAppearance" src="img/Splits/ei/ei_swap_part2x1.jpeg"/>   </td> 
+                            <td class="imageTileStyle" id="p4t3x1" data-group="puzzle4Source"><image class="imagetileAppearance" src="img/Splits/ei/ei_swap_part3x1.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p4t1x1" data-group="puzzle4Source"><image class="imagetileAppearance" src="img/Splits/ei/ei_swap_part1x1.jpeg"/>   </td>
+
+                        </tr>
+                        <tr> 
+                            <td class="imageTileStyle" id="p4t2x3" data-group="puzzle4Source"><image class="imagetileAppearance" src="img/Splits/ei/ei_swap_part2x3.jpeg"/>   </td> 
+                            <td class="imageTileStyle" id="p4t3x2" data-group="puzzle4Source"><image class="imagetileAppearance" src="img/Splits/ei/ei_swap_part3x2.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p4t2x2" data-group="puzzle4Source"><image class="imagetileAppearance" src="img/Splits/ei/ei_swap_part2x2.jpeg"/>   </td>
+
+                        </tr>
+                        <tr> 
+                            <td class="imageTileStyle" id="p4t1x3" data-group="puzzle4Source"><image class="imagetileAppearance" src="img/Splits/ei/ei_swap_part1x3.jpeg"/>   </td> 
+                            <td class="imageTileStyle" id="p4t3x3" data-group="puzzle4Source"> <image class="imagetileAppearance" src="img/Splits/ei/ei_swap_part3x3.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p4t1x2" data-group="puzzle4Source"><image class="imagetileAppearance" src="img/Splits/ei/ei_swap_part1x2.jpeg"/>   </td>
+
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div id="emptySplits4">
+                    <table class="tableToFill4" cellpadding="0" border="0" cellspacing="0">
+                        <tr> 
+                            <td class="cellToFill4" id="p4z1x1" data-group="puzzle4Target" >   </td> 
+                            <td class="cellToFill4" id="p4z1x2" data-group="puzzle4Target" >   </td>
+                            <td class="cellToFill4" id="p4z1x3" data-group="puzzle4Target" >   </td>
+                        </tr>
+                        <tr> 
+                            <td class="cellToFill4" id="p4z2x1" data-group="puzzle4Target" >   </td> 
+                            <td class="cellToFill4" id="p4z2x2" data-group="puzzle4Target" >   </td>
+                            <td class="cellToFill4" id="p4z2x3" data-group="puzzle4Target" >   </td>
+                        </tr>
+                        <tr> 
+                            <td class="cellToFill4" id="p4z3x1" data-group="puzzle4Target" >   </td> 
+                            <td class="cellToFill4" id="p4z3x2" data-group="puzzle4Target" >   </td>
+                            <td class="cellToFill4" id="p4z3x3" data-group="puzzle4Target" >   </td>
+                        </tr>
+
+                    </table>  
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!--fifth puzzle-->
+        <div data-role="page" id="puzzle5" data-dom-cache=true class="testPage">
+            
+            <div data-role="content" >
+
+                <div id="wholeImage5" class="originalImage1">
+                    <image src="img/kompass.jpeg" id="pic5"/>
+                </div>
+
+
+                <div id="splittedImage5"> 
+                    <table class="tableWithSplits5" id="splittab5">
+                        <tr> 
+                            <td class="imageTileStyle" id="p5t1x1" data-group="puzzle5Source"><image class="imagetileAppearance" src="img/Splits/Kompass/kompass_swap_part1x1.jpeg"/>   </td> 
+                            <td class="imageTileStyle" id="p5t3x2" data-group="puzzle5Source"><image class="imagetileAppearance" src="img/Splits/Kompass/kompass_swap_part3x2.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p5t1x3" data-group="puzzle5Source"><image class="imagetileAppearance" src="img/Splits/Kompass/kompass_swap_part1x3.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p5t2x1" data-group="puzzle5Source"><image class="imagetileAppearance" src="img/Splits/Kompass/kompass_swap_part2x1.jpeg"/>   </td>
+
+                        </tr>
+                        <tr> 
+                            <td class="imageTileStyle" id="p5t1x4" data-group="puzzle5Source"><image class="imagetileAppearance" src="img/Splits/Kompass/kompass_swap_part1x4.jpeg"/>   </td> 
+                            <td class="imageTileStyle" id="p5t1x2" data-group="puzzle5Source"><image class="imagetileAppearance" src="img/Splits/Kompass/kompass_swap_part1x2.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p5t3x1" data-group="puzzle5Source"><image class="imagetileAppearance" src="img/Splits/Kompass/kompass_swap_part3x1.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p5t2x2" data-group="puzzle5Source"><image class="imagetileAppearance" src="img/Splits/Kompass/kompass_swap_part2x2.jpeg"/>   </td>
+
+                        </tr>
+                        <tr> 
+                            <td class="imageTileStyle" id="p5t3x3" data-group="puzzle5Source"><image class="imagetileAppearance" src="img/Splits/Kompass/kompass_swap_part3x3.jpeg"/>   </td> 
+                            <td class="imageTileStyle" id="p5t2x4" data-group="puzzle5Source"><image class="imagetileAppearance" src="img/Splits/Kompass/kompass_swap_part2x4.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p5t3x4" data-group="puzzle5Source"><image class="imagetileAppearance" src="img/Splits/Kompass/kompass_swap_part3x4.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p5t2x3" data-group="puzzle5Source"><image class="imagetileAppearance" src="img/Splits/Kompass/kompass_swap_part2x3.jpeg"/>   </td>
+
+
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div id="emptySplits5">
+                    <table class="tableToFill5" cellpadding="0" border="0" cellspacing="0">
+                        <tr> 
+                            <td class="cellToFill5" id="p5z1x1" data-group="puzzle5Target" >   </td> 
+                            <td class="cellToFill5" id="p5z1x2" data-group="puzzle5Target" >   </td>
+                            <td class="cellToFill5" id="p5z1x3" data-group="puzzle5Target" >   </td>
+                            <td class="cellToFill5" id="p5z1x4" data-group="puzzle5Target" >   </td>
+                        </tr>
+                        <tr> 
+                            <td class="cellToFill5" id="p5z2x1" data-group="puzzle5Target" >   </td> 
+                            <td class="cellToFill5" id="p5z2x2" data-group="puzzle5Target" >   </td>
+                            <td class="cellToFill5" id="p5z2x3" data-group="puzzle5Target" >   </td>
+                            <td class="cellToFill5" id="p5z2x4" data-group="puzzle5Target" >   </td>
+                        </tr>
+                        <tr>
+                            <td class="cellToFill5" id="p5z3x1" data-group="puzzle5Target" >   </td> 
+                            <td class="cellToFill5" id="p5z3x2" data-group="puzzle5Target" >   </td>
+                            <td class="cellToFill5" id="p5z3x3" data-group="puzzle5Target" >   </td>
+                            <td class="cellToFill5" id="p5z3x4" data-group="puzzle5Target" >   </td>
+                        </tr>
+
+                    </table>  
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!--sixth puzzle-->
+        <div data-role="page" id="puzzle6" data-dom-cache=true class="testPage">
+           
+            <div data-role="content" >
+
+                <div id="wholeImage6" class="originalImage1">
+                    <image src="img/ostereier.jpeg" id="pic6"/>
+                </div>
+
+
+                <div id="splittedImage6"> 
+                    <table class="tableWithSplits6" id="splittab6">
+                        <tr> 
+                            <td class="imageTileStyle" id="p6t1x1" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part1x1.jpg"/>   </td> 
+                            <td class="imageTileStyle" id="p6t3x1" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part3x1.jpg"/>   </td>
+                            <td class="imageTileStyle" id="p6t4x1" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part4x1.jpg"/>   </td>
+                            <td class="imageTileStyle" id="p6t1x2" data-group="puzzle6Source"><image class="imagetileAppearance"src="img/Splits/Ostereier/ostereier_swap_part1x2.jpg"/>   </td>
+
+                        </tr>
+
+                        <tr> 
+                            <td class="imageTileStyle" id="p6t1x3" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part1x3.jpg"/>   </td> 
+                            <td class="imageTileStyle" id="p6t2x1" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part2x1.jpg"/>   </td>
+                            <td class="imageTileStyle" id="p6t3x4" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part3x4.jpg"/>   </td>
+                            <td class="imageTileStyle" id="p6t2x4" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part2x4.jpg"/>   </td>
+
+                        </tr>
+                        <tr> 
+                            <td class="imageTileStyle" id="p6t3x2" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part3x2.jpg"/>   </td> 
+                            <td class="imageTileStyle" id="p6t1x4" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part1x4.jpg"/>   </td>
+                            <td class="imageTileStyle" id="p6t2x3" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part2x3.jpg"/>   </td>
+                            <td class="imageTileStyle" id="p6t2x2" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part2x2.jpg"/>   </td>
+
+                        </tr>
+
+                        <tr> 
+                            <td class="imageTileStyle" id="p6t4x2" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part4x2.jpg"/>   </td> 
+                            <td class="imageTileStyle" id="p6t4x3" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part4x3.jpg"/>   </td>
+                            <td class="imageTileStyle" id="p6t4x4" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part4x4.jpg"/>   </td>
+                            <td class="imageTileStyle" id="p6t3x3" data-group="puzzle6Source"><image class="imagetileAppearance" src="img/Splits/Ostereier/ostereier_swap_part3x3.jpg"/>   </td>
+
+
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div id="emptySplits6">
+                    <table class="tableToFill6" cellpadding="0" border="0" cellspacing="0">
+                        <tr> 
+                            <td class="cellToFill6" id="p6z1x1" data-group="puzzle6Target" >   </td> 
+                            <td class="cellToFill6" id="p6z1x2" data-group="puzzle6Target" >   </td>
+                            <td class="cellToFill6" id="p6z1x3" data-group="puzzle6Target" >   </td>
+                            <td class="cellToFill6" id="p6z1x4" data-group="puzzle6Target" >   </td>
+                        </tr>
+                        <tr> 
+                            <td class="cellToFill6" id="p6z2x1" data-group="puzzle6Target" >   </td> 
+                            <td class="cellToFill6" id="p6z2x2" data-group="puzzle6Target" >   </td>
+                            <td class="cellToFill6" id="p6z2x3" data-group="puzzle6Target" >   </td>
+                            <td class="cellToFill6" id="p6z2x4" data-group="puzzle6Target" >   </td>
+                        </tr>
+                        <tr> 
+                            <td class="cellToFill6" id="p6z3x1" data-group="puzzle6Target" >   </td> 
+                            <td class="cellToFill6" id="p6z3x2" data-group="puzzle6Target" >   </td>
+                            <td class="cellToFill6" id="p6z3x3" data-group="puzzle6Target" >   </td>
+                            <td class="cellToFill6" id="p6z3x4" data-group="puzzle6Target" >   </td>
+                        </tr>
+                        <tr> 
+                            <td class="cellToFill6" id="p6z4x1" data-group="puzzle6Target" >   </td> 
+                            <td class="cellToFill6" id="p6z4x2" data-group="puzzle6Target" >   </td>
+                            <td class="cellToFill6" id="p6z4x3" data-group="puzzle6Target" >   </td>
+                            <td class="cellToFill6" id="p6z4x4" data-group="puzzle6Target" >   </td>
+                        </tr>
+
+                    </table>  
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <!--seventh puzzle-->
+        <div data-role="page" id="puzzle7" data-dom-cache=true class="testPage">
+           
+            <div data-role="content" >
+
+                <div id="wholeImage7" class="originalImage1">
+                    <image src="img/rechner.jpeg" id="pic7"/>
+                </div>
+
+
+                <div id="splittedImage7" > 
+                    <table class="tableWithSplits7" id="splittab7">
+                        <tr> 
+                            <td class="imageTileStyle" id="p7t1x1" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part1x1.jpeg"/>   </td> 
+                            <td class="imageTileStyle" id="p7t3x1" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part3x1.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p7t4x1" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part4x1.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p7t1x2" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part1x2.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p7t1x5" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part1x5.jpeg"/>   </td>
+
+                        </tr>
+                        <tr> 
+                            <td class="imageTileStyle" id="p7t1x3" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part1x3.jpeg"/>   </td> 
+                            <td class="imageTileStyle" id="p7t2x1" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part2x1.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p7t3x4" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part3x4.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p7t2x4" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part2x4.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p7t2x5" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part2x5.jpeg"/>   </td>
+
+                        </tr>
+                        <tr> 
+                            <td class="imageTileStyle" id="p7t3x2" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part3x2.jpeg"/>   </td> 
+                            <td class="imageTileStyle" id="p7t1x4" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part1x4.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p7t2x3" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part2x3.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p7t2x2" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part2x2.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p7t3x5" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part3x5.jpeg"/>   </td>
+
+                        </tr>
+
+                        <tr> 
+                            <td class="imageTileStyle" id="p7t4x2" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part4x2.jpeg"/>   </td> 
+                            <td class="imageTileStyle" id="p7t4x3" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part4x3.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p7t4x4" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part4x4.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p7t3x3" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part3x3.jpeg"/>   </td>
+                            <td class="imageTileStyle" id="p7t4x5" onclick="selectImageTile(this, document.getElementById('splittab7'));"><image class="imagetileAppearance" src="img/Splits/Rechner/rechner_swap_part4x5.jpeg"/>   </td>
+
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div id="emptySplits7">
+                    <table class="tableToFill7" cellpadding="0" border="0" cellspacing="0">
+                        <tr> 
+                            <td class="cellToFill7" id="p7z1x1" onclick="selectTargetTile7(this);">   </td> 
+                            <td class="cellToFill7" id="p7z1x2" onclick="selectTargetTile7(this);">   </td>
+                            <td class="cellToFill7" id="p7z1x3" onclick="selectTargetTile7(this);">   </td>
+                            <td class="cellToFill7" id="p7z1x4" onclick="selectTargetTile7(this);">   </td>
+                            <td class="cellToFill7" id="p7z1x5" onclick="selectTargetTile7(this);">   </td>
+                        </tr>
+                        <tr>
+                            <td class="cellToFill7" id="p7z2x1" onclick="selectTargetTile7(this);">   </td> 
+                            <td class="cellToFill7" id="p7z2x2" onclick="selectTargetTile7(this);">   </td>
+                            <td class="cellToFill7" id="p7z2x3" onclick="selectTargetTile7(this);">   </td>
+                            <td class="cellToFill7" id="p7z2x4" onclick="selectTargetTile7(this);">   </td>
+                            <td class="cellToFill7" id="p7z2x5" onclick="selectTargetTile7(this);">   </td>
+                        </tr>
+                        <tr> 
+                            <td class="cellToFill7" id="p7z3x1" onclick="selectTargetTile7(this);">   </td> 
+                            <td class="cellToFill7" id="p7z3x2" onclick="selectTargetTile7(this);">   </td>
+                            <td class="cellToFill7" id="p7z3x3" onclick="selectTargetTile7(this);">   </td>
+                            <td class="cellToFill7" id="p7z3x4" onclick="selectTargetTile7(this);">   </td>
+                            <td class="cellToFill7" id="p7z3x5" onclick="selectTargetTile7(this);">  </td>
+                        </tr>
+                        <tr> 
+                            <td class="cellToFill7" id="p7z4x1" onclick="selectTargetTile7(this);">   </td> 
+                            <td class="cellToFill7" id="p7z4x2" onclick="selectTargetTile7(this);">   </td>
+                            <td class="cellToFill7" id="p7z4x3" onclick="selectTargetTile7(this);">   </td>
+                            <td class="cellToFill7" id="p7z4x4" onclick="selectTargetTile7(this);">   </td>
+                            <td class="cellToFill7" id="p7z4x5" onclick="selectTargetTile7(this);">   </td>
+                        </tr>
+
+                    </table>  
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+<!--transition page to the next task (zahlen sortieren)-->
+<div data-role="page" id="MosaiktestTransit" data-dom-cache=true class="testPage">
+
+
+            <div data-role="content">
+                 <h1 id="repeatitionHint" class="transitionPageText" >Die dritte Aufgabe haben Sie geschafft!</h1> 
+                
+                <br>
+                <br>
+                <a data-role="button" data-inline="true" class="defaultButton" onclick="goToZahlensortierentest();"
+                   style="float: right;position: absolute;top: 70%;left: 70%">Nächste Aufgabe</a> 
+            </div>
+        </div>
+
+
+    </body>
+</html>
