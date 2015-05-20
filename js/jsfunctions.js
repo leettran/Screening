@@ -5,6 +5,8 @@
 
 
 //variablen für paarassoziationtest
+var weiterIsActive = true;
+var weiterDelayedIsActive = true;
 var cnt = 0;
 var cntRepeat = 0;
 var showLoopAktiv;
@@ -122,7 +124,7 @@ function highlightSelectedWord1(td) {
     try {
         if (!wordSelected)
             wordSelected = true;
-        
+
         td.style.backgroundColor = "green";
         // color other tds back
         var allElements = document.querySelectorAll("[data-group='iteration1']");
@@ -243,134 +245,171 @@ function highlightSelectedWordDelayed(td) {
 
 function choosed() {
 
-    
+
     try {
-        if (wordSelected){
-            wordSelected = false;
-        var el;
-// find out which td was selected
-        var allElements = document.querySelectorAll("[data-group='iteration1']");
-        for (var i = 0; i < allElements.length; i++) {
-            var tempElem = allElements[i];
+        
+        // only when weiter btn is activated 
+        if (weiterIsActive) {
+            
+            // (avoid double clicking)
+            weiterIsActive = false;
+            
+        // if a word was selected
+        if (wordSelected) {
+         
+         
+            var el;
+            // find out which td was selected
+            var allElements = document.querySelectorAll("[data-group='iteration1']");
+            for (var i = 0; i < allElements.length; i++) {
+                var tempElem = allElements[i];
 
-            var tempElemBgr = tempElem.style.backgroundColor;
+                var tempElemBgr = tempElem.style.backgroundColor;
 
 
-            if ((tempElemBgr === "green")) {
+                if ((tempElemBgr === "green")) {
 
 
-                el = tempElem;
-                break;
+                    el = tempElem;
+                    break;
+
+                }
+            }
+
+
+
+            // handle selection
+            switch (cnt) {
+                case 0:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word1');
+
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords1++;
+                        }
+                        else {
+                            wrongWords1++;
+                        }
+                        $.mobile.changePage('#wordpair2', {transition: "flip"});
+                        wordSelected = false;
+                            // enable weiter btn
+                            weiterIsActive = true;
+                    }, 300);
+                    cnt++;
+                    break;
+                case 1:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word2');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords1++;
+                        }
+                        else {
+                            wrongWords1++;
+                        }
+                        $.mobile.changePage('#wordpair3', {transition: "flip"});
+                        wordSelected = false;
+                            // enable weiter btn
+                            weiterIsActive = true;
+                    }, 300);
+                    cnt++;
+                    break;
+                case 2:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word3');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords1++;
+                        }
+                        else {
+                            wrongWords1++;
+                        }
+                        $.mobile.changePage('#wordpair4', {transition: "flip"});
+                        wordSelected = false;
+                            // enable weiter btn
+                            weiterIsActive = true;
+                    }, 300);
+                    cnt++;
+                    break;
+                case 3:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word4');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords1++;
+                        }
+                        else {
+                            wrongWords1++;
+                        }
+                        $.mobile.changePage('#wordpair5', {transition: "flip"});
+                        wordSelected = false;
+                            // enable weiter btn
+                            weiterIsActive = true;
+                    }, 300);
+                    cnt++;
+                    break;
+                case 4:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word5');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords1++;
+                        }
+                        else {
+                            wrongWords1++;
+                        }
+                        $.mobile.changePage('#wordpair6', {transition: "flip"});
+                        wordSelected = false;
+                            // enable weiter btn
+                            weiterIsActive = true;
+                    }, 300);
+                    cnt++;
+                    break;
+                case 5:
+                    cnt = cnt - 5;
+
+                    var leftw = document.getElementById('word6');
+                    if (isCorrectWord(leftw, el)) {
+                        correctWords1++;
+                    }
+                    else {
+                        wrongWords1++;
+                    }
+
+                    showLoopAktiv = setTimeout(function () {
+                        // store results
+                        jQuery.jStorage.set("RightClickedWords1", correctWords1);
+                        jQuery.jStorage.set("WrongClickedWords1", wrongWords1);
+                        el.style.backgroundColor = "#b9c68d";
+
+                        $.mobile.changePage('#wordpairsTransit1', {transition: "flip"});
+                        
+                        wordSelected = false;
+                            // enable weiter btn
+                            weiterIsActive = true;
+
+                    }, 300);
+
+
+
+                    break;
 
             }
         }
-//        el.style.backgroundColor = "green";
-
-
-
-        switch (cnt) {
-            case 0:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word1');
-
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords1++;
-                    }
-                    else {
-                        wrongWords1++;
-                    }
-                    $.mobile.changePage('#wordpair2', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 1:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word2');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords1++;
-                    }
-                    else {
-                        wrongWords1++;
-                    }
-                    $.mobile.changePage('#wordpair3', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 2:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word3');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords1++;
-                    }
-                    else {
-                        wrongWords1++;
-                    }
-                    $.mobile.changePage('#wordpair4', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 3:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word4');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords1++;
-                    }
-                    else {
-                        wrongWords1++;
-                    }
-                    $.mobile.changePage('#wordpair5', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 4:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word5');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords1++;
-                    }
-                    else {
-                        wrongWords1++;
-                    }
-                    $.mobile.changePage('#wordpair6', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 5:
-                cnt = cnt - 5;
-
-                var leftw = document.getElementById('word6');
-                if (isCorrectWord(leftw, el)) {
-                    correctWords1++;
-                }
-                else {
-                    wrongWords1++;
-                }
-
-                showLoopAktiv = setTimeout(function() {
-                    // store results
-                    jQuery.jStorage.set("RightClickedWords1", correctWords1);
-                    jQuery.jStorage.set("WrongClickedWords1", wrongWords1);
-                    el.style.backgroundColor = "#b9c68d";
-//                $('#weiter').css('display', 'none');
-
-                    $.mobile.changePage('#wordpairsTransit1', {transition: "flip"});
-
-                }, 300);
-
-
-
-                break;
-
-        }
-        }
-        else
-          alert("Bitte wählen Sie ein Wort aus der Liste aus!");  
+        else if (!wordSelected){
+            alert("Bitte wählen Sie ein Wort aus der Liste aus!");
+            
+            setTimeout(function () {
+                    weiterIsActive = true;
+                },300);
+        
+            }
     }
+    
+    
+    }
+    
     catch (error) {
         console.log("Fehler beim Klicken des elementes " + e1 + error);
     }
@@ -384,129 +423,129 @@ function choosed() {
 function choosedOrdered1() {
 
     try {
-        
-        if (wordSelected){
+
+        if (wordSelected) {
             wordSelected = false;
 
 //        el.style.backgroundColor = "green";
-var el;
+            var el;
 // find out which td was selected
-        var allElements = document.querySelectorAll("[data-group='iteration2']");
-        for (var i = 0; i < allElements.length; i++) {
-            var tempElem = allElements[i];
+            var allElements = document.querySelectorAll("[data-group='iteration2']");
+            for (var i = 0; i < allElements.length; i++) {
+                var tempElem = allElements[i];
 
-            var tempElemBgr = tempElem.style.backgroundColor;
-
-
-            if ((tempElemBgr === "green")) {
+                var tempElemBgr = tempElem.style.backgroundColor;
 
 
-                el = tempElem;
-                break;
+                if ((tempElemBgr === "green")) {
+
+
+                    el = tempElem;
+                    break;
+
+                }
+            }
+
+            switch (cnt) {
+                case 0:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word1Ordered1');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords2++;
+                        }
+                        else {
+                            wrongWords2++;
+                        }
+                        $.mobile.changePage('#wordpair2Ordered1', {transition: "flip"});
+                    }, 300);
+                    cnt++;
+                    break;
+                case 1:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word2Ordered1');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords2++;
+                        }
+                        else {
+                            wrongWords2++;
+                        }
+                        $.mobile.changePage('#wordpair3Ordered1', {transition: "flip"});
+                    }, 300);
+                    cnt++;
+                    break;
+                case 2:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word3Ordered1');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords2++;
+                        }
+                        else {
+                            wrongWords2++;
+                        }
+                        $.mobile.changePage('#wordpair4Ordered1', {transition: "flip"});
+                    }, 300);
+                    cnt++;
+                    break;
+                case 3:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word4Ordered1');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords2++;
+                        }
+                        else {
+                            wrongWords2++;
+                        }
+                        $.mobile.changePage('#wordpair5Ordered1', {transition: "flip"});
+                    }, 300);
+                    cnt++;
+                    break;
+                case 4:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word5Ordered1');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords2++;
+                        }
+                        else {
+                            wrongWords2++;
+                        }
+                        $.mobile.changePage('#wordpair6Ordered1', {transition: "flip"});
+                    }, 300);
+                    cnt++;
+                    break;
+                case 5:
+                    cnt = cnt - 5;
+
+                    var leftw = document.getElementById('word6Ordered1');
+                    if (isCorrectWord(leftw, el)) {
+                        correctWords2++;
+                    }
+                    else {
+                        wrongWords2++;
+                    }
+
+                    showLoopAktiv = setTimeout(function () {
+                        // store results
+                        jQuery.jStorage.set("RightClickedWords2", correctWords2);
+                        jQuery.jStorage.set("WrongClickedWords2", wrongWords2);
+                        el.style.backgroundColor = "#b9c68d";
+                        $('#weiterOrdered1').css('display', 'none');
+
+                        $.mobile.changePage('#wordpairsTransit2', {transition: "flip"});
+
+                    }, 300);
+
+
+                    break;
 
             }
         }
-
-        switch (cnt) {
-            case 0:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word1Ordered1');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords2++;
-                    }
-                    else {
-                        wrongWords2++;
-                    }
-                    $.mobile.changePage('#wordpair2Ordered1', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 1:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word2Ordered1');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords2++;
-                    }
-                    else {
-                        wrongWords2++;
-                    }
-                    $.mobile.changePage('#wordpair3Ordered1', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 2:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word3Ordered1');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords2++;
-                    }
-                    else {
-                        wrongWords2++;
-                    }
-                    $.mobile.changePage('#wordpair4Ordered1', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 3:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word4Ordered1');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords2++;
-                    }
-                    else {
-                        wrongWords2++;
-                    }
-                    $.mobile.changePage('#wordpair5Ordered1', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 4:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word5Ordered1');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords2++;
-                    }
-                    else {
-                        wrongWords2++;
-                    }
-                    $.mobile.changePage('#wordpair6Ordered1', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 5:
-                cnt = cnt - 5;
-
-                var leftw = document.getElementById('word6Ordered1');
-                if (isCorrectWord(leftw, el)) {
-                    correctWords2++;
-                }
-                else {
-                    wrongWords2++;
-                }
-
-                showLoopAktiv = setTimeout(function() {
-                    // store results
-                    jQuery.jStorage.set("RightClickedWords2", correctWords2);
-                    jQuery.jStorage.set("WrongClickedWords2", wrongWords2);
-                    el.style.backgroundColor = "#b9c68d";
-                    $('#weiterOrdered1').css('display', 'none');
-
-                    $.mobile.changePage('#wordpairsTransit2', {transition: "flip"});
-
-                }, 300);
-
-
-                break;
-
-        }
-        }
         else
-            alert("Bitte wählen Sie ein Wort aus der Liste aus!");  
+            alert("Bitte wählen Sie ein Wort aus der Liste aus!");
     }
     catch (error) {
         console.log("Fehler beim Klicken des elementes " + e1 + error);
@@ -519,129 +558,129 @@ var el;
 function choosedOrdered2() {
 
     try {
-        
-        if (wordSelected){
+
+        if (wordSelected) {
             wordSelected = false;
 
 //        el.style.backgroundColor = "green";
-var el;
+            var el;
 // find out which td was selected
-        var allElements = document.querySelectorAll("[data-group='iteration3']");
-        for (var i = 0; i < allElements.length; i++) {
-            var tempElem = allElements[i];
+            var allElements = document.querySelectorAll("[data-group='iteration3']");
+            for (var i = 0; i < allElements.length; i++) {
+                var tempElem = allElements[i];
 
-            var tempElemBgr = tempElem.style.backgroundColor;
-
-
-            if ((tempElemBgr === "green")) {
+                var tempElemBgr = tempElem.style.backgroundColor;
 
 
-                el = tempElem;
-                break;
+                if ((tempElemBgr === "green")) {
+
+
+                    el = tempElem;
+                    break;
+
+                }
+            }
+
+            switch (cnt) {
+                case 0:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word1Ordered2');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords3++;
+                        }
+                        else {
+                            wrongWords3++;
+                        }
+                        $.mobile.changePage('#wordpair2Ordered2', {transition: "flip"});
+                    }, 300);
+                    cnt++;
+                    break;
+                case 1:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word2Ordered2');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords3++;
+                        }
+                        else {
+                            wrongWords3++;
+                        }
+                        $.mobile.changePage('#wordpair3Ordered2', {transition: "flip"});
+                    }, 300);
+                    cnt++;
+                    break;
+                case 2:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word3Ordered2');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords3++;
+                        }
+                        else {
+                            wrongWords3++;
+                        }
+                        $.mobile.changePage('#wordpair4Ordered2', {transition: "flip"});
+                    }, 300);
+                    cnt++;
+                    break;
+                case 3:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word4Ordered2');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords3++;
+                        }
+                        else {
+                            wrongWords3++;
+                        }
+                        $.mobile.changePage('#wordpair5Ordered2', {transition: "flip"});
+                    }, 300);
+                    cnt++;
+                    break;
+                case 4:
+                    showLoopAktiv = setTimeout(function () {
+                        el.style.backgroundColor = "#b9c68d";
+                        var leftw = document.getElementById('word5Ordered2');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords3++;
+                        }
+                        else {
+                            wrongWords3++;
+                        }
+                        $.mobile.changePage('#wordpair6Ordered2', {transition: "flip"});
+                    }, 300);
+                    cnt++;
+                    break;
+                case 5:
+                    cnt = cnt - 5;
+
+                    var leftw = document.getElementById('word6Ordered2');
+                    if (isCorrectWord(leftw, el)) {
+                        correctWords3++;
+                    }
+                    else {
+                        wrongWords3++;
+                    }
+
+                    showLoopAktiv = setTimeout(function () {
+                        // store results
+                        jQuery.jStorage.set("RightClickedWords3", correctWords3);
+                        jQuery.jStorage.set("WrongClickedWords3", wrongWords3);
+                        el.style.backgroundColor = "#b9c68d";
+                        $('#weiterOrdered2').css('display', 'none');
+
+                        $.mobile.changePage('#wordpairsTransit3', {transition: "flip"});
+
+                    }, 300);
+
+
+                    break;
 
             }
         }
-
-        switch (cnt) {
-            case 0:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word1Ordered2');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords3++;
-                    }
-                    else {
-                        wrongWords3++;
-                    }
-                    $.mobile.changePage('#wordpair2Ordered2', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 1:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word2Ordered2');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords3++;
-                    }
-                    else {
-                        wrongWords3++;
-                    }
-                    $.mobile.changePage('#wordpair3Ordered2', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 2:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word3Ordered2');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords3++;
-                    }
-                    else {
-                        wrongWords3++;
-                    }
-                    $.mobile.changePage('#wordpair4Ordered2', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 3:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word4Ordered2');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords3++;
-                    }
-                    else {
-                        wrongWords3++;
-                    }
-                    $.mobile.changePage('#wordpair5Ordered2', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 4:
-                showLoopAktiv = setTimeout(function() {
-                    el.style.backgroundColor = "#b9c68d";
-                    var leftw = document.getElementById('word5Ordered2');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords3++;
-                    }
-                    else {
-                        wrongWords3++;
-                    }
-                    $.mobile.changePage('#wordpair6Ordered2', {transition: "flip"});
-                }, 300);
-                cnt++;
-                break;
-            case 5:
-                cnt = cnt - 5;
-
-                var leftw = document.getElementById('word6Ordered2');
-                if (isCorrectWord(leftw, el)) {
-                    correctWords3++;
-                }
-                else {
-                    wrongWords3++;
-                }
-
-                showLoopAktiv = setTimeout(function() {
-                    // store results
-                    jQuery.jStorage.set("RightClickedWords3", correctWords3);
-                    jQuery.jStorage.set("WrongClickedWords3", wrongWords3);
-                    el.style.backgroundColor = "#b9c68d";
-                    $('#weiterOrdered2').css('display', 'none');
-
-                    $.mobile.changePage('#wordpairsTransit3', {transition: "flip"});
-
-                }, 300);
-
-
-                break;
-
-        }
-        }
         else
-            alert("Bitte wählen Sie ein Wort aus der Liste aus!");  
+            alert("Bitte wählen Sie ein Wort aus der Liste aus!");
     }
     catch (error) {
         console.log("Fehler beim Klicken des elementes " + e1 + error);
@@ -734,13 +773,13 @@ function selectNumber(k) {
     try {
         // starting timer fot TMT1
         if (timerTMT1 === 0) {
-            aktivTimerTMT1 = setInterval(function() {
+            aktivTimerTMT1 = setInterval(function () {
                 timerTMT1++;
             }, 1000);
         }
         // starting timer for clicks intervals
         if (timerInterval1 === 0) {
-            aktivTimerInterval1 = setInterval(function() {
+            aktivTimerInterval1 = setInterval(function () {
                 timerInterval1++;
             }, 1000);
         }
@@ -754,7 +793,7 @@ function selectNumber(k) {
             // reset
             timerInterval1 = 0;
             // count for new time
-            aktivTimerInterval1 = setInterval(function() {
+            aktivTimerInterval1 = setInterval(function () {
                 timerInterval1++;
             }, 1000);
         }
@@ -936,7 +975,7 @@ function selectNumber(k) {
                 jQuery.jStorage.set("WrongNumFieldsTMT1", wrongNumFieldsTMT1);
                 jQuery.jStorage.set("TimeToSolveTMT1", timerTMT1);
                 jQuery.jStorage.set("ClickIntervalsTMT1", clickIntervals1);
-                setTimeout(function() {
+                setTimeout(function () {
                     clearAllIntervals();
                     $.mobile.changePage('#intro2v2a', {transition: "flip"});
                 }, 1000);
@@ -1002,7 +1041,7 @@ function countV1() {
             clearInterval(aktiv);
         }
         interactionTimer = 0;
-        aktiv = setInterval(function() {
+        aktiv = setInterval(function () {
             interactionTimer++;
 //        document.getElementById("timestamp").innerHTML = interactionTimer;
             if (interactionTimer === 40) {
@@ -1103,14 +1142,14 @@ function selectNumberOrLetter(k) {
 
 // starting timer fot TMT2
         if (timerTMT2 === 0) {
-            aktivTimerTMT2 = setInterval(function() {
+            aktivTimerTMT2 = setInterval(function () {
                 timerTMT2++;
             }, 1000);
         }
 
         // starting timer for clicks intervals
         if (timerInterval2 === 0) {
-            aktivTimerInterval2 = setInterval(function() {
+            aktivTimerInterval2 = setInterval(function () {
                 timerInterval2++;
             }, 1000);
         }
@@ -1119,7 +1158,7 @@ function selectNumberOrLetter(k) {
             clearInterval(aktivTimerInterval2);
             clickIntervals2.push(timerInterval2);
             timerInterval2 = 0;
-            aktivTimerInterval2 = setInterval(function() {
+            aktivTimerInterval2 = setInterval(function () {
                 timerInterval2++;
             }, 1000);
         }
@@ -1809,7 +1848,7 @@ function selectNumberOrLetter(k) {
                         jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                         jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                         jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                        setTimeout(function() {
+                        setTimeout(function () {
                             clearAllIntervals();
                             cleanRightHitsAndMistakes(kreisId);
                             $.mobile.changePage('#intro2v3a', {transition: "flip"});
@@ -1844,31 +1883,31 @@ function selectNumberOrLetter(k) {
                     }
                     break;
                 default:
-                    {
-                        // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
-                            cleanOtherMistakes(kreisId);
-                            mistakesV2++;
-                            wrongNumFieldsTMT2++;
+                {
+                    // don't allow make the same mistake twice
+                    if (k.style.background !== "red" && k.style.background !== "gray") {
+                        k.style.background = "red";
+                        cleanOtherMistakes(kreisId);
+                        mistakesV2++;
+                        wrongNumFieldsTMT2++;
 
-                            // if mistakes are 3
-                            if (mistakesV2 === 3) {
-                                // stopping timer
-                                clearInterval(aktivTimerTMT2);
-                                clearInterval(aktivTimerInterval2);
-                                clearAllIntervals();
-                                jQuery.jStorage.set("RightNumFieldsTMT2", correctNumFieldsTMT2);
-                                jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
-                                jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
-                                jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                        // if mistakes are 3
+                        if (mistakesV2 === 3) {
+                            // stopping timer
+                            clearInterval(aktivTimerTMT2);
+                            clearInterval(aktivTimerInterval2);
+                            clearAllIntervals();
+                            jQuery.jStorage.set("RightNumFieldsTMT2", correctNumFieldsTMT2);
+                            jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
+                            jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
+                            jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
+                            $.mobile.changePage('#intro2v3a', {transition: "flip"});
 
-                            }
                         }
-                        else
-                            return;
                     }
+                    else
+                        return;
+                }
             }
 
         }
@@ -1904,7 +1943,7 @@ function countV2() {
             clearInterval(aktivV2);
         }
         interactionTimerV2 = 0;
-        aktivV2 = setInterval(function() {
+        aktivV2 = setInterval(function () {
             interactionTimerV2++;
 //        document.getElementById("timestampV2").innerHTML = interactionTimerV2;
             if (interactionTimerV2 === 40) {
@@ -1931,13 +1970,13 @@ function selectOnlyNumber(k) {
     try {
         // starting timer fot TMT1
         if (timerTMT3 === 0) {
-            aktivTimerTMT3 = setInterval(function() {
+            aktivTimerTMT3 = setInterval(function () {
                 timerTMT3++;
             }, 1000);
         }
         // starting timer for clicks intervals
         if (timerInterval3 === 0) {
-            aktivTimerInterval3 = setInterval(function() {
+            aktivTimerInterval3 = setInterval(function () {
                 timerInterval3++;
             }, 1000);
         }
@@ -1946,7 +1985,7 @@ function selectOnlyNumber(k) {
             clearInterval(aktivTimerInterval3);
             clickIntervals3.push(timerInterval3);
             timerInterval3 = 0;
-            aktivTimerInterval3 = setInterval(function() {
+            aktivTimerInterval3 = setInterval(function () {
                 timerInterval3++;
             }, 1000);
         }
@@ -2359,7 +2398,7 @@ function selectOnlyNumber(k) {
                         jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
                         jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
                         jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                        setTimeout(function() {
+                        setTimeout(function () {
                             clearAllIntervals();
                             $.mobile.changePage('#intro2v4a', {transition: "flip"});
                         }, 1000);
@@ -2393,31 +2432,31 @@ function selectOnlyNumber(k) {
                     }
                     break;
                 default:
-                    {
-                        // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
-                            cleanOtherMistakes(kreisId);
-                            mistakesV3++;
-                            wrongNumFieldsTMT3++;
+                {
+                    // don't allow make the same mistake twice
+                    if (k.style.background !== "red" && k.style.background !== "gray") {
+                        k.style.background = "red";
+                        cleanOtherMistakes(kreisId);
+                        mistakesV3++;
+                        wrongNumFieldsTMT3++;
 
-                            // if mistakes are 3
-                            if (mistakesV3 === 3) {
-                                clearAllIntervals();
-                                // stopping timer
-                                clearInterval(aktivTimerTMT3);
-                                clearInterval(aktivTimerInterval3);
-                                // store results
-                                jQuery.jStorage.set("RightNumFieldsTMT3", correctNumFieldsTMT3);
-                                jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
-                                jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
-                                jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                                $.mobile.changePage('#intro2v4a', {transition: "flip"});
-                            }
+                        // if mistakes are 3
+                        if (mistakesV3 === 3) {
+                            clearAllIntervals();
+                            // stopping timer
+                            clearInterval(aktivTimerTMT3);
+                            clearInterval(aktivTimerInterval3);
+                            // store results
+                            jQuery.jStorage.set("RightNumFieldsTMT3", correctNumFieldsTMT3);
+                            jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
+                            jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
+                            jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
+                            $.mobile.changePage('#intro2v4a', {transition: "flip"});
                         }
-                        else
-                            return;
                     }
+                    else
+                        return;
+                }
             }
 
         }
@@ -2446,7 +2485,7 @@ function countV3() {
             clearInterval(aktivV3);
         }
         interactionTimerV3 = 0;
-        aktivV3 = setInterval(function() {
+        aktivV3 = setInterval(function () {
             interactionTimerV3++;
 //        document.getElementById("timestampV3").innerHTML = interactionTimerV3;
             if (interactionTimerV3 === 40) {
@@ -2473,13 +2512,13 @@ function selectNumberOrLetterV4(k) {
     try {
         // starting timer fot TMT1
         if (timerTMT4 === 0) {
-            aktivTimerTMT4 = setInterval(function() {
+            aktivTimerTMT4 = setInterval(function () {
                 timerTMT4++;
             }, 1000);
         }
         // starting timer for clicks intervals
         if (timerInterval4 === 0) {
-            aktivTimerInterval4 = setInterval(function() {
+            aktivTimerInterval4 = setInterval(function () {
                 timerInterval4++;
             }, 1000);
         }
@@ -2488,7 +2527,7 @@ function selectNumberOrLetterV4(k) {
             clearInterval(aktivTimerInterval4);
             clickIntervals4.push(timerInterval4);
             timerInterval4 = 0;
-            aktivTimerInterval4 = setInterval(function() {
+            aktivTimerInterval4 = setInterval(function () {
                 timerInterval4++;
             }, 1000);
         }
@@ -2913,7 +2952,7 @@ function selectNumberOrLetterV4(k) {
                         jQuery.jStorage.set("WrongNumFieldsTMT4", wrongNumFieldsTMT4);
                         jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
                         jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
-                        setTimeout(function() {
+                        setTimeout(function () {
                             clearAllIntervals();
 //                        cleanRightHitsAndMistakes(kreisId);
 //                        //deactivate fullscreen
@@ -2953,32 +2992,32 @@ function selectNumberOrLetterV4(k) {
                     break;
 
                 default:
-                    {
-                        // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
-                            cleanOtherMistakes(kreisId);
-                            mistakesV4++;
-                            wrongNumFieldsTMT4++;
+                {
+                    // don't allow make the same mistake twice
+                    if (k.style.background !== "red" && k.style.background !== "gray") {
+                        k.style.background = "red";
+                        cleanOtherMistakes(kreisId);
+                        mistakesV4++;
+                        wrongNumFieldsTMT4++;
 
-                            // if mistakes are 3
-                            if (mistakesV4 === 3) {
-                                clearAllIntervals();
-                                // stopping timer
-                                clearInterval(aktivTimerTMT4);
-                                clearInterval(aktivTimerInterval4);
-                                // store results
-                                jQuery.jStorage.set("RightNumFieldsTMT4", correctNumFieldsTMT4);
-                                jQuery.jStorage.set("WrongNumFieldsTMT4", wrongNumFieldsTMT4);
-                                jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
-                                jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
+                        // if mistakes are 3
+                        if (mistakesV4 === 3) {
+                            clearAllIntervals();
+                            // stopping timer
+                            clearInterval(aktivTimerTMT4);
+                            clearInterval(aktivTimerInterval4);
+                            // store results
+                            jQuery.jStorage.set("RightNumFieldsTMT4", correctNumFieldsTMT4);
+                            jQuery.jStorage.set("WrongNumFieldsTMT4", wrongNumFieldsTMT4);
+                            jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
+                            jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
 
-                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
-                            }
+                            $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
                         }
-                        else
-                            return;
                     }
+                    else
+                        return;
+                }
 
             }
         }
@@ -3010,7 +3049,7 @@ function countV4() {
             clearInterval(aktivV4);
         }
         interactionTimerV4 = 0;
-        aktivV4 = setInterval(function() {
+        aktivV4 = setInterval(function () {
             interactionTimerV4++;
 //        document.getElementById("timestampV4").innerHTML = interactionTimerV4;
             if (interactionTimerV4 === 40) {
@@ -3039,7 +3078,7 @@ function getAnswer1(answerRadio) {
     var answerId = $('label[for="' + radioId + '"]').attr('id');
     var hoverItem;
     $("#" + answerId).css("color", "white");
-    hoverItem = setInterval(function() {
+    hoverItem = setInterval(function () {
         $("#" + answerId).css("color", "black");
         clearInterval(hoverItem);
     }, 1000);
@@ -3072,7 +3111,7 @@ function getAnswer2(answerRadio) {
 
     var hoverItem;
     $("#" + answerId).css("color", "white");
-    hoverItem = setInterval(function() {
+    hoverItem = setInterval(function () {
         $("#" + answerId).css("color", "black");
         clearInterval(hoverItem);
     }, 1000);
@@ -3101,7 +3140,7 @@ function getAnswer3(answerRadio) {
 
     var hoverItem;
     $("#" + answerId).css("color", "white");
-    hoverItem = setInterval(function() {
+    hoverItem = setInterval(function () {
         $("#" + answerId).css("color", "black");
         clearInterval(hoverItem);
     }, 1000);
@@ -3131,7 +3170,7 @@ function getAnswer4(answerRadio) {
 
     var hoverItem;
     $("#" + answerId).css("color", "white");
-    hoverItem = setInterval(function() {
+    hoverItem = setInterval(function () {
         $("#" + answerId).css("color", "black");
         clearInterval(hoverItem);
     }, 1000);
@@ -3160,7 +3199,7 @@ function getAnswer5(answerRadio) {
 
     var hoverItem;
     $("#" + answerId).css("color", "white");
-    hoverItem = setInterval(function() {
+    hoverItem = setInterval(function () {
         $("#" + answerId).css("color", "black");
         clearInterval(hoverItem);
     }, 1000);
@@ -3190,7 +3229,7 @@ function getAnswer6(answerRadio) {
 
     var hoverItem;
     $("#" + answerId).css("color", "white");
-    hoverItem = setInterval(function() {
+    hoverItem = setInterval(function () {
         $("#" + answerId).css("color", "black");
         clearInterval(hoverItem);
     }, 1000);
@@ -3408,7 +3447,7 @@ function getChoice(answerRadio) {
 
         var hoverItem;
         $("#" + answerId).css("color", "white");
-        hoverItem = setInterval(function() {
+        hoverItem = setInterval(function () {
             $("#" + answerId).css("color", "black");
             clearInterval(hoverItem);
         }, 1000);
@@ -3652,16 +3691,16 @@ function numsLoop(nums, aktivloop, aktivhint, numElem, i) {
     try {
         $('#NumbersLength').html("");
 
-        aktivloop = setTimeout(function() {
+        aktivloop = setTimeout(function () {
 
             if (i < nums.length) {
                 numElem.innerHTML = nums[i];
                 i++;
-                var loop1 = setTimeout(function() {
+                var loop1 = setTimeout(function () {
                     numElem.innerHTML = "";
                 }, 1500);
 
-                var loop2 = setTimeout(function() {
+                var loop2 = setTimeout(function () {
                     numsLoop(nums, aktivloop, aktivhint, numElem, i);
                     return;
                 }, 500);
@@ -3674,7 +3713,7 @@ function numsLoop(nums, aktivloop, aktivhint, numElem, i) {
                 clearTimeout(loop2);
                 clearTimeout(aktivloop);
 
-                setTimeout(function() {
+                setTimeout(function () {
                     $.mobile.changePage('#numsview');
                     $('#NumbersLength').html("Noch " + nums.length + " Ziffer");
 
@@ -3878,7 +3917,7 @@ function matchNumbers(numbElement) {
 
     try {
 
-        numbersArray = numbersArray.sort(function(a, b) {
+        numbersArray = numbersArray.sort(function (a, b) {
             return a - b;
         });
         var allowedClicks = numbersArray.length;
@@ -3887,7 +3926,7 @@ function matchNumbers(numbElement) {
         //hover clicked item
         $(numbElement).css("border", "4px solid white");
         $(numbElement).css("background-color", "gray");
-        hoverItem = setInterval(function() {
+        hoverItem = setInterval(function () {
             $(numbElement).css("border", "");
             $(numbElement).css("background-color", "yellow");
             clearInterval(hoverItem);
@@ -3917,7 +3956,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT1", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT1", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -3933,7 +3972,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT1Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT1Rep", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -3947,7 +3986,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT1", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT1", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -3963,7 +4002,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT1Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT1Rep", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -3995,7 +4034,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT2", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT2", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4010,7 +4049,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT2Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT2Rep", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4024,7 +4063,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT2", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT2", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4040,7 +4079,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT2Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT2Rep", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4071,7 +4110,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT3", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT3", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4086,7 +4125,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT3Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT3Rep", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4101,7 +4140,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT3", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT3", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4117,7 +4156,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT3Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT3Rep", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4151,7 +4190,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT4", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT4", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4166,7 +4205,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT4Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT4Rep", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4181,7 +4220,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT4", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT4", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4197,7 +4236,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT4Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT4Rep", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4231,7 +4270,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT5", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT5", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4246,7 +4285,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT5Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT5Rep", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4261,7 +4300,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT5", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT5", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4277,7 +4316,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT5Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT5Rep", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4311,7 +4350,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT6", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT6", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4326,7 +4365,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT6Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT6Rep", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4341,7 +4380,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT6", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT6", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4357,7 +4396,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT6Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT6Rep", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4391,7 +4430,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT7", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT7", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4410,7 +4449,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT7Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT7Rep", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4425,7 +4464,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT7", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT7", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4441,7 +4480,7 @@ function matchNumbers(numbElement) {
                         jQuery.jStorage.set("ToAchieveArrayT7Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT7Rep", clickedNumbArray);
                         //clear arrays for next use
-                        Array.prototype.clear = function()
+                        Array.prototype.clear = function ()
                         {
                             this.length = 0;
                         };
@@ -4478,140 +4517,177 @@ function choosedDelayed() {
 
 //    el.style.backgroundColor = "green";
 
-try{
-    
-    if (wordSelected){
-    
-var el;
-// find out which td was selected
-        var allElements = document.querySelectorAll("[data-group='iterationDelayed']");
-        for (var i = 0; i < allElements.length; i++) {
-            var tempElem = allElements[i];
+    try {
 
-            var tempElemBgr = tempElem.style.backgroundColor;
+        // only when weiter btn is activated 
+        if (weiterDelayedIsActive) {
 
-
-            if ((tempElemBgr === "green")) {
+            // (avoid double clicking)
+            weiterDelayedIsActive = false;
+            
+            
+            // if a word was selected
+            if (wordSelected) {
 
 
-                el = tempElem;
-                break;
+                var el;
+                // find out which td was selected
+                var allElements = document.querySelectorAll("[data-group='iterationDelayed']");
+                for (var i = 0; i < allElements.length; i++) {
+                    var tempElem = allElements[i];
 
+                    var tempElemBgr = tempElem.style.backgroundColor;
+
+
+                    if ((tempElemBgr === "green")) {
+
+
+                        el = tempElem;
+                        break;
+
+                    }
+                }
+
+                // handle selection
+                switch (cntDelayed) {
+                    
+                    case 0:
+                        showLoopAktivDelay = setTimeout(function () {
+                            el.style.backgroundColor = "#b9c68d";
+                            var leftw = document.getElementById('word1');
+                            if (isCorrectWord(leftw, el)) {
+                                correctWordsDelay++;
+                            }
+                            else {
+                                wrongWordsDelay++;
+                            }
+                            clearTimeout(showLoopAktivDelay);
+                            $.mobile.changePage('#wordpair2', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterDelayedIsActive = true;
+                        }, 300);
+                        cntDelayed++;
+                        break;
+                        
+                    case 1:
+                        showLoopAktivDelay = setTimeout(function () {
+                            el.style.backgroundColor = "#b9c68d";
+                            var leftw = document.getElementById('word2');
+                            if (isCorrectWord(leftw, el)) {
+                                correctWordsDelay++;
+                            }
+                            else {
+                                wrongWordsDelay++;
+                            }
+                            clearTimeout(showLoopAktivDelay);
+                            $.mobile.changePage('#wordpair3', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterDelayedIsActive = true;
+                        }, 300);
+                        cntDelayed++;
+                        break;
+                    case 2:
+                        showLoopAktivDelay = setTimeout(function () {
+                            el.style.backgroundColor = "#b9c68d";
+                            var leftw = document.getElementById('word3');
+                            if (isCorrectWord(leftw, el)) {
+                                correctWordsDelay++;
+                            }
+                            else {
+                                wrongWordsDelay++;
+                            }
+                            clearTimeout(showLoopAktivDelay);
+                            $.mobile.changePage('#wordpair4', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterDelayedIsActive = true;
+                        }, 300);
+                        cntDelayed++;
+                        break;
+                    case 3:
+                        showLoopAktivDelay = setTimeout(function () {
+                            el.style.backgroundColor = "#b9c68d";
+                            var leftw = document.getElementById('word4');
+                            if (isCorrectWord(leftw, el)) {
+                                correctWordsDelay++;
+                            }
+                            else {
+                                wrongWordsDelay++;
+                            }
+                            clearTimeout(showLoopAktivDelay);
+                            $.mobile.changePage('#wordpair5', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterDelayedIsActive = true;
+                        }, 300);
+                        cntDelayed++;
+                        break;
+                    case 4:
+                        showLoopAktivDelay = setTimeout(function () {
+                            el.style.backgroundColor = "#b9c68d";
+                            var leftw = document.getElementById('word5');
+                            if (isCorrectWord(leftw, el)) {
+                                correctWordsDelay++;
+                            }
+                            else {
+                                wrongWordsDelay++;
+                            }
+                            clearTimeout(showLoopAktivDelay);
+                            $.mobile.changePage('#wordpair6', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterDelayedIsActive = true;
+                        }, 300);
+                        cntDelayed++;
+                        break;
+                    case 5:
+                        // reset counter
+                        cntDelayed = cntDelayed - 5;
+
+
+                        var leftw = document.getElementById('word6');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWordsDelay++;
+                        }
+                        else {
+                            wrongWordsDelay++;
+                        }
+
+                        showLoopAktivDelay = setTimeout(function () {
+                            el.style.backgroundColor = "#b9c68d";
+                            // store results
+                            jQuery.jStorage.set("RightClickedWordsDelay", correctWordsDelay);
+                            jQuery.jStorage.set("WrongClickedWordsDelay", wrongWordsDelay);
+                            // clear timer
+                            clearTimeout(showLoopAktivDelay);
+                            // go to depressionsscreening questions
+                            goToDepressionsscreening();
+                            // enable weiter btn
+                            weiterDelayedIsActive = true;
+                        }, 1000);
+
+
+
+                        break;
+
+                }
             }
+            else if (!wordSelected){
+                alert("Bitte wählen Sie ein Wort aus der Liste aus!");
+                setTimeout(function () {
+                    weiterDelayedIsActive = true;
+                },300);
+                
+                
+            }
+
         }
-
-    switch (cntDelayed) {
-        case 0:
-            showLoopAktivDelay = setTimeout(function() {
-                el.style.backgroundColor = "#b9c68d";
-                var leftw = document.getElementById('word1');
-                if (isCorrectWord(leftw, el)) {
-                    correctWordsDelay++;
-                }
-                else {
-                    wrongWordsDelay++;
-                }
-                clearTimeout(showLoopAktivDelay);
-                $.mobile.changePage('#wordpair2', {transition: "flip"});
-            }, 300);
-            cntDelayed++;
-            break;
-        case 1:
-            showLoopAktivDelay = setTimeout(function() {
-                el.style.backgroundColor = "#b9c68d";
-                var leftw = document.getElementById('word2');
-                if (isCorrectWord(leftw, el)) {
-                    correctWordsDelay++;
-                }
-                else {
-                    wrongWordsDelay++;
-                }
-                clearTimeout(showLoopAktivDelay);
-                $.mobile.changePage('#wordpair3', {transition: "flip"});
-            }, 300);
-            cntDelayed++;
-            break;
-        case 2:
-            showLoopAktivDelay = setTimeout(function() {
-                el.style.backgroundColor = "#b9c68d";
-                var leftw = document.getElementById('word3');
-                if (isCorrectWord(leftw, el)) {
-                    correctWordsDelay++;
-                }
-                else {
-                    wrongWordsDelay++;
-                }
-                clearTimeout(showLoopAktivDelay);
-                $.mobile.changePage('#wordpair4', {transition: "flip"});
-            }, 300);
-            cntDelayed++;
-            break;
-        case 3:
-            showLoopAktivDelay = setTimeout(function() {
-                el.style.backgroundColor = "#b9c68d";
-                var leftw = document.getElementById('word4');
-                if (isCorrectWord(leftw, el)) {
-                    correctWordsDelay++;
-                }
-                else {
-                    wrongWordsDelay++;
-                }
-                clearTimeout(showLoopAktivDelay);
-                $.mobile.changePage('#wordpair5', {transition: "flip"});
-            }, 300);
-            cntDelayed++;
-            break;
-        case 4:
-            showLoopAktivDelay = setTimeout(function() {
-                el.style.backgroundColor = "#b9c68d";
-                var leftw = document.getElementById('word5');
-                if (isCorrectWord(leftw, el)) {
-                    correctWordsDelay++;
-                }
-                else {
-                    wrongWordsDelay++;
-                }
-                clearTimeout(showLoopAktivDelay);
-                $.mobile.changePage('#wordpair6', {transition: "flip"});
-            }, 300);
-            cntDelayed++;
-            break;
-        case 5:
-            // reset counter
-            cntDelayed = cntDelayed - 5;
-
-
-            var leftw = document.getElementById('word6');
-            if (isCorrectWord(leftw, el)) {
-                correctWordsDelay++;
-            }
-            else {
-                wrongWordsDelay++;
-            }
-
-            showLoopAktivDelay = setTimeout(function() {
-                el.style.backgroundColor = "#b9c68d";
-                // store results
-                jQuery.jStorage.set("RightClickedWordsDelay", correctWordsDelay);
-                jQuery.jStorage.set("WrongClickedWordsDelay", wrongWordsDelay);
-                // clear timer
-                clearTimeout(showLoopAktivDelay);
-                // go to depressionsscreening questions
-                goToDepressionsscreening();
-            }, 1000);
-
-
-
-            break;
-
     }
+    catch (error) {
+        console.log("Fehler matchen der Wörter" + error);
     }
-    else
-        alert("Bitte wählen Sie ein Wort aus der Liste aus!");  
-}
-catch (error){
-    console.log("Fehler matchen der Wörter" + error);
-}
 
 }
 
@@ -4630,7 +4706,7 @@ function login(id, password) {
 
             }
 
-        }).success(function(data) {
+        }).success(function (data) {
 
 
 
@@ -4647,7 +4723,7 @@ function login(id, password) {
                 console.log("failed");
             }
 
-        }).fail(function(data) {
+        }).fail(function (data) {
             $.mobile.changePage('#forbiddenHint', {transition: "flip"});
             console.log(data);
             console.log("failed");
@@ -4669,7 +4745,6 @@ function sendResults() {
             url: "https://www.neurocare-aal.de/screening/functions/index.php",
             data: {
                 user_id: jQuery.jStorage.get("UserName"),
-                
                 RightClickedWords1: jQuery.jStorage.get("RightClickedWords1"), WrongClickedWords1: jQuery.jStorage.get("WrongClickedWords1"),
                 RightClickedWords2: jQuery.jStorage.get("RightClickedWords2"), WrongClickedWords2: jQuery.jStorage.get("WrongClickedWords2"),
                 RightClickedWords3: jQuery.jStorage.get("RightClickedWords3"), WrongClickedWords3: jQuery.jStorage.get("WrongClickedWords3"),
@@ -4697,22 +4772,22 @@ function sendResults() {
 
             }
         }).
-                success(function(data) {
+                success(function (data) {
 
-            console.log(data);
+                    console.log(data);
 
-            if (data.success === true) {
-                $.mobile.changePage('#sendConfirmation', {transition: "flip"});
-            }
+                    if (data.success === true) {
+                        $.mobile.changePage('#sendConfirmation', {transition: "flip"});
+                    }
 
-            else if (data.success === false) {
-                $.mobile.changePage('#sendFailed', {transition: "flip"});
-            }
+                    else if (data.success === false) {
+                        $.mobile.changePage('#sendFailed', {transition: "flip"});
+                    }
 
-            console.log("success");
+                    console.log("success");
 
 
-        }).fail(function(data) {
+                }).fail(function (data) {
             $.mobile.changePage('#sendFailed', {transition: "flip"});
             console.log("failed to load php script due to internet connection.");
             console.log(data);
@@ -4742,19 +4817,19 @@ function getResults() {
                     testId: testId,
                     passwort: passwort
                 }
-            }).success(function(data) {
+            }).success(function (data) {
                 $('#resultsText').html(data);
                 $.mobile.changePage('#displayResults', {transition: "slideup"});
 
-            }).fail(function(data) {
+            }).fail(function (data) {
                 $.mobile.changePage('#requestFailed', {transition: "slideup"});
                 console.log("request failed!" + testId + "  " + passwort + data);
 
             })
 
-                    .done(function(data) {
-                console.log("request successfull! " + testId + "  " + passwort);
-            });
+                    .done(function (data) {
+                        console.log("request successfull! " + testId + "  " + passwort);
+                    });
         }
     }
 
@@ -4771,7 +4846,7 @@ function getResults() {
 function switchToFullscreen() {
     try {
 
-        $(document).find("div[data-role=page").each(function() {
+        $(document).find("div[data-role=page").each(function () {
             if (this.requestFullScreen) {
                 this.requestFullScreen();
             } else if (this.mozRequestFullScreen) {
