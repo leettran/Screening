@@ -308,7 +308,16 @@
         
     }
     
-    
+     .tippIconBig{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 71px;
+        position: absolute;       
+        left: 5%;
+        top: 5%;
+
+    }
     
     
     
