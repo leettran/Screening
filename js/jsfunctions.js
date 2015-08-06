@@ -27,6 +27,10 @@ var correctWordsDelay = 0;
 var wrongWordsDelay = 0;
 var cntDelayed = 0;
 
+// color values
+var selectionColor = "#8c8c8c";
+var normalColor = "#57BB58";
+
 
 
 //variablen für trailmakingtest
@@ -138,6 +142,17 @@ function showFollowingPageDelayed(page, delay)
 
 }
 
+// turns rgb color value to hex value 
+function rgb2hex(rgb) {
+    if (rgb!== ""){
+    
+    rgb = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+))?\)$/);
+    function hex(x) {
+        return ("0" + parseInt(x).toString(16)).slice(-2);
+    }
+    return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+}
+}
 
 
 
@@ -160,19 +175,19 @@ function highlightSelectedWord1(td) {
         // hide selection hint
         $(".selectionHintDiv").css("visibility", "hidden");
 
-        td.style.backgroundColor = "#8C8C8C";
+        td.style.backgroundColor = selectionColor;
         // color other tds back
         var allElements = document.querySelectorAll("[data-group='iteration1']");
         for (var i = 0; i < allElements.length; i++) {
             var tempElem = allElements[i];
 
-            var tempElemBgr = tempElem.style.backgroundColor;
+
+            var tempElemBgr = rgb2hex(tempElem.style.backgroundColor);
 
 
-            if ((tempElem !== td && tempElemBgr === "#8C8C8C")) {
+            if ((tempElem !== td && tempElemBgr === selectionColor)) {
 
-
-                tempElem.style.backgroundColor = '#57BB58';
+                tempElem.style.backgroundColor = normalColor;
 
             }
         }
@@ -185,6 +200,8 @@ function highlightSelectedWord1(td) {
 }
 
 
+
+
 // used to highlight selected word in the 2. pass
 function highlightSelectedWord2(td) {
 
@@ -195,19 +212,19 @@ function highlightSelectedWord2(td) {
         // hide selection hint
         $(".selectionHintDiv").css("visibility", "hidden");
         
-        td.style.backgroundColor = "#8C8C8C";
+        td.style.backgroundColor = selectionColor;
         // color other tds back
         var allElements = document.querySelectorAll("[data-group='iteration2']");
         for (var i = 0; i < allElements.length; i++) {
             var tempElem = allElements[i];
 
-            var tempElemBgr = tempElem.style.backgroundColor;
+            var tempElemBgr = rgb2hex(tempElem.style.backgroundColor);
 
 
-            if ((tempElem !== td && tempElemBgr === "#8C8C8C")) {
+            if ((tempElem !== td && tempElemBgr === selectionColor)) {
 
 
-                tempElem.style.backgroundColor = '#57BB58';
+                tempElem.style.backgroundColor = normalColor;
 
             }
         }
@@ -229,19 +246,19 @@ function highlightSelectedWord3(td) {
         // hide selection hint
         $(".selectionHintDiv").css("visibility", "hidden");
         
-        td.style.backgroundColor = "#8C8C8C";
+        td.style.backgroundColor = selectionColor;
         // color other tds back
         var allElements = document.querySelectorAll("[data-group='iteration3']");
         for (var i = 0; i < allElements.length; i++) {
             var tempElem = allElements[i];
 
-            var tempElemBgr = tempElem.style.backgroundColor;
+            var tempElemBgr = rgb2hex(tempElem.style.backgroundColor);
 
 
-            if ((tempElem !== td && tempElemBgr === "#8C8C8C")) {
+            if ((tempElem !== td && tempElemBgr === selectionColor)) {
 
 
-                tempElem.style.backgroundColor = '#57BB58';
+                tempElem.style.backgroundColor = normalColor;
 
             }
         }
@@ -276,10 +293,10 @@ function choosed() {
                 for (var i = 0; i < allElements.length; i++) {
                     var tempElem = allElements[i];
 
-                    var tempElemBgr = tempElem.style.backgroundColor;
+                    var tempElemBgr = rgb2hex(tempElem.style.backgroundColor);
 
 
-                    if ((tempElemBgr === "#8C8C8C")) {
+                    if ((tempElemBgr === selectionColor)) {
 
 
                         el = tempElem;
@@ -294,7 +311,7 @@ function choosed() {
                 switch (cnt) {
                     case 0:
                         showLoopAktiv = setTimeout(function () {
-                            el.style.backgroundColor = "#57BB58";
+                            el.style.backgroundColor = normalColor;
                             var leftw = document.getElementById('word1');
 
                             if (isCorrectWord(leftw, el)) {
@@ -313,7 +330,7 @@ function choosed() {
                         break;
                     case 1:
                         showLoopAktiv = setTimeout(function () {
-                            el.style.backgroundColor = "#57BB58";
+                            el.style.backgroundColor = normalColor;
                             var leftw = document.getElementById('word2');
                             if (isCorrectWord(leftw, el)) {
                                 correctWords1++;
@@ -331,7 +348,7 @@ function choosed() {
                         break;
                     case 2:
                         showLoopAktiv = setTimeout(function () {
-                            el.style.backgroundColor = "#57BB58";
+                            el.style.backgroundColor = normalColor;
                             var leftw = document.getElementById('word3');
                             if (isCorrectWord(leftw, el)) {
                                 correctWords1++;
@@ -349,7 +366,7 @@ function choosed() {
                         break;
                     case 3:
                         showLoopAktiv = setTimeout(function () {
-                            el.style.backgroundColor = "#57BB58";
+                            el.style.backgroundColor = normalColor;
                             var leftw = document.getElementById('word4');
                             if (isCorrectWord(leftw, el)) {
                                 correctWords1++;
@@ -367,7 +384,7 @@ function choosed() {
                         break;
                     case 4:
                         showLoopAktiv = setTimeout(function () {
-                            el.style.backgroundColor = "#57BB58";
+                            el.style.backgroundColor = normalColor;
                             var leftw = document.getElementById('word5');
                             if (isCorrectWord(leftw, el)) {
                                 correctWords1++;
@@ -398,7 +415,7 @@ function choosed() {
                             // store results
                             jQuery.jStorage.set("RightClickedWords1", correctWords1);
                             jQuery.jStorage.set("WrongClickedWords1", wrongWords1);
-                            el.style.backgroundColor = "#57BB58";
+                            el.style.backgroundColor = normalColor;
                             $(".selectionHintDiv").css("visibility", "hidden");
                             $.mobile.changePage('#wordpairsTransit1', {transition: "flip"});
 
@@ -419,7 +436,7 @@ function choosed() {
               $(".selectionHintDiv").css("visibility", "visible");
               setTimeout(function () {
             $(".selectionHintDiv").css("visibility", "hidden");
-             }, 500);
+             }, 1000);
                 
 
                 setTimeout(function () {
@@ -455,10 +472,10 @@ function choosedOrdered1() {
             for (var i = 0; i < allElements.length; i++) {
                 var tempElem = allElements[i];
 
-                var tempElemBgr = tempElem.style.backgroundColor;
+                var tempElemBgr = rgb2hex(tempElem.style.backgroundColor);
 
 
-                if ((tempElemBgr === "#8C8C8C")) {
+                if ((tempElemBgr === selectionColor)) {
 
 
                     el = tempElem;
@@ -470,7 +487,7 @@ function choosedOrdered1() {
             switch (cnt) {
                 case 0:
                     showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#57BB58";
+                        el.style.backgroundColor = normalColor;
                         var leftw = document.getElementById('word1Ordered1');
                         if (isCorrectWord(leftw, el)) {
                             correctWords2++;
@@ -485,7 +502,7 @@ function choosedOrdered1() {
                     break;
                 case 1:
                     showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#57BB58";
+                        el.style.backgroundColor = normalColor;
                         var leftw = document.getElementById('word2Ordered1');
                         if (isCorrectWord(leftw, el)) {
                             correctWords2++;
@@ -500,7 +517,7 @@ function choosedOrdered1() {
                     break;
                 case 2:
                     showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#57BB58";
+                        el.style.backgroundColor = normalColor;
                         var leftw = document.getElementById('word3Ordered1');
                         if (isCorrectWord(leftw, el)) {
                             correctWords2++;
@@ -515,7 +532,7 @@ function choosedOrdered1() {
                     break;
                 case 3:
                     showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#57BB58";
+                        el.style.backgroundColor = normalColor;
                         var leftw = document.getElementById('word4Ordered1');
                         if (isCorrectWord(leftw, el)) {
                             correctWords2++;
@@ -530,7 +547,7 @@ function choosedOrdered1() {
                     break;
                 case 4:
                     showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#57BB58";
+                        el.style.backgroundColor = normalColor;
                         var leftw = document.getElementById('word5Ordered1');
                         if (isCorrectWord(leftw, el)) {
                             correctWords2++;
@@ -558,7 +575,7 @@ function choosedOrdered1() {
                         // store results
                         jQuery.jStorage.set("RightClickedWords2", correctWords2);
                         jQuery.jStorage.set("WrongClickedWords2", wrongWords2);
-                        el.style.backgroundColor = "#57BB58";
+                        el.style.backgroundColor = normalColor;
                         $('#weiterOrdered1').css('display', 'none');
                         $(".selectionHintDiv").css("visibility", "hidden");
                         $.mobile.changePage('#wordpairsTransit2', {transition: "flip"});
@@ -575,7 +592,7 @@ function choosedOrdered1() {
               $(".selectionHintDiv").css("visibility", "visible");
               setTimeout(function () {
             $(".selectionHintDiv").css("visibility", "hidden");
-             }, 500);
+             }, 1000);
                 
 
                 setTimeout(function () {
@@ -606,10 +623,10 @@ function choosedOrdered2() {
             for (var i = 0; i < allElements.length; i++) {
                 var tempElem = allElements[i];
 
-                var tempElemBgr = tempElem.style.backgroundColor;
+                var tempElemBgr = rgb2hex(tempElem.style.backgroundColor);
 
 
-                if ((tempElemBgr === "#8C8C8C")) {
+                if ((tempElemBgr === selectionColor)) {
 
 
                     el = tempElem;
@@ -621,7 +638,7 @@ function choosedOrdered2() {
             switch (cnt) {
                 case 0:
                     showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#b9c68d";
+                        el.style.backgroundColor = normalColor;
                         var leftw = document.getElementById('word1Ordered2');
                         if (isCorrectWord(leftw, el)) {
                             correctWords3++;
@@ -636,7 +653,7 @@ function choosedOrdered2() {
                     break;
                 case 1:
                     showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#57BB58";
+                        el.style.backgroundColor = normalColor;
                         var leftw = document.getElementById('word2Ordered2');
                         if (isCorrectWord(leftw, el)) {
                             correctWords3++;
@@ -651,7 +668,7 @@ function choosedOrdered2() {
                     break;
                 case 2:
                     showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#57BB58";
+                        el.style.backgroundColor = normalColor;
                         var leftw = document.getElementById('word3Ordered2');
                         if (isCorrectWord(leftw, el)) {
                             correctWords3++;
@@ -666,7 +683,7 @@ function choosedOrdered2() {
                     break;
                 case 3:
                     showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#57BB58";
+                        el.style.backgroundColor = normalColor;
                         var leftw = document.getElementById('word4Ordered2');
                         if (isCorrectWord(leftw, el)) {
                             correctWords3++;
@@ -681,7 +698,7 @@ function choosedOrdered2() {
                     break;
                 case 4:
                     showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#57BB58";
+                        el.style.backgroundColor = normalColor;
                         var leftw = document.getElementById('word5Ordered2');
                         if (isCorrectWord(leftw, el)) {
                             correctWords3++;
@@ -709,7 +726,7 @@ function choosedOrdered2() {
                         // store results
                         jQuery.jStorage.set("RightClickedWords3", correctWords3);
                         jQuery.jStorage.set("WrongClickedWords3", wrongWords3);
-                        el.style.backgroundColor = "#57BB58";
+                        el.style.backgroundColor = normalColor;
                         $('#weiterOrdered2').css('display', 'none');
                         $(".selectionHintDiv").css("visibility", "hidden");
                         $.mobile.changePage('#wordpairsTransit3', {transition: "flip"});
@@ -726,7 +743,7 @@ function choosedOrdered2() {
              $(".selectionHintDiv").css("visibility", "visible");
               setTimeout(function () {
             $(".selectionHintDiv").css("visibility", "hidden");
-             }, 500);
+             }, 1000);
                 
 
                 setTimeout(function () {
