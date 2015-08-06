@@ -115,6 +115,53 @@ var repeats;
 
 
 
+//global functions 
+
+
+// shows given page after a given time interval
+function showFollowingPageDelayed(page, delay)
+{
+    try
+    {
+        setTimeout(function () {
+            $.mobile.changePage('#'+page, {transition: "flip"});
+        }, delay);
+
+
+
+    }
+
+    catch (error) {
+        console.log("Error when switching to page: " + page + error);
+    }
+
+
+}
+
+
+
+
+
+
+//! global functions 
+
+
+
+//functions for wortpaare assoziation
+
+
+
+
+
+
+
+
+
+//! functions for wortpaare assoziation
+
+
+
+
 
 
 
@@ -247,169 +294,169 @@ function choosed() {
 
 
     try {
-        
+
         // only when weiter btn is activated 
         if (weiterIsActive) {
-            
+
             // (avoid double clicking)
             weiterIsActive = false;
-            
-        // if a word was selected
-        if (wordSelected) {
-         
-         
-            var el;
-            // find out which td was selected
-            var allElements = document.querySelectorAll("[data-group='iteration1']");
-            for (var i = 0; i < allElements.length; i++) {
-                var tempElem = allElements[i];
 
-                var tempElemBgr = tempElem.style.backgroundColor;
+            // if a word was selected
+            if (wordSelected) {
 
 
-                if ((tempElemBgr === "green")) {
+                var el;
+                // find out which td was selected
+                var allElements = document.querySelectorAll("[data-group='iteration1']");
+                for (var i = 0; i < allElements.length; i++) {
+                    var tempElem = allElements[i];
+
+                    var tempElemBgr = tempElem.style.backgroundColor;
 
 
-                    el = tempElem;
-                    break;
+                    if ((tempElemBgr === "green")) {
+
+
+                        el = tempElem;
+                        break;
+
+                    }
+                }
+
+
+
+                // handle selection
+                switch (cnt) {
+                    case 0:
+                        showLoopAktiv = setTimeout(function () {
+                            el.style.backgroundColor = "#b9c68d";
+                            var leftw = document.getElementById('word1');
+
+                            if (isCorrectWord(leftw, el)) {
+                                correctWords1++;
+                            }
+                            else {
+                                wrongWords1++;
+                            }
+                            $.mobile.changePage('#wordpair2', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterIsActive = true;
+                        }, 300);
+                        cnt++;
+                        break;
+                    case 1:
+                        showLoopAktiv = setTimeout(function () {
+                            el.style.backgroundColor = "#b9c68d";
+                            var leftw = document.getElementById('word2');
+                            if (isCorrectWord(leftw, el)) {
+                                correctWords1++;
+                            }
+                            else {
+                                wrongWords1++;
+                            }
+                            $.mobile.changePage('#wordpair3', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterIsActive = true;
+                        }, 300);
+                        cnt++;
+                        break;
+                    case 2:
+                        showLoopAktiv = setTimeout(function () {
+                            el.style.backgroundColor = "#b9c68d";
+                            var leftw = document.getElementById('word3');
+                            if (isCorrectWord(leftw, el)) {
+                                correctWords1++;
+                            }
+                            else {
+                                wrongWords1++;
+                            }
+                            $.mobile.changePage('#wordpair4', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterIsActive = true;
+                        }, 300);
+                        cnt++;
+                        break;
+                    case 3:
+                        showLoopAktiv = setTimeout(function () {
+                            el.style.backgroundColor = "#b9c68d";
+                            var leftw = document.getElementById('word4');
+                            if (isCorrectWord(leftw, el)) {
+                                correctWords1++;
+                            }
+                            else {
+                                wrongWords1++;
+                            }
+                            $.mobile.changePage('#wordpair5', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterIsActive = true;
+                        }, 300);
+                        cnt++;
+                        break;
+                    case 4:
+                        showLoopAktiv = setTimeout(function () {
+                            el.style.backgroundColor = "#b9c68d";
+                            var leftw = document.getElementById('word5');
+                            if (isCorrectWord(leftw, el)) {
+                                correctWords1++;
+                            }
+                            else {
+                                wrongWords1++;
+                            }
+                            $.mobile.changePage('#wordpair6', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterIsActive = true;
+                        }, 300);
+                        cnt++;
+                        break;
+                    case 5:
+                        cnt = cnt - 5;
+
+                        var leftw = document.getElementById('word6');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWords1++;
+                        }
+                        else {
+                            wrongWords1++;
+                        }
+
+                        showLoopAktiv = setTimeout(function () {
+                            // store results
+                            jQuery.jStorage.set("RightClickedWords1", correctWords1);
+                            jQuery.jStorage.set("WrongClickedWords1", wrongWords1);
+                            el.style.backgroundColor = "#b9c68d";
+
+                            $.mobile.changePage('#wordpairsTransit1', {transition: "flip"});
+
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterIsActive = true;
+
+                        }, 300);
+
+
+
+                        break;
 
                 }
             }
+            else if (!wordSelected) {
+                alert("Bitte wählen Sie ein Wort aus der Liste aus!");
 
-
-
-            // handle selection
-            switch (cnt) {
-                case 0:
-                    showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#b9c68d";
-                        var leftw = document.getElementById('word1');
-
-                        if (isCorrectWord(leftw, el)) {
-                            correctWords1++;
-                        }
-                        else {
-                            wrongWords1++;
-                        }
-                        $.mobile.changePage('#wordpair2', {transition: "flip"});
-                        wordSelected = false;
-                            // enable weiter btn
-                            weiterIsActive = true;
-                    }, 300);
-                    cnt++;
-                    break;
-                case 1:
-                    showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#b9c68d";
-                        var leftw = document.getElementById('word2');
-                        if (isCorrectWord(leftw, el)) {
-                            correctWords1++;
-                        }
-                        else {
-                            wrongWords1++;
-                        }
-                        $.mobile.changePage('#wordpair3', {transition: "flip"});
-                        wordSelected = false;
-                            // enable weiter btn
-                            weiterIsActive = true;
-                    }, 300);
-                    cnt++;
-                    break;
-                case 2:
-                    showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#b9c68d";
-                        var leftw = document.getElementById('word3');
-                        if (isCorrectWord(leftw, el)) {
-                            correctWords1++;
-                        }
-                        else {
-                            wrongWords1++;
-                        }
-                        $.mobile.changePage('#wordpair4', {transition: "flip"});
-                        wordSelected = false;
-                            // enable weiter btn
-                            weiterIsActive = true;
-                    }, 300);
-                    cnt++;
-                    break;
-                case 3:
-                    showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#b9c68d";
-                        var leftw = document.getElementById('word4');
-                        if (isCorrectWord(leftw, el)) {
-                            correctWords1++;
-                        }
-                        else {
-                            wrongWords1++;
-                        }
-                        $.mobile.changePage('#wordpair5', {transition: "flip"});
-                        wordSelected = false;
-                            // enable weiter btn
-                            weiterIsActive = true;
-                    }, 300);
-                    cnt++;
-                    break;
-                case 4:
-                    showLoopAktiv = setTimeout(function () {
-                        el.style.backgroundColor = "#b9c68d";
-                        var leftw = document.getElementById('word5');
-                        if (isCorrectWord(leftw, el)) {
-                            correctWords1++;
-                        }
-                        else {
-                            wrongWords1++;
-                        }
-                        $.mobile.changePage('#wordpair6', {transition: "flip"});
-                        wordSelected = false;
-                            // enable weiter btn
-                            weiterIsActive = true;
-                    }, 300);
-                    cnt++;
-                    break;
-                case 5:
-                    cnt = cnt - 5;
-
-                    var leftw = document.getElementById('word6');
-                    if (isCorrectWord(leftw, el)) {
-                        correctWords1++;
-                    }
-                    else {
-                        wrongWords1++;
-                    }
-
-                    showLoopAktiv = setTimeout(function () {
-                        // store results
-                        jQuery.jStorage.set("RightClickedWords1", correctWords1);
-                        jQuery.jStorage.set("WrongClickedWords1", wrongWords1);
-                        el.style.backgroundColor = "#b9c68d";
-
-                        $.mobile.changePage('#wordpairsTransit1', {transition: "flip"});
-                        
-                        wordSelected = false;
-                            // enable weiter btn
-                            weiterIsActive = true;
-
-                    }, 300);
-
-
-
-                    break;
+                setTimeout(function () {
+                    weiterIsActive = true;
+                }, 300);
 
             }
         }
-        else if (!wordSelected){
-            alert("Bitte wählen Sie ein Wort aus der Liste aus!");
-            
-            setTimeout(function () {
-                    weiterIsActive = true;
-                },300);
-        
-            }
+
+
     }
-    
-    
-    }
-    
+
     catch (error) {
         console.log("Fehler beim Klicken des elementes " + e1 + error);
     }
@@ -4524,8 +4571,8 @@ function choosedDelayed() {
 
             // (avoid double clicking)
             weiterDelayedIsActive = false;
-            
-            
+
+
             // if a word was selected
             if (wordSelected) {
 
@@ -4550,7 +4597,7 @@ function choosedDelayed() {
 
                 // handle selection
                 switch (cntDelayed) {
-                    
+
                     case 0:
                         showLoopAktivDelay = setTimeout(function () {
                             el.style.backgroundColor = "#b9c68d";
@@ -4569,7 +4616,7 @@ function choosedDelayed() {
                         }, 300);
                         cntDelayed++;
                         break;
-                        
+
                     case 1:
                         showLoopAktivDelay = setTimeout(function () {
                             el.style.backgroundColor = "#b9c68d";
@@ -4674,13 +4721,13 @@ function choosedDelayed() {
 
                 }
             }
-            else if (!wordSelected){
+            else if (!wordSelected) {
                 alert("Bitte wählen Sie ein Wort aus der Liste aus!");
                 setTimeout(function () {
                     weiterDelayedIsActive = true;
-                },300);
-                
-                
+                }, 300);
+
+
             }
 
         }
