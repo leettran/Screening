@@ -131,6 +131,22 @@
         
     }
     
+    
+    .selectionHintText{
+        font-size: 30px;
+        font-family: Enigma_2;
+        color: red;
+        text-shadow: none;
+        text-align: center;
+        font-weight: bold;
+        position: relative;       
+        left: 40px;
+        top: 0px;
+        bottom: 0px;
+        
+        
+    }
+    
     .instructionText{
         font-size: 20px;
         font-family: QuattrocentoSans;
@@ -162,6 +178,29 @@
         top: 3px;
 
     }
+    
+    
+    .selectionHintIcon{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 35px;
+        width: 35px;
+        position: absolute;       
+        left: 5%;
+        bottom: 10%;
+
+    }
+    
+    
+    .selectionHintDiv{
+        visibility: hidden;
+        position: absolute;
+        bottom: 12%;
+        left: 5%; 
+        width: 70%;
+        height: Auto;
+    }
+    
 
  .divWithRoundedCorners{
         margin-left: auto;
