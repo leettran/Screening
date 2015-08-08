@@ -1,7 +1,13 @@
 <!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
+This is the task page of the task: Zahlen sortieren 
+Created by: A.Karim El Moussaoui @Ascora GmnH
+Project: NeuroCare
+Component: Screening
 -->
+
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,7 +35,7 @@ and open the template in the editor.
 
 
         <!--start page to zahlensortieren test-->
-        <div data-role="page" id="test4Start" data-dom-cache=true class="introPage">
+        <div data-role="page" id="test4Start" data-dom-cache=true class="startPage">
 
             <div data-role="content">
 
@@ -69,65 +75,150 @@ and open the template in the editor.
         <div data-role="page" id="intro" data-dom-cache=true class="introPage">
 
             <div data-role="content">
-                <h1 class="instructionText1" >Was ist Ihre Aufgabe?</h1> 
-                <p class="instructionTextDescription">Gleich werden auf dem Bildschirm kurz nacheinander Zahlen eingeblendet. 
-                    Ihre Aufgabe ist es, sich diese zu merken und im Anschluss wiederzugeben. 
-                    Das Schwierige dabei: Sie sollen die Zahlen <b>nach ihrer aufsteigenden Größe sortiert</b> wiedergeben. 
-                    Starten Sie mit der kleinsten Zahl, dann die nächst höhere usw. 
-                    Zur Beantwortung steht Ihnen eine Zahlenreihe von 1 bis 9 zum Antippen zur Verfügung. 
-                    Wenn Sie sich nicht mehr erinnern, raten Sie bitte! Es gibt mehrere Durchgänge.
-                    </br></br>
-                <u>Ein Beispiel:</u>  
-                </br></br>
-                Auf dem Bildschirm erscheinen nacheinander die Zahlen 3 – 4 – 1.
-                Sortiert nach ihrer aufsteigenden Größe wäre die richtige Antwort 1 – 3 – 4. 
-                Sie würden also die Ziffernfelder 1, 3 und 4 nacheinander antippen.
+
+                <div class="wrap">
+
+                    <!--instruction div-->
+                    <div class="floatleft">
+
+                        <!--instruction header-->
+                        <div style="display: inline;">
+
+                            <image src="css\images\icons\info.png" class="infoIcon"/>
+
+                            <h1 class="instructionHeader" >Was ist Ihre Aufgabe?</h1>
+
+                        </div>
+
+                        <!--instruction text-->
+                        <div class="instructionContent">
+                            <p class="instructionText">
+
+                                Gleich werden auf dem Bildschirm kurz nacheinander Zahlen eingeblendet. </br>
+                                Ihre Aufgabe ist es, sich diese zu merken und im Anschluss wiederzugeben. </br></br>
+                                Das Schwierige dabei: Sie sollen die Zahlen <b>nach ihrer aufsteigenden Größe sortiert</b> wiedergeben. </br>
+                                Starten Sie mit der kleinsten Zahl, dann die nächst höhere usw. </br></br>
+                                Zur Beantwortung steht Ihnen eine Zahlenreihe von 1 bis 9 zum Antippen zur Verfügung. </br>
+                                Wenn Sie sich nicht mehr erinnern, raten Sie bitte! Es gibt mehrere Durchgänge.
+
+                            </p>
+                        </div>
 
 
-                </p>
-                <br><br><br>
-
-                <center>
-                    <div>
-                        <image src="img/zahlensortierenDemo.png"/>
                     </div>
-                </center>
 
-                <br><br><br>
 
-                <a href="#countdown1" data-role="button" data-inline="true" class="defaultButton" 
-                   style="float: right;" onclick="switchToFullscreen();">Aufgabe starten</a> 
+
+                    <!--example div-->
+                    <div class="floatright">
+                        <p class="instructionText">
+                            Auf dem Bildschirm erscheinen nacheinander die Zahlen: </br> 3 – 4 – 1. </br>
+                            Sortiert nach ihrer aufsteigenden Größe wäre die richtige Antwort 1 – 3 – 4. </br></br>
+                            Sie würden also die Ziffernfelder 1, 3 und 4 nacheinander antippen.
+                        </p>
+
+                    </div>
+
+
+                    <div style="clear: both;">
+
+
+
+
+                    </div>      
+
+
+
+
+
+
+                </div>
+
+
+
+                <!--                <h1 class="instructionText1" >Was ist Ihre Aufgabe?</h1> 
+                                <p class="instructionTextDescription">Gleich werden auf dem Bildschirm kurz nacheinander Zahlen eingeblendet. 
+                                    Ihre Aufgabe ist es, sich diese zu merken und im Anschluss wiederzugeben. 
+                                    Das Schwierige dabei: Sie sollen die Zahlen <b>nach ihrer aufsteigenden Größe sortiert</b> wiedergeben. 
+                                    Starten Sie mit der kleinsten Zahl, dann die nächst höhere usw. 
+                                    Zur Beantwortung steht Ihnen eine Zahlenreihe von 1 bis 9 zum Antippen zur Verfügung. 
+                                    Wenn Sie sich nicht mehr erinnern, raten Sie bitte! Es gibt mehrere Durchgänge.
+                                    </br></br>
+                                <u>Ein Beispiel:</u>  
+                                </br></br>
+                                Auf dem Bildschirm erscheinen nacheinander die Zahlen 3 – 4 – 1.
+                                Sortiert nach ihrer aufsteigenden Größe wäre die richtige Antwort 1 – 3 – 4. 
+                                Sie würden also die Ziffernfelder 1, 3 und 4 nacheinander antippen.
+                
+                
+                                </p>
+                                <br><br><br>
+                
+                                <center>
+                                    <div>
+                                        <image src="img/zahlensortierenDemo.png"/>
+                                    </div>
+                                </center>
+                
+                                <br><br><br>-->
+                
+                <!--start button-->
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="showFollowingPageDelayed('countdown1', 1000);"/> 
+
+<!--                <a href="#countdown1" data-role="button" data-inline="true" class="defaultButton" 
+                   style="float: right;" onclick="switchToFullscreen();">Aufgabe starten</a> -->
             </div>
 
         </div>
 
         <!--zahlen fragment-->
-        <div data-role="page" id="numsview" data-dom-cache=true class="testPage">
+        <div data-role="page" id="numsview" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
-                <div id="NumbersLength" class="numbersarrayLenght"></div>
-                <h1>Gebe Sie die Zahlen in aufsteigender Reihenfolge wieder </h1> 
-                <br><br><br><br><br><br>
+            <div data-role="content" >
+                
+                <!--remaining nums counter-->
+                <div id="NumbersLength" class="numbersarrayLenght">
+                    
+                </div>
+                
+                
+                <h1 class="numsViewHintText">Geben Sie die Zahlen in aufsteigender Reihenfolge wieder </h1> 
+                
+                
+                <div style="position: absolute; top: 45%;">
+                
                 <center>
-                    <div class="zahlFragment" data-group="number">1</div>   
-                    <div class="zahlFragment" data-group="number">2</div>  
-                    <div class="zahlFragment" data-group="number">3</div>  
-                    <div class="zahlFragment" data-group="number">4</div>   
-                    <div class="zahlFragment" data-group="number">5</div>  
-                    <div class="zahlFragment" data-group="number">6</div>  
-                    <div class="zahlFragment" data-group="number">7</div>   
-                    <div class="zahlFragment" data-group="number">8</div>   
-                    <div class="zahlFragment" data-group="number">9</div>   
+                    <div class="zahlFragment" data-group="number" >1</div>   
+                    <div class="zahlFragment" data-group="number" >2</div>  
+                    <div class="zahlFragment" data-group="number" >3</div>  
+                    <div class="zahlFragment" data-group="number" >4</div>   
+                    <div class="zahlFragment" data-group="number" >5</div>  
+                    <div class="zahlFragment" data-group="number" >6</div>  
+                    <div class="zahlFragment" data-group="number" >7</div>   
+                    <div class="zahlFragment" data-group="number" >8</div>   
+                    <div class="zahlFragment" data-group="number" >9</div>   
                 </center>
+                    
+                    
+                    </div>
+                    
             </div>
 
         </div>
 
+        
+        
+        
 
         <!--countdown for test1-->
-        <div data-role="page" id="countdown1" data-dom-cache=true class="testPage">
+        <div data-role="page" id="countdown1" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
+            <div data-role="content" >
+                
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+                
+                
+                
                 <br><br><br><br><br>
                 <div class="countdown"><p class="countdownText">Merken Sie sich bitte folgende Zahlen</p></div>
                 <br>
@@ -154,9 +245,13 @@ and open the template in the editor.
         </div>
 
         <!--countdown for test1Rep-->
-        <div data-role="page" id="countdown1Rep" data-dom-cache=true class="testPage">
+        <div data-role="page" id="countdown1Rep" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
+            <div data-role="content" >
+                
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+                
+                
                 <br><br><br><br><br>
                 <div class="countdown"><p class="countdownText">Merken Sie sich bitte folgende Zahlen</p></div>
                 <br>
@@ -183,9 +278,14 @@ and open the template in the editor.
         </div>
 
         <!--countdown for test2-->
-        <div data-role="page" id="countdown2" data-dom-cache=true class="testPage">
+        <div data-role="page" id="countdown2" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
+            <div data-role="content" >
+                
+                
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+                
+                
                 <br><br><br><br><br>
                 <div class="countdown"><p class="countdownText">Merken Sie sich bitte folgende Zahlen</p></div>
 
@@ -211,9 +311,13 @@ and open the template in the editor.
         </div>
 
         <!--countdown for test2Rep-->
-        <div data-role="page" id="countdown2Rep" data-dom-cache=true class="testPage">
+        <div data-role="page" id="countdown2Rep" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
+            <div data-role="content" >
+                
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+                
+                
                 <br><br><br><br><br>
                 <div class="countdown"><p class="countdownText">Merken Sie sich bitte folgende Zahlen</p></div>
 
@@ -239,9 +343,12 @@ and open the template in the editor.
         </div>
 
         <!--countdown for test3-->
-        <div data-role="page" id="countdown3" data-dom-cache=true class="testPage">
+        <div data-role="page" id="countdown3" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
+            <div data-role="content" >
+                
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+                
                 <br><br><br><br><br>
                 <div class="countdown"><p class="countdownText">Merken Sie sich bitte folgende Zahlen</p></div>
 
@@ -268,9 +375,12 @@ and open the template in the editor.
 
 
         <!--countdown for test3Rep-->
-        <div data-role="page" id="countdown3Rep" data-dom-cache=true class="testPage">
+        <div data-role="page" id="countdown3Rep" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
+            <div data-role="content" >
+                
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+                
                 <br><br><br><br><br>
                 <div class="countdown"><p class="countdownText">Merken Sie sich bitte folgende Zahlen</p></div>
 
@@ -296,9 +406,12 @@ and open the template in the editor.
         </div>
 
         <!--countdown for test4-->
-        <div data-role="page" id="countdown4" data-dom-cache=true class="testPage">
+        <div data-role="page" id="countdown4" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
+            <div data-role="content" >
+                
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+                
                 <br><br><br><br><br>
                 <div class="countdown"><p class="countdownText">Merken Sie sich bitte folgende Zahlen</p></div>
 
@@ -325,9 +438,13 @@ and open the template in the editor.
 
 
         <!--countdown for test4Rep-->
-        <div data-role="page" id="countdown4Rep" data-dom-cache=true class="testPage">
+        <div data-role="page" id="countdown4Rep" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
+            <div data-role="content" >
+                
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+                
+                
                 <br><br><br><br><br>
                 <div class="countdown"><p class="countdownText">Merken Sie sich bitte folgende Zahlen</p></div>
 
@@ -354,9 +471,12 @@ and open the template in the editor.
 
 
         <!--countdown for test5-->
-        <div data-role="page" id="countdown5" data-dom-cache=true class="testPage">
+        <div data-role="page" id="countdown5" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
+            <div data-role="content" >
+                
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+                
                 <br><br><br><br><br>
                 <div class="countdown"><p class="countdownText">Merken Sie sich bitte folgende Zahlen</p></div>
 
@@ -383,9 +503,12 @@ and open the template in the editor.
 
 
         <!--countdown for test5Rep-->
-        <div data-role="page" id="countdown5Rep" data-dom-cache=true class="testPage">
+        <div data-role="page" id="countdown5Rep" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
+            <div data-role="content" >
+                
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+                
                 <br><br><br><br><br>
                 <div class="countdown"><p class="countdownText">Merken Sie sich bitte folgende Zahlen</p></div>
 
@@ -412,9 +535,12 @@ and open the template in the editor.
 
 
         <!--countdown for test6-->
-        <div data-role="page" id="countdown6" data-dom-cache=true class="testPage">
+        <div data-role="page" id="countdown6" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
+            <div data-role="content" >
+                
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+                
                 <br><br><br><br><br>
                 <div class="countdown"><p class="countdownText">Merken Sie sich bitte folgende Zahlen</p></div>
 
@@ -441,9 +567,13 @@ and open the template in the editor.
 
 
         <!--countdown for test6Rep-->
-        <div data-role="page" id="countdown6Rep" data-dom-cache=true class="testPage">
+        <div data-role="page" id="countdown6Rep" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
+            <div data-role="content" >
+                
+                
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+                
                 <br><br><br><br><br>
                 <div class="countdown"><p class="countdownText">Merken Sie sich bitte folgende Zahlen</p></div>
 
@@ -470,9 +600,12 @@ and open the template in the editor.
 
 
         <!--countdown for test7-->
-        <div data-role="page" id="countdown7" data-dom-cache=true class="testPage">
+        <div data-role="page" id="countdown7" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
+            <div data-role="content" >
+                
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+                
                 <br><br><br><br><br>
                 <div class="countdown"><p class="countdownText">Merken Sie sich bitte folgende Zahlen</p></div>
 
@@ -499,9 +632,12 @@ and open the template in the editor.
 
 
         <!--countdown for test7Rep-->
-        <div data-role="page" id="countdown7Rep" data-dom-cache=true class="testPage">
+        <div data-role="page" id="countdown7Rep" data-dom-cache=true class="whitePage">
 
-            <div data-role="content" id="numsDivs">
+            <div data-role="content" >
+                
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+                
                 <br><br><br><br><br>
                 <div class="countdown"><p class="countdownText">Merken Sie sich bitte folgende Zahlen</p></div>
 
@@ -526,7 +662,9 @@ and open the template in the editor.
 
         </div>
 
-        <div data-role="page" id="test1" data-dom-cache=true  class="testPage">
+        
+        
+        <div data-role="page" id="test1" data-dom-cache=true  class="whitePage">
 
 
             <div data-role="content" >
@@ -547,7 +685,7 @@ and open the template in the editor.
             </div>
         </div>
 
-        <div data-role="page" id="test1Rep" data-dom-cache=true  class="testPage">
+        <div data-role="page" id="test1Rep" data-dom-cache=true  class="whitePage">
 
             <div data-role="content" >
                 <br><br><br><br><br><br><br><br><br><br><br>
@@ -573,7 +711,7 @@ and open the template in the editor.
         </div>
 
 
-        <div data-role="page" id="test2" data-dom-cache=true  class="testPage">
+        <div data-role="page" id="test2" data-dom-cache=true  class="whitePage">
 
             <div data-role="content" >
                 <br><br><br><br><br><br><br><br><br><br><br>
@@ -598,7 +736,7 @@ and open the template in the editor.
             </div>
         </div>
 
-        <div data-role="page" id="test2Rep" data-dom-cache=true  class="testPage">
+        <div data-role="page" id="test2Rep" data-dom-cache=true  class="whitePage">
 
             <div data-role="content" >
                 <br><br><br><br><br><br><br><br><br><br><br>
@@ -624,7 +762,7 @@ and open the template in the editor.
         </div>
 
 
-        <div data-role="page" id="test3" data-dom-cache=true  class="testPage">
+        <div data-role="page" id="test3" data-dom-cache=true  class="whitePage">
 
             <div data-role="content" >
                 <br><br><br><br><br><br><br><br><br><br><br>
@@ -650,7 +788,7 @@ and open the template in the editor.
         </div>
 
 
-        <div data-role="page" id="test3Rep" data-dom-cache=true  class="testPage">
+        <div data-role="page" id="test3Rep" data-dom-cache=true  class="whitePage">
 
             <div data-role="content" >
                 <br><br><br><br><br><br><br><br><br><br><br>
@@ -676,7 +814,7 @@ and open the template in the editor.
         </div>
 
 
-        <div data-role="page" id="test4" data-dom-cache=true  class="testPage">
+        <div data-role="page" id="test4" data-dom-cache=true  class="whitePage">
 
             <div data-role="content" >
                 <br><br><br><br><br><br><br><br><br><br><br>
@@ -701,7 +839,7 @@ and open the template in the editor.
             </div>
         </div>
 
-        <div data-role="page" id="test4Rep" data-dom-cache=true  class="testPage">
+        <div data-role="page" id="test4Rep" data-dom-cache=true  class="whitePage">
 
             <div data-role="content" >
                 <br><br><br><br><br><br><br><br><br><br><br>
@@ -726,7 +864,7 @@ and open the template in the editor.
             </div>
         </div>
 
-        <div data-role="page" id="test5" data-dom-cache=true  class="testPage">
+        <div data-role="page" id="test5" data-dom-cache=true  class="whitePage">
 
             <div data-role="content" >
                 <br><br><br><br><br><br><br><br><br><br><br>
@@ -751,7 +889,7 @@ and open the template in the editor.
             </div>
         </div>
 
-        <div data-role="page" id="test5Rep" data-dom-cache=true  class="testPage">
+        <div data-role="page" id="test5Rep" data-dom-cache=true  class="whitePage">
 
             <div data-role="content" >
                 <br><br><br><br><br><br><br><br><br><br><br>
@@ -776,7 +914,7 @@ and open the template in the editor.
             </div>
         </div>
 
-        <div data-role="page" id="test6" data-dom-cache=true  class="testPage">
+        <div data-role="page" id="test6" data-dom-cache=true  class="whitePage">
 
             <div data-role="content" >
                 <br><br><br><br><br><br><br><br><br><br><br>
@@ -801,7 +939,7 @@ and open the template in the editor.
             </div>
         </div>
 
-        <div data-role="page" id="test6Rep" data-dom-cache=true  class="testPage">
+        <div data-role="page" id="test6Rep" data-dom-cache=true  class="whitePage">
 
             <div data-role="content" >
                 <br><br><br><br><br><br><br><br><br><br><br>
@@ -826,7 +964,7 @@ and open the template in the editor.
             </div>
         </div>
 
-        <div data-role="page" id="test7" data-dom-cache=true  class="testPage">
+        <div data-role="page" id="test7" data-dom-cache=true  class="whitePage">
 
             <div data-role="content" >
                 <br><br><br><br><br><br><br><br><br><br><br>
@@ -851,7 +989,7 @@ and open the template in the editor.
             </div>
         </div>
 
-        <div data-role="page" id="test7Rep" data-dom-cache=true  class="testPage">
+        <div data-role="page" id="test7Rep" data-dom-cache=true  class="whitePage">
 
             <div data-role="content" >
                 <br><br><br><br><br><br><br><br><br><br><br>
@@ -879,16 +1017,20 @@ and open the template in the editor.
 
 
         <!--transition page to the next task (depressionsscreening)-->
-        <div data-role="page" id="ZahlensortierenTransit" data-dom-cache=true class="testPage">
+        <div data-role="page" id="ZahlensortierenTransit" data-dom-cache=true class="whitePage">
 
 
             <div data-role="content">
-                <h1 id="repeatitionHint" class="transitionPageText" >Die vierte Aufgabe haben Sie geschafft!</h1> 
+                <h1 class="transitionPageText" >Die vierte Aufgabe haben Sie geschafft!</h1> 
 
                 <br>
                 <br>
-                <a data-role="button" data-inline="true" class="defaultButton" onclick="goToPaarassoziationstestTeil2();"
-                   style="float: right;position: absolute;top: 70%;left: 70%">Nächste Aufgabe</a> 
+                
+                
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToPaarassoziationstestTeil2();"/>
+                
+<!--                <a data-role="button" data-inline="true" class="defaultButton" onclick="goToPaarassoziationstestTeil2();"
+                   style="float: right;position: absolute;top: 70%;left: 70%">Nächste Aufgabe</a> -->
             </div>
         </div>
 

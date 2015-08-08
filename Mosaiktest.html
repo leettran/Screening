@@ -1,7 +1,12 @@
 <!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
+This is the task page of the task: Mosaiktest 
+Created by: A.Karim El Moussaoui @Ascora GmnH
+Project: NeuroCare
+Component: Screening
 -->
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,7 +38,7 @@ and open the template in the editor.
 
 
         <!--start page to mosaik test-->
-        <div data-role="page" id="test3Start" data-dom-cache=true class="introPage">
+        <div data-role="page" id="test3Start" data-dom-cache=true class="startPage">
 
             <div data-role="content">
 
@@ -110,25 +115,90 @@ and open the template in the editor.
         <div data-role="page" id="intro" data-dom-cache=true class="introPage">
 
             <div data-role="content">
-                <h1 class="instructionText1" >Was ist Ihre Aufgabe?</h1> 
 
-                <p class="instructionTextDescription">Auf dem Bildschirm sehen Sie gleich rechts unten ein Bild.
-                    Ihre Aufgabe ist es dieses Bild aus seinen Einzelbausteinen nachzubauen. 
-                    Wählen Sie zuerst einen Baustein, den Sie setzen wollen, aus. Danach wählen Sie ein leeres Feld in Ihrem „Baufeld“, in das Sie den Baustein legen wollen. 
-                    Wenn Sie ein richtiges Feld ausgewählt haben, wird der Baustein hier eingesetzt.
-                    Wenn Sie ein falsches Feld auswählen, erscheint es rot – dann können Sie  sich entweder für ein anderes Feld entscheiden oder zuerst einen anderen Baustein wählen.
-                    Versuchen Sie <b>so schnell und so fehlerfrei wie möglich zu arbeiten!</b>
-                </p>
 
-                <center> <div>
-                        <image src="img/mosaiktestDemo.jpeg"/>
+                <div class="wrap">
+
+                    <!--instruction div-->
+                    <div class="floatleft">
+
+                        <!--instruction header-->
+                        <div style="display: inline;">
+
+                            <image src="css\images\icons\info.png" class="infoIcon"/>
+
+                            <h1 class="instructionHeader" >Was ist Ihre Aufgabe?</h1>
+
+                        </div>
+
+                        <!--instruction text-->
+                        <div class="instructionContent">
+                            <p class="instructionText">
+
+                                Auf dem Bildschirm sehen Sie gleich rechts unten ein Bild. </br>
+                                Ihre Aufgabe ist es dieses Bild aus seinen Einzelbausteinen nachzubauen.</br></br> 
+                                Wählen Sie zuerst einen Baustein, den Sie setzen wollen, aus. Danach wählen Sie ein leeres Feld in Ihrem „Baufeld“, in das Sie den Baustein legen wollen.</br> 
+                                Wenn Sie ein richtiges Feld ausgewählt haben, wird der Baustein hier eingesetzt.
+                                Wenn Sie ein falsches Feld auswählen, erscheint es rot – dann können Sie  sich entweder für ein anderes Feld entscheiden oder zuerst einen anderen Baustein wählen.</br></br>
+                                Versuchen Sie <b>so schnell und so fehlerfrei</b> wie möglich zu arbeiten!
+
+                            </p>
+                        </div>
+
+
                     </div>
-                </center>
 
 
-                <p class="instructionTextDescription"> Wenn Sie bereit sind, drücken Sie bitte auf "Start"</p>
 
-                <a href="#puzzle1" data-role="button" data-inline="true" class="defaultButton" style="float: right;" onclick="switchToFullscreen();">Aufgabe starten</a>
+                    <!--example div-->
+                    <div class="floatright">
+
+
+
+
+                    </div>
+
+
+                    <div style="clear: both;">
+
+
+
+
+                    </div>      
+
+
+
+
+
+
+                </div>
+
+
+
+
+                <!--                <h1 class="instructionText1" >Was ist Ihre Aufgabe?</h1> 
+                
+                                <p class="instructionTextDescription">Auf dem Bildschirm sehen Sie gleich rechts unten ein Bild.
+                                    Ihre Aufgabe ist es dieses Bild aus seinen Einzelbausteinen nachzubauen. 
+                                    Wählen Sie zuerst einen Baustein, den Sie setzen wollen, aus. Danach wählen Sie ein leeres Feld in Ihrem „Baufeld“, in das Sie den Baustein legen wollen. 
+                                    Wenn Sie ein richtiges Feld ausgewählt haben, wird der Baustein hier eingesetzt.
+                                    Wenn Sie ein falsches Feld auswählen, erscheint es rot – dann können Sie  sich entweder für ein anderes Feld entscheiden oder zuerst einen anderen Baustein wählen.
+                                    Versuchen Sie <b>so schnell und so fehlerfrei wie möglich zu arbeiten!</b>
+                                </p>
+                
+                                <center> <div>
+                                        <image src="img/mosaiktestDemo.jpeg"/>
+                                    </div>
+                                </center>
+                
+                
+                                <p class="instructionTextDescription"> Wenn Sie bereit sind, drücken Sie bitte auf "Start"</p>-->
+
+                
+                <!--start button-->
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="showFollowingPageDelayed('puzzle1', 1000);"/> 
+                
+                <!--<a href="#puzzle1" data-role="button" data-inline="true" class="defaultButton" style="float: right;" onclick="switchToFullscreen();">Aufgabe starten</a>-->
 
             </div>
 
@@ -137,7 +207,7 @@ and open the template in the editor.
 
 
         <!--first puzzle-->
-        <div data-role="page" id="puzzle1" data-dom-cache=true class="testPage">
+        <div data-role="page" id="puzzle1" data-dom-cache=true class="whitePage">
 
             <div data-role="content" >
 
@@ -582,7 +652,7 @@ and open the template in the editor.
 
 
         <!--transition page to the next task (zahlen sortieren)-->
-        <div data-role="page" id="MosaiktestTransit" data-dom-cache=true class="testPage">
+        <div data-role="page" id="MosaiktestTransit" data-dom-cache=true class="whitePage">
 
 
             <div data-role="content">
@@ -590,8 +660,12 @@ and open the template in the editor.
 
                 <br>
                 <br>
-                <a data-role="button" data-inline="true" class="defaultButton" onclick="goToZahlensortierentest();"
-                   style="float: right;position: absolute;top: 70%;left: 70%">Nächste Aufgabe</a> 
+                
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToZahlensortierentest();"/>
+                
+                
+<!--                <a data-role="button" data-inline="true" class="defaultButton" onclick="goToZahlensortierentest();"
+                   style="float: right;position: absolute;top: 70%;left: 70%">Nächste Aufgabe</a> -->
             </div>
         </div>
 

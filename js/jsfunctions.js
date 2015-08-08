@@ -29,7 +29,7 @@ var cntDelayed = 0;
 
 // color values
 var selectionColor = "#8c8c8c";
-var normalColor = "#57BB58";
+var normalColor = "#57bb58";
 
 
 
@@ -84,6 +84,8 @@ var clickIntervals3 = new Array();
 var timerInterval4 = 0;
 var aktivTimerInterval4;
 var clickIntervals4 = new Array();
+var wrongSelectionColor = "#ff0000";
+var nextToLastSelectionColor = "#f0ff00";
 
 
 //variablen für mosaiktest
@@ -249,6 +251,43 @@ function highlightSelectedWord3(td) {
         td.style.backgroundColor = selectionColor;
         // color other tds back
         var allElements = document.querySelectorAll("[data-group='iteration3']");
+        for (var i = 0; i < allElements.length; i++) {
+            var tempElem = allElements[i];
+
+            var tempElemBgr = rgb2hex(tempElem.style.backgroundColor);
+
+
+            if ((tempElem !== td && tempElemBgr === selectionColor)) {
+
+
+                tempElem.style.backgroundColor = normalColor;
+
+            }
+        }
+
+    }
+    catch (error) {
+        console.log("Fehler beim Klicken des elementes " + td + error);
+    }
+
+}
+
+
+
+// used to highlight selected word in delayed pass
+function highlightSelectedWordDelayed(td) {
+
+    try {
+        if (!wordSelected)
+            wordSelected = true;
+        
+        // hide selection hint
+        $(".selectionHintDiv").css("visibility", "hidden");
+        
+        
+        td.style.backgroundColor = selectionColor;
+        // color other tds back
+        var allElements = document.querySelectorAll("[data-group='iterationDelayed']");
         for (var i = 0; i < allElements.length; i++) {
             var tempElem = allElements[i];
 
@@ -760,146 +799,211 @@ function choosedOrdered2() {
 
 
 
+// handles wordpairs shown on delay
+function choosedDelayed() {
+
+//    el.style.backgroundColor = "green";
+
+    try {
+
+        // only when weiter btn is activated 
+        if (weiterDelayedIsActive) {
+
+            // (avoid double clicking)
+            weiterDelayedIsActive = false;
+
+
+            // if a word was selected
+            if (wordSelected) {
+
+
+                var el;
+                // find out which td was selected
+                var allElements = document.querySelectorAll("[data-group='iterationDelayed']");
+                for (var i = 0; i < allElements.length; i++) {
+                    var tempElem = allElements[i];
+
+                    var tempElemBgr = rgb2hex(tempElem.style.backgroundColor);
+
+
+                    if ((tempElemBgr === selectionColor)) {
+
+
+                        el = tempElem;
+                        break;
+
+                    }
+                }
+
+                // handle selection
+                switch (cntDelayed) {
+
+                    case 0:
+                        showLoopAktivDelay = setTimeout(function () {
+                            el.style.backgroundColor = normalColor;
+                            var leftw = document.getElementById('word1');
+                            if (isCorrectWord(leftw, el)) {
+                                correctWordsDelay++;
+                            }
+                            else {
+                                wrongWordsDelay++;
+                            }
+                            clearTimeout(showLoopAktivDelay);
+                            $(".selectionHintDiv").css("visibility", "hidden");
+                            $.mobile.changePage('#wordpair2', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterDelayedIsActive = true;
+                        }, 300);
+                        cntDelayed++;
+                        break;
+
+                    case 1:
+                        showLoopAktivDelay = setTimeout(function () {
+                            el.style.backgroundColor = normalColor;
+                            var leftw = document.getElementById('word2');
+                            if (isCorrectWord(leftw, el)) {
+                                correctWordsDelay++;
+                            }
+                            else {
+                                wrongWordsDelay++;
+                            }
+                            clearTimeout(showLoopAktivDelay);
+                            $(".selectionHintDiv").css("visibility", "hidden");
+                            $.mobile.changePage('#wordpair3', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterDelayedIsActive = true;
+                        }, 300);
+                        cntDelayed++;
+                        break;
+                    case 2:
+                        showLoopAktivDelay = setTimeout(function () {
+                            el.style.backgroundColor = normalColor;
+                            var leftw = document.getElementById('word3');
+                            if (isCorrectWord(leftw, el)) {
+                                correctWordsDelay++;
+                            }
+                            else {
+                                wrongWordsDelay++;
+                            }
+                            clearTimeout(showLoopAktivDelay);
+                            $(".selectionHintDiv").css("visibility", "hidden");
+                            $.mobile.changePage('#wordpair4', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterDelayedIsActive = true;
+                        }, 300);
+                        cntDelayed++;
+                        break;
+                    case 3:
+                        showLoopAktivDelay = setTimeout(function () {
+                            el.style.backgroundColor = normalColor;
+                            var leftw = document.getElementById('word4');
+                            if (isCorrectWord(leftw, el)) {
+                                correctWordsDelay++;
+                            }
+                            else {
+                                wrongWordsDelay++;
+                            }
+                            clearTimeout(showLoopAktivDelay);
+                            $(".selectionHintDiv").css("visibility", "hidden");
+                            $.mobile.changePage('#wordpair5', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterDelayedIsActive = true;
+                        }, 300);
+                        cntDelayed++;
+                        break;
+                    case 4:
+                        showLoopAktivDelay = setTimeout(function () {
+                            el.style.backgroundColor = normalColor;
+                            var leftw = document.getElementById('word5');
+                            if (isCorrectWord(leftw, el)) {
+                                correctWordsDelay++;
+                            }
+                            else {
+                                wrongWordsDelay++;
+                            }
+                            clearTimeout(showLoopAktivDelay);
+                            $(".selectionHintDiv").css("visibility", "hidden");
+                            $.mobile.changePage('#wordpair6', {transition: "flip"});
+                            wordSelected = false;
+                            // enable weiter btn
+                            weiterDelayedIsActive = true;
+                        }, 300);
+                        cntDelayed++;
+                        break;
+                    case 5:
+                        // reset counter
+                        cntDelayed = cntDelayed - 5;
+
+
+                        var leftw = document.getElementById('word6');
+                        if (isCorrectWord(leftw, el)) {
+                            correctWordsDelay++;
+                        }
+                        else {
+                            wrongWordsDelay++;
+                        }
+
+                        showLoopAktivDelay = setTimeout(function () {
+                            el.style.backgroundColor = normalColor;
+                            // store results
+                            jQuery.jStorage.set("RightClickedWordsDelay", correctWordsDelay);
+                            jQuery.jStorage.set("WrongClickedWordsDelay", wrongWordsDelay);
+                            // clear timer
+                            clearTimeout(showLoopAktivDelay);
+                            $(".selectionHintDiv").css("visibility", "hidden");
+                            // go to depressionsscreening questions
+                            goToDepressionsscreening();
+                            // enable weiter btn
+                            weiterDelayedIsActive = true;
+                        }, 1000);
+
+
+
+                        break;
+
+                }
+            }
+            else if (!wordSelected) {
+                
+                $(".selectionHintDiv").css("visibility", "visible");
+                 setTimeout(function () {
+            $(".selectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                
+               
+                setTimeout(function () {
+                    weiterDelayedIsActive = true;
+                }, 500);
+
+
+            }
+
+        }
+    }
+    catch (error) {
+        console.log("Fehler matchen der Wörter" + error);
+    }
+
+}
+
+
+
 //! functions for wortpaare assoziation
 
 
 
 
+////////////////////////////////////////////////////////////////////////////////////////////
 
 
+// functions for trailmakingtest
 
 
-
-
-
-
-
-
-
-
-function highlightSelectedWordDelayed(td) {
-
-    try {
-        if (!wordSelected)
-            wordSelected = true;
-        td.style.backgroundColor = "green";
-        // color other tds back
-        var allElements = document.querySelectorAll("[data-group='iterationDelayed']");
-        for (var i = 0; i < allElements.length; i++) {
-            var tempElem = allElements[i];
-
-            var tempElemBgr = tempElem.style.backgroundColor;
-
-
-            if ((tempElem !== td && tempElemBgr === "green")) {
-
-
-                tempElem.style.backgroundColor = '#b9c68d';
-
-            }
-        }
-
-    }
-    catch (error) {
-        console.log("Fehler beim Klicken des elementes " + td + error);
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// go to trailmaking test task
-function goToTrailmakingtest() {
-    //deactivate fullscreen
-    cancelFullscreen();
-    window.location = "Trailmakingtest.html";
-}
-
-// go to mosaik test task
-function goToMosaiktest() {
-    //deactivate fullscreen
-    cancelFullscreen();
-    window.location = "Mosaiktest.html";
-}
-
-
-// go to zahlen sortieren test
-function goToZahlensortierentest() {
-    //deactivate fullscreen
-    cancelFullscreen();
-    window.location = "Zahlensortieren.html";
-}
-
-// go to Paarassoziations test
-function goToPaarassoziationstestTeil2() {
-    //deactivate fullscreen
-    cancelFullscreen();
-    window.location = "PaarassoziationstestTeil2.html";
-}
-
-// go to offene fragen test
-function goToDepressionsscreening() {
-    //deactivate fullscreen
-    cancelFullscreen();
-    window.location = "Depressionsscreening.html";
-}
-
-// go to ADLs test
-function goToADLs() {
-    if (!isReadyToSwitch)
-        alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-    else {
-        isReadyToSwitch = false;
-        // store map
-        jQuery.jStorage.set("DepressionQuestionAnswerMap", questAnswerMap);
-
-        //deactivate fullscreen
-        cancelFullscreen();
-        window.location = "ADLs.html";
-    }
-}
-
-// check if the hitten word was correspendant to the first word
-function isCorrectWord(leftwDiv, rightwTd) {
-
-
-    var isCorrect = false;
-    var leftW = leftwDiv.innerHTML;
-    var rightW = rightwTd.innerHTML;
-    var matchingWord = $(leftwDiv).data('match');
-    rightW = jQuery.trim(rightW);
-
-    try {
-        // look for matched word
-        if (rightW === matchingWord)
-            isCorrect = true;
-        else
-            isCorrect = false;
-    }
-    catch (error) {
-        console.log("Fehler beim matchen der beiden Wörter: " + rightW + " und " + matchingWord + error);
-    }
-
-    return isCorrect;
-}
-
-
-
-
-
-// to process TMT1
+// to process selection in TMT1
 function selectNumber(k) {
 
     try {
@@ -944,7 +1048,7 @@ function selectNumber(k) {
             if (kreisId === "v11" && forwardCnt === 1) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -952,7 +1056,7 @@ function selectNumber(k) {
             else if (kreisId === "v12" && forwardCnt === 2) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -960,7 +1064,7 @@ function selectNumber(k) {
             else if (kreisId === "v13" && forwardCnt === 3) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
 
@@ -969,7 +1073,7 @@ function selectNumber(k) {
             else if (kreisId === "v14" && forwardCnt === 4) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -977,7 +1081,7 @@ function selectNumber(k) {
             else if (kreisId === "v15" && forwardCnt === 5) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -985,7 +1089,7 @@ function selectNumber(k) {
             else if (kreisId === "v16" && forwardCnt === 6) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -993,7 +1097,7 @@ function selectNumber(k) {
             else if (kreisId === "v17" && forwardCnt === 7) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -1001,7 +1105,7 @@ function selectNumber(k) {
             else if (kreisId === "v18" && forwardCnt === 8) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -1009,7 +1113,7 @@ function selectNumber(k) {
             else if (kreisId === "v19" && forwardCnt === 9) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -1017,7 +1121,7 @@ function selectNumber(k) {
             else if (kreisId === "v110" && forwardCnt === 10) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -1025,7 +1129,7 @@ function selectNumber(k) {
             else if (kreisId === "v111" && forwardCnt === 11) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -1033,7 +1137,7 @@ function selectNumber(k) {
             else if (kreisId === "v112" && forwardCnt === 12) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -1041,7 +1145,7 @@ function selectNumber(k) {
             else if (kreisId === "v113" && forwardCnt === 13) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -1049,7 +1153,7 @@ function selectNumber(k) {
             else if (kreisId === "v114" && forwardCnt === 14) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -1057,7 +1161,7 @@ function selectNumber(k) {
             else if (kreisId === "v115" && forwardCnt === 15) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -1065,7 +1169,7 @@ function selectNumber(k) {
             else if (kreisId === "v116" && forwardCnt === 16) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -1073,7 +1177,7 @@ function selectNumber(k) {
             else if (kreisId === "v117" && forwardCnt === 17) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -1081,7 +1185,7 @@ function selectNumber(k) {
             else if (kreisId === "v118" && forwardCnt === 18) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -1089,7 +1193,7 @@ function selectNumber(k) {
             else if (kreisId === "v119" && forwardCnt === 19) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 forwardCnt++;
                 correctNumFieldsTMT1++;
                 return;
@@ -1097,7 +1201,7 @@ function selectNumber(k) {
             else if (kreisId === "v120" && forwardCnt === 20) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
-                k.style.background = "gray";
+                k.style.background = selectionColor;
                 correctNumFieldsTMT1++;
                 // stopping timer
                 clearInterval(aktivTimerTMT1);
@@ -1116,11 +1220,11 @@ function selectNumber(k) {
 
             // when making a mistake 
             else {
-                // don't accept the same mistake twice
-                if (k.style.background !== "red" && k.style.background !== "gray") {
+                // don't allow the same mistake twice
+                if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
 
                     cleanOtherMistakes(kreisId);
-                    k.style.background = "red";
+                    k.style.background = wrongSelectionColor;
                     mistakesV1++;
                     wrongNumFieldsTMT1++;
                     // if 3 mistakes are made
@@ -1151,70 +1255,13 @@ function selectNumber(k) {
         console.log("Fehler beim Tippen des Kreises mit der ID: " + k.id + error);
     }
 
-//    // if 3 mistakes are made
-//    else if (mistakesV1 === 2) {
-//        // stopping timer
-//        clearInterval(aktivTimerTMT1);
-//        clearInterval(aktivTimerInterval1);
-//        // store results
-//        jQuery.jStorage.set("RightNumFieldsTMT1", correctNumFieldsTMT1);
-//        jQuery.jStorage.set("WrongNumFieldsTMT1", wrongNumFieldsTMT1);
-//        jQuery.jStorage.set("TimeToSolveTMT1", timerTMT1);
-//        jQuery.jStorage.set("ClickIntervalsTMT1", clickIntervals1);
-//        $.mobile.changePage('#intro2v2a', {transition: "flip"});
-//        clearInterval(aktiv);
-//    }
+
 }
 
-function countV1() {
 
-    try {
-        if (aktiv !== 0) {
-            clearInterval(aktiv);
-        }
-        interactionTimer = 0;
-        aktiv = setInterval(function () {
-            interactionTimer++;
-//        document.getElementById("timestamp").innerHTML = interactionTimer;
-            if (interactionTimer === 40) {
-                // store results
-                jQuery.jStorage.set("RightNumFieldsTMT1", correctNumFieldsTMT1);
-                jQuery.jStorage.set("WrongNumFieldsTMT1", wrongNumFieldsTMT1);
-                jQuery.jStorage.set("TimeToSolveTMT1", timerTMT1);
-                jQuery.jStorage.set("ClickIntervalsTMT1", clickIntervals1);
-                // clear timers
-                clearAllIntervals();
-                $.mobile.changePage('#intro2v2a', {transition: "flip"});
-            }
-        }, 1000);
 
-    }
-    catch (error) {
-        console.log("Fehler beim Zählen!" + error);
-    }
-}
 
-function cleanOtherMistakes(id) {
-    try {
-        var allElements = document.getElementsByClassName('kreis');
-
-        for (var i = 0; i < allElements.length; i++) {
-            var tempElem = allElements[i];
-            var tempElemId = tempElem.id;
-            var tempElemBgr = tempElem.style.backgroundColor;
-            if (tempElemId !== id && tempElemBgr === "red") {
-//            if (tempElemBgr === "red") {
-
-                tempElem.style.backgroundColor = '#fcaf35';
-//            }
-            }
-        }
-    }
-    catch (error) {
-        console.log("Fehler entfernen von alten Fehlern!" + error);
-    }
-}
-
+// cleans right hits and wrong selected elements
 function cleanRightHitsAndMistakes(id) {
     var pageID = $.mobile.activePage.attr('id');
     var allElements = document.getElementsByClassName('kreis');
@@ -1226,16 +1273,16 @@ function cleanRightHitsAndMistakes(id) {
             for (var i = 0; i < allElements.length; i++) {
                 var tempElem = allElements[i];
                 var tempElemId = tempElem.id;
-                var tempElemBgr = tempElem.style.backgroundColor;
+                var tempElemBgr = rgb2hex(tempElem.style.backgroundColor);
 
                 if (tempElemId !== id) {
-                    if (tempElemBgr === "white")
-                        tempElem.style.backgroundColor = '#fcaf35';
-                    else if (tempElemBgr === "gray")
-                        tempElem.style.backgroundColor = "white";
+                    if (tempElemBgr === nextToLastSelectionColor)
+                        tempElem.style.backgroundColor = normalColor;
+                    else if (tempElemBgr === selectionColor)
+                        tempElem.style.backgroundColor = nextToLastSelectionColor;
 
-                    else if (tempElemBgr === "red")
-                        tempElem.style.backgroundColor = '#fcaf35';
+                    else if (tempElemBgr === wrongSelectionColor)
+                        tempElem.style.backgroundColor = normalColor;
                 }
             }
 
@@ -1248,13 +1295,13 @@ function cleanRightHitsAndMistakes(id) {
             for (var i = 0; i < allElements.length; i++) {
                 var tempElem = allElements[i];
                 var tempElemId = tempElem.id;
-                var tempElemBgr = tempElem.style.backgroundColor;
+                var tempElemBgr = rgb2hex(tempElem.style.backgroundColor);
 
 
-                if ((tempElemId !== id && tempElemBgr === "gray") || (tempElemId !== id && tempElemBgr === "red")) {
+                if ((tempElemId !== id && tempElemBgr === selectionColor) || (tempElemId !== id && tempElemBgr === wrongSelectionColor)) {
 
 
-                    tempElem.style.backgroundColor = '#fcaf35';
+                    tempElem.style.backgroundColor = normalColor;
 
                 }
             }
@@ -1266,8 +1313,31 @@ function cleanRightHitsAndMistakes(id) {
 }
 
 
+// cleans only wrong selected elements
+function cleanOtherMistakes(id) {
+    try {
+        var allElements = document.getElementsByClassName('kreis');
+
+        for (var i = 0; i < allElements.length; i++) {
+            var tempElem = allElements[i];
+            var tempElemId = tempElem.id;
+            var tempElemBgr = rgb2hex(tempElem.style.backgroundColor);
+            if (tempElemId !== id && tempElemBgr === wrongSelectionColor) {
+//            if (tempElemBgr === "red") {
+
+                tempElem.style.backgroundColor = normalColor;
+//            }
+            }
+        }
+    }
+    catch (error) {
+        console.log("Fehler entfernen von alten Fehlern!" + error);
+    }
+}
 
 
+
+// used in selecting elements in the 2.task of tmt
 function selectNumberOrLetter(k) {
 
     try {
@@ -1303,7 +1373,7 @@ function selectNumberOrLetter(k) {
             switch (kreisId) {
                 case "v21":
                     if (numberCnt === 1 && letterCnt === 1) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         numberCnt++;
                         correctNumFieldsTMT2++;
@@ -1311,8 +1381,8 @@ function selectNumberOrLetter(k) {
                     }
                     else {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1338,7 +1408,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "a":
                     if (numberCnt === 2 && letterCnt === 1) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         letterCnt++;
                         correctNumFieldsTMT2++;
@@ -1347,8 +1417,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1373,7 +1443,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "v22":
                     if (numberCnt === 2 && letterCnt === 2) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         numberCnt++;
                         correctNumFieldsTMT2++;
@@ -1382,8 +1452,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1408,7 +1478,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "b":
                     if (numberCnt === 3 && letterCnt === 2) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         letterCnt++;
                         correctNumFieldsTMT2++;
@@ -1417,8 +1487,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1443,7 +1513,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "v23":
                     if (numberCnt === 3 && letterCnt === 3) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         numberCnt++;
                         correctNumFieldsTMT2++;
@@ -1452,8 +1522,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                       if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1478,7 +1548,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "c":
                     if (numberCnt === 4 && letterCnt === 3) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         letterCnt++;
                         correctNumFieldsTMT2++;
@@ -1487,8 +1557,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                       if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1513,7 +1583,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "v24":
                     if (numberCnt === 4 && letterCnt === 4) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         numberCnt++;
                         correctNumFieldsTMT2++;
@@ -1522,8 +1592,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1548,7 +1618,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "d":
                     if (numberCnt === 5 && letterCnt === 4) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         letterCnt++;
                         correctNumFieldsTMT2++;
@@ -1557,8 +1627,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1583,7 +1653,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "v25":
                     if (numberCnt === 5 && letterCnt === 5) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         numberCnt++;
                         correctNumFieldsTMT2++;
@@ -1592,8 +1662,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1618,7 +1688,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "e":
                     if (numberCnt === 6 && letterCnt === 5) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         letterCnt++;
                         correctNumFieldsTMT2++;
@@ -1627,8 +1697,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1653,7 +1723,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "v26":
                     if (numberCnt === 6 && letterCnt === 6) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         numberCnt++;
                         correctNumFieldsTMT2++;
@@ -1662,8 +1732,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1688,7 +1758,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "f":
                     if (numberCnt === 7 && letterCnt === 6) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         letterCnt++;
                         correctNumFieldsTMT2++;
@@ -1697,8 +1767,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1723,7 +1793,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "v27":
                     if (numberCnt === 7 && letterCnt === 7) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         numberCnt++;
                         correctNumFieldsTMT2++;
@@ -1732,8 +1802,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1758,7 +1828,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "g":
                     if (numberCnt === 8 && letterCnt === 7) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         letterCnt++;
                         correctNumFieldsTMT2++;
@@ -1767,8 +1837,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1793,7 +1863,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "v28":
                     if (numberCnt === 8 && letterCnt === 8) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         numberCnt++;
                         correctNumFieldsTMT2++;
@@ -1802,8 +1872,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1828,7 +1898,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "h":
                     if (numberCnt === 9 && letterCnt === 8) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         letterCnt++;
                         correctNumFieldsTMT2++;
@@ -1837,8 +1907,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1863,7 +1933,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "v29":
                     if (numberCnt === 9 && letterCnt === 9) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         numberCnt++;
                         correctNumFieldsTMT2++;
@@ -1872,8 +1942,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
                             cleanOtherMistakes(kreisId);
@@ -1898,7 +1968,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "i":
                     if (numberCnt === 10 && letterCnt === 9) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         letterCnt++;
                         correctNumFieldsTMT2++;
@@ -1907,8 +1977,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1933,7 +2003,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "v210":
                     if (numberCnt === 10 && letterCnt === 10) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         numberCnt++;
                         correctNumFieldsTMT2++;
@@ -1942,8 +2012,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -1968,7 +2038,7 @@ function selectNumberOrLetter(k) {
                     break;
                 case "j":
                     if (numberCnt === 11 && letterCnt === 10) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV2 = 0;
                         letterCnt++;
                         correctNumFieldsTMT2++;
@@ -1991,8 +2061,8 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
                             wrongNumFieldsTMT2++;
@@ -2017,8 +2087,8 @@ function selectNumberOrLetter(k) {
                 default:
                 {
                     // don't allow make the same mistake twice
-                    if (k.style.background !== "red" && k.style.background !== "gray") {
-                        k.style.background = "red";
+                    if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                         cleanOtherMistakes(kreisId);
                         mistakesV2++;
                         wrongNumFieldsTMT2++;
@@ -2043,61 +2113,17 @@ function selectNumberOrLetter(k) {
             }
 
         }
-        // if mistakes are 3
-//    else if (mistakesV2 === 3) {
-//        // stopping timer
-//        clearInterval(aktivTimerTMT2);
-//        clearInterval(aktivTimerInterval2);
-//        clearAllIntervals();
-//        jQuery.jStorage.set("RightNumFieldsTMT2", correctNumFieldsTMT2);
-//        jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
-//        jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
-//        jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-//        $.mobile.changePage('#intro2v3a', {transition: "flip"});
-//
-//    }
+       
     }
     catch (error) {
         console.log("Fehler beim Tippen des Kreises mit der ID: " + k.id + error);
     }
 }
 
-function clearAllIntervals() {
-    clearInterval(aktiv);
-    clearInterval(aktivV2);
-    clearInterval(aktivV3);
-    clearInterval(aktivV4);
-}
-
-function countV2() {
-    try {
-        if (aktivV2 !== 0) {
-            clearInterval(aktivV2);
-        }
-        interactionTimerV2 = 0;
-        aktivV2 = setInterval(function () {
-            interactionTimerV2++;
-//        document.getElementById("timestampV2").innerHTML = interactionTimerV2;
-            if (interactionTimerV2 === 40) {
-                // store results
-                jQuery.jStorage.set("RightNumFieldsTMT2", correctNumFieldsTMT2);
-                jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
-                jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
-                jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                // clear timers
-                clearInterval(aktivV2);
-                $.mobile.changePage('#intro2v3a', {transition: "flip"});
-            }
-        }, 1000);
-    }
-    catch (error) {
-        console.log("Fehler beim Zählen!" + error);
-    }
-}
 
 
 
-
+// used to select elements in 3task of tmt
 function selectOnlyNumber(k) {
     try {
         // starting timer fot TMT1
@@ -2133,7 +2159,7 @@ function selectOnlyNumber(k) {
             switch (kreisId) {
                 case "v36":
                     if (arrayElement === "6" && arrayPointer === 0) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV3 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         arrayPointer++;
@@ -2142,8 +2168,8 @@ function selectOnlyNumber(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV3++;
                             wrongNumFieldsTMT3++;
@@ -2168,7 +2194,7 @@ function selectOnlyNumber(k) {
                     break;
                 case "v315":
                     if (arrayElement === "15" && arrayPointer === 1) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV3 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         arrayPointer++;
@@ -2177,8 +2203,8 @@ function selectOnlyNumber(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV3++;
                             wrongNumFieldsTMT3++;
@@ -2203,7 +2229,7 @@ function selectOnlyNumber(k) {
                     break;
                 case "v318":
                     if (arrayElement === "18" && arrayPointer === 2) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV3 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         arrayPointer++;
@@ -2212,8 +2238,8 @@ function selectOnlyNumber(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV3++;
                             wrongNumFieldsTMT3++;
@@ -2238,7 +2264,7 @@ function selectOnlyNumber(k) {
                     break;
                 case "v324":
                     if (arrayElement === "24" && arrayPointer === 3) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV3 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         arrayPointer++;
@@ -2247,8 +2273,8 @@ function selectOnlyNumber(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV3++;
                             wrongNumFieldsTMT3++;
@@ -2273,7 +2299,7 @@ function selectOnlyNumber(k) {
                     break;
                 case "v333":
                     if (arrayElement === "33" && arrayPointer === 4) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV3 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         arrayPointer++;
@@ -2282,8 +2308,8 @@ function selectOnlyNumber(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV3++;
                             wrongNumFieldsTMT3++;
@@ -2308,7 +2334,7 @@ function selectOnlyNumber(k) {
                     break;
                 case "v338":
                     if (arrayElement === "38" && arrayPointer === 5) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV3 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         arrayPointer++;
@@ -2317,8 +2343,8 @@ function selectOnlyNumber(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV3++;
                             wrongNumFieldsTMT3++;
@@ -2343,7 +2369,7 @@ function selectOnlyNumber(k) {
                     break;
                 case "v342":
                     if (arrayElement === "42" && arrayPointer === 6) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV3 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         arrayPointer++;
@@ -2352,8 +2378,8 @@ function selectOnlyNumber(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV3++;
                             wrongNumFieldsTMT3++;
@@ -2378,7 +2404,7 @@ function selectOnlyNumber(k) {
                     break;
                 case "v356":
                     if (arrayElement === "56" && arrayPointer === 7) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV3 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         arrayPointer++;
@@ -2387,8 +2413,8 @@ function selectOnlyNumber(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV3++;
                             wrongNumFieldsTMT3++;
@@ -2413,7 +2439,7 @@ function selectOnlyNumber(k) {
                     break;
                 case "v361":
                     if (arrayElement === "61" && arrayPointer === 8) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV3 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         arrayPointer++;
@@ -2422,8 +2448,8 @@ function selectOnlyNumber(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV3++;
                             wrongNumFieldsTMT3++;
@@ -2448,7 +2474,7 @@ function selectOnlyNumber(k) {
                     break;
                 case "v379":
                     if (arrayElement === "79" && arrayPointer === 9) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV3 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         arrayPointer++;
@@ -2457,8 +2483,8 @@ function selectOnlyNumber(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV3++;
                             wrongNumFieldsTMT3++;
@@ -2483,7 +2509,7 @@ function selectOnlyNumber(k) {
                     break;
                 case "v387":
                     if (arrayElement === "87" && arrayPointer === 10) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV3 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         arrayPointer++;
@@ -2492,8 +2518,8 @@ function selectOnlyNumber(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV3++;
                             wrongNumFieldsTMT3++;
@@ -2518,7 +2544,7 @@ function selectOnlyNumber(k) {
                     break;
                 case "v395":
                     if (arrayElement === "95" && arrayPointer === 11) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV3 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         correctNumFieldsTMT3++;
@@ -2539,8 +2565,8 @@ function selectOnlyNumber(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV3++;
                             wrongNumFieldsTMT3++;
@@ -2566,8 +2592,8 @@ function selectOnlyNumber(k) {
                 default:
                 {
                     // don't allow make the same mistake twice
-                    if (k.style.background !== "red" && k.style.background !== "gray") {
-                        k.style.background = "red";
+                    if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                         cleanOtherMistakes(kreisId);
                         mistakesV3++;
                         wrongNumFieldsTMT3++;
@@ -2592,54 +2618,17 @@ function selectOnlyNumber(k) {
             }
 
         }
-// if mistakes are 3
-//    else if (mistakesV3 === 3) {
-//        clearAllIntervals();
-//        // stopping timer
-//        clearInterval(aktivTimerTMT3);
-//        clearInterval(aktivTimerInterval3);
-//        // store results
-//        jQuery.jStorage.set("RightNumFieldsTMT3", correctNumFieldsTMT3);
-//        jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
-//        jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
-//        jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-//        $.mobile.changePage('#intro2v4a', {transition: "flip"});
-//    }
+
     }
     catch (error) {
         console.log("Fehler beim Tippen des Kreises mit der ID: " + k.id + error);
     }
 }
 
-function countV3() {
-    try {
-        if (aktivV3 !== 0) {
-            clearInterval(aktivV3);
-        }
-        interactionTimerV3 = 0;
-        aktivV3 = setInterval(function () {
-            interactionTimerV3++;
-//        document.getElementById("timestampV3").innerHTML = interactionTimerV3;
-            if (interactionTimerV3 === 40) {
-                // store results
-                jQuery.jStorage.set("RightNumFieldsTMT3", correctNumFieldsTMT3);
-                jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
-                jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
-                jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                //clear timers
-                clearInterval(aktivV3);
-                $.mobile.changePage('#intro2v4a', {transition: "flip"});
-            }
-        }, 1000);
-    }
-    catch (error) {
-        console.log("Fehler beim Zählen!" + error);
-    }
-}
 
 
 
-
+// used for selecting elements in the 4.task of tmt
 function selectNumberOrLetterV4(k) {
     try {
         // starting timer fot TMT1
@@ -2676,7 +2665,7 @@ function selectNumberOrLetterV4(k) {
             switch (kreisId) {
                 case "v44":
                     if (arrayElementNr === "4" && numberPointer === 0 && letterPointer === 0) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV4 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         numberPointer++;
@@ -2685,8 +2674,8 @@ function selectNumberOrLetterV4(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV4++;
                             wrongNumFieldsTMT4++;
@@ -2712,7 +2701,7 @@ function selectNumberOrLetterV4(k) {
                     break;
                 case "v4e":
                     if (arrayElementLt === "E" && letterPointer === 0 && numberPointer === 1) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV4 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         letterPointer++;
@@ -2721,8 +2710,8 @@ function selectNumberOrLetterV4(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV4++;
                             wrongNumFieldsTMT4++;
@@ -2748,7 +2737,7 @@ function selectNumberOrLetterV4(k) {
                     break;
                 case "v410":
                     if (arrayElementNr === "10" && letterPointer === 1 && numberPointer === 1) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV4 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         numberPointer++;
@@ -2757,8 +2746,8 @@ function selectNumberOrLetterV4(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV4++;
                             wrongNumFieldsTMT4++;
@@ -2784,7 +2773,7 @@ function selectNumberOrLetterV4(k) {
                     break;
                 case "v4h":
                     if (arrayElementLt === "H" && letterPointer === 1 && numberPointer === 2) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV4 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         letterPointer++;
@@ -2793,8 +2782,8 @@ function selectNumberOrLetterV4(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV4++;
                             wrongNumFieldsTMT4++;
@@ -2820,7 +2809,7 @@ function selectNumberOrLetterV4(k) {
                     break;
                 case "v427":
                     if (arrayElementNr === "27" && letterPointer === 2 && numberPointer === 2) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV4 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         numberPointer++;
@@ -2829,8 +2818,8 @@ function selectNumberOrLetterV4(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV4++;
                             wrongNumFieldsTMT4++;
@@ -2856,7 +2845,7 @@ function selectNumberOrLetterV4(k) {
                     break;
                 case "v4l":
                     if (arrayElementLt === "L" && letterPointer === 2 && numberPointer === 3) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV4 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         letterPointer++;
@@ -2865,8 +2854,8 @@ function selectNumberOrLetterV4(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV4++;
                             wrongNumFieldsTMT4++;
@@ -2892,7 +2881,7 @@ function selectNumberOrLetterV4(k) {
                     break;
                 case "v449":
                     if (arrayElementNr === "49" && letterPointer === 3 && numberPointer === 3) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV4 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         numberPointer++;
@@ -2901,8 +2890,8 @@ function selectNumberOrLetterV4(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV4++;
                             wrongNumFieldsTMT4++;
@@ -2928,7 +2917,7 @@ function selectNumberOrLetterV4(k) {
                     break;
                 case "v4p":
                     if (arrayElementLt === "P" && letterPointer === 3 && numberPointer === 4) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV4 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         letterPointer++;
@@ -2937,8 +2926,8 @@ function selectNumberOrLetterV4(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV4++;
                             wrongNumFieldsTMT4++;
@@ -2964,7 +2953,7 @@ function selectNumberOrLetterV4(k) {
                     break;
                 case "v462":
                     if (arrayElementNr === "62" && letterPointer === 4 && numberPointer === 4) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV4 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         numberPointer++;
@@ -2973,8 +2962,8 @@ function selectNumberOrLetterV4(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV4++;
                             wrongNumFieldsTMT4++;
@@ -3000,7 +2989,7 @@ function selectNumberOrLetterV4(k) {
                     break;
                 case "v4t":
                     if (arrayElementLt === "T" && letterPointer === 4 && numberPointer === 5) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV4 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         letterPointer++;
@@ -3009,8 +2998,8 @@ function selectNumberOrLetterV4(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV4++;
                             wrongNumFieldsTMT4++;
@@ -3036,7 +3025,7 @@ function selectNumberOrLetterV4(k) {
                     break;
                 case "v483":
                     if (arrayElementNr === "83" && letterPointer === 5 && numberPointer === 5) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV4 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         numberPointer++;
@@ -3045,8 +3034,8 @@ function selectNumberOrLetterV4(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                       if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV4++;
                             wrongNumFieldsTMT4++;
@@ -3072,7 +3061,7 @@ function selectNumberOrLetterV4(k) {
                     break;
                 case "v4u":
                     if (arrayElementLt === "U" && letterPointer === 5 && numberPointer === 6) {
-                        k.style.background = "gray";
+                        k.style.background = selectionColor;
                         mistakesV4 = 0;
                         cleanRightHitsAndMistakes(kreisId);
                         correctNumFieldsTMT4++;
@@ -3096,8 +3085,8 @@ function selectNumberOrLetterV4(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                        if (k.style.background !== "red" && k.style.background !== "gray") {
-                            k.style.background = "red";
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV4++;
                             wrongNumFieldsTMT4++;
@@ -3126,8 +3115,8 @@ function selectNumberOrLetterV4(k) {
                 default:
                 {
                     // don't allow make the same mistake twice
-                    if (k.style.background !== "red" && k.style.background !== "gray") {
-                        k.style.background = "red";
+                    if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                            k.style.background = wrongSelectionColor;
                         cleanOtherMistakes(kreisId);
                         mistakesV4++;
                         wrongNumFieldsTMT4++;
@@ -3153,898 +3142,26 @@ function selectNumberOrLetterV4(k) {
 
             }
         }
-// if mistakes are 3
-//    else if (mistakesV4 === 3) {
-//        clearAllIntervals();
-//        // stopping timer
-//        clearInterval(aktivTimerTMT4);
-//        clearInterval(aktivTimerInterval4);
-//        // store results
-//        jQuery.jStorage.set("RightNumFieldsTMT4", correctNumFieldsTMT4);
-//        jQuery.jStorage.set("WrongNumFieldsTMT4", wrongNumFieldsTMT4);
-//        jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
-//        jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
-////        //deactivate fullscreen
-////        cancelFullscreen();
-////        window.location = "Mosaiktest.html";
-//        $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
-//    }
+
     }
     catch (error) {
         console.log("Fehler beim Tippen des Kreises mit der ID: " + k.id + error);
     }
 }
 
-function countV4() {
-    try {
-        if (aktivV4 !== 0) {
-            clearInterval(aktivV4);
-        }
-        interactionTimerV4 = 0;
-        aktivV4 = setInterval(function () {
-            interactionTimerV4++;
-//        document.getElementById("timestampV4").innerHTML = interactionTimerV4;
-            if (interactionTimerV4 === 40) {
-                // store results
-                jQuery.jStorage.set("RightNumFieldsTMT4", correctNumFieldsTMT4);
-                jQuery.jStorage.set("WrongNumFieldsTMT4", wrongNumFieldsTMT4);
-                jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
-                jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
-                //clear timers
-                clearInterval(aktivV4);
-//            window.location = "Mosaiktest.html";
-                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
-            }
-        }, 1000);
-    }
-    catch (error) {
-        console.log("Fehler beim Zählen!" + error);
-    }
-}
 
+//! function for trailmakingtest
 
-function getAnswer1(answerRadio) {
 
-    var question = $("#quest1").html();
-    var radioId = $(answerRadio).attr('id');
-    var answerId = $('label[for="' + radioId + '"]').attr('id');
-    var hoverItem;
-    $("#" + answerId).css("color", "white");
-    hoverItem = setInterval(function () {
-        $("#" + answerId).css("color", "black");
-        clearInterval(hoverItem);
-    }, 1000);
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    var answer = $("#" + answerId).text();
-    questAnswerMap[question] = answer;
 
+// functions for zahlen sortieren
 
 
-    // make button "weiter" ready to switch
-    isReadyToSwitch = true;
 
-//    $.mobile.changePage('#fragenTeil2', {transition: "flip"});
-}
-
-function goToFragenTeil2() {
-    if (!isReadyToSwitch)
-        alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-    else {
-        $.mobile.changePage('#fragenTeil2', {transition: "flip"});
-        isReadyToSwitch = false;
-    }
-}
-
-function getAnswer2(answerRadio) {
-    var question = $("#quest2").html();
-    var radioId = $(answerRadio).attr('id');
-    var answerId = $('label[for="' + radioId + '"]').attr('id');
-
-    var hoverItem;
-    $("#" + answerId).css("color", "white");
-    hoverItem = setInterval(function () {
-        $("#" + answerId).css("color", "black");
-        clearInterval(hoverItem);
-    }, 1000);
-    var answer = $("#" + answerId).text();
-    questAnswerMap[question] = answer;
-
-
-// make button "weiter" ready to switch
-    isReadyToSwitch = true;
-//    $.mobile.changePage('#fragenTeil3', {transition: "flip"});
-}
-
-function goToFragenTeil3() {
-    if (!isReadyToSwitch)
-        alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-    else {
-        $.mobile.changePage('#fragenTeil3', {transition: "flip"});
-        isReadyToSwitch = false;
-    }
-}
-
-function getAnswer3(answerRadio) {
-    var question = $("#quest3").html();
-    var radioId = $(answerRadio).attr('id');
-    var answerId = $('label[for="' + radioId + '"]').attr('id');
-
-    var hoverItem;
-    $("#" + answerId).css("color", "white");
-    hoverItem = setInterval(function () {
-        $("#" + answerId).css("color", "black");
-        clearInterval(hoverItem);
-    }, 1000);
-    var answer = $("#" + answerId).text();
-    questAnswerMap[question] = answer;
-
-
-// make button "weiter" ready to switch
-    isReadyToSwitch = true;
-
-//    $.mobile.changePage('#fragenTeil4', {transition: "flip"});
-}
-
-function goToFragenTeil4() {
-    if (!isReadyToSwitch)
-        alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-    else {
-        $.mobile.changePage('#fragenTeil4', {transition: "flip"});
-        isReadyToSwitch = false;
-    }
-}
-
-function getAnswer4(answerRadio) {
-    var question = $("#quest4").html();
-    var radioId = $(answerRadio).attr('id');
-    var answerId = $('label[for="' + radioId + '"]').attr('id');
-
-    var hoverItem;
-    $("#" + answerId).css("color", "white");
-    hoverItem = setInterval(function () {
-        $("#" + answerId).css("color", "black");
-        clearInterval(hoverItem);
-    }, 1000);
-    var answer = $("#" + answerId).text();
-    questAnswerMap[question] = answer;
-
-
-// make button "weiter" ready to switch
-    isReadyToSwitch = true;
-//    $.mobile.changePage('#fragenTeil5', {transition: "flip"});
-}
-
-function goToFragenTeil5() {
-    if (!isReadyToSwitch)
-        alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-    else {
-        $.mobile.changePage('#fragenTeil5', {transition: "flip"});
-        isReadyToSwitch = false;
-    }
-}
-
-function getAnswer5(answerRadio) {
-    var question = $("#quest5").html();
-    var radioId = $(answerRadio).attr('id');
-    var answerId = $('label[for="' + radioId + '"]').attr('id');
-
-    var hoverItem;
-    $("#" + answerId).css("color", "white");
-    hoverItem = setInterval(function () {
-        $("#" + answerId).css("color", "black");
-        clearInterval(hoverItem);
-    }, 1000);
-    var answer = $("#" + answerId).text();
-    questAnswerMap[question] = answer;
-
-
-    // make button "weiter" ready to switch
-    isReadyToSwitch = true;
-
-//    $.mobile.changePage('#fragenTeil6', {transition: "flip"});
-}
-
-function goToFragenTeil6() {
-    if (!isReadyToSwitch)
-        alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-    else {
-        $.mobile.changePage('#fragenTeil6', {transition: "flip"});
-        isReadyToSwitch = false;
-    }
-}
-
-function getAnswer6(answerRadio) {
-    var question = $("#quest6").html();
-    var radioId = $(answerRadio).attr('id');
-    var answerId = $('label[for="' + radioId + '"]').attr('id');
-
-    var hoverItem;
-    $("#" + answerId).css("color", "white");
-    hoverItem = setInterval(function () {
-        $("#" + answerId).css("color", "black");
-        clearInterval(hoverItem);
-    }, 1000);
-    var answer = $("#" + answerId).text();
-    questAnswerMap[question] = answer;
-
-
-    // make button "weiter" ready to switch
-    isReadyToSwitch = true;
-
-
-
-
-
-
-
-//    var question = $("#quest6").html();
-//    var answer;
-//    var divChild = answerRadio.getElementsByTagName('div');
-//    for (var i = 0; i < divChild.length; i++) {
-//        var pChild = divChild[i].getElementsByTagName('p');
-//        for (var j = 0; j < pChild.length; j++) {
-//            answer = pChild[0].innerHTML;
-//        }
-//    }
-//
-//
-//    questAnswerMap[question] = answer;
-//    // store map
-//    jQuery.jStorage.set("DepressionQuestionAnswerMap", questAnswerMap);
-
-    // make "weiter" ready to switch task
-//    if (answer.length !== 0)
-//        isReadyToSwitch = true;
-
-    //deactivate fullscreen
-//    cancelFullscreen();
-//    window.location = "ADLs.html";
-}
-
-
-
-function goToNextADL() {
-    try {
-        switch (ADLQuest) {
-            case 1:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage2', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 2:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage3', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 3:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage4', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 4:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage5', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 5:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage6', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 6:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage7', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 7:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage8', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 8:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage9', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 9:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage10', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 10:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage11', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 11:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage12', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 12:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage13', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 13:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage14', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 14:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage15', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 15:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage16', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 16:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    $.mobile.changePage('#frage17', {transition: "flip"});
-                    ADLQuest++;
-                }
-                break;
-            case 17:
-                if (!isReadyToSwitch)
-                    alert("Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!");
-                else {
-                    isReadyToSwitch = false;
-                    // reset count variable
-                    ADLQuest = 0;
-                    // store map
-                    jQuery.jStorage.set("ADLQuestAnswerMap", ADLQuestAnswerMap);
-
-                    // show the end of screening
-                    $.mobile.changePage('#screeningEnd', {transition: "flip"});
-                }
-                break;
-        }
-    }
-    catch (error) {
-        console.log("Fehler beim Übergang zur nächsten Frage! " + ADLQuest + error);
-    }
-}
-
-function getChoice(answerRadio) {
-    try {
-        var radioId = $(answerRadio).attr('id');
-        var answerId = $('label[for="' + radioId + '"]').attr('id');
-
-        var hoverItem;
-        $("#" + answerId).css("color", "white");
-        hoverItem = setInterval(function () {
-            $("#" + answerId).css("color", "black");
-            clearInterval(hoverItem);
-        }, 1000);
-
-        // set "weiter" ready to switch
-        isReadyToSwitch = true;
-        switch (ADLQuest) {
-            case 1:
-                var question = $("#quest1").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#frage2', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 2:
-                var question = $("#quest2").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#frage3', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 3:
-                var question = $("#quest3").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#frage4', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 4:
-                var question = $("#quest4").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#frage5', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 5:
-                var question = $("#quest5").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#frage6', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 6:
-                var question = $("#quest6").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 7:
-                var question = $("#quest7").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 8:
-                var question = $("#quest8").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 9:
-                var question = $("#quest9").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 10:
-                var question = $("#quest10").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 11:
-                var question = $("#quest11").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 12:
-                var question = $("#quest12").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 13:
-                var question = $("#quest13").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 14:
-                var question = $("#quest14").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 15:
-                var question = $("#quest15").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 16:
-                var question = $("#quest16").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
-//            ADLQuest++;
-                break;
-            case 17:
-                var question = $("#quest17").html();
-//            var radioId = $(answerRadio).attr('id');
-//            var answerId = $('label[for="' + radioId + '"]').attr('id');
-                var answer = $("#" + answerId).text();
-                ADLQuestAnswerMap[question] = answer;
-
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
-//            ADLQuest++;
-                break;
-
-        }
-    }
-    catch (error) {
-        console.log("Fehler beim Setzen der Antwort zur ADL: " + ADLQuest + error);
-    }
-
-}
-
-
-// not actually in use 
-function goToNextQuestion(answerRadio) {
-    switch (mentalQuest) {
-        case 1:
-            var question = $("#adlQuest1").html();
-            var answer;
-            var pChild = answerRadio.getElementsByTagName('p');
-            for (var i = 0; i < pChild.length; i++) {
-                answer = pChild[0].innerHTML;
-            }
-            ADLQuestAnswerMap[question] = answer;
-
-            $.mobile.changePage('#mentalefrage2', {transition: "slide"});
-            mentalQuest++;
-            break;
-
-        case 2:
-            var question = $("#adlQuest2").html();
-            var answer;
-            var pChild = answerRadio.getElementsByTagName('p');
-            for (var i = 0; i < pChild.length; i++) {
-                answer = pChild[0].innerHTML;
-            }
-            ADLQuestAnswerMap[question] = answer;
-
-            $.mobile.changePage('#mentalefrage3', {transition: "slide"});
-            mentalQuest++;
-
-            break;
-
-        case 3:
-            var question = $("#adlQuest3").html();
-            var answer;
-            var pChild = answerRadio.getElementsByTagName('p');
-            for (var i = 0; i < pChild.length; i++) {
-                answer = pChild[0].innerHTML;
-            }
-            ADLQuestAnswerMap[question] = answer;
-            //store results
-            jQuery.jStorage.set("ADLQuestAnswerMap", ADLQuestAnswerMap);
-            //call wordpairs delayed
-            $.mobile.changePage('#transitionPage', {transition: "slide"});
-            //reset question counter
-            mentalQuest = 1;
-            break;
-
-    }
-
-}
-
-
-
-function numsLoop(nums, aktivloop, aktivhint, numElem, i) {
-    try {
-        $('#NumbersLength').html("");
-
-        aktivloop = setTimeout(function () {
-
-            if (i < nums.length) {
-                numElem.innerHTML = nums[i];
-                i++;
-                var loop1 = setTimeout(function () {
-                    numElem.innerHTML = "";
-                }, 1500);
-
-                var loop2 = setTimeout(function () {
-                    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-                    return;
-                }, 500);
-
-
-            }
-            else if (i === nums.length) {
-                // clear timeout instances
-                clearTimeout(loop1);
-                clearTimeout(loop2);
-                clearTimeout(aktivloop);
-
-                setTimeout(function () {
-                    $.mobile.changePage('#numsview');
-                    $('#NumbersLength').html("Noch " + nums.length + " Ziffer");
-
-                }, 1000);
-                clearTimeout(aktivhint);
-                return;
-            }
-        }, 2000);
-    }
-    catch (error) {
-        console.log("Fehler beim Anzeigen der Zahlen " + nums + error);
-    }
-
-}
-
-function showNumbers1(nums) {
-
-    numbersArray = nums;
-    var aktivloop;
-    var aktivhint;
-    var numElem = document.getElementById("zahl1");
-    var i = 0;
-
-    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-
-}
-
-
-
-function showNumbers1Rep(nums) {
-    numbersArray = nums;
-
-    var aktivloop;
-    var aktivhint;
-    var numElem = document.getElementById("zahl1Rep");
-//    numElem.innerHTML = nums[0];
-    var i = 0;
-
-    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-
-}
-
-function showNumbers2(nums) {
-    numbersArray = nums;
-
-    var aktivloop;
-    var aktivhint;
-    var numElem = document.getElementById("zahl2");
-//    numElem.innerHTML = nums[0];
-    var i = 0;
-
-    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-
-}
-
-function showNumbers2Rep(nums) {
-    numbersArray = nums;
-
-    var aktivloop;
-    var aktivhint;
-    var numElem = document.getElementById("zahl2Rep");
-//    numElem.innerHTML = nums[0];
-    var i = 0;
-
-    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-
-}
-
-function showNumbers3(nums) {
-    numbersArray = nums;
-
-    var aktivloop;
-    var aktivhint;
-    var numElem = document.getElementById("zahl3");
-//    numElem.innerHTML = nums[0];
-    var i = 0;
-
-    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-
-}
-
-function showNumbers3Rep(nums) {
-    numbersArray = nums;
-
-    var aktivloop;
-    var aktivhint;
-    var numElem = document.getElementById("zahl3Rep");
-//    numElem.innerHTML = nums[0];
-    var i = 0;
-
-    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-
-}
-
-function showNumbers4(nums) {
-    numbersArray = nums;
-
-    var aktivloop;
-    var aktivhint;
-    var numElem = document.getElementById("zahl4");
-//    numElem.innerHTML = nums[0];
-    var i = 0;
-
-    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-
-}
-
-function showNumbers4Rep(nums) {
-    numbersArray = nums;
-
-    var aktivloop;
-    var aktivhint;
-    var numElem = document.getElementById("zahl4Rep");
-//    numElem.innerHTML = nums[0];
-    var i = 0;
-
-    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-
-}
-
-function showNumbers5(nums) {
-    numbersArray = nums;
-
-    var aktivloop;
-    var aktivhint;
-    var numElem = document.getElementById("zahl5");
-//    numElem.innerHTML = nums[0];
-    var i = 0;
-
-    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-
-}
-
-function showNumbers5Rep(nums) {
-    numbersArray = nums;
-
-    var aktivloop;
-    var aktivhint;
-    var numElem = document.getElementById("zahl5Rep");
-//    numElem.innerHTML = nums[0];
-    var i = 0;
-
-    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-
-}
-
-function showNumbers6(nums) {
-    numbersArray = nums;
-
-    var aktivloop;
-    var aktivhint;
-    var numElem = document.getElementById("zahl6");
-//    numElem.innerHTML = nums[0];
-    var i = 0;
-
-    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-
-}
-
-function showNumbers6Rep(nums) {
-    numbersArray = nums;
-
-    var aktivloop;
-    var aktivhint;
-    var numElem = document.getElementById("zahl6Rep");
-//    numElem.innerHTML = nums[0];
-    var i = 0;
-
-    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-
-}
-
-function showNumbers7(nums) {
-    numbersArray = nums;
-
-    var aktivloop;
-    var aktivhint;
-    var numElem = document.getElementById("zahl7");
-//    numElem.innerHTML = nums[0];
-    var i = 0;
-
-    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-
-}
-
-
-function showNumbers7Rep(nums) {
-    numbersArray = nums;
-
-    var aktivloop;
-    var aktivhint;
-    var numElem = document.getElementById("zahl7Rep");
-//    numElem.innerHTML = nums[0];
-    var i = 0;
-
-    numsLoop(nums, aktivloop, aktivhint, numElem, i);
-
-}
-
+// used to match selected number
 function matchNumbers(numbElement) {
 
     try {
@@ -4057,14 +3174,14 @@ function matchNumbers(numbElement) {
         var hoverItem;
         //hover clicked item
         $(numbElement).css("border", "4px solid white");
-        $(numbElement).css("background-color", "gray");
+        $(numbElement).css("background-color", selectionColor);
         hoverItem = setInterval(function () {
             $(numbElement).css("border", "");
-            $(numbElement).css("background-color", "yellow");
+            $(numbElement).css("background-color", normalColor);
             clearInterval(hoverItem);
         }, 500);
 
-//find out how many digits are leftover from the whole string
+        //find out how many digits are leftover from the whole string
         var numbersarraylengthString = $('#NumbersLength').html().split(" ");
         var restNumbers = parseInt(numbersarraylengthString[1]);
         //decrement numbersarraylength
@@ -4639,189 +3756,1245 @@ function matchNumbers(numbElement) {
 }
 
 
+
+
+
+//! functions for zahlen sortieren
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// go to trailmaking test task
+function goToTrailmakingtest() {
+    //deactivate fullscreen
+    cancelFullscreen();
+    window.location = "Trailmakingtest.html";
+}
+
+// go to mosaik test task
+function goToMosaiktest() {
+    //deactivate fullscreen
+    cancelFullscreen();
+    window.location = "Mosaiktest.html";
+}
+
+
+// go to zahlen sortieren test
+function goToZahlensortierentest() {
+    //deactivate fullscreen
+    cancelFullscreen();
+    window.location = "Zahlensortieren.html";
+}
+
+// go to Paarassoziations test
+function goToPaarassoziationstestTeil2() {
+    //deactivate fullscreen
+    cancelFullscreen();
+    window.location = "PaarassoziationstestTeil2.html";
+}
+
+// go to offene fragen test
+function goToDepressionsscreening() {
+    //deactivate fullscreen
+    cancelFullscreen();
+    window.location = "Depressionsscreening.html";
+}
+
+// go to ADLs test
+function goToADLs() {
+    if (!isReadyToSwitch){
+        
+         $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+    }
+        
+    else {
+        isReadyToSwitch = false;
+        // store map
+        jQuery.jStorage.set("DepressionQuestionAnswerMap", questAnswerMap);
+
+        //deactivate fullscreen
+        cancelFullscreen();
+        window.location = "ADLs.html";
+    }
+}
+
+// check if the hitten word was correspendant to the first word
+function isCorrectWord(leftwDiv, rightwTd) {
+
+
+    var isCorrect = false;
+    var leftW = leftwDiv.innerHTML;
+    var rightW = rightwTd.innerHTML;
+    var matchingWord = $(leftwDiv).data('match');
+    rightW = jQuery.trim(rightW);
+
+    try {
+        // look for matched word
+        if (rightW === matchingWord)
+            isCorrect = true;
+        else
+            isCorrect = false;
+    }
+    catch (error) {
+        console.log("Fehler beim matchen der beiden Wörter: " + rightW + " und " + matchingWord + error);
+    }
+
+    return isCorrect;
+}
+
+
+
+
+
+
+
+function countV1() {
+
+    try {
+        if (aktiv !== 0) {
+            clearInterval(aktiv);
+        }
+        interactionTimer = 0;
+        aktiv = setInterval(function () {
+            interactionTimer++;
+//        document.getElementById("timestamp").innerHTML = interactionTimer;
+            if (interactionTimer === 40) {
+                // store results
+                jQuery.jStorage.set("RightNumFieldsTMT1", correctNumFieldsTMT1);
+                jQuery.jStorage.set("WrongNumFieldsTMT1", wrongNumFieldsTMT1);
+                jQuery.jStorage.set("TimeToSolveTMT1", timerTMT1);
+                jQuery.jStorage.set("ClickIntervalsTMT1", clickIntervals1);
+                // clear timers
+                clearAllIntervals();
+                $.mobile.changePage('#intro2v2a', {transition: "flip"});
+            }
+        }, 1000);
+
+    }
+    catch (error) {
+        console.log("Fehler beim Zählen!" + error);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+function clearAllIntervals() {
+    clearInterval(aktiv);
+    clearInterval(aktivV2);
+    clearInterval(aktivV3);
+    clearInterval(aktivV4);
+}
+
+function countV2() {
+    try {
+        if (aktivV2 !== 0) {
+            clearInterval(aktivV2);
+        }
+        interactionTimerV2 = 0;
+        aktivV2 = setInterval(function () {
+            interactionTimerV2++;
+//        document.getElementById("timestampV2").innerHTML = interactionTimerV2;
+            if (interactionTimerV2 === 40) {
+                // store results
+                jQuery.jStorage.set("RightNumFieldsTMT2", correctNumFieldsTMT2);
+                jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
+                jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
+                jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
+                // clear timers
+                clearInterval(aktivV2);
+                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+            }
+        }, 1000);
+    }
+    catch (error) {
+        console.log("Fehler beim Zählen!" + error);
+    }
+}
+
+
+
+
+
+
+function countV3() {
+    try {
+        if (aktivV3 !== 0) {
+            clearInterval(aktivV3);
+        }
+        interactionTimerV3 = 0;
+        aktivV3 = setInterval(function () {
+            interactionTimerV3++;
+//        document.getElementById("timestampV3").innerHTML = interactionTimerV3;
+            if (interactionTimerV3 === 40) {
+                // store results
+                jQuery.jStorage.set("RightNumFieldsTMT3", correctNumFieldsTMT3);
+                jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
+                jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
+                jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
+                //clear timers
+                clearInterval(aktivV3);
+                $.mobile.changePage('#intro2v4a', {transition: "flip"});
+            }
+        }, 1000);
+    }
+    catch (error) {
+        console.log("Fehler beim Zählen!" + error);
+    }
+}
+
+
+
+
+
+
+function countV4() {
+    try {
+        if (aktivV4 !== 0) {
+            clearInterval(aktivV4);
+        }
+        interactionTimerV4 = 0;
+        aktivV4 = setInterval(function () {
+            interactionTimerV4++;
+//        document.getElementById("timestampV4").innerHTML = interactionTimerV4;
+            if (interactionTimerV4 === 40) {
+                // store results
+                jQuery.jStorage.set("RightNumFieldsTMT4", correctNumFieldsTMT4);
+                jQuery.jStorage.set("WrongNumFieldsTMT4", wrongNumFieldsTMT4);
+                jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
+                jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
+                //clear timers
+                clearInterval(aktivV4);
+//            window.location = "Mosaiktest.html";
+                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+            }
+        }, 1000);
+    }
+    catch (error) {
+        console.log("Fehler beim Zählen!" + error);
+    }
+}
+
+
+function getAnswer1(answerRadio) {
+    
+    $(".answerSelectionHintDiv").css("visibility", "hidden");
+
+    var question = $("#quest1").html();
+    var radioId = $(answerRadio).attr('id');
+    var answerId = $('label[for="' + radioId + '"]').attr('id');
+    var hoverItem;
+    $("#" + answerId).css("color", normalColor);
+    hoverItem = setInterval(function () {
+        $("#" + answerId).css("color", "black");
+        clearInterval(hoverItem);
+    }, 1000);
+
+
+    var answer = $("#" + answerId).text();
+    questAnswerMap[question] = answer;
+
+
+
+    // make button "weiter" ready to switch
+    isReadyToSwitch = true;
+
+//    $.mobile.changePage('#fragenTeil2', {transition: "flip"});
+}
+
+function goToFragenTeil2() {
+    if (!isReadyToSwitch){
+        
+        $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+    }
+       
+    else {
+        $.mobile.changePage('#fragenTeil2', {transition: "flip"});
+        isReadyToSwitch = false;
+    }
+}
+
+function getAnswer2(answerRadio) {
+    
+    $(".answerSelectionHintDiv").css("visibility", "hidden");
+    
+    var question = $("#quest2").html();
+    var radioId = $(answerRadio).attr('id');
+    var answerId = $('label[for="' + radioId + '"]').attr('id');
+
+    var hoverItem;
+    $("#" + answerId).css("color", normalColor);
+    hoverItem = setInterval(function () {
+        $("#" + answerId).css("color", "black");
+        clearInterval(hoverItem);
+    }, 1000);
+    var answer = $("#" + answerId).text();
+    questAnswerMap[question] = answer;
+
+
+// make button "weiter" ready to switch
+    isReadyToSwitch = true;
+//    $.mobile.changePage('#fragenTeil3', {transition: "flip"});
+}
+
+function goToFragenTeil3() {
+    if (!isReadyToSwitch){
+        
+         $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+        
+    }
+       
+    else {
+        $.mobile.changePage('#fragenTeil3', {transition: "flip"});
+        isReadyToSwitch = false;
+    }
+}
+
+function getAnswer3(answerRadio) {
+    
+    $(".answerSelectionHintDiv").css("visibility", "hidden");
+    
+    var question = $("#quest3").html();
+    var radioId = $(answerRadio).attr('id');
+    var answerId = $('label[for="' + radioId + '"]').attr('id');
+
+    var hoverItem;
+    $("#" + answerId).css("color", normalColor);
+    hoverItem = setInterval(function () {
+        $("#" + answerId).css("color", "black");
+        clearInterval(hoverItem);
+    }, 1000);
+    var answer = $("#" + answerId).text();
+    questAnswerMap[question] = answer;
+
+
+// make button "weiter" ready to switch
+    isReadyToSwitch = true;
+
+//    $.mobile.changePage('#fragenTeil4', {transition: "flip"});
+}
+
+function goToFragenTeil4() {
+    if (!isReadyToSwitch){
+        
+         $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+        
+    }
+       
+    else {
+        $.mobile.changePage('#fragenTeil4', {transition: "flip"});
+        isReadyToSwitch = false;
+    }
+}
+
+function getAnswer4(answerRadio) {
+    
+    $(".answerSelectionHintDiv").css("visibility", "hidden");
+    
+    var question = $("#quest4").html();
+    var radioId = $(answerRadio).attr('id');
+    var answerId = $('label[for="' + radioId + '"]').attr('id');
+
+    var hoverItem;
+    $("#" + answerId).css("color", normalColor);
+    hoverItem = setInterval(function () {
+        $("#" + answerId).css("color", "black");
+        clearInterval(hoverItem);
+    }, 1000);
+    var answer = $("#" + answerId).text();
+    questAnswerMap[question] = answer;
+
+
+// make button "weiter" ready to switch
+    isReadyToSwitch = true;
+//    $.mobile.changePage('#fragenTeil5', {transition: "flip"});
+}
+
+function goToFragenTeil5() {
+    if (!isReadyToSwitch){
+        
+         $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+        
+    }
+        
+    else {
+        $.mobile.changePage('#fragenTeil5', {transition: "flip"});
+        isReadyToSwitch = false;
+    }
+}
+
+function getAnswer5(answerRadio) {
+    
+    $(".answerSelectionHintDiv").css("visibility", "hidden");
+    
+    var question = $("#quest5").html();
+    var radioId = $(answerRadio).attr('id');
+    var answerId = $('label[for="' + radioId + '"]').attr('id');
+
+    var hoverItem;
+    $("#" + answerId).css("color", normalColor);
+    hoverItem = setInterval(function () {
+        $("#" + answerId).css("color", "black");
+        clearInterval(hoverItem);
+    }, 1000);
+    var answer = $("#" + answerId).text();
+    questAnswerMap[question] = answer;
+
+
+    // make button "weiter" ready to switch
+    isReadyToSwitch = true;
+
+//    $.mobile.changePage('#fragenTeil6', {transition: "flip"});
+}
+
+function goToFragenTeil6() {
+    if (!isReadyToSwitch){
+        
+         $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+        
+    }
+       
+    else {
+        $.mobile.changePage('#fragenTeil6', {transition: "flip"});
+        isReadyToSwitch = false;
+    }
+}
+
+function getAnswer6(answerRadio) {
+    
+    $(".answerSelectionHintDiv").css("visibility", "hidden");
+    var question = $("#quest6").html();
+    var radioId = $(answerRadio).attr('id');
+    var answerId = $('label[for="' + radioId + '"]').attr('id');
+
+    var hoverItem;
+    $("#" + answerId).css("color", normalColor);
+    hoverItem = setInterval(function () {
+        $("#" + answerId).css("color", "black");
+        clearInterval(hoverItem);
+    }, 1000);
+    var answer = $("#" + answerId).text();
+    questAnswerMap[question] = answer;
+
+
+    // make button "weiter" ready to switch
+    isReadyToSwitch = true;
+
+
+
+
+
+
+
+//    var question = $("#quest6").html();
+//    var answer;
+//    var divChild = answerRadio.getElementsByTagName('div');
+//    for (var i = 0; i < divChild.length; i++) {
+//        var pChild = divChild[i].getElementsByTagName('p');
+//        for (var j = 0; j < pChild.length; j++) {
+//            answer = pChild[0].innerHTML;
+//        }
+//    }
+//
+//
+//    questAnswerMap[question] = answer;
+//    // store map
+//    jQuery.jStorage.set("DepressionQuestionAnswerMap", questAnswerMap);
+
+    // make "weiter" ready to switch task
+//    if (answer.length !== 0)
+//        isReadyToSwitch = true;
+
+    //deactivate fullscreen
+//    cancelFullscreen();
+//    window.location = "ADLs.html";
+}
+
+
+
+function goToNextADL() {
+    try {
+        switch (ADLQuest) {
+            case 1:
+                if (!isReadyToSwitch){
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                    
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage2', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 2:
+                if (!isReadyToSwitch){
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                   
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage3', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 3:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage4', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 4:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage5', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 5:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage6', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 6:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage7', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 7:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage8', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 8:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage9', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 9:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage10', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 10:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage11', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 11:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage12', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 12:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage13', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 13:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage14', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 14:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage15', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 15:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage16', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 16:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    $.mobile.changePage('#frage17', {transition: "flip"});
+                    ADLQuest++;
+                }
+                break;
+            case 17:
+                if (!isReadyToSwitch)
+                {
+                    $(".answerSelectionHintDiv").css("visibility", "visible");
+              setTimeout(function () {
+            $(".answerSelectionHintDiv").css("visibility", "hidden");
+             }, 1000);
+                }
+                else {
+                    isReadyToSwitch = false;
+                    // reset count variable
+                    ADLQuest = 0;
+                    // store map
+                    jQuery.jStorage.set("ADLQuestAnswerMap", ADLQuestAnswerMap);
+
+                    // show the end of screening
+                    $.mobile.changePage('#screeningEnd', {transition: "flip"});
+                }
+                break;
+        }
+    }
+    catch (error) {
+        console.log("Fehler beim Übergang zur nächsten Frage! " + ADLQuest + error);
+    }
+}
+
+function getChoice(answerRadio) {
+    
+    try {
+        
+        $(".answerSelectionHintDiv").css("visibility", "hidden");
+        
+        var radioId = $(answerRadio).attr('id');
+        var answerId = $('label[for="' + radioId + '"]').attr('id');
+
+        var hoverItem;
+        $("#" + answerId).css("color", normalColor);
+        hoverItem = setInterval(function () {
+            $("#" + answerId).css("color", "black");
+            clearInterval(hoverItem);
+        }, 1000);
+
+        // set "weiter" ready to switch
+        isReadyToSwitch = true;
+        switch (ADLQuest) {
+            case 1:
+                var question = $("#quest1").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#frage2', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 2:
+                var question = $("#quest2").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#frage3', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 3:
+                var question = $("#quest3").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#frage4', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 4:
+                var question = $("#quest4").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#frage5', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 5:
+                var question = $("#quest5").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#frage6', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 6:
+                var question = $("#quest6").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 7:
+                var question = $("#quest7").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 8:
+                var question = $("#quest8").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 9:
+                var question = $("#quest9").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 10:
+                var question = $("#quest10").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 11:
+                var question = $("#quest11").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 12:
+                var question = $("#quest12").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 13:
+                var question = $("#quest13").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 14:
+                var question = $("#quest14").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 15:
+                var question = $("#quest15").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 16:
+                var question = $("#quest16").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            ADLQuest++;
+                break;
+            case 17:
+                var question = $("#quest17").html();
+//            var radioId = $(answerRadio).attr('id');
+//            var answerId = $('label[for="' + radioId + '"]').attr('id');
+                var answer = $("#" + answerId).text();
+                ADLQuestAnswerMap[question] = answer;
+
+//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            ADLQuest++;
+                break;
+
+        }
+    }
+    catch (error) {
+        console.log("Fehler beim Setzen der Antwort zur ADL: " + ADLQuest + error);
+    }
+
+}
+
+
+// not actually in use 
+function goToNextQuestion(answerRadio) {
+    switch (mentalQuest) {
+        case 1:
+            var question = $("#adlQuest1").html();
+            var answer;
+            var pChild = answerRadio.getElementsByTagName('p');
+            for (var i = 0; i < pChild.length; i++) {
+                answer = pChild[0].innerHTML;
+            }
+            ADLQuestAnswerMap[question] = answer;
+
+            $.mobile.changePage('#mentalefrage2', {transition: "slide"});
+            mentalQuest++;
+            break;
+
+        case 2:
+            var question = $("#adlQuest2").html();
+            var answer;
+            var pChild = answerRadio.getElementsByTagName('p');
+            for (var i = 0; i < pChild.length; i++) {
+                answer = pChild[0].innerHTML;
+            }
+            ADLQuestAnswerMap[question] = answer;
+
+            $.mobile.changePage('#mentalefrage3', {transition: "slide"});
+            mentalQuest++;
+
+            break;
+
+        case 3:
+            var question = $("#adlQuest3").html();
+            var answer;
+            var pChild = answerRadio.getElementsByTagName('p');
+            for (var i = 0; i < pChild.length; i++) {
+                answer = pChild[0].innerHTML;
+            }
+            ADLQuestAnswerMap[question] = answer;
+            //store results
+            jQuery.jStorage.set("ADLQuestAnswerMap", ADLQuestAnswerMap);
+            //call wordpairs delayed
+            $.mobile.changePage('#transitionPage', {transition: "slide"});
+            //reset question counter
+            mentalQuest = 1;
+            break;
+
+    }
+
+}
+
+
+
+function numsLoop(nums, aktivloop, aktivhint, numElem, i) {
+    try {
+        $('#NumbersLength').html("");
+
+        aktivloop = setTimeout(function () {
+
+            if (i < nums.length) {
+                numElem.innerHTML = nums[i];
+                i++;
+                var loop1 = setTimeout(function () {
+                    numElem.innerHTML = "";
+                }, 1500);
+
+                var loop2 = setTimeout(function () {
+                    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+                    return;
+                }, 500);
+
+
+            }
+            else if (i === nums.length) {
+                // clear timeout instances
+                clearTimeout(loop1);
+                clearTimeout(loop2);
+                clearTimeout(aktivloop);
+
+                setTimeout(function () {
+                    $.mobile.changePage('#numsview');
+                    $('#NumbersLength').html("Noch " + nums.length + " Ziffer");
+
+                }, 1000);
+                clearTimeout(aktivhint);
+                return;
+            }
+        }, 2000);
+    }
+    catch (error) {
+        console.log("Fehler beim Anzeigen der Zahlen " + nums + error);
+    }
+
+}
+
+function showNumbers1(nums) {
+
+    numbersArray = nums;
+    var aktivloop;
+    var aktivhint;
+    var numElem = document.getElementById("zahl1");
+    var i = 0;
+
+    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+
+}
+
+
+
+function showNumbers1Rep(nums) {
+    numbersArray = nums;
+
+    var aktivloop;
+    var aktivhint;
+    var numElem = document.getElementById("zahl1Rep");
+//    numElem.innerHTML = nums[0];
+    var i = 0;
+
+    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+
+}
+
+function showNumbers2(nums) {
+    numbersArray = nums;
+
+    var aktivloop;
+    var aktivhint;
+    var numElem = document.getElementById("zahl2");
+//    numElem.innerHTML = nums[0];
+    var i = 0;
+
+    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+
+}
+
+function showNumbers2Rep(nums) {
+    numbersArray = nums;
+
+    var aktivloop;
+    var aktivhint;
+    var numElem = document.getElementById("zahl2Rep");
+//    numElem.innerHTML = nums[0];
+    var i = 0;
+
+    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+
+}
+
+function showNumbers3(nums) {
+    numbersArray = nums;
+
+    var aktivloop;
+    var aktivhint;
+    var numElem = document.getElementById("zahl3");
+//    numElem.innerHTML = nums[0];
+    var i = 0;
+
+    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+
+}
+
+function showNumbers3Rep(nums) {
+    numbersArray = nums;
+
+    var aktivloop;
+    var aktivhint;
+    var numElem = document.getElementById("zahl3Rep");
+//    numElem.innerHTML = nums[0];
+    var i = 0;
+
+    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+
+}
+
+function showNumbers4(nums) {
+    numbersArray = nums;
+
+    var aktivloop;
+    var aktivhint;
+    var numElem = document.getElementById("zahl4");
+//    numElem.innerHTML = nums[0];
+    var i = 0;
+
+    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+
+}
+
+function showNumbers4Rep(nums) {
+    numbersArray = nums;
+
+    var aktivloop;
+    var aktivhint;
+    var numElem = document.getElementById("zahl4Rep");
+//    numElem.innerHTML = nums[0];
+    var i = 0;
+
+    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+
+}
+
+function showNumbers5(nums) {
+    numbersArray = nums;
+
+    var aktivloop;
+    var aktivhint;
+    var numElem = document.getElementById("zahl5");
+//    numElem.innerHTML = nums[0];
+    var i = 0;
+
+    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+
+}
+
+function showNumbers5Rep(nums) {
+    numbersArray = nums;
+
+    var aktivloop;
+    var aktivhint;
+    var numElem = document.getElementById("zahl5Rep");
+//    numElem.innerHTML = nums[0];
+    var i = 0;
+
+    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+
+}
+
+function showNumbers6(nums) {
+    numbersArray = nums;
+
+    var aktivloop;
+    var aktivhint;
+    var numElem = document.getElementById("zahl6");
+//    numElem.innerHTML = nums[0];
+    var i = 0;
+
+    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+
+}
+
+function showNumbers6Rep(nums) {
+    numbersArray = nums;
+
+    var aktivloop;
+    var aktivhint;
+    var numElem = document.getElementById("zahl6Rep");
+//    numElem.innerHTML = nums[0];
+    var i = 0;
+
+    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+
+}
+
+function showNumbers7(nums) {
+    numbersArray = nums;
+
+    var aktivloop;
+    var aktivhint;
+    var numElem = document.getElementById("zahl7");
+//    numElem.innerHTML = nums[0];
+    var i = 0;
+
+    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+
+}
+
+
+function showNumbers7Rep(nums) {
+    numbersArray = nums;
+
+    var aktivloop;
+    var aktivhint;
+    var numElem = document.getElementById("zahl7Rep");
+//    numElem.innerHTML = nums[0];
+    var i = 0;
+
+    numsLoop(nums, aktivloop, aktivhint, numElem, i);
+
+}
+
+
+
+
 function getArray() {
 
     return numbersArray;
 }
 
-// handles wordpairs tables appended after finishing ADLs // not in use actually
-function choosedDelayed() {
 
-//    el.style.backgroundColor = "green";
-
-    try {
-
-        // only when weiter btn is activated 
-        if (weiterDelayedIsActive) {
-
-            // (avoid double clicking)
-            weiterDelayedIsActive = false;
-
-
-            // if a word was selected
-            if (wordSelected) {
-
-
-                var el;
-                // find out which td was selected
-                var allElements = document.querySelectorAll("[data-group='iterationDelayed']");
-                for (var i = 0; i < allElements.length; i++) {
-                    var tempElem = allElements[i];
-
-                    var tempElemBgr = tempElem.style.backgroundColor;
-
-
-                    if ((tempElemBgr === "green")) {
-
-
-                        el = tempElem;
-                        break;
-
-                    }
-                }
-
-                // handle selection
-                switch (cntDelayed) {
-
-                    case 0:
-                        showLoopAktivDelay = setTimeout(function () {
-                            el.style.backgroundColor = "#b9c68d";
-                            var leftw = document.getElementById('word1');
-                            if (isCorrectWord(leftw, el)) {
-                                correctWordsDelay++;
-                            }
-                            else {
-                                wrongWordsDelay++;
-                            }
-                            clearTimeout(showLoopAktivDelay);
-                            $.mobile.changePage('#wordpair2', {transition: "flip"});
-                            wordSelected = false;
-                            // enable weiter btn
-                            weiterDelayedIsActive = true;
-                        }, 300);
-                        cntDelayed++;
-                        break;
-
-                    case 1:
-                        showLoopAktivDelay = setTimeout(function () {
-                            el.style.backgroundColor = "#b9c68d";
-                            var leftw = document.getElementById('word2');
-                            if (isCorrectWord(leftw, el)) {
-                                correctWordsDelay++;
-                            }
-                            else {
-                                wrongWordsDelay++;
-                            }
-                            clearTimeout(showLoopAktivDelay);
-                            $.mobile.changePage('#wordpair3', {transition: "flip"});
-                            wordSelected = false;
-                            // enable weiter btn
-                            weiterDelayedIsActive = true;
-                        }, 300);
-                        cntDelayed++;
-                        break;
-                    case 2:
-                        showLoopAktivDelay = setTimeout(function () {
-                            el.style.backgroundColor = "#b9c68d";
-                            var leftw = document.getElementById('word3');
-                            if (isCorrectWord(leftw, el)) {
-                                correctWordsDelay++;
-                            }
-                            else {
-                                wrongWordsDelay++;
-                            }
-                            clearTimeout(showLoopAktivDelay);
-                            $.mobile.changePage('#wordpair4', {transition: "flip"});
-                            wordSelected = false;
-                            // enable weiter btn
-                            weiterDelayedIsActive = true;
-                        }, 300);
-                        cntDelayed++;
-                        break;
-                    case 3:
-                        showLoopAktivDelay = setTimeout(function () {
-                            el.style.backgroundColor = "#b9c68d";
-                            var leftw = document.getElementById('word4');
-                            if (isCorrectWord(leftw, el)) {
-                                correctWordsDelay++;
-                            }
-                            else {
-                                wrongWordsDelay++;
-                            }
-                            clearTimeout(showLoopAktivDelay);
-                            $.mobile.changePage('#wordpair5', {transition: "flip"});
-                            wordSelected = false;
-                            // enable weiter btn
-                            weiterDelayedIsActive = true;
-                        }, 300);
-                        cntDelayed++;
-                        break;
-                    case 4:
-                        showLoopAktivDelay = setTimeout(function () {
-                            el.style.backgroundColor = "#b9c68d";
-                            var leftw = document.getElementById('word5');
-                            if (isCorrectWord(leftw, el)) {
-                                correctWordsDelay++;
-                            }
-                            else {
-                                wrongWordsDelay++;
-                            }
-                            clearTimeout(showLoopAktivDelay);
-                            $.mobile.changePage('#wordpair6', {transition: "flip"});
-                            wordSelected = false;
-                            // enable weiter btn
-                            weiterDelayedIsActive = true;
-                        }, 300);
-                        cntDelayed++;
-                        break;
-                    case 5:
-                        // reset counter
-                        cntDelayed = cntDelayed - 5;
-
-
-                        var leftw = document.getElementById('word6');
-                        if (isCorrectWord(leftw, el)) {
-                            correctWordsDelay++;
-                        }
-                        else {
-                            wrongWordsDelay++;
-                        }
-
-                        showLoopAktivDelay = setTimeout(function () {
-                            el.style.backgroundColor = "#b9c68d";
-                            // store results
-                            jQuery.jStorage.set("RightClickedWordsDelay", correctWordsDelay);
-                            jQuery.jStorage.set("WrongClickedWordsDelay", wrongWordsDelay);
-                            // clear timer
-                            clearTimeout(showLoopAktivDelay);
-                            // go to depressionsscreening questions
-                            goToDepressionsscreening();
-                            // enable weiter btn
-                            weiterDelayedIsActive = true;
-                        }, 1000);
-
-
-
-                        break;
-
-                }
-            }
-            else if (!wordSelected) {
-                alert("Bitte wählen Sie ein Wort aus der Liste aus!");
-                setTimeout(function () {
-                    weiterDelayedIsActive = true;
-                }, 300);
-
-
-            }
-
-        }
-    }
-    catch (error) {
-        console.log("Fehler matchen der Wörter" + error);
-    }
-
-}
 
 
 

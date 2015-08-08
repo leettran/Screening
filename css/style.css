@@ -147,6 +147,22 @@
         
     }
     
+    .answerSelectionHintText{
+        font-size: 30px;
+        font-family: Enigma_2;
+        color: red;
+        text-shadow: none;
+        text-align: center;
+        font-weight: bolsd;
+        position: relative;       
+        left: 5px;
+        top: 0px;
+        bottom: 0px;
+        
+        
+    }
+    
+    
     .instructionText{
         font-size: 20px;
         font-family: QuattrocentoSans;
@@ -191,15 +207,36 @@
 
     }
     
+    .answerSelectionHintIcon{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 35px;
+        width: 35px;
+        position: absolute;       
+        left: 1%;
+        bottom: 10%;
+
+    }
+    
     
     .selectionHintDiv{
-        visibility: visible;
+        visibility: hidden;
         position: absolute;
         bottom: 8%;
         left: 5%; 
         width: 70%;
         height: Auto;
     }
+    
+    .answerSelectionHintDiv{
+        visibility: hidden;
+        position: absolute;
+        bottom: 20%;
+        left: 1%; 
+        width: 90%;
+        height: Auto;
+    }
+    
     
 
  .divWithRoundedCorners{
@@ -234,6 +271,30 @@
         text-shadow: none;
         position: absolute;
         top: 30%;
+        left: 5%;
+     }
+     
+     
+      .numsViewHintText
+     {
+        font-size: 45px;
+        font-family: EnigmaB_2;
+        color: black;
+        text-shadow: none;
+        position: absolute;
+        top: 10%;
+        left: 1%;
+     }
+     
+     
+       .questionText
+     {
+        font-size: 30px;
+        font-family: EnigmaB_2;
+        color: black;
+        text-shadow: none;
+        position: absolute;
+        top: 1%;
         left: 5%;
      }
     
@@ -320,11 +381,161 @@
     }
     
     
+     .kreis{
+        background-color: #57BB58;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        text-align: center;
+        border-radius: 50%;
+        display: table;
+        font-size: 30px;
+        font-weight: bold;
+        vertical-align: middle;
+        text-shadow: none;
+
+    }
+    
+    
+     .starthint {
+        background-color: transparent;
+        position: absolute;
+        width: 100px;
+        height: 60px;
+        top: 1%;
+        left: 88%;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 10px;
+        font-size: 40px;
+        font-family: EnigmaB_2;
+        text-shadow: none;
+    }
+    
+     #endhint {
+        background-color: transparent;
+        position: absolute;
+        width: 100px;
+        height: 60px;
+        top: 80%;
+        left: 1%;
+        text-align: center;
+        line-height: 10px;
+        text-shadow: none;
+        font-size: 40px;
+        font-family: EnigmaB_2;
+    }
+    
+    
+     .starthintleft{
+        top: 2%;
+        left: 1%;
+        background-color: transparent;
+        width: 100px;
+        height: 60px;
+        line-height: 10px;
+        position: absolute;
+        text-shadow: none;
+        font-size: 40px;
+        font-family: EnigmaB_2;
+    }
+
+    .endhintright{
+        background-color: transparent;
+        position: absolute;
+        width: 100px;
+        height: 60px;
+        top: 83%;
+        left: 89%;
+        line-height: 10px;
+        text-shadow: none;
+        font-size: 40px;
+        font-family: EnigmaB_2;
+    }
+    
+     .countdownText{
+        font-size: 50px;
+        text-shadow: none;
+        font-family: EnigmaB_2;
+    }
+    
+    
+     .countdown{
+        text-align: center;
+        width: 600px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: transparent;
+
+    }
+    
+    
+    .zahlItem{
+        font-size: 180px;
+        font-family: EnigmaB_2;
+        vertical-align: middle;
+        text-align: center;
+        top:50%;
+        left:50%;
+        text-shadow: none;    
+        color:black;
+    }
+    
+    
+     .zahlFragment{
+        width: 70px;
+        height: 100px;
+        border: 2px solid;
+        display: inline-block;
+        background-color: #57BB58;
+        text-align: center;
+        text-shadow: none;
+        vertical-align: middle;
+        font-size: 70px;
+        font-family: EnigmaB_2;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-left: 20px;
+    }
+    
+    
+    .numbersarrayLenght{
+        text-shadow: none;
+        font-size: 40px;
+        font-family: EnigmaB_2;
+        color: #57BB58;
+        position: absolute;
+        top: 80%;
+        left: 70%;
+        border: #57BB58 solid 1px;
+    }
+    
+    
+     .underline{
+        /*text-decoration: underline;*/
+        color: black;
+        text-shadow: none;
+        font-family: EnigmaB_2;
+        font-size: 25px;
+
+    }
+    
+     .answerChoice{
+        /*text-decoration: underline;*/
+        color: black;
+        text-shadow: none;
+        font-family: EnigmaB_2;
+        font-size: 20px;
+
+    }
     
     
     
-    
-    
+   
     
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -366,34 +577,11 @@
         background: #5092f4;
     }
 
-    .zahlFragment{
-        width: 70px;
-        height: 100px;
-        border: 2px solid;
-        display: inline-block;
-        background-color: yellow;
-        text-align: center;
-        vertical-align: middle;
-        font-size: 70px;
-        padding-left: 5px;
-        padding-right: 5px;
-        padding-top: 10px;
-        padding-bottom: 5px;
-        margin-left: 20px;
-    }
+    
 
    
 
-    .zahlItem{
-
-        font-size: 180px;
-        vertical-align: middle;
-        text-align: center;
-        top:50%;
-        left:50%;
-        text-shadow: none;    
-        color:white;
-    }
+    
 
     .kreisItem{
         display: inline-block;
@@ -421,14 +609,7 @@
 
    
 
-    .underline{
-        /*text-decoration: underline;*/
-        color: black;
-        text-shadow: none;
-        font-family: sans-serif;
-        font-size: 30px;
-
-    }
+   
 
     .hint{
         font-weight: bold;
@@ -448,21 +629,7 @@
         text-decoration: none;
     }
 
-    .kreis{
-        background-color: #fcaf35;
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        border: 1px solid black;
-        text-align: center;
-        border-radius: 50%;
-        display: table;
-        font-size: 30px;
-        font-weight: bold;
-        vertical-align: middle;
-        text-shadow: none;
-
-    }
+   
 
 
     .smallKreis2{
@@ -504,54 +671,9 @@
         font-style: normal;
         font-weight: bold;
     }
-    .starthint {
-        background-color: transparent;
-        position: absolute;
-        width: 100px;
-        height: 60px;
-        top: 10%;
-        left: 91%;
-        text-align: center;
-        vertical-align: middle;
-        line-height: 10px;
-        font-size: 40px;
-        text-shadow: none;
-    }
-    .starthintleft{
-        top: 13%;
-        left: 5%;
-        background-color: transparent;
-        width: 100px;
-        height: 60px;
-        line-height: 10px;
-        position: absolute;
-        text-shadow: none;
-        font-size: 40px;
-    }
-
-    .endhintright{
-        background-color: transparent;
-        position: absolute;
-        width: 100px;
-        height: 60px;
-        top: 83%;
-        left: 90%;
-        line-height: 10px;
-        text-shadow: none;
-        font-size: 40px;
-    }
-    #endhint{
-        background-color: transparent;
-        position: absolute;
-        width: 100px;
-        height: 60px;
-        top: 80%;
-        left: 5%;
-        text-align: center;
-        line-height: 10px;
-        text-shadow: none;
-        font-size: 40px;
-    }
+   
+   
+   
 
     #timestamp{
         font-size: 30px;
@@ -876,14 +998,7 @@
         border: 1px solid black;       
     }
 
-    .numbersarrayLenght{
-        text-shadow: none;
-        font-size: 40px;
-        position: absolute;
-        top: 70%;
-        left: 70%;
-        border: white solid 1px;
-    }
+    
 
     .testname{
         width: 500px;
@@ -995,20 +1110,9 @@
 
    
 
-    .countdown{
-        text-align: center;
-        width: 600px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: transparent;
+   
 
-    }
-
-    .countdownText{
-        font-size: 50px;
-        text-shadow: none;
-    }
+   
 
     .alertText{
         font-size: 30px;
