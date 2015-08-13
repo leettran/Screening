@@ -9,23 +9,21 @@
 @media only screen and (orientation: landscape){
     /*nur wenn das tablet auf landscape gerichtet ist*/  
 
-    
-    @font-face { font-family: Enigma_2; src: url('Enigma_2.ttf'); } 
-    @font-face { font-family: EnigmaB_2; src: url('EnigmaB_2.ttf'); } 
-    @font-face { font-family: Enigma_2i; src: url('Enigma_2i.ttf'); } 
-    @font-face { font-family: QuattrocentoSans; src: url('QuattrocentoSans-Regular.otf'); }
-    
-
-    .startPage{
-        background-image: url('images/bg/bg-wheels.png');
-        background-color: transparent;
-        background-size: 100%;
-        width: 100%;
-        height: 100%;
-        height: auto;
-        min-height:100%;
+    .inputSize{
+        width: 100px;
+        height: 20px;
     }
 
+    .resultTextStyle{
+        text-shadow: none;
+        text-align: justify;
+       
+    }
+    
+    .introPage{
+        background: #b9c68d;
+    }
+    
     .whitePage{
         background-image: url('images/bg/bg-white.png');
         background-color: transparent;
@@ -36,310 +34,100 @@
         min-height:100%;
     }
 
-
-    .introPage{
-        background-image: url('images/bg/bg-standard.png');
-        background-color: transparent;
-        background-size: 100%;
-        width: 100%;
-        height: 100%;
-        height: auto;
-        min-height:100%;
+    .testPage{
+        background: #5092f4;
     }
 
-    .defaultButton{
-        background-size: 100%;
-        background-repeat:no-repeat;       
-        height: 70px;
-        width: 230px;
-        position: absolute;
-        bottom: 2%;
-        right: 5%;
-        font-size: x-large;
-        text-shadow: none;
+    .zahlFragment{
+        width: 70px;
+        height: 100px;
+        border: 2px solid;
+        display: inline-block;
+        background-color: yellow;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 70px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-left: 20px;
     }
 
-
-    .defaultButton:active, .defaultButton:focus, .defaultButton.active{
-        background-image:url('images/btns-bg/bt-weiter-hover.png');
-        position:absolute; 
-        bottom: 1.7%;
-        right: 4.8%;
-        background-image: none;
-        outline: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-    }
-
-
-    .instructionLong{
-        text-shadow: none;
-        text-align: justify;
-        text-decoration: none;
-        font-size: 28px;
-        font-weight: bold;
-        font-family: Quattrocento;
-
-    }
-
-    .wrap {
-        width: 100%;
-        
-        position: absolute;
-        top: 90px;
-        left: 1px;
-        right: 1px;
-    }
-
-    .floatleft {
-        float:left; 
-        width: 50%;
-        background-color: transparent;
-        height: auto;
-        
-    }
-
-    .floatright {
-        float: right;
-        background-color: transparent;
-        width: 50%;
-        height: auto;
-        
-    }
-    
-    .instructionContent{
-        float:left; 
-        width: 45%;
-        overflow-y: auto;
-        position: absolute;
-        top: 40px;
-        left: 10px;
-        right: 10px;
-        
-    }
-
- .instructionHeader{
-        font-size: 20px;
-        font-family: Enigma_2;
-        color: black;
+    .secondWord{
         text-shadow: none;
         text-align: center;
-        font-weight: bold;
-        position: absolute;       
-        left: 60px;
-        top: 0px;
-        
+        background: #b9c68d;
+        height: 60px;
+        width: 100px;
+        border:solid 2px black;      
+        text-shadow: none;
+        overflow: hidden;
     }
-    
-    
-    .selectionHintText{
-        font-size: 30px;
-        font-family: Enigma_2;
-        color: red;
+
+    .zahlItem{
+
+        font-size: 180px;
+        vertical-align: middle;
+        text-align: center;
+        top:50%;
+        left:50%;
+        text-shadow: none;    
+        color:white;
+    }
+
+    .kreisItem{
+        display: inline-block;
+        margin-left: 25px;
+        list-style: none;
         text-shadow: none;
         text-align: center;
-        font-weight: bold;
-        position: relative;       
-        left: 40px;
-        top: 0px;
-        bottom: 0px;
-        
-        
     }
-    
-    .answerSelectionHintText{
-        font-size: 30px;
-        font-family: Enigma_2;
-        color: red;
-        text-shadow: none;
-        text-align: center;
-        font-weight: bolsd;
-        position: relative;       
-        left: 5px;
-        top: 0px;
-        bottom: 0px;
-        
-        
-    }
-    
-    
+
     .instructionText{
-        font-size: 20px;
-        font-family: QuattrocentoSans;
-        color: black;
-        text-shadow: none;
-        text-align: justify;
-        font-weight: normal; 
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    
-    .instructionTextForExample{
-        font-size: 20px;
-        font-family: Quattrocento;
-        color: black;
         text-shadow: none;
         text-align: center;
-        font-weight: bold;       
+        font-family: serif;
+        font-size: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
-    
-
- .infoIcon{
-        background-size: 100%;
-        background-repeat:no-repeat;       
-        height: 35px;
-        width: 35px;
-        position: absolute;       
-        left: 10px;
-        top: 3px;
-
-    }
-    
-    
-    .selectionHintIcon{
-        background-size: 100%;
-        background-repeat:no-repeat;       
-        height: 35px;
-        width: 35px;
-        position: absolute;       
-        left: 5%;
-        bottom: 10%;
-
-    }
-    
-    .answerSelectionHintIcon{
-        background-size: 100%;
-        background-repeat:no-repeat;       
-        height: 35px;
-        width: 35px;
-        position: absolute;       
-        left: 1%;
-        bottom: 10%;
-
-    }
-    
-    
-    .selectionHintDiv{
-        visibility: hidden;
-        position: absolute;
-        bottom: 8%;
-        left: 5%; 
-        width: 70%;
-        height: Auto;
-    }
-    
-    .answerSelectionHintDiv{
-        visibility: hidden;
-        position: absolute;
-        bottom: 20%;
-        left: 1%; 
-        width: 90%;
-        height: Auto;
-    }
-    
-    
-
- .divWithRoundedCorners{
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        background: #8BDE8C;
-        border-radius: 10px;
-        width: 90%;
-    }
-    
-     .wordrectangleForExample{
-        width: 110px;
-        height: 40px;
-        background: #57BB58;
-        border-radius: 1px;
-        border:solid 2px black ;
+    .defaultButton{
+        height: 60px;
+        width: 270px;
+        font-size: x-large;
+        background: orange;
         text-shadow: none;
-        font-size: 20px;
-        font-weight: bold;
+    }
+    
+    h1{
         text-align: center;
-        line-height: 50px;
-
+        color: white;
     }
-    
-     .transitionPageText
-     {
-        font-size: 45px;
-        font-family: EnigmaB_2;
+
+    .underline{
+        /*text-decoration: underline;*/
         color: black;
         text-shadow: none;
-        position: absolute;
-        top: 30%;
-        left: 5%;
-     }
-     
-     
-      .numsViewHintText
-     {
-        font-size: 45px;
-        font-family: EnigmaB_2;
-        color: black;
-        text-shadow: none;
-        position: absolute;
-        top: 10%;
-        left: 1%;
-     }
-     
-     
-       .questionText
-     {
+        font-family: sans-serif;
         font-size: 30px;
-        font-family: EnigmaB_2;
+        
+    }
+
+    .hint{
+        font-weight: bold;
         color: black;
+        text-decoration: none;
         text-shadow: none;
-        position: absolute;
-        top: 1%;
-        left: 5%;
-     }
-    
-    
-    
+    }
     .bigview {
         display: inline;
         font-size: 110px;
-        color: black;
-        font-family: EnigmaB_2;
         vertical-align: middle;
         margin-top: 70px;
     }
-    
-     h1{
-        text-align: center;
-        color: black;
-        font-family: EnigmaB_2;
-        
-    }
-    
-    
-     .firstword {
-        font-size: 40px;
-        font-weight: bold;
-        background: #57BB58;
-        font-family: EnigmaB_2;
-        text-align: center;
-        width: 300px;
-        height: 60px;
-        line-height: 60px;
-        vertical-align: middle;
-        text-shadow: none;
-        border: solid 2px black;
-    }
-    
-     .questionMark{
-        font-size: 50px;
-        font-weight: bolder;
-        font-family: EnigmaB_2;
-        display: inline
-    }
-    
-    
-      .wordstable {
+
+    .wordstable {
         border:black;
         border-spacing: 30px;
         width: 1000px;
@@ -354,35 +142,29 @@
     .wordstable tr:hover{
         cursor: pointer;
     }
-    
-    
-     .secondWord{
-        text-shadow: none;
-        text-align: center;
-        background: #57BB58;
-        height: 60px;
-        width: 100px;
-        border:solid 2px black;      
-        text-shadow: none;
-        overflow: hidden;
-        font-family: EnigmaB_2;
-        
-    }
-    
-     .tippIconBig{
-        background-size: 100%;
-        background-repeat:no-repeat;       
-        height: 70px;
-        width: 71px;
-        position: absolute;       
-        left: 5%;
-        top: 5%;
 
+
+    .firstword {
+        font-size: 40px;
+        font-weight: bold;
+        background: #b9c68d;
+        font-family: serif;
+        text-align: center;
+        width: 300px;
+        height: 60px;
+        line-height: 60px;
+        vertical-align: middle;
+        text-shadow: none;
+        border: solid 2px black;
     }
-    
-    
-     .kreis{
-        background-color: #57BB58;
+
+    .listitem {
+        font-size: 25px;
+        text-decoration: none;
+    }
+
+    .kreis{
+        background-color: #fcaf35;
         position: absolute;
         width: 100px;
         height: 100px;
@@ -396,240 +178,6 @@
         text-shadow: none;
 
     }
-    
-    
-     .starthint {
-        background-color: transparent;
-        position: absolute;
-        width: 100px;
-        height: 60px;
-        top: 1%;
-        left: 88%;
-        text-align: center;
-        vertical-align: middle;
-        line-height: 10px;
-        font-size: 40px;
-        font-family: EnigmaB_2;
-        text-shadow: none;
-    }
-    
-     #endhint {
-        background-color: transparent;
-        position: absolute;
-        width: 100px;
-        height: 60px;
-        top: 80%;
-        left: 1%;
-        text-align: center;
-        line-height: 10px;
-        text-shadow: none;
-        font-size: 40px;
-        font-family: EnigmaB_2;
-    }
-    
-    
-     .starthintleft{
-        top: 2%;
-        left: 1%;
-        background-color: transparent;
-        width: 100px;
-        height: 60px;
-        line-height: 10px;
-        position: absolute;
-        text-shadow: none;
-        font-size: 40px;
-        font-family: EnigmaB_2;
-    }
-
-    .endhintright{
-        background-color: transparent;
-        position: absolute;
-        width: 100px;
-        height: 60px;
-        top: 83%;
-        left: 89%;
-        line-height: 10px;
-        text-shadow: none;
-        font-size: 40px;
-        font-family: EnigmaB_2;
-    }
-    
-     .countdownText{
-        font-size: 50px;
-        text-shadow: none;
-        font-family: EnigmaB_2;
-    }
-    
-    
-     .countdown{
-        text-align: center;
-        width: 600px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: transparent;
-
-    }
-    
-    
-    .zahlItem{
-        font-size: 180px;
-        font-family: EnigmaB_2;
-        vertical-align: middle;
-        text-align: center;
-        top:50%;
-        left:50%;
-        text-shadow: none;    
-        color:black;
-    }
-    
-    
-     .zahlFragment{
-        width: 70px;
-        height: 100px;
-        border: 2px solid;
-        display: inline-block;
-        background-color: #57BB58;
-        text-align: center;
-        text-shadow: none;
-        vertical-align: middle;
-        font-size: 70px;
-        font-family: EnigmaB_2;
-        padding-left: 5px;
-        padding-right: 5px;
-        padding-top: 10px;
-        padding-bottom: 5px;
-        margin-left: 20px;
-    }
-    
-    
-    .numbersarrayLenght{
-        text-shadow: none;
-        font-size: 40px;
-        font-family: EnigmaB_2;
-        color: #57BB58;
-        position: absolute;
-        top: 80%;
-        left: 70%;
-        border: #57BB58 solid 1px;
-    }
-    
-    
-     .underline{
-        /*text-decoration: underline;*/
-        color: black;
-        text-shadow: none;
-        font-family: EnigmaB_2;
-        font-size: 25px;
-
-    }
-    
-     .answerChoice{
-        /*text-decoration: underline;*/
-        color: black;
-        text-shadow: none;
-        font-family: EnigmaB_2;
-        font-size: 20px;
-
-    }
-    
-    
-    
-   
-    
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-    .inputSize{
-        width: 100px;
-        height: 20px;
-    }
-
-    .resultTextStyle{
-        text-shadow: none;
-        text-align: justify;
-
-    }
-
-    /*    .introPage{
-            background: #b9c68d;
-        }*/
-
-/*    .whitePage{
-        background-image: url('images/bg/bg-white.png');
-        background-color: transparent;
-        background-size: 100%;
-        width: 100%;
-        height: 100%;
-        height: auto;
-        min-height:100%;
-    }*/
-
-    .testPage{
-        background: #5092f4;
-    }
-
-    
-
-   
-
-    
-
-    .kreisItem{
-        display: inline-block;
-        margin-left: 25px;
-        list-style: none;
-        text-shadow: none;
-        text-align: center;
-    }
-
-/*    .instructionText{
-        text-shadow: none;
-        text-align: center;
-        font-family: serif;
-        font-size: 40px;
-        margin-left: 20px;
-        margin-right: 20px;
-    }*/
-    /*    .defaultButton{
-            height: 60px;
-            width: 270px;
-            font-size: x-large;
-            background: orange;
-            text-shadow: none;
-        }*/
-
-   
-
-   
-
-    .hint{
-        font-weight: bold;
-        color: black;
-        text-decoration: none;
-        text-shadow: none;
-    }
-    
-
-  
-
-
-   
-
-    .listitem {
-        font-size: 25px;
-        text-decoration: none;
-    }
-
-   
 
 
     .smallKreis2{
@@ -671,9 +219,54 @@
         font-style: normal;
         font-weight: bold;
     }
-   
-   
-   
+    .starthint {
+        background-color: transparent;
+        position: absolute;
+        width: 100px;
+        height: 60px;
+        top: 10%;
+        left: 91%;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 10px;
+        font-size: 40px;
+        text-shadow: none;
+    }
+    .starthintleft{
+        top: 13%;
+        left: 5%;
+        background-color: transparent;
+        width: 100px;
+        height: 60px;
+        line-height: 10px;
+        position: absolute;
+        text-shadow: none;
+        font-size: 40px;
+    }
+
+    .endhintright{
+        background-color: transparent;
+        position: absolute;
+        width: 100px;
+        height: 60px;
+        top: 83%;
+        left: 90%;
+        line-height: 10px;
+        text-shadow: none;
+        font-size: 40px;
+    }
+    #endhint{
+        background-color: transparent;
+        position: absolute;
+        width: 100px;
+        height: 60px;
+        top: 80%;
+        left: 5%;
+        text-align: center;
+        line-height: 10px;
+        text-shadow: none;
+        font-size: 40px;
+    }
 
     #timestamp{
         font-size: 30px;
@@ -900,8 +493,8 @@
         position: absolute;
         left: 10px;
         bottom: 10px;
-
-
+        
+        
     }
     .cellToFill2{
         width: 270px;
@@ -922,8 +515,8 @@
         bottom: 10px;
     }
     .cellToFill3{
-        width: 180px;
-        height: 150px;
+       width: 180px;
+       height: 150px;
         border: 1px solid black;
 
     }
@@ -946,7 +539,7 @@
 
     }
     .tableWithSplits5{
-        position:absolute;
+         position:absolute;
         top: 5px;
         left: 30%;
     }
@@ -958,8 +551,8 @@
         bottom: 10px;
     }
     .cellToFill5{
-        width: 135px;
-        height: 100px;
+       width: 135px;
+       height: 100px;
         border: 1px solid black;
 
     }
@@ -976,8 +569,8 @@
         bottom: 10px;
     }
     .cellToFill6{
-        width: 135px;
-        height: 75px;
+       width: 135px;
+       height: 75px;
         border: 1px solid black;      
     }
     .tableWithSplits7{
@@ -993,19 +586,26 @@
         bottom: 10px;
     }
     .cellToFill7{
-        width: 108px;
-        height: 75px;
+       width: 108px;
+       height: 75px;
         border: 1px solid black;       
     }
 
-    
+    .numbersarrayLenght{
+        text-shadow: none;
+        font-size: 40px;
+        position: absolute;
+        top: 70%;
+        left: 70%;
+        border: white solid 1px;
+    }
 
     .testname{
         width: 500px;
         height: 300px;
         background-color: transparent;
         position: absolute;
-        top:20%;
+        top:0;
         bottom: 0;
         left: 0;
         right: 0;
@@ -1014,12 +614,11 @@
         font-weight: bold;
         text-align: center;
         text-shadow: none;
-        font-family: EnigmaB_2;
     }
 
     .wordpairexample{
-        /*        width: 500px;
-                height: 200px;*/
+/*        width: 500px;
+        height: 200px;*/
         background-color: transparent;
         position: absolute;
         font-size:30px; 
@@ -1033,8 +632,8 @@
         text-align: left;
         font-weight: bold;       
     }
-
-    .instructionText2{
+    
+     .instructionText2{
         font-size: 25px;
         color: black;
         text-shadow: none;
@@ -1049,22 +648,22 @@
         text-align: justify;
         font-weight: normal;       
     }
-
-/*    .divWithRoundedCorners{
+    
+    .divWithRoundedCorners{
         margin-left: auto;
         margin-right: auto;
         background: lightblue;
         border-radius: 10px;
         width: 90%;
-    }*/
-
+    }
+    
     .instructionTextDescriptionBold{
         font-size: 40px;
         color: black;
         text-shadow: none;
         text-align: justify;
         font-weight: bold;
-
+        
     }
 
     .wordrectangle{
@@ -1078,28 +677,28 @@
         font-weight: bold;
         text-align: center;
         line-height: 50px;
-
-
-
-
-        /*        text-shadow: none;
-                text-align: center;
-                background: #b9c68d;
-                height: 60px;
-                width: 100px;
-                border:solid 2px black;      
-                text-shadow: none;
-                overflow: hidden;*/
+        
+        
+        
+        
+/*        text-shadow: none;
+        text-align: center;
+        background: #b9c68d;
+        height: 60px;
+        width: 100px;
+        border:solid 2px black;      
+        text-shadow: none;
+        overflow: hidden;*/
     }
 
-/*    .transitionPageText{
+    .transitionPageText{
         font-size: 45px;
         color: black;
         text-shadow: none;
         position: absolute;
         top: 30%;
         left: 5%;
-    }*/
+    }
 
 
     .taskTitle{
@@ -1108,11 +707,26 @@
         color: black;
     }
 
-   
+    .questionMark{
+        font-size: 60px;
+        font-weight: bolder;
+        display: inline
+    }
 
-   
+    .countdown{
+        text-align: center;
+        width: 600px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: transparent;
 
-   
+    }
+
+    .countdownText{
+        font-size: 50px;
+        text-shadow: none;
+    }
 
     .alertText{
         font-size: 30px;
@@ -1137,17 +751,17 @@
         position: absolute;
         bottom: 10px;
         right: 1px;
-
+        
     }
-
-
+    
+    
 
 
 
     .imageTileStyle{
-
+     
     }
-
+    
     .imagetileAppearance{
         display: block;
     }

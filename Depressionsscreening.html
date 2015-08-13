@@ -1,23 +1,17 @@
 <!--
-This is the task page of the task: Depressionsscreening
-Created by: A.Karim El Moussaoui @Ascora GmnH
-Project: NeuroCare
-Component: Screening
+To change this template, choose Tools | Templates
+and open the template in the editor.
 -->
-
-
-
-
 <!DOCTYPE html>
 <html>
     <head>
         <title>NeuroCare-Screening</title>
-        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0b1.min.css"/>
+         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0b1.min.css"/>
         <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
         <link rel="stylesheet" href="css/style.css" media="screen and (orientation: landscape)" type="text/css">  
         <link rel="stylesheet" href="css/style_none.css" media="screen and (orientation: portrait)" type="text/css">       
-
+       
         <script type="text/javascript" src="js/jsfunctions.js"></script>-->
         <script type="text/javascript" src="js/jstorage.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -30,182 +24,71 @@ Component: Screening
 
     <body>
 
-
-
-        <!--start page to zahlensortieren test-->
-        <div data-role="page" id="test5Start" data-dom-cache=true class="startPage">
-
-            <div data-role="content">
-
-                <div class="testname">Aufgabe<br>Fragen zum Wohlbefinden<br>
-                    <!--<a href="#intro" data-role="button" data-inline="true" class="defaultButton" >Zur Aufgabe</a>-->
-                </div>
-
-            </div>
-
-            <script type="text/javascript">
-                $(document).delegate('#test5Start', 'pageshow', function () {
-
-                    function showJustForWhile() {
-                        setTimeout(function () {
-                            $.mobile.changePage('#intro', {transition: "flip"});
-                        }, 3000);
-                    }
-
-
-                    showJustForWhile();
-
-                });
-
-            </script>
-
-        </div> 
-
-
-
-
-
         <div data-role="page" id="intro" data-dom-cache=true class="introPage">
 
             <div data-role="content">
+                <p class="instructionTextDescriptionBold">Sie haben die Aufgaben geschafft! </p>
+                    <p class="instructionTextDescription">Nun haben wir noch einige Fragen an Sie, die sich auf Ihr aktuelles Erleben beziehen. Wichtig ist nur Ihre eigene Einschätzung. <br>
+                    Es werden Ihnen Antwortmöglichkeiten vorgegeben. Bitte wählen Sie mit dem Finger jeweils die Antwort aus,
+                    die <b>am ehesten</b> auf Sie zutrifft.<br>
+                    Nachdem Sie sich für eine Antwort entschieden haben, gelangen Sie über den „Weiter“ Knopf zur nächsten Frage.  
+                </p>
 
 
-                <div class="wrap">
+                <br><br>
 
-                    <!--instruction div-->
-                    <div class="floatleft">
-
-                        <!--instruction header-->
-                        <div style="display: inline;">
-
-                            <image src="css\images\icons\info.png" class="infoIcon"/>
-
-                            <h1 class="instructionHeader" >Was ist Ihre Aufgabe?</h1>
-
-                        </div>
-
-                        <!--instruction text-->
-                        <div class="instructionContent">
-                            <p class="instructionText">
-
-                                Sie haben die Aufgaben geschafft! </br></br>
-                                Nun haben wir noch einige Fragen an Sie, die sich auf Ihr aktuelles Erleben beziehen. Wichtig ist nur Ihre eigene Einschätzung. <br>
-                                Es werden Ihnen Antwortmöglichkeiten vorgegeben. Bitte wählen Sie mit dem Finger jeweils die Antwort aus,
-                                die <b>am ehesten</b> auf Sie zutrifft.</br></br></br>
-                                Nachdem Sie sich für eine Antwort entschieden haben, gelangen Sie über den „Weiter“ Knopf zur nächsten Frage.
-
-                            </p>
-                        </div>
-
-
-                    </div>
-
-
-
-                    <!--example div-->
-                    <div class="floatright">
-
-
-
-
-                    </div>
-
-
-                    <div style="clear: both;">
-
-
-
-
-                    </div>      
-
-
-
-
-
-
-                </div>
-
-
-
-
-                <!--                <p class="instructionTextDescriptionBold">Sie haben die Aufgaben geschafft! </p>
-                                <p class="instructionTextDescription">Nun haben wir noch einige Fragen an Sie, die sich auf Ihr aktuelles Erleben beziehen. Wichtig ist nur Ihre eigene Einschätzung. <br>
-                                    Es werden Ihnen Antwortmöglichkeiten vorgegeben. Bitte wählen Sie mit dem Finger jeweils die Antwort aus,
-                                    die <b>am ehesten</b> auf Sie zutrifft.<br>
-                                    Nachdem Sie sich für eine Antwort entschieden haben, gelangen Sie über den „Weiter“ Knopf zur nächsten Frage.  
-                                </p>
-                
-                
-                                <br><br>-->
-
-
-                <!--start button-->
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="showFollowingPageDelayed('fragenTeil1', 1000);"/> 
-
-                <!--                <a href="#fragenTeil1" data-role="button" data-inline="true" class="defaultButton"
-                                   onclick="switchToFullscreen();" style="float: right;">Zu den Fragen</a> -->
+                <a href="#fragenTeil1" data-role="button" data-inline="true" class="defaultButton"
+                   onclick="switchToFullscreen();" style="float: right;">Zu den Fragen</a> 
             </div>
 
         </div>
 
-        <div data-role="page" id="fragenTeil1" data-dom-cache=true class="whitePage">
+        <div data-role="page" id="fragenTeil1" data-dom-cache=true class="testPage">
 
 
             <div data-role="content">
 
-                <p class="questionText" id="quest1">Haben Sie sich in den letzten zwei Wochen oft niedergeschlagen,<br> traurig oder bedrückt gefühlt?</p>
+                <p class="instructionText" id="quest1">Haben Sie sich in den letzten zwei Wochen oft niedergeschlagen,<br> traurig oder bedrückt gefühlt?</p>
 
-                <form style="position: absolute;top: 25%;">
+                <form>
                     <fieldset>
 
                         <p>
                             <label class="underline">Bitte wählen Sie eine Antwort aus, die am ehesten auf Sie passt:</label>
-
-
+                           
                             <input type = "radio"
                                    name = "answers1"
                                    id = "first1"
                                    value = "first" onchange="getAnswer1(this);"/>
-                            <label for = "first1" id="answer11" class="answerChoice">Nein</label>
+                            <label for = "first1" id="answer11">Nein</label>
 
 
                             <input type = "radio"
                                    name = "answers1"
                                    id = "second1"
                                    value = "second" onchange="getAnswer1(this);"/>
-                            <label for = "second1" id="answer21" class="answerChoice">An vereinzelten Tagen</label>
+                            <label for = "second1" id="answer21">An vereinzelten Tagen</label>
 
 
                             <input type = "radio"
                                    name = "answers1"
                                    id = "third1"
                                    value = "third" onchange="getAnswer1(this);"/>
-                            <label for = "third1" id="answer31" class="answerChoice">An mehr als der Hälfte der letzten 14 Tagen</label> 
+                            <label for = "third1" id="answer31">An mehr als der Hälfte der letzten 14 Tagen</label> 
 
 
                             <input type = "radio"
                                    name = "answers1"
                                    id = "fourth1"
                                    value = "fourth" onchange="getAnswer1(this);"/>
-                            <label for = "fourth1" id="answer41" class="answerChoice">Fast jeden Tag oder täglich</label> 
+                            <label for = "fourth1" id="answer41">Fast jeden Tag oder täglich</label> 
 
                         </p>
                     </fieldset>
 
                 </form>
 
-
-                <!--selection hint-->
-                <div class="answerSelectionHintDiv">
-
-                    <h1 class="answerSelectionHintText" ><image src="css\images\icons\info.png" class="answerSelectionHintIcon"/>Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!</h1>
-
-                </div>
-
-
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToFragenTeil2();"/>
-
-                <!--<a data-role="button" data-inline="true" class="defaultButton" style="float: right;" onclick="goToFragenTeil2();">Weiter</a>-->
+                <a data-role="button" data-inline="true" class="defaultButton" style="float: right;" onclick="goToFragenTeil2();">Weiter</a>
 
 
             </div>
@@ -215,12 +98,12 @@ Component: Screening
 
 
 
-        <div data-role="page" id="fragenTeil2" data-dom-cache=true class="whitePage">
+        <div data-role="page" id="fragenTeil2" data-dom-cache=true class="testPage">
 
             <div data-role="content">
 
-                <p class="questionText" id="quest2">Haben Sie sich in den letzten zwei Wochen antriebslos gefühlt<br> oder waren Sie häufig erschöpft?</p>          
-                <form style="position: absolute;top: 25%;">
+                <p class="instructionText" id="quest2">Haben Sie sich in den letzten zwei Wochen antriebslos gefühlt<br> oder waren Sie häufig erschöpft?</p>          
+                <form>
                     <fieldset>
 
                         <p>
@@ -230,41 +113,31 @@ Component: Screening
                                    name = "answers2"
                                    id = "first2"
                                    value = "first" onchange="getAnswer2(this);"/>
-                            <label for = "first2" id="answer12" class="answerChoice">Nein</label>
+                            <label for = "first2" id="answer12">Nein</label>
 
                             <input type = "radio"
                                    name = "answers2"
                                    id = "second2"
                                    value = "second" onchange="getAnswer2(this);"/>
-                            <label for = "second2" id="answer22" class="answerChoice">An vereinzelten Tagen</label>
+                            <label for = "second2" id="answer22">An vereinzelten Tagen</label>
 
                             <input type = "radio"
                                    name = "answers2"
                                    id = "third2"
                                    value = "third" onchange="getAnswer2(this);"/>
-                            <label for = "third2" id="answer32" class="answerChoice">An mehr als der Hälfte der letzten 14 Tagen</label> 
+                            <label for = "third2" id="answer32">An mehr als der Hälfte der letzten 14 Tagen</label> 
 
                             <input type = "radio"
                                    name = "answers2"
                                    id = "fourth2"
                                    value = "fourth" onchange="getAnswer2(this);"/>
-                            <label for = "fourth2" id="answer42" class="answerChoice">Fast jeden Tag oder täglich</label> 
+                            <label for = "fourth2" id="answer42">Fast jeden Tag oder täglich</label> 
                         </p>
                     </fieldset>
 
                 </form>
 
-
-                <!--selection hint-->
-                <div class="answerSelectionHintDiv">
-
-                    <h1 class="answerSelectionHintText" ><image src="css\images\icons\info.png" class="answerSelectionHintIcon"/>Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!</h1>
-
-                </div>
-
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToFragenTeil3();"/>
-
-                <!--<a onclick="goToFragenTeil3();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>-->
+                <a onclick="goToFragenTeil3();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>
             </div>
 
         </div>
@@ -272,14 +145,14 @@ Component: Screening
 
 
 
-        <div data-role="page" id="fragenTeil3" data-dom-cache=true class="whitePage">
+        <div data-role="page" id="fragenTeil3" data-dom-cache=true class="testPage">
 
             <div data-role="content">
 
-                <p class="questionText" id="quest3">Hatten Sie in den letzten zwei Wochen deutlich weniger Lust und Interesse<br>
+                <p class="instructionText" id="quest3">Hatten Sie in den letzten zwei Wochen deutlich weniger Lust und Interesse<br>
                     an Dingen, die Sie sonst gerne tun?</p>
 
-                <form style="position: absolute;top: 25%;">
+                <form>
                     <fieldset>
 
                         <p>
@@ -289,41 +162,31 @@ Component: Screening
                                    name = "answers3"
                                    id = "first3"
                                    value = "first" onchange="getAnswer3(this);"/>
-                            <label for = "first3" id="answer13" class="answerChoice">Nein</label>
+                            <label for = "first3" id="answer13">Nein</label>
 
                             <input type = "radio"
                                    name = "answers3"
                                    id = "second3"
                                    value = "second" onchange="getAnswer3(this);"/>
-                            <label for = "second3" id="answer23" class="answerChoice">An vereinzelten Tagen</label>
+                            <label for = "second3" id="answer23">An vereinzelten Tagen</label>
 
                             <input type = "radio"
                                    name = "answers3"
                                    id = "third3"
                                    value = "third" onchange="getAnswer3(this);"/>
-                            <label for = "third3" id="answer33" class="answerChoice">An mehr als der Hälfte der letzten 14 Tagen</label> 
+                            <label for = "third3" id="answer33">An mehr als der Hälfte der letzten 14 Tagen</label> 
 
                             <input type = "radio"
                                    name = "answers3"
                                    id = "fourth3"
                                    value = "fourth" onchange="getAnswer3(this);"/>
-                            <label for = "fourth3" id="answer43" class="answerChoice">Fast jeden Tag oder täglich</label> 
+                            <label for = "fourth3" id="answer43">Fast jeden Tag oder täglich</label> 
                         </p>
                     </fieldset>
 
                 </form>
 
-
-                <!--selection hint-->
-                <div class="answerSelectionHintDiv">
-
-                    <h1 class="answerSelectionHintText" ><image src="css\images\icons\info.png" class="answerSelectionHintIcon"/>Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!</h1>
-
-                </div>
-
-
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToFragenTeil4();"/>
-                <!--<a onclick="goToFragenTeil4();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>-->
+                <a onclick="goToFragenTeil4();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>
             </div>
 
         </div>
@@ -331,14 +194,14 @@ Component: Screening
 
 
 
-        <div data-role="page" id="fragenTeil4" data-dom-cache=true class="whitePage">
+        <div data-role="page" id="fragenTeil4" data-dom-cache=true class="testPage">
 
 
             <div data-role="content">
 
-                <p class="questionText" id="quest4">Ist Ihr Gedächtnis in den letzten Jahren schlechter geworden?</p>
+                <p class="instructionText" id="quest4">Ist Ihr Gedächtnis in den letzten Jahren schlechter geworden?</p>
 
-                <form style="position: absolute;top: 25%;">
+                <form>
                     <fieldset>
 
                         <p>
@@ -348,30 +211,20 @@ Component: Screening
                                    name = "answers4"
                                    id = "first4"
                                    value = "first" onchange="getAnswer4(this);"/>
-                            <label for = "first4" id="answer14" class="answerChoice">Ja</label>
+                            <label for = "first4" id="answer14">Ja</label>
 
                             <input type = "radio"
                                    name = "answers4"
                                    id = "second4"
                                    value = "second" onchange="getAnswer4(this);"/>
-                            <label for = "second4" id="answer24" class="answerChoice">Nein</label>
+                            <label for = "second4" id="answer24">Nein</label>
 
                         </p>
                     </fieldset>
 
                 </form>
 
-
-                <!--selection hint-->
-                <div class="answerSelectionHintDiv">
-
-                    <h1 class="answerSelectionHintText" ><image src="css\images\icons\info.png" class="answerSelectionHintIcon"/>Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!</h1>
-
-                </div>
-
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToFragenTeil5();"/>
-
-                <!--<a onclick="goToFragenTeil5();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>-->
+                <a onclick="goToFragenTeil5();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>
             </div>
 
         </div>
@@ -380,14 +233,14 @@ Component: Screening
 
 
 
-        <div data-role="page" id="fragenTeil5" data-dom-cache=true class="whitePage">
+        <div data-role="page" id="fragenTeil5" data-dom-cache=true class="testPage">
 
 
             <div data-role="content">
 
-                <p class="questionText" id="quest5">Wie häufig haben Sie Probleme mit Ihrem Gedächtnis?</p>
+                <p class="instructionText" id="quest5">Wie häufig haben Sie Probleme mit Ihrem Gedächtnis?</p>
 
-                <form style="position: absolute;top: 25%;">
+                <form>
                     <fieldset>
 
                         <p>
@@ -397,42 +250,32 @@ Component: Screening
                                    name = "answers5"
                                    id = "first5"
                                    value = "first" onchange="getAnswer5(this);"/>
-                            <label for = "first5" id="answer15" class="answerChoice">Täglich</label>
+                            <label for = "first5" id="answer15">Täglich</label>
 
                             <input type = "radio"
                                    name = "answers5"
                                    id = "second5"
                                    value = "second" onchange="getAnswer5(this);"/>
-                            <label for = "second5" id="answer25" class="answerChoice">Mehrmals die Woche</label>
+                            <label for = "second5" id="answer25">Mehrmals die Woche</label>
 
                             <input type = "radio"
                                    name = "answers5"
                                    id = "third5"
                                    value = "third" onchange="getAnswer5(this);"/>
-                            <label for = "third5" id="answer35" class="answerChoice">Ca. 1x die Woche</label>
+                            <label for = "third5" id="answer35">Ca. 1x die Woche</label>
 
                             <input type = "radio"
                                    name = "answers5"
                                    id = "fourth5"
                                    value = "fourth" onchange="getAnswer5(this);"/>
-                            <label for = "fourth5" id="answer45" class="answerChoice">Weniger als 1x die Woche</label>
+                            <label for = "fourth5" id="answer45">Weniger als 1x die Woche</label>
 
                         </p>
                     </fieldset>
 
                 </form>
 
-
-                <!--selection hint-->
-                <div class="answerSelectionHintDiv">
-
-                    <h1 class="answerSelectionHintText" ><image src="css\images\icons\info.png" class="answerSelectionHintIcon"/>Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!</h1>
-
-                </div>
-
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToFragenTeil6();"/>
-
-                <!--<a onclick="goToFragenTeil6();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>-->
+                <a onclick="goToFragenTeil6();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>
             </div>
 
         </div>
@@ -440,14 +283,14 @@ Component: Screening
 
 
 
-        <div data-role="page" id="fragenTeil6" data-dom-cache=true class="whitePage">
+        <div data-role="page" id="fragenTeil6" data-dom-cache=true class="testPage">
 
 
             <div data-role="content">
 
-                <p class="questionText" id="quest6">Wie sehr machen Sie sich Sorgen um die Verschlechterung ihres Gedächtnisses?</p>
+                <p class="instructionText" id="quest6">Wie sehr machen Sie sich Sorgen um die Verschlechterung ihres Gedächtnisses?</p>
 
-                <form style="position: absolute;top: 25%;">
+                <form>
                     <fieldset>
 
                         <p>
@@ -457,44 +300,59 @@ Component: Screening
                                    name = "answers6"
                                    id = "first6"
                                    value = "first" onchange="getAnswer6(this);"/>
-                            <label for = "first6" id="answer16" class="answerChoice">Ich mache mir KEINE Sorgen</label>
+                            <label for = "first6" id="answer16">Ich mache mir KEINE Sorgen</label>
 
                             <input type = "radio"
                                    name = "answers6"
                                    id = "second6"
                                    value = "second" onchange="getAnswer6(this);"/>
-                            <label for = "second6" id="answer26" class="answerChoice">Ich mache mir ETWAS Sorgen</label>
+                            <label for = "second6" id="answer26">Ich mache mir ETWAS Sorgen</label>
 
                             <input type = "radio"
                                    name = "answers6"
                                    id = "third6"
                                    value = "third" onchange="getAnswer6(this);"/>
-                            <label for = "third6" id="answer36" class="answerChoice">Ich mache mir GROßE Sorgen</label>
+                            <label for = "third6" id="answer36">Ich mache mir GROßE Sorgen</label>
 
                             <input type = "radio"
                                    name = "answers6"
                                    id = "fourth6"
                                    value = "fourth" onchange="getAnswer6(this);"/>
-                            <label for = "fourth6" id="answer46" class="answerChoice">Ich mache mir SEHR GROße Sorgen</label>
+                            <label for = "fourth6" id="answer46">Ich mache mir SEHR GROße Sorgen</label>
 
                         </p>
                     </fieldset>
 
                 </form>
+                
+                
+<!--                <form>
+                    <fieldset>
 
-                <!--selection hint-->
-                <div class="answerSelectionHintDiv">
+                        <p>
+                            <label class="underline">Bitte wählen Sie zwischen 0 und 4:</label>
 
-                    <h1 class="answerSelectionHintText" ><image src="css\images\icons\info.png" class="answerSelectionHintIcon"/>Bitte wählen Sie eine Antwort, die am ehesten auf Sie passt, aus!</h1>
+                        <center>  <ul>
+                                <li class="kreisItem"><p>Keine</p></li>
 
-                </div>
+                                <li class="kreisItem" id="first6" onclick="getAnswer6(this);">  <div  class="smallKreis" style="background-color: #c8f7f6"><p style="color: white" data-reference="first6">0</p></div></li>
+                                <li class="kreisItem" id="second6" onclick="getAnswer6(this);"> <div  class="smallKreis" style="background-color: cyan"><p style="color: white" data-reference="second6">1</p></div></li>
+                                <li class="kreisItem" id="third6" onclick="getAnswer6(this);">  <div  class="smallKreis" style="background-color: darkturquoise"><p style="color: white" data-reference="third6">2</p></div></li>
+                                <li class="kreisItem" id="fourth6" onclick="getAnswer6(this);"> <div  class="smallKreis" style="background-color: blue"><p style="color: white" data-reference="fourth6">3</p></div></li>
+                                <li class="kreisItem" id="fifth6" onclick="getAnswer6(this);">  <div  class="smallKreis" style="background-color: #2400c9"><p style="color: white" data-reference="fifth6">4</p></div></li>
 
+                                <li class="kreisItem"><p>Große</p></li>
+                            </ul>
+                        </center>
+
+                        </p>
+                    </fieldset>
+
+                </form>-->
 
                 <br> <br> <br>
 
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToADLs();"/>
-
-                <!--<a data-role="button" data-inline="true" class="defaultButton" style="float: right;" onclick="goToADLs();">Weiter</a>-->
+                <a data-role="button" data-inline="true" class="defaultButton" style="float: right;" onclick="goToADLs();">Weiter</a>
 
             </div>
 

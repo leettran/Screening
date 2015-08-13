@@ -1,13 +1,7 @@
 <!--
-This is the task page of the task: Paarassoziatiostest Teil2 
-Created by: A.Karim El Moussaoui @Ascora GmnH
-Project: NeuroCare
-Component: Screening
+To change this template, choose Tools | Templates
+and open the template in the editor.
 -->
-
-
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,7 +25,7 @@ Component: Screening
     <body>
 
         <!--start page to paarassoziation part 2 test-->
-        <div data-role="page" id="test5Start" data-dom-cache=true class="startPage">
+        <div data-role="page" id="test5Start" data-dom-cache=true class="introPage">
 
             <div data-role="content">
 
@@ -83,90 +77,27 @@ Component: Screening
         <div data-role="page" id="intro" data-dom-cache=true class="introPage">
 
             <div data-role="content">
+                <p class="instructionTextDescription">Erinnern Sie sich noch an die Wortpaare, die Sie am Anfang des Tests gelernt haben?</p>
+                <br>
+                <p class="instructionTextDescription">Ihre Aufgabe ist es, diese noch einmal richtig wieder zu erinnern. 
+                    Ein Wort eines Paares wird Ihnen vorgegeben. 
+                    Das dazugehörige Wort sollen Sie aus einer Auswahl von möglichen Wörtern wiedererkennen und auswählen.  
+                    Wenn Sie sich nicht mehr an das Wort erinnern, raten Sie bitte!
+
+                </p>
 
 
-                <div class="wrap">
+                <br><br><br>
 
-                    <!--instruction div-->
-                    <div class="floatleft">
-
-                        <!--instruction header-->
-                        <div style="display: inline;">
-
-                            <image src="css\images\icons\info.png" class="infoIcon"/>
-
-                            <h1 class="instructionHeader" >Was ist Ihre Aufgabe?</h1>
-
-                        </div>
-
-                        <!--instruction text-->
-                        <div class="instructionContent">
-                            <p class="instructionText">
-
-                                Erinnern Sie sich noch an die Wortpaare, die Sie am Anfang des Tests gelernt haben? </br></br>
-                                Ihre Aufgabe ist es, diese noch einmal richtig wieder zu erinnern. </br>
-                                Ein Wort eines Paares wird Ihnen vorgegeben. 
-                                Das dazugehörige Wort sollen Sie aus einer Auswahl von möglichen Wörtern wiedererkennen und auswählen. </br></br> 
-                                Wenn Sie sich nicht mehr an das Wort erinnern, raten Sie bitte!
-
-                            </p>
-                        </div>
-
-
-                    </div>
-
-
-
-                    <!--example div-->
-                    <div class="floatright">
-
-
-
-
-                    </div>
-
-
-                    <div style="clear: both;">
-
-
-
-
-                    </div>      
-
-
-
-
-
-
-                </div>
-
-
-
-
-                <!--                <p class="instructionTextDescription">Erinnern Sie sich noch an die Wortpaare, die Sie am Anfang des Tests gelernt haben?</p>
-                                <br>
-                                <p class="instructionTextDescription">Ihre Aufgabe ist es, diese noch einmal richtig wieder zu erinnern. 
-                                    Ein Wort eines Paares wird Ihnen vorgegeben. 
-                                    Das dazugehörige Wort sollen Sie aus einer Auswahl von möglichen Wörtern wiedererkennen und auswählen.  
-                                    Wenn Sie sich nicht mehr an das Wort erinnern, raten Sie bitte!
-                
-                                </p>
-                
-                
-                                <br><br><br>-->
-
-                <!--start button-->
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="showFollowingPageDelayed('wordpair1', 1000);"/> 
-                
-<!--                <a href="#wordpair1" data-role="button" data-inline="true" class="defaultButton" 
-                   style="float: right;" onclick="switchToFullscreen();">Aufgabe starten</a> -->
+                <a href="#wordpair1" data-role="button" data-inline="true" class="defaultButton" 
+                   style="float: right;" onclick="switchToFullscreen();">Aufgabe starten</a> 
             </div>
 
         </div>
 
 
         <!--invoke wordpairs-->
-        <div data-role="page" id="wordpair1" data-dom-cache=true class="whitePage">
+        <div data-role="page" id="wordpair1" data-dom-cache=true class="testPage">
 
             <div data-role="content" >
                 <center> <h1>Welches Wort wurde zusammen mit dem Wort „Wecker“ gezeigt?</h1> </center> 
@@ -204,30 +135,20 @@ Component: Screening
                         </tr>
                     </table>
                 </center>
+
+                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                   onclick="choosedDelayed();">Weiter</a>
                 
                 
-                 <!--selection hint-->
-                <div class="selectionHintDiv">
-
-                    <h1 class="selectionHintText" ><image src="css\images\icons\info.png" class="selectionHintIcon"/>Bitte wählen Sie ein Wort aus der Liste aus!</h1>
-
-                </div>
-                 
-                  <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
-
-<!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
-                   onclick="choosedDelayed();">Weiter</a>-->
-
-
-
-
-
+                
+                
+                
 
             </div>
         </div>
 
 
-        <div data-role="page" id="wordpair2" data-dom-cache=true class="whitePage">
+        <div data-role="page" id="wordpair2" data-dom-cache=true class="testPage">
 
             <div data-role="content" >
                 <center> <h1>Welches Wort wurde zusammen mit dem Wort „Kissen“ gezeigt?</h1> </center> 
@@ -265,27 +186,17 @@ Component: Screening
                         </tr>
                     </table>
                 </center>
+
+                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                   onclick="choosedDelayed();">Weiter</a>
+
+
+               
                 
-                
-                <!--selection hint-->
-                <div class="selectionHintDiv">
-
-                    <h1 class="selectionHintText" ><image src="css\images\icons\info.png" class="selectionHintIcon"/>Bitte wählen Sie ein Wort aus der Liste aus!</h1>
-
-                </div>
-                 
-                  <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
-
-<!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
-                   onclick="choosedDelayed();">Weiter</a>-->
-
-
-
-
             </div>
         </div>
 
-        <div data-role="page" id="wordpair3" data-dom-cache=true class="whitePage">
+        <div data-role="page" id="wordpair3" data-dom-cache=true class="testPage">
 
             <div data-role="content" >
                 <center> <h1>Welches Wort wurde zusammen mit dem Wort „Fenster“ gezeigt?</h1> </center> 
@@ -323,27 +234,17 @@ Component: Screening
                         </tr>
                     </table>
                 </center>
+
+
+                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                   onclick="choosedDelayed();">Weiter</a>
+
                 
                 
-                <!--selection hint-->
-                <div class="selectionHintDiv">
-
-                    <h1 class="selectionHintText" ><image src="css\images\icons\info.png" class="selectionHintIcon"/>Bitte wählen Sie ein Wort aus der Liste aus!</h1>
-
-                </div>
-                 
-                  <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
-
-
-<!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
-                   onclick="choosedDelayed();">Weiter</a>-->
-
-
-
             </div>
         </div>
 
-        <div data-role="page" id="wordpair4" data-dom-cache=true class="whitePage">
+        <div data-role="page" id="wordpair4" data-dom-cache=true class="testPage">
 
             <div data-role="content" >
                 <center> <h1>Welches Wort wurde zusammen mit dem Wort „Tafel“ gezeigt?</h1> </center> 
@@ -381,28 +282,18 @@ Component: Screening
                         </tr>
                     </table>
                 </center>
+
+                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                   onclick="choosedDelayed();">Weiter</a>
+
                 
                 
-                <!--selection hint-->
-                <div class="selectionHintDiv">
-
-                    <h1 class="selectionHintText" ><image src="css\images\icons\info.png" class="selectionHintIcon"/>Bitte wählen Sie ein Wort aus der Liste aus!</h1>
-
-                </div>
-                 
-                  <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
-
-<!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
-                   onclick="choosedDelayed();">Weiter</a>-->
-
-
-
 
             </div>
         </div>
 
 
-        <div data-role="page" id="wordpair5" data-dom-cache=true class="whitePage">
+        <div data-role="page" id="wordpair5" data-dom-cache=true class="testPage">
 
             <div data-role="content" >
                 <center> <h1>Welches Wort wurde zusammen mit dem Wort „Rahmen“ gezeigt?</h1> </center> 
@@ -440,26 +331,17 @@ Component: Screening
                         </tr>
                     </table>
                 </center>
+
+                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                   onclick="choosedDelayed();">Weiter</a>
+
                 
-                <!--selection hint-->
-                <div class="selectionHintDiv">
-
-                    <h1 class="selectionHintText" ><image src="css\images\icons\info.png" class="selectionHintIcon"/>Bitte wählen Sie ein Wort aus der Liste aus!</h1>
-
-                </div>
-                 
-                  <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
-
-<!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
-                   onclick="choosedDelayed();">Weiter</a>-->
-
-
-
+                
 
             </div>
         </div>
 
-        <div data-role="page" id="wordpair6" data-dom-cache=true class="whitePage">
+        <div data-role="page" id="wordpair6" data-dom-cache=true class="testPage">
 
             <div data-role="content" >
                 <center> <h1>Welches Wort wurde zusammen mit dem Wort „Knopf“ gezeigt?</h1> </center> 
@@ -497,21 +379,12 @@ Component: Screening
                         </tr>
                     </table>
                 </center>
+
+                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                   onclick="choosedDelayed();">Weiter</a>
+
                 
-                <!--selection hint-->
-                <div class="selectionHintDiv">
-
-                    <h1 class="selectionHintText" ><image src="css\images\icons\info.png" class="selectionHintIcon"/>Bitte wählen Sie ein Wort aus der Liste aus!</h1>
-
-                </div>
-                 
-                  <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
-
-<!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
-                   onclick="choosedDelayed();">Weiter</a>-->
-
-
-
+                
 
             </div>
         </div>
