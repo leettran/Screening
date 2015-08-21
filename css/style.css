@@ -54,7 +54,7 @@
         width: 230px;
         position: absolute;
         bottom: 2%;
-        right: 5%;
+        right: 2%;
         font-size: x-large;
         text-shadow: none;
     }
@@ -64,12 +64,89 @@
         background-image:url('images/btns-bg/bt-weiter-hover.png');
         position:absolute; 
         bottom: 1.7%;
-        right: 4.8%;
+        right: 1.8%;
         background-image: none;
         outline: none;
         -webkit-box-shadow: none;
         box-shadow: none;
     }
+    
+    
+    .startButton{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 230px;
+        position: absolute;
+        bottom: 2%;
+        right: 2%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+
+    .startButton:active, .startButton:focus, .startButton.active{
+        background-image:url('images/btns-bg/bt-start.png');
+        position:absolute; 
+        bottom: 1.7%;
+        right: 1.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
+    .startTaskButton{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 230px;
+        position: absolute;
+        bottom: 2%;
+        right: 2%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+
+    .startTaskButton:active, .startTaskButton:focus, .startTaskButton.active{
+        background-image:url('images/btns-bg/bt-aufgabe-starten.png');
+        position:absolute; 
+        bottom: 1.7%;
+        right: 1.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
+     .nextTaskButton{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 320px;
+        position: absolute;
+        bottom: 2%;
+        right: 2%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+
+    .nextTaskButton:active, .nextTaskButton:focus, .nextTaskButton.active{
+        background-image:url('images/btns-bg/bt-next-task.png');
+        position:absolute; 
+        bottom: 1.7%;
+        right: 1.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
 
 
     .instructionLong{
@@ -128,6 +205,19 @@
         position: absolute;       
         left: 60px;
         top: 0px;
+        
+    }
+    
+    .exampleHeader{
+        font-size: 20px;
+        font-family: Enigma_2;
+        color: black;
+        text-shadow: none;
+        text-align: center;
+        font-weight: bold;
+        position: absolute;       
+        left: 51%;
+        top: 0%;
         
     }
     

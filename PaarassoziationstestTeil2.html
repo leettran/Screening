@@ -120,7 +120,46 @@ Component: Screening
                     <!--example div-->
                     <div class="floatright">
 
+                        <h1 class="exampleHeader" >Beispiel:</h1>
 
+                        </br></br>
+                        
+                        <div class="divWithRoundedCorners">
+
+                            <p class="instructionTextForExample" >
+                                Welches Wort wurde Ihnen zusammen mit dem Wort „Uhr“ gezeigt? 
+                            </p>
+                        </div>
+
+                        </br></br>
+
+
+                        <center> <div class="wordrectangleForExample" style="font-size: 20px;font-weight: bold; font-family: Quattrocento;">Uhr - ?</div> </center>
+
+                        </br></br>
+
+                        <center><table>
+                                <tr>
+                                    <td><center> <div class="wordrectangleForExample" style="font-size: 20px;font-weight: bold; font-family: Quattrocento;">Hase</div> </center></td>
+                                <td><center> <div class="wordrectangleForExample" style="font-size: 20px;font-weight: bold; font-family: Quattrocento;">Pudding</div> </center></td>
+                                <td><center> <div class="wordrectangleForExample" style="font-size: 20px;font-weight: bold; font-family: Quattrocento;">Maus</div> </center></td>
+                                <td><center> <div class="wordrectangleForExample" style="font-size: 20px;font-weight: bold; font-family: Quattrocento;">Salz</div> </center></td>
+                                </tr>
+                                <tr>
+                                    <td><center> <div class="wordrectangleForExample" style="font-size: 20px;font-weight: bold; font-family: Quattrocento;">Vorhang</div> </center></td>
+                                <td><center> <div class="wordrectangleForExample" style="font-size: 20px;font-weight: bold; font-family: Quattrocento;">Bus</div> </center></td>
+                                <td><center> <div class="wordrectangleForExample" style="font-size: 20px;font-weight: bold; font-family: Quattrocento;">Brunnen</div> </center></td>
+                                <td><center> <div class="wordrectangleForExample" style="font-size: 20px;font-weight: bold; font-family: Quattrocento;">Meer</div> </center></td>
+                                </tr>
+                            </table>
+                        </center>
+
+
+                        </br></br></br>
+
+                        <p class="instructionText">Die richtige Antwort wäre das Wort „Hase“, das Sie dann auswählen.</p>
+
+                        <p class="instructionText">Wenn Sie bereit sind, drücken Sie bitte auf „Aufgabe starten“.</p>
 
 
                     </div>
@@ -156,10 +195,10 @@ Component: Screening
                                 <br><br><br>-->
 
                 <!--start button-->
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="showFollowingPageDelayed('wordpair1', 1000);"/> 
-                
-<!--                <a href="#wordpair1" data-role="button" data-inline="true" class="defaultButton" 
-                   style="float: right;" onclick="switchToFullscreen();">Aufgabe starten</a> -->
+                <image src="css\images\btns-bg\bt-aufgabe-starten.png" class="startTaskButton" onclick="showFollowingPageDelayed('wordpair1', 1000);"/> 
+
+                <!--                <a href="#wordpair1" data-role="button" data-inline="true" class="defaultButton" 
+                                   style="float: right;" onclick="switchToFullscreen();">Aufgabe starten</a> -->
             </div>
 
         </div>
@@ -204,19 +243,19 @@ Component: Screening
                         </tr>
                     </table>
                 </center>
-                
-                
-                 <!--selection hint-->
+
+
+                <!--selection hint-->
                 <div class="selectionHintDiv">
 
                     <h1 class="selectionHintText" ><image src="css\images\icons\info.png" class="selectionHintIcon"/>Bitte wählen Sie ein Wort aus der Liste aus!</h1>
 
                 </div>
-                 
-                  <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
 
-<!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
-                   onclick="choosedDelayed();">Weiter</a>-->
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
+
+                <!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                                   onclick="choosedDelayed();">Weiter</a>-->
 
 
 
@@ -265,19 +304,19 @@ Component: Screening
                         </tr>
                     </table>
                 </center>
-                
-                
+
+
                 <!--selection hint-->
                 <div class="selectionHintDiv">
 
                     <h1 class="selectionHintText" ><image src="css\images\icons\info.png" class="selectionHintIcon"/>Bitte wählen Sie ein Wort aus der Liste aus!</h1>
 
                 </div>
-                 
-                  <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
 
-<!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
-                   onclick="choosedDelayed();">Weiter</a>-->
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
+
+                <!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                                   onclick="choosedDelayed();">Weiter</a>-->
 
 
 
@@ -323,20 +362,20 @@ Component: Screening
                         </tr>
                     </table>
                 </center>
-                
-                
+
+
                 <!--selection hint-->
                 <div class="selectionHintDiv">
 
                     <h1 class="selectionHintText" ><image src="css\images\icons\info.png" class="selectionHintIcon"/>Bitte wählen Sie ein Wort aus der Liste aus!</h1>
 
                 </div>
-                 
-                  <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
 
 
-<!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
-                   onclick="choosedDelayed();">Weiter</a>-->
+                <!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                                   onclick="choosedDelayed();">Weiter</a>-->
 
 
 
@@ -381,19 +420,19 @@ Component: Screening
                         </tr>
                     </table>
                 </center>
-                
-                
+
+
                 <!--selection hint-->
                 <div class="selectionHintDiv">
 
                     <h1 class="selectionHintText" ><image src="css\images\icons\info.png" class="selectionHintIcon"/>Bitte wählen Sie ein Wort aus der Liste aus!</h1>
 
                 </div>
-                 
-                  <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
 
-<!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
-                   onclick="choosedDelayed();">Weiter</a>-->
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
+
+                <!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                                   onclick="choosedDelayed();">Weiter</a>-->
 
 
 
@@ -440,18 +479,18 @@ Component: Screening
                         </tr>
                     </table>
                 </center>
-                
+
                 <!--selection hint-->
                 <div class="selectionHintDiv">
 
                     <h1 class="selectionHintText" ><image src="css\images\icons\info.png" class="selectionHintIcon"/>Bitte wählen Sie ein Wort aus der Liste aus!</h1>
 
                 </div>
-                 
-                  <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
 
-<!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
-                   onclick="choosedDelayed();">Weiter</a>-->
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
+
+                <!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                                   onclick="choosedDelayed();">Weiter</a>-->
 
 
 
@@ -497,24 +536,43 @@ Component: Screening
                         </tr>
                     </table>
                 </center>
-                
+
                 <!--selection hint-->
                 <div class="selectionHintDiv">
 
                     <h1 class="selectionHintText" ><image src="css\images\icons\info.png" class="selectionHintIcon"/>Bitte wählen Sie ein Wort aus der Liste aus!</h1>
 
                 </div>
-                 
-                  <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
 
-<!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
-                   onclick="choosedDelayed();">Weiter</a>-->
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="choosedDelayed();"/> 
+
+                <!--                <a data-role="button" data-description="forward" data-inline="true" class="defaultButton" style="float: right;position: absolute;left: 72%;bottom: 25px;"
+                                   onclick="choosedDelayed();">Weiter</a>-->
 
 
 
 
             </div>
         </div>
+        
+        
+        
+         <!--transition page to the next task (paar assoziationstest teil2 test)-->
+        <div data-role="page" id="taskEndPage" data-dom-cache=true class="whitePage">
+
+
+            <div data-role="content">
+                <h1 id="repeatitionHint" class="transitionPageText" >Die fünfte Aufgabe haben Sie geschafft!</h1> 
+
+                <br>
+                <br>
+
+                <image src="css\images\btns-bg\bt-next-task.png" class="nextTaskButton" onclick="goToDepressionsscreening();"/>
+
+                
+            </div>
+        </div> 
+        
 
 
     </body>

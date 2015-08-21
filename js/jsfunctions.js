@@ -955,8 +955,9 @@ function choosedDelayed() {
                             // clear timer
                             clearTimeout(showLoopAktivDelay);
                             $(".selectionHintDiv").css("visibility", "hidden");
+                            $.mobile.changePage('#taskEndPage', {transition: "flip"});
                             // go to depressionsscreening questions
-                            goToDepressionsscreening();
+//                            goToDepressionsscreening();
                             // enable weiter btn
                             weiterDelayedIsActive = true;
                         }, 1000);
