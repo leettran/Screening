@@ -1014,12 +1014,14 @@ function selectNumber(k) {
                 timerTMT1++;
             }, 1000);
         }
+        
+        
         // starting timer for clicks intervals
-        if (timerInterval1 === 0) {
-            aktivTimerInterval1 = setInterval(function () {
-                timerInterval1++;
-            }, 1000);
-        }
+//        if (timerInterval1 === 0) {
+//            aktivTimerInterval1 = setInterval(function () {
+//                timerInterval1++;
+//            }, 1000);
+//        }
 
 
         // stopping timer and starting it for next click interval
@@ -1351,11 +1353,13 @@ function selectNumberOrLetter(k) {
         }
 
         // starting timer for clicks intervals
-        if (timerInterval2 === 0) {
-            aktivTimerInterval2 = setInterval(function () {
-                timerInterval2++;
-            }, 1000);
-        }
+//        if (timerInterval2 === 0) {
+//            aktivTimerInterval2 = setInterval(function () {
+//                timerInterval2++;
+//            }, 1000);
+//        }
+        
+        
         // stopping timer and starting it for next click interval
         if (timerInterval2 !== 0 || timerInterval2 === 0) {
             clearInterval(aktivTimerInterval2);
@@ -2134,11 +2138,13 @@ function selectOnlyNumber(k) {
             }, 1000);
         }
         // starting timer for clicks intervals
-        if (timerInterval3 === 0) {
-            aktivTimerInterval3 = setInterval(function () {
-                timerInterval3++;
-            }, 1000);
-        }
+//        if (timerInterval3 === 0) {
+//            aktivTimerInterval3 = setInterval(function () {
+//                timerInterval3++;
+//            }, 1000);
+//        }
+        
+        
         // stopping timer and starting it for next click interval
         if (timerInterval3 !== 0 || timerInterval3 === 0) {
             clearInterval(aktivTimerInterval3);
@@ -2639,11 +2645,13 @@ function selectNumberOrLetterV4(k) {
             }, 1000);
         }
         // starting timer for clicks intervals
-        if (timerInterval4 === 0) {
-            aktivTimerInterval4 = setInterval(function () {
-                timerInterval4++;
-            }, 1000);
-        }
+//        if (timerInterval4 === 0) {
+//            aktivTimerInterval4 = setInterval(function () {
+//                timerInterval4++;
+//            }, 1000);
+//        }
+        
+        
         // stopping timer and starting it for next click interval
         if (timerInterval4 !== 0 || timerInterval4 === 0) {
             clearInterval(aktivTimerInterval4);
