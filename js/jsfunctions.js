@@ -66,11 +66,15 @@ var correctNumFieldsTMT4 = 0;
 var wrongNumFieldsTMT4 = 0;
 var timerTMT1 = 0;
 var aktivTimerTMT1;
+var isFirstClickTMT1 = true;
 var timerTMT2 = 0;
 var aktivTimerTMT2;
+var isFirstClickTMT2 = true;
 var timerTMT3 = 0;
 var aktivTimerTMT3;
+var isFirstClickTMT3 = true;
 var timerTMT4 = 0;
+var isFirstClickTMT4 = true;
 var aktivTimerTMT4;
 var timerInterval1 = 0;
 var aktivTimerInterval1;
@@ -130,7 +134,7 @@ function showFollowingPageDelayed(page, delay)
     try
     {
         setTimeout(function () {
-            $.mobile.changePage('#'+page, {transition: "flip"});
+            $.mobile.changePage('#' + page, {transition: "flip"});
         }, delay);
 
 
@@ -146,14 +150,14 @@ function showFollowingPageDelayed(page, delay)
 
 // turns rgb color value to hex value 
 function rgb2hex(rgb) {
-    if (rgb!== ""){
-    
-    rgb = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+))?\)$/);
-    function hex(x) {
-        return ("0" + parseInt(x).toString(16)).slice(-2);
+    if (rgb !== "") {
+
+        rgb = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+))?\)$/);
+        function hex(x) {
+            return ("0" + parseInt(x).toString(16)).slice(-2);
+        }
+        return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
     }
-    return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
-}
 }
 
 
@@ -173,7 +177,7 @@ function highlightSelectedWord1(td) {
     try {
         if (!wordSelected)
             wordSelected = true;
-        
+
         // hide selection hint
         $(".selectionHintDiv").css("visibility", "hidden");
 
@@ -210,10 +214,10 @@ function highlightSelectedWord2(td) {
     try {
         if (!wordSelected)
             wordSelected = true;
-        
+
         // hide selection hint
         $(".selectionHintDiv").css("visibility", "hidden");
-        
+
         td.style.backgroundColor = selectionColor;
         // color other tds back
         var allElements = document.querySelectorAll("[data-group='iteration2']");
@@ -244,10 +248,10 @@ function highlightSelectedWord3(td) {
     try {
         if (!wordSelected)
             wordSelected = true;
-        
+
         // hide selection hint
         $(".selectionHintDiv").css("visibility", "hidden");
-        
+
         td.style.backgroundColor = selectionColor;
         // color other tds back
         var allElements = document.querySelectorAll("[data-group='iteration3']");
@@ -280,11 +284,11 @@ function highlightSelectedWordDelayed(td) {
     try {
         if (!wordSelected)
             wordSelected = true;
-        
+
         // hide selection hint
         $(".selectionHintDiv").css("visibility", "hidden");
-        
-        
+
+
         td.style.backgroundColor = selectionColor;
         // color other tds back
         var allElements = document.querySelectorAll("[data-group='iterationDelayed']");
@@ -471,12 +475,12 @@ function choosed() {
                 }
             }
             else if (!wordSelected) {
-                
-              $(".selectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".selectionHintDiv").css("visibility", "hidden");
-             }, 1000);
-                
+
+                $(".selectionHintDiv").css("visibility", "visible");
+                setTimeout(function () {
+                    $(".selectionHintDiv").css("visibility", "hidden");
+                }, 1000);
+
 
                 setTimeout(function () {
                     weiterIsActive = true;
@@ -628,16 +632,16 @@ function choosedOrdered1() {
         }
         else
         {
-              $(".selectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".selectionHintDiv").css("visibility", "hidden");
-             }, 1000);
-                
+            $(".selectionHintDiv").css("visibility", "visible");
+            setTimeout(function () {
+                $(".selectionHintDiv").css("visibility", "hidden");
+            }, 1000);
 
-                setTimeout(function () {
-                    weiterIsActive = true;
-                }, 500);
-            
+
+            setTimeout(function () {
+                weiterIsActive = true;
+            }, 500);
+
         }
     }
     catch (error) {
@@ -779,16 +783,16 @@ function choosedOrdered2() {
         }
         else
         {
-             $(".selectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".selectionHintDiv").css("visibility", "hidden");
-             }, 1000);
-                
+            $(".selectionHintDiv").css("visibility", "visible");
+            setTimeout(function () {
+                $(".selectionHintDiv").css("visibility", "hidden");
+            }, 1000);
 
-                setTimeout(function () {
-                    weiterIsActive = true;
-                }, 500);
-            
+
+            setTimeout(function () {
+                weiterIsActive = true;
+            }, 500);
+
         }
     }
     catch (error) {
@@ -969,13 +973,13 @@ function choosedDelayed() {
                 }
             }
             else if (!wordSelected) {
-                
+
                 $(".selectionHintDiv").css("visibility", "visible");
-                 setTimeout(function () {
-            $(".selectionHintDiv").css("visibility", "hidden");
-             }, 1000);
-                
-               
+                setTimeout(function () {
+                    $(".selectionHintDiv").css("visibility", "hidden");
+                }, 1000);
+
+
                 setTimeout(function () {
                     weiterDelayedIsActive = true;
                 }, 500);
@@ -1014,8 +1018,8 @@ function selectNumber(k) {
                 timerTMT1++;
             }, 1000);
         }
-        
-        
+
+
         // starting timer for clicks intervals
 //        if (timerInterval1 === 0) {
 //            aktivTimerInterval1 = setInterval(function () {
@@ -1025,17 +1029,21 @@ function selectNumber(k) {
 
 
         // stopping timer and starting it for next click interval
-        if (timerInterval1 !== 0 || timerInterval1 === 0) {
+//        if (timerInterval1 !== 0 || timerInterval1 === 0) {
             clearInterval(aktivTimerInterval1);
             // store interval
-            clickIntervals1.push(timerInterval1);
+            if (!isFirstClickTMT1)
+                clickIntervals1.push(timerInterval1);
+            // toggle bool after first time clicking
+            if (isFirstClickTMT1)
+                isFirstClickTMT1 = false;
             // reset
             timerInterval1 = 0;
             // count for new time
             aktivTimerInterval1 = setInterval(function () {
                 timerInterval1++;
             }, 1000);
-        }
+//        }
 
 // get element id
         var kreisId = k.id;
@@ -1047,7 +1055,8 @@ function selectNumber(k) {
         if (mistakesV1 < 3) {
 
             // count for 40 sec
-            countV1();
+//            countV1();
+            
             if (kreisId === "v11" && forwardCnt === 1) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
@@ -1358,23 +1367,30 @@ function selectNumberOrLetter(k) {
 //                timerInterval2++;
 //            }, 1000);
 //        }
-        
-        
+
+
         // stopping timer and starting it for next click interval
-        if (timerInterval2 !== 0 || timerInterval2 === 0) {
+//        if (timerInterval2 !== 0 || timerInterval2 === 0) {
             clearInterval(aktivTimerInterval2);
+            if (!isFirstClickTMT2)
             clickIntervals2.push(timerInterval2);
+        // toggle bool after first time clicking
+            if (isFirstClickTMT2)
+                isFirstClickTMT2 = false;
+        
             timerInterval2 = 0;
             aktivTimerInterval2 = setInterval(function () {
                 timerInterval2++;
             }, 1000);
-        }
+//        }
 
         var kreisId = k.id;
         // if made mistakes are less than 3
         if (mistakesV2 < 3) {
+            
             // count for 40 sec
-            countV2();
+//            countV2();
+            
             switch (kreisId) {
                 case "v21":
                     if (numberCnt === 1 && letterCnt === 1) {
@@ -1527,7 +1543,7 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                       if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
                             k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
@@ -1562,7 +1578,7 @@ function selectNumberOrLetter(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                       if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
                             k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV2++;
@@ -2093,7 +2109,7 @@ function selectNumberOrLetter(k) {
                 {
                     // don't allow make the same mistake twice
                     if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
-                            k.style.background = wrongSelectionColor;
+                        k.style.background = wrongSelectionColor;
                         cleanOtherMistakes(kreisId);
                         mistakesV2++;
                         wrongNumFieldsTMT2++;
@@ -2118,7 +2134,7 @@ function selectNumberOrLetter(k) {
             }
 
         }
-       
+
     }
     catch (error) {
         console.log("Fehler beim Tippen des Kreises mit der ID: " + k.id + error);
@@ -2143,17 +2159,22 @@ function selectOnlyNumber(k) {
 //                timerInterval3++;
 //            }, 1000);
 //        }
-        
-        
+
+
         // stopping timer and starting it for next click interval
-        if (timerInterval3 !== 0 || timerInterval3 === 0) {
+//        if (timerInterval3 !== 0 || timerInterval3 === 0) {
             clearInterval(aktivTimerInterval3);
+            if (!isFirstClickTMT3)
             clickIntervals3.push(timerInterval3);
+         // toggle bool after first time clicking
+            if (isFirstClickTMT3)
+                isFirstClickTMT3 = false;
+        
             timerInterval3 = 0;
             aktivTimerInterval3 = setInterval(function () {
                 timerInterval3++;
             }, 1000);
-        }
+//        }
 
 
         var kreisId = k.id;
@@ -2161,8 +2182,10 @@ function selectOnlyNumber(k) {
         var arrayElement = numberArray[arrayPointer];
         // if mistakes made are less than 3
         if (mistakesV3 < 3) {
+            
             // count for 40 sec
-            countV3();
+//            countV3();
+            
             switch (kreisId) {
                 case "v36":
                     if (arrayElement === "6" && arrayPointer === 0) {
@@ -2600,7 +2623,7 @@ function selectOnlyNumber(k) {
                 {
                     // don't allow make the same mistake twice
                     if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
-                            k.style.background = wrongSelectionColor;
+                        k.style.background = wrongSelectionColor;
                         cleanOtherMistakes(kreisId);
                         mistakesV3++;
                         wrongNumFieldsTMT3++;
@@ -2650,17 +2673,23 @@ function selectNumberOrLetterV4(k) {
 //                timerInterval4++;
 //            }, 1000);
 //        }
-        
-        
+
+
         // stopping timer and starting it for next click interval
-        if (timerInterval4 !== 0 || timerInterval4 === 0) {
+//        if (timerInterval4 !== 0 || timerInterval4 === 0) {
             clearInterval(aktivTimerInterval4);
+            if (!isFirstClickTMT4)
             clickIntervals4.push(timerInterval4);
+        
+        // toggle bool after first time clicking
+            if (isFirstClickTMT4)
+                isFirstClickTMT4 = false;
+        
             timerInterval4 = 0;
             aktivTimerInterval4 = setInterval(function () {
                 timerInterval4++;
             }, 1000);
-        }
+//        }
 
 
         var kreisId = k.id;
@@ -2669,8 +2698,10 @@ function selectNumberOrLetterV4(k) {
         var arrayElementLt = letterArrayV4[letterPointer];
 // if mistakes less than 3
         if (mistakesV4 < 3) {
+            
             // count for 40 sec
-            countV4();
+//            countV4();
+            
             switch (kreisId) {
                 case "v44":
                     if (arrayElementNr === "4" && numberPointer === 0 && letterPointer === 0) {
@@ -3043,7 +3074,7 @@ function selectNumberOrLetterV4(k) {
                     else
                     {
                         // don't allow make the same mistake twice
-                       if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
+                        if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
                             k.style.background = wrongSelectionColor;
                             cleanOtherMistakes(kreisId);
                             mistakesV4++;
@@ -3125,7 +3156,7 @@ function selectNumberOrLetterV4(k) {
                 {
                     // don't allow make the same mistake twice
                     if (rgb2hex(k.style.background) !== wrongSelectionColor && rgb2hex(k.style.background) !== selectionColor) {
-                            k.style.background = wrongSelectionColor;
+                        k.style.background = wrongSelectionColor;
                         cleanOtherMistakes(kreisId);
                         mistakesV4++;
                         wrongNumFieldsTMT4++;
@@ -3831,14 +3862,14 @@ function goToDepressionsscreening() {
 
 // go to ADLs test
 function goToADLs() {
-    if (!isReadyToSwitch){
-        
-         $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
+    if (!isReadyToSwitch) {
+
+        $(".answerSelectionHintDiv").css("visibility", "visible");
+        setTimeout(function () {
             $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+        }, 1000);
     }
-        
+
     else {
         isReadyToSwitch = false;
         // store map
@@ -4015,7 +4046,7 @@ function countV4() {
 
 
 function getAnswer1(answerRadio) {
-    
+
     $(".answerSelectionHintDiv").css("visibility", "hidden");
 
     var question = $("#quest1").html();
@@ -4041,14 +4072,14 @@ function getAnswer1(answerRadio) {
 }
 
 function goToFragenTeil2() {
-    if (!isReadyToSwitch){
-        
+    if (!isReadyToSwitch) {
+
         $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
+        setTimeout(function () {
             $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+        }, 1000);
     }
-       
+
     else {
         $.mobile.changePage('#fragenTeil2', {transition: "flip"});
         isReadyToSwitch = false;
@@ -4056,9 +4087,9 @@ function goToFragenTeil2() {
 }
 
 function getAnswer2(answerRadio) {
-    
+
     $(".answerSelectionHintDiv").css("visibility", "hidden");
-    
+
     var question = $("#quest2").html();
     var radioId = $(answerRadio).attr('id');
     var answerId = $('label[for="' + radioId + '"]').attr('id');
@@ -4079,15 +4110,15 @@ function getAnswer2(answerRadio) {
 }
 
 function goToFragenTeil3() {
-    if (!isReadyToSwitch){
-        
-         $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
+    if (!isReadyToSwitch) {
+
+        $(".answerSelectionHintDiv").css("visibility", "visible");
+        setTimeout(function () {
             $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
-        
+        }, 1000);
+
     }
-       
+
     else {
         $.mobile.changePage('#fragenTeil3', {transition: "flip"});
         isReadyToSwitch = false;
@@ -4095,9 +4126,9 @@ function goToFragenTeil3() {
 }
 
 function getAnswer3(answerRadio) {
-    
+
     $(".answerSelectionHintDiv").css("visibility", "hidden");
-    
+
     var question = $("#quest3").html();
     var radioId = $(answerRadio).attr('id');
     var answerId = $('label[for="' + radioId + '"]').attr('id');
@@ -4119,15 +4150,15 @@ function getAnswer3(answerRadio) {
 }
 
 function goToFragenTeil4() {
-    if (!isReadyToSwitch){
-        
-         $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
+    if (!isReadyToSwitch) {
+
+        $(".answerSelectionHintDiv").css("visibility", "visible");
+        setTimeout(function () {
             $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
-        
+        }, 1000);
+
     }
-       
+
     else {
         $.mobile.changePage('#fragenTeil4', {transition: "flip"});
         isReadyToSwitch = false;
@@ -4135,9 +4166,9 @@ function goToFragenTeil4() {
 }
 
 function getAnswer4(answerRadio) {
-    
+
     $(".answerSelectionHintDiv").css("visibility", "hidden");
-    
+
     var question = $("#quest4").html();
     var radioId = $(answerRadio).attr('id');
     var answerId = $('label[for="' + radioId + '"]').attr('id');
@@ -4158,15 +4189,15 @@ function getAnswer4(answerRadio) {
 }
 
 function goToFragenTeil5() {
-    if (!isReadyToSwitch){
-        
-         $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
+    if (!isReadyToSwitch) {
+
+        $(".answerSelectionHintDiv").css("visibility", "visible");
+        setTimeout(function () {
             $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
-        
+        }, 1000);
+
     }
-        
+
     else {
         $.mobile.changePage('#fragenTeil5', {transition: "flip"});
         isReadyToSwitch = false;
@@ -4174,9 +4205,9 @@ function goToFragenTeil5() {
 }
 
 function getAnswer5(answerRadio) {
-    
+
     $(".answerSelectionHintDiv").css("visibility", "hidden");
-    
+
     var question = $("#quest5").html();
     var radioId = $(answerRadio).attr('id');
     var answerId = $('label[for="' + radioId + '"]').attr('id');
@@ -4198,15 +4229,15 @@ function getAnswer5(answerRadio) {
 }
 
 function goToFragenTeil6() {
-    if (!isReadyToSwitch){
-        
-         $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
+    if (!isReadyToSwitch) {
+
+        $(".answerSelectionHintDiv").css("visibility", "visible");
+        setTimeout(function () {
             $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
-        
+        }, 1000);
+
     }
-       
+
     else {
         $.mobile.changePage('#fragenTeil6', {transition: "flip"});
         isReadyToSwitch = false;
@@ -4214,7 +4245,7 @@ function goToFragenTeil6() {
 }
 
 function getAnswer6(answerRadio) {
-    
+
     $(".answerSelectionHintDiv").css("visibility", "hidden");
     var question = $("#quest6").html();
     var radioId = $(answerRadio).attr('id');
@@ -4269,13 +4300,13 @@ function goToNextADL() {
     try {
         switch (ADLQuest) {
             case 1:
-                if (!isReadyToSwitch){
+                if (!isReadyToSwitch) {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
-                    
+
                 else {
                     isReadyToSwitch = false;
                     $.mobile.changePage('#frage2', {transition: "flip"});
@@ -4283,13 +4314,13 @@ function goToNextADL() {
                 }
                 break;
             case 2:
-                if (!isReadyToSwitch){
+                if (!isReadyToSwitch) {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
-                   
+
                 else {
                     isReadyToSwitch = false;
                     $.mobile.changePage('#frage3', {transition: "flip"});
@@ -4300,9 +4331,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4314,9 +4345,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4328,9 +4359,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4342,9 +4373,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4356,9 +4387,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4370,9 +4401,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4384,9 +4415,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4398,9 +4429,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4412,9 +4443,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4426,9 +4457,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4440,9 +4471,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4454,9 +4485,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4468,9 +4499,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4482,9 +4513,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4496,9 +4527,9 @@ function goToNextADL() {
                 if (!isReadyToSwitch)
                 {
                     $(".answerSelectionHintDiv").css("visibility", "visible");
-              setTimeout(function () {
-            $(".answerSelectionHintDiv").css("visibility", "hidden");
-             }, 1000);
+                    setTimeout(function () {
+                        $(".answerSelectionHintDiv").css("visibility", "hidden");
+                    }, 1000);
                 }
                 else {
                     isReadyToSwitch = false;
@@ -4519,11 +4550,11 @@ function goToNextADL() {
 }
 
 function getChoice(answerRadio) {
-    
+
     try {
-        
+
         $(".answerSelectionHintDiv").css("visibility", "hidden");
-        
+
         var radioId = $(answerRadio).attr('id');
         var answerId = $('label[for="' + radioId + '"]').attr('id');
 
