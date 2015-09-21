@@ -47,7 +47,7 @@ Component: Screening
 
                     function showJustForWhile() {
                         setTimeout(function () {
-                            $.mobile.changePage('#intro2ADLs1', {transition: "flip"});
+                            $.mobile.changePage('#intro2ADLs1', {transition: "pop"});
                         }, 3000);
                     }
 
@@ -85,7 +85,7 @@ Component: Screening
                             <p class="instructionText">
 
                                 Im Folgenden stellen wir Ihnen Situationen vor. </br></br>
-                                Bitte entscheiden Sie, wie häufig diese Situationen bei Ihnen vorkommen.</br>
+                                Bitte entscheiden Sie, <b> wie häufig </b> diese Situationen bei Ihnen vorkommen.</br>
                                 Es werden Ihnen Antwortmöglichkeiten vorgegeben. Bitte wählen Sie mit dem Finger die Antwort aus, die am ehesten auf Sie zutrifft.
 
                             </p>
@@ -99,7 +99,11 @@ Component: Screening
                     <!--example div-->
                     <div class="floatright">
 
+                        <h1 class="exampleHeader" >Beispiel:</h1>
 
+                        </br></br></br></br>
+
+                        <image src="css\images\examples\adl_fragen_example.png" />
 
 
                     </div>
@@ -134,8 +138,8 @@ Component: Screening
                 <!--start button-->
                 <image src="css\images\btns-bg\bt-aufgabe-starten.png" class="startTaskButton" onclick="showFollowingPageDelayed('frage1', 1000);"/> 
 
-<!--                <a href="#frage1" data-role="button" data-inline="true" 
-                   style="float: right;" class="defaultButton" onclick="switchToFullscreen();">Zu den Fragen</a> -->
+                <!--                <a href="#frage1" data-role="button" data-inline="true" 
+                                   style="float: right;" class="defaultButton" onclick="switchToFullscreen();">Zu den Fragen</a> -->
             </div>
 
         </div>
@@ -191,8 +195,8 @@ Component: Screening
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextADL();"/>
-                
-                
+
+
                 <!--<a onclick="goToNextADL();" style="float: right;" data-role="button" data-inline="true" class="defaultButton">Weiter</a>--> 
             </div>
 
@@ -240,8 +244,8 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
-                
+
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -251,7 +255,7 @@ Component: Screening
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextADL();"/>
-                
+
                 <!--<a onclick="goToNextADL();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>--> 
 
             </div>
@@ -300,10 +304,10 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
-                
-                
-                
+
+
+
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -361,7 +365,7 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -419,7 +423,7 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -429,7 +433,7 @@ Component: Screening
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextADL();"/>
-                
+
                 <!--<a onclick="goToNextADL();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>--> 
 
             </div>
@@ -478,7 +482,7 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -488,7 +492,7 @@ Component: Screening
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextADL();"/>
-                
+
                 <!--<a onclick="goToNextADL();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>--> 
 
             </div>
@@ -536,7 +540,7 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -593,7 +597,7 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -603,7 +607,7 @@ Component: Screening
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextADL();"/>
-                
+
                 <!--<a onclick="goToNextADL();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>--> 
 
             </div>
@@ -650,7 +654,7 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -660,7 +664,7 @@ Component: Screening
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextADL();"/>
-                
+
                 <!--<a onclick="goToNextADL();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>--> 
 
             </div>
@@ -708,7 +712,7 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -718,7 +722,7 @@ Component: Screening
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextADL();"/>
-                
+
                 <!--<a onclick="goToNextADL();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>--> 
 
             </div>
@@ -765,7 +769,7 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -775,7 +779,7 @@ Component: Screening
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextADL();"/>
-                
+
                 <!--<a onclick="goToNextADL();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>--> 
 
             </div>
@@ -822,7 +826,7 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -832,7 +836,7 @@ Component: Screening
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextADL();"/>
-                
+
                 <!--<a onclick="goToNextADL();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>--> 
 
             </div>
@@ -879,7 +883,7 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -889,7 +893,7 @@ Component: Screening
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextADL();"/>
-                
+
                 <!--<a onclick="goToNextADL();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>--> 
 
             </div>
@@ -936,7 +940,7 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -946,7 +950,7 @@ Component: Screening
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextADL();"/>
-                
+
                 <!--<a onclick="goToNextADL();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>--> 
 
             </div>
@@ -993,7 +997,7 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -1003,7 +1007,7 @@ Component: Screening
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextADL();"/>
-                
+
                 <!--<a onclick="goToNextADL();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>--> 
 
             </div>
@@ -1050,7 +1054,7 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -1060,7 +1064,7 @@ Component: Screening
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextADL();"/>
-                
+
                 <!--<a onclick="goToNextADL();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>--> 
 
             </div>
@@ -1107,7 +1111,7 @@ Component: Screening
                     </fieldset>
 
                 </form>
-                
+
                 <!--selection hint-->
                 <div class="answerSelectionHintDiv">
 
@@ -1117,7 +1121,7 @@ Component: Screening
 
 
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToNextADL();"/>
-                
+
                 <!--<a onclick="goToNextADL();" data-role="button" style="float: right;" data-inline="true" class="defaultButton">Weiter</a>--> 
 
             </div>
@@ -1132,12 +1136,12 @@ Component: Screening
         <div data-role="page" id="screeningEnd" data-dom-cache=true class="whitePage">
 
             <div data-role="content" >
-                
+
                 <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
-                
-                 <h1 id="sendHint" class="transitionPageText">Der Test ist nun beendet!<br> Wir bedanken uns herzlich für Ihre Mitarbeit!</h1> 
-                
-                
+
+                <h1 id="sendHint" class="transitionPageText">Der Test ist nun beendet!<br> Wir bedanken uns herzlich für Ihre Mitarbeit!</h1> 
+
+
                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="sendResults();"/>
                 <!--<center> <a  data-role="button" data-inline="true" class="defaultButton" onclick="sendResults();">Abschicken</a> </center>-->
 
@@ -1150,13 +1154,13 @@ Component: Screening
         <div data-role="page" id="sendConfirmation" data-dom-cache=true class="whitePage">
 
             <div data-role="content" >
-                
-                 <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
-                
+
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+
                 <h1 id="sendHint" class="transitionPageText">Ihre Ergebnisse wurden uns übertragen!<br> Wir bedanken uns herzlich für Ihre Mitarbeit!</h1> 
 
-                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="onResume();"/>
-                
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="onResume();"/>
+
                 <!--<center> <a  data-role="button" data-inline="true" class="defaultButton"  onclick="onResume();" >Zur Startseite</a> </center>-->
 
                 <!--add code when button calls directly an external url-->
@@ -1170,13 +1174,13 @@ Component: Screening
         <div data-role="page" id="sendFailed" data-dom-cache=true class="whitePage">
 
             <div data-role="content" >
-                
-                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
-                
-                 <h1 class="transitionPageText">Ihre Ergebnisse konnten nicht übertragen werden!<br> Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut!</h1> 
 
-                 <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="sendResults();"/>
-                 
+                <image src="css\images\icons\tipp_70px.png" class="tippIconBig"/>
+
+                <h1 class="transitionPageText">Ihre Ergebnisse konnten nicht übertragen werden!<br> Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut!</h1> 
+
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="sendResults();"/>
+
                 <!--<center> <a  data-role="button" data-inline="true" class="defaultButton"  onclick="sendResults();" >Nochmal</a> </center>-->
 
 

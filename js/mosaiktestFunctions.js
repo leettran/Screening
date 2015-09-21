@@ -66,7 +66,7 @@ function selectImageTile(imgTile, splittable) {
     tableID = table.id;
     // checks if selected image tile is not empty
     if ($('#' + imageTileID).children().length !== 0) {
-        $('#' + imageTileID).css("border", "4px solid white");
+        $('#' + imageTileID).css("border", "4px solid #8c8c8c");
         isTileSelected = true;
         var cells = table.getElementsByTagName('td');
         for (var i = 0; i < cells.length; i++) {
@@ -108,7 +108,7 @@ function countForTask(splittable) {
                     // clear timers
                     clearAllTimers();
 
-                    $.mobile.changePage('#puzzle2', {transition: "flip"});
+                    $.mobile.changePage('#puzzle2', {transition: "slide"});
                 }
             }, 1000);
 
@@ -136,7 +136,7 @@ function countForTask(splittable) {
                     // clear timers
                     clearAllTimers();
 
-                    $.mobile.changePage('#puzzle3', {transition: "flip"});
+                    $.mobile.changePage('#puzzle3', {transition: "slide"});
                 }
             }, 1000);
             
@@ -164,7 +164,7 @@ function countForTask(splittable) {
                     // clear timers
                     clearAllTimers();
 
-                    $.mobile.changePage('#puzzle4', {transition: "flip"});
+                    $.mobile.changePage('#puzzle4', {transition: "slide"});
                 }
             }, 1000);
             
@@ -192,7 +192,7 @@ function countForTask(splittable) {
                     // clear timers
                     clearAllTimers();
 
-                    $.mobile.changePage('#puzzle5', {transition: "flip"});
+                    $.mobile.changePage('#puzzle5', {transition: "slide"});
                 }
             }, 1000);
             
@@ -221,7 +221,7 @@ function countForTask(splittable) {
                     // clear timers
                     clearAllTimers();
 
-                    $.mobile.changePage('#puzzle6', {transition: "flip"});
+                    $.mobile.changePage('#puzzle6', {transition: "slide"});
                 }
             }, 1000);
             
@@ -251,8 +251,8 @@ function countForTask(splittable) {
                     //deactivate fullscreen
                     cancelFullscreen();
                     // change to end page
-                    $.mobile.changePage('#MosaiktestTransit', {transition: "flip"});
-//                    $.mobile.changePage('#puzzle7', {transition: "flip"});
+                    $.mobile.changePage('#MosaiktestTransit', {transition: "slide"});
+//                    $.mobile.changePage('#puzzle7', {transition: "slide"});
                 }
             }, 1000);
             
@@ -282,7 +282,7 @@ function countForTask(splittable) {
                     //deactivate fullscreen
                     cancelFullscreen();
                     // change to end page
-                    $.mobile.changePage('#MosaiktestTransit', {transition: "flip"});
+                    $.mobile.changePage('#MosaiktestTransit', {transition: "slide"});
                 }
             }, 1000);
             
@@ -408,7 +408,7 @@ function selectTargetTile1(trgTile) {
         // clear timers
         clearAllTimers();
 
-        $.mobile.changePage('#puzzle2', {transition: "flip"});
+        $.mobile.changePage('#puzzle2', {transition: "slide"});
         achievedTiles = 0;
 
     }
@@ -529,7 +529,7 @@ function selectTargetTile2(trgTile) {
         // clear timers
         clearAllTimers();
 
-        $.mobile.changePage('#puzzle3', {transition: "flip"});
+        $.mobile.changePage('#puzzle3', {transition: "slide"});
         achievedTiles = 0;
     }
 }
@@ -655,7 +655,7 @@ function selectTargetTile3(trgTile) {
         // clear timers
         clearAllTimers();
 
-        $.mobile.changePage('#puzzle4', {transition: "flip"});
+        $.mobile.changePage('#puzzle4', {transition: "slide"});
         achievedTiles = 0;
     }
 }
@@ -833,7 +833,7 @@ function selectTargetTile4(trgTile) {
         // clear timers
         clearAllTimers();
 
-        $.mobile.changePage('#puzzle5', {transition: "flip"});
+        $.mobile.changePage('#puzzle5', {transition: "slide"});
         achievedTiles = 0;
     }
 }
@@ -1047,7 +1047,7 @@ function selectTargetTile5(trgTile) {
         // clear timers
         clearAllTimers();
 
-        $.mobile.changePage('#puzzle6', {transition: "flip"});
+        $.mobile.changePage('#puzzle6', {transition: "slide"});
         achievedTiles = 0;
     }
 }
@@ -1318,11 +1318,11 @@ function selectTargetTile6(trgTile) {
         jQuery.jStorage.set("PuzzleSolvedP6", isSolvedP6);
         // clear timers
         clearAllTimers();
-//        $.mobile.changePage('#puzzle7', {transition: "flip"});
+//        $.mobile.changePage('#puzzle7', {transition: "slide"});
 //deactivate fullscreen
         cancelFullscreen();
         // change to end page
-        $.mobile.changePage('#MosaiktestTransit', {transition: "flip"});
+        $.mobile.changePage('#MosaiktestTransit', {transition: "slide"});
         achievedTiles = 0;
     }
 }
@@ -1655,7 +1655,7 @@ function selectTargetTile7(trgTile) {
             //deactivate fullscreen
             cancelFullscreen();
             // change to end page
-            $.mobile.changePage('#MosaiktestTransit', {transition: "flip"});
+            $.mobile.changePage('#MosaiktestTransit', {transition: "slide"});
 //            window.location = "Zahlensortieren.html";
         }, 500);
 

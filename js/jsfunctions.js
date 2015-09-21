@@ -134,7 +134,7 @@ function showFollowingPageDelayed(page, delay)
     try
     {
         setTimeout(function () {
-            $.mobile.changePage('#' + page, {transition: "flip"});
+            $.mobile.changePage('#' + page, {transition: "slide"});
         }, delay);
 
 
@@ -364,7 +364,7 @@ function choosed() {
                                 wrongWords1++;
                             }
                             $(".selectionHintDiv").css("visibility", "hidden");
-                            $.mobile.changePage('#wordpair2', {transition: "flip"});
+                            $.mobile.changePage('#wordpair2', {transition: "slide"});
                             wordSelected = false;
                             // enable weiter btn
                             weiterIsActive = true;
@@ -382,7 +382,7 @@ function choosed() {
                                 wrongWords1++;
                             }
                             $(".selectionHintDiv").css("visibility", "hidden");
-                            $.mobile.changePage('#wordpair3', {transition: "flip"});
+                            $.mobile.changePage('#wordpair3', {transition: "slide"});
                             wordSelected = false;
                             // enable weiter btn
                             weiterIsActive = true;
@@ -400,7 +400,7 @@ function choosed() {
                                 wrongWords1++;
                             }
                             $(".selectionHintDiv").css("visibility", "hidden");
-                            $.mobile.changePage('#wordpair4', {transition: "flip"});
+                            $.mobile.changePage('#wordpair4', {transition: "slide"});
                             wordSelected = false;
                             // enable weiter btn
                             weiterIsActive = true;
@@ -418,7 +418,7 @@ function choosed() {
                                 wrongWords1++;
                             }
                             $(".selectionHintDiv").css("visibility", "hidden");
-                            $.mobile.changePage('#wordpair5', {transition: "flip"});
+                            $.mobile.changePage('#wordpair5', {transition: "slide"});
                             wordSelected = false;
                             // enable weiter btn
                             weiterIsActive = true;
@@ -436,7 +436,7 @@ function choosed() {
                                 wrongWords1++;
                             }
                             $(".selectionHintDiv").css("visibility", "hidden");
-                            $.mobile.changePage('#wordpair6', {transition: "flip"});
+                            $.mobile.changePage('#wordpair6', {transition: "slide"});
                             wordSelected = false;
                             // enable weiter btn
                             weiterIsActive = true;
@@ -460,7 +460,7 @@ function choosed() {
                             jQuery.jStorage.set("WrongClickedWords1", wrongWords1);
                             el.style.backgroundColor = normalColor;
                             $(".selectionHintDiv").css("visibility", "hidden");
-                            $.mobile.changePage('#wordpairsTransit1', {transition: "flip"});
+                            $.mobile.changePage('#wordpairsTransit1', {transition: "slide"});
 
                             wordSelected = false;
                             // enable weiter btn
@@ -539,7 +539,7 @@ function choosedOrdered1() {
                             wrongWords2++;
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
-                        $.mobile.changePage('#wordpair2Ordered1', {transition: "flip"});
+                        $.mobile.changePage('#wordpair2Ordered1', {transition: "slide"});
                     }, 300);
                     cnt++;
                     break;
@@ -554,7 +554,7 @@ function choosedOrdered1() {
                             wrongWords2++;
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
-                        $.mobile.changePage('#wordpair3Ordered1', {transition: "flip"});
+                        $.mobile.changePage('#wordpair3Ordered1', {transition: "slide"});
                     }, 300);
                     cnt++;
                     break;
@@ -569,7 +569,7 @@ function choosedOrdered1() {
                             wrongWords2++;
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
-                        $.mobile.changePage('#wordpair4Ordered1', {transition: "flip"});
+                        $.mobile.changePage('#wordpair4Ordered1', {transition: "slide"});
                     }, 300);
                     cnt++;
                     break;
@@ -584,7 +584,7 @@ function choosedOrdered1() {
                             wrongWords2++;
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
-                        $.mobile.changePage('#wordpair5Ordered1', {transition: "flip"});
+                        $.mobile.changePage('#wordpair5Ordered1', {transition: "slide"});
                     }, 300);
                     cnt++;
                     break;
@@ -599,7 +599,7 @@ function choosedOrdered1() {
                             wrongWords2++;
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
-                        $.mobile.changePage('#wordpair6Ordered1', {transition: "flip"});
+                        $.mobile.changePage('#wordpair6Ordered1', {transition: "slide"});
                     }, 300);
                     cnt++;
                     break;
@@ -621,7 +621,7 @@ function choosedOrdered1() {
                         el.style.backgroundColor = normalColor;
                         $('#weiterOrdered1').css('display', 'none');
                         $(".selectionHintDiv").css("visibility", "hidden");
-                        $.mobile.changePage('#wordpairsTransit2', {transition: "flip"});
+                        $.mobile.changePage('#wordpairsTransit2', {transition: "slide"});
 
                     }, 300);
 
@@ -690,7 +690,7 @@ function choosedOrdered2() {
                             wrongWords3++;
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
-                        $.mobile.changePage('#wordpair2Ordered2', {transition: "flip"});
+                        $.mobile.changePage('#wordpair2Ordered2', {transition: "slide"});
                     }, 300);
                     cnt++;
                     break;
@@ -705,7 +705,7 @@ function choosedOrdered2() {
                             wrongWords3++;
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
-                        $.mobile.changePage('#wordpair3Ordered2', {transition: "flip"});
+                        $.mobile.changePage('#wordpair3Ordered2', {transition: "slide"});
                     }, 300);
                     cnt++;
                     break;
@@ -720,7 +720,7 @@ function choosedOrdered2() {
                             wrongWords3++;
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
-                        $.mobile.changePage('#wordpair4Ordered2', {transition: "flip"});
+                        $.mobile.changePage('#wordpair4Ordered2', {transition: "slide"});
                     }, 300);
                     cnt++;
                     break;
@@ -735,7 +735,7 @@ function choosedOrdered2() {
                             wrongWords3++;
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
-                        $.mobile.changePage('#wordpair5Ordered2', {transition: "flip"});
+                        $.mobile.changePage('#wordpair5Ordered2', {transition: "slide"});
                     }, 300);
                     cnt++;
                     break;
@@ -750,7 +750,7 @@ function choosedOrdered2() {
                             wrongWords3++;
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
-                        $.mobile.changePage('#wordpair6Ordered2', {transition: "flip"});
+                        $.mobile.changePage('#wordpair6Ordered2', {transition: "slide"});
                     }, 300);
                     cnt++;
                     break;
@@ -772,7 +772,7 @@ function choosedOrdered2() {
                         el.style.backgroundColor = normalColor;
                         $('#weiterOrdered2').css('display', 'none');
                         $(".selectionHintDiv").css("visibility", "hidden");
-                        $.mobile.changePage('#wordpairsTransit3', {transition: "flip"});
+                        $.mobile.changePage('#wordpairsTransit3', {transition: "slide"});
 
                     }, 300);
 
@@ -854,7 +854,7 @@ function choosedDelayed() {
                             }
                             clearTimeout(showLoopAktivDelay);
                             $(".selectionHintDiv").css("visibility", "hidden");
-                            $.mobile.changePage('#wordpair2', {transition: "flip"});
+                            $.mobile.changePage('#wordpair2', {transition: "slide"});
                             wordSelected = false;
                             // enable weiter btn
                             weiterDelayedIsActive = true;
@@ -874,7 +874,7 @@ function choosedDelayed() {
                             }
                             clearTimeout(showLoopAktivDelay);
                             $(".selectionHintDiv").css("visibility", "hidden");
-                            $.mobile.changePage('#wordpair3', {transition: "flip"});
+                            $.mobile.changePage('#wordpair3', {transition: "slide"});
                             wordSelected = false;
                             // enable weiter btn
                             weiterDelayedIsActive = true;
@@ -893,7 +893,7 @@ function choosedDelayed() {
                             }
                             clearTimeout(showLoopAktivDelay);
                             $(".selectionHintDiv").css("visibility", "hidden");
-                            $.mobile.changePage('#wordpair4', {transition: "flip"});
+                            $.mobile.changePage('#wordpair4', {transition: "slide"});
                             wordSelected = false;
                             // enable weiter btn
                             weiterDelayedIsActive = true;
@@ -912,7 +912,7 @@ function choosedDelayed() {
                             }
                             clearTimeout(showLoopAktivDelay);
                             $(".selectionHintDiv").css("visibility", "hidden");
-                            $.mobile.changePage('#wordpair5', {transition: "flip"});
+                            $.mobile.changePage('#wordpair5', {transition: "slide"});
                             wordSelected = false;
                             // enable weiter btn
                             weiterDelayedIsActive = true;
@@ -931,7 +931,7 @@ function choosedDelayed() {
                             }
                             clearTimeout(showLoopAktivDelay);
                             $(".selectionHintDiv").css("visibility", "hidden");
-                            $.mobile.changePage('#wordpair6', {transition: "flip"});
+                            $.mobile.changePage('#wordpair6', {transition: "slide"});
                             wordSelected = false;
                             // enable weiter btn
                             weiterDelayedIsActive = true;
@@ -959,7 +959,7 @@ function choosedDelayed() {
                             // clear timer
                             clearTimeout(showLoopAktivDelay);
                             $(".selectionHintDiv").css("visibility", "hidden");
-                            $.mobile.changePage('#taskEndPage', {transition: "flip"});
+                            $.mobile.changePage('#taskEndPage', {transition: "slide"});
                             // go to depressionsscreening questions
 //                            goToDepressionsscreening();
                             // enable weiter btn
@@ -1225,7 +1225,7 @@ function selectNumber(k) {
                 jQuery.jStorage.set("ClickIntervalsTMT1", clickIntervals1);
                 setTimeout(function () {
                     clearAllIntervals();
-                    $.mobile.changePage('#intro2v2a', {transition: "flip"});
+                    $.mobile.changePage('#intro2v2a', {transition: "slide"});
                 }, 1000);
                 return;
             }
@@ -1249,7 +1249,7 @@ function selectNumber(k) {
                         jQuery.jStorage.set("WrongNumFieldsTMT1", wrongNumFieldsTMT1);
                         jQuery.jStorage.set("TimeToSolveTMT1", timerTMT1);
                         jQuery.jStorage.set("ClickIntervalsTMT1", clickIntervals1);
-                        $.mobile.changePage('#intro2v2a', {transition: "flip"});
+                        $.mobile.changePage('#intro2v2a', {transition: "slide"});
                         clearInterval(aktiv);
                     }
 
@@ -1418,7 +1418,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1454,7 +1454,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1489,7 +1489,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1524,7 +1524,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1559,7 +1559,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1594,7 +1594,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1629,7 +1629,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1664,7 +1664,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1699,7 +1699,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1734,7 +1734,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1769,7 +1769,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1804,7 +1804,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1839,7 +1839,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1874,7 +1874,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1909,7 +1909,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1944,7 +1944,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -1979,7 +1979,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -2014,7 +2014,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -2049,7 +2049,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -2074,7 +2074,7 @@ function selectNumberOrLetter(k) {
                         setTimeout(function () {
                             clearAllIntervals();
                             cleanRightHitsAndMistakes(kreisId);
-                            $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                            $.mobile.changePage('#intro2v3a', {transition: "slide"});
                         }, 1000);
                     }
 
@@ -2097,7 +2097,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                             }
                         }
@@ -2124,7 +2124,7 @@ function selectNumberOrLetter(k) {
                             jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                             jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                             jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                            $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                            $.mobile.changePage('#intro2v3a', {transition: "slide"});
 
                         }
                     }
@@ -2215,7 +2215,7 @@ function selectOnlyNumber(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
                                 jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
                                 jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                                $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v4a', {transition: "slide"});
                             }
                         }
                         else
@@ -2250,7 +2250,7 @@ function selectOnlyNumber(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
                                 jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
                                 jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                                $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v4a', {transition: "slide"});
                             }
                         }
                         else
@@ -2285,7 +2285,7 @@ function selectOnlyNumber(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
                                 jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
                                 jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                                $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v4a', {transition: "slide"});
                             }
                         }
                         else
@@ -2320,7 +2320,7 @@ function selectOnlyNumber(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
                                 jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
                                 jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                                $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v4a', {transition: "slide"});
                             }
                         }
                         else
@@ -2355,7 +2355,7 @@ function selectOnlyNumber(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
                                 jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
                                 jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                                $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v4a', {transition: "slide"});
                             }
                         }
                         else
@@ -2390,7 +2390,7 @@ function selectOnlyNumber(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
                                 jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
                                 jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                                $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v4a', {transition: "slide"});
                             }
                         }
                         else
@@ -2425,7 +2425,7 @@ function selectOnlyNumber(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
                                 jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
                                 jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                                $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v4a', {transition: "slide"});
                             }
                         }
                         else
@@ -2460,7 +2460,7 @@ function selectOnlyNumber(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
                                 jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
                                 jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                                $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v4a', {transition: "slide"});
                             }
                         }
                         else
@@ -2495,7 +2495,7 @@ function selectOnlyNumber(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
                                 jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
                                 jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                                $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v4a', {transition: "slide"});
                             }
                         }
                         else
@@ -2530,7 +2530,7 @@ function selectOnlyNumber(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
                                 jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
                                 jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                                $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v4a', {transition: "slide"});
                             }
                         }
                         else
@@ -2565,7 +2565,7 @@ function selectOnlyNumber(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
                                 jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
                                 jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                                $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v4a', {transition: "slide"});
                             }
                         }
                         else
@@ -2588,7 +2588,7 @@ function selectOnlyNumber(k) {
                         jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
                         setTimeout(function () {
                             clearAllIntervals();
-                            $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                            $.mobile.changePage('#intro2v4a', {transition: "slide"});
                         }, 1000);
                     }
                     // when making mistake
@@ -2612,7 +2612,7 @@ function selectOnlyNumber(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
                                 jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
                                 jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                                $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                                $.mobile.changePage('#intro2v4a', {transition: "slide"});
                             }
                         }
                         else
@@ -2639,7 +2639,7 @@ function selectOnlyNumber(k) {
                             jQuery.jStorage.set("WrongNumFieldsTMT3", wrongNumFieldsTMT3);
                             jQuery.jStorage.set("TimeToSolveTMT3", timerTMT3);
                             jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
-                            $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                            $.mobile.changePage('#intro2v4a', {transition: "slide"});
                         }
                     }
                     else
@@ -2732,7 +2732,7 @@ function selectNumberOrLetterV4(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
                                 jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
 
-                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                             }
                         }
                         else
@@ -2768,7 +2768,7 @@ function selectNumberOrLetterV4(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
                                 jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
 
-                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                             }
                         }
                         else
@@ -2804,7 +2804,7 @@ function selectNumberOrLetterV4(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
                                 jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
 
-                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                             }
                         }
                         else
@@ -2840,7 +2840,7 @@ function selectNumberOrLetterV4(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
                                 jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
 
-                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                             }
                         }
                         else
@@ -2876,7 +2876,7 @@ function selectNumberOrLetterV4(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
                                 jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
 
-                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                             }
                         }
                         else
@@ -2912,7 +2912,7 @@ function selectNumberOrLetterV4(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
                                 jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
 
-                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                             }
                         }
                         else
@@ -2948,7 +2948,7 @@ function selectNumberOrLetterV4(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
                                 jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
 
-                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                             }
                         }
                         else
@@ -2984,7 +2984,7 @@ function selectNumberOrLetterV4(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
                                 jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
 
-                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                             }
                         }
                         else
@@ -3020,7 +3020,7 @@ function selectNumberOrLetterV4(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
                                 jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
 
-                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                             }
                         }
                         else
@@ -3056,7 +3056,7 @@ function selectNumberOrLetterV4(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
                                 jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
 
-                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                             }
                         }
                         else
@@ -3092,7 +3092,7 @@ function selectNumberOrLetterV4(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
                                 jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
 
-                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                             }
                         }
                         else
@@ -3119,7 +3119,7 @@ function selectNumberOrLetterV4(k) {
 //                        //deactivate fullscreen
 //                        cancelFullscreen();
 //                        window.location = "Mosaiktest.html";
-                            $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                            $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                         }, 1000);
                     }
                     else
@@ -3143,7 +3143,7 @@ function selectNumberOrLetterV4(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
                                 jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
 
-                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                             }
                         }
                         else
@@ -3173,7 +3173,7 @@ function selectNumberOrLetterV4(k) {
                             jQuery.jStorage.set("TimeToSolveTMT4", timerTMT4);
                             jQuery.jStorage.set("ClickIntervalsTMT4", clickIntervals4);
 
-                            $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                            $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                         }
                     }
                     else
@@ -3251,7 +3251,7 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-                        $.mobile.changePage('#countdown2', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown2', {transition: "slide"}, {reloadPage: true});
                     }
 
                     else if (clickedNumbArray.toString() === numbersArray.toString() && sequenceReapeat === 2) {
@@ -3267,7 +3267,7 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-                        $.mobile.changePage('#countdown2', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown2', {transition: "slide"}, {reloadPage: true});
                     }
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat < 2) {
                         sequenceReapeat++;
@@ -3281,8 +3281,8 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-//                        $.mobile.changePage('#test1Rep', {transition: "flip"}, {reloadPage: true});
-                        $.mobile.changePage('#countdown1Rep', {transition: "flip"}, {reloadPage: true});
+//                        $.mobile.changePage('#test1Rep', {transition: "slide"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown1Rep', {transition: "slide"}, {reloadPage: true});
 
                     }
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat === 2) {
@@ -3301,7 +3301,7 @@ function matchNumbers(numbElement) {
 //                    cancelFullscreen();
 //                    window.location = "Depressionsscreening.html";
                         //jump to the end page 
-                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
 
                     clickCount = 1;
@@ -3329,7 +3329,7 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-                        $.mobile.changePage('#countdown3', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown3', {transition: "slide"}, {reloadPage: true});
                     }
                     else if (clickedNumbArray.toString() === numbersArray.toString() && sequenceReapeat === 2) {
                         taskCount++;
@@ -3344,7 +3344,7 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-                        $.mobile.changePage('#countdown3', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown3', {transition: "slide"}, {reloadPage: true});
                     }
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat < 2) {
                         sequenceReapeat++;
@@ -3358,8 +3358,8 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-//                        $.mobile.changePage('#test2Rep', {transition: "flip"}, {reloadPage: true});
-                        $.mobile.changePage('#countdown2Rep', {transition: "flip"}, {reloadPage: true});
+//                        $.mobile.changePage('#test2Rep', {transition: "slide"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown2Rep', {transition: "slide"}, {reloadPage: true});
 
                     }
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat <= 2) {
@@ -3378,7 +3378,7 @@ function matchNumbers(numbElement) {
 //                    cancelFullscreen();
 //                    window.location = "Depressionsscreening.html";
 //jump to the end page 
-                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
 
                     clickCount = 1;
@@ -3405,7 +3405,7 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-                        $.mobile.changePage('#countdown4', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown4', {transition: "slide"}, {reloadPage: true});
                     }
                     else if (clickedNumbArray.toString() === numbersArray.toString() && sequenceReapeat === 2) {
                         taskCount++;
@@ -3420,7 +3420,7 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-                        $.mobile.changePage('#countdown4', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown4', {transition: "slide"}, {reloadPage: true});
                     }
 
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat < 2) {
@@ -3435,8 +3435,8 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-//                        $.mobile.changePage('#test3Rep', {transition: "flip"}, {reloadPage: true});
-                        $.mobile.changePage('#countdown3Rep', {transition: "flip"}, {reloadPage: true});
+//                        $.mobile.changePage('#test3Rep', {transition: "slide"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown3Rep', {transition: "slide"}, {reloadPage: true});
 
                     }
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat <= 2) {
@@ -3455,7 +3455,7 @@ function matchNumbers(numbElement) {
 //                    cancelFullscreen();
 //                    window.location = "Depressionsscreening.html";
 //jump to the end page 
-                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
 
                     clickCount = 1;
@@ -3485,7 +3485,7 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-                        $.mobile.changePage('#countdown5', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown5', {transition: "slide"}, {reloadPage: true});
                     }
                     else if (clickedNumbArray.toString() === numbersArray.toString() && sequenceReapeat === 2) {
                         taskCount++;
@@ -3500,7 +3500,7 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-                        $.mobile.changePage('#countdown5', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown5', {transition: "slide"}, {reloadPage: true});
                     }
 
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat < 2) {
@@ -3515,8 +3515,8 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-//                        $.mobile.changePage('#test4Rep', {transition: "flip"}, {reloadPage: true});
-                        $.mobile.changePage('#countdown4Rep', {transition: "flip"}, {reloadPage: true});
+//                        $.mobile.changePage('#test4Rep', {transition: "slide"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown4Rep', {transition: "slide"}, {reloadPage: true});
 
                     }
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat <= 2) {
@@ -3535,7 +3535,7 @@ function matchNumbers(numbElement) {
 //                    cancelFullscreen();
 //                    window.location = "Depressionsscreening.html";
 //jump to the end page 
-                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
 
                     clickCount = 1;
@@ -3565,7 +3565,7 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-                        $.mobile.changePage('#countdown6', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown6', {transition: "slide"}, {reloadPage: true});
                     }
                     else if (clickedNumbArray.toString() === numbersArray.toString() && sequenceReapeat === 2) {
                         taskCount++;
@@ -3580,7 +3580,7 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-                        $.mobile.changePage('#countdown6', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown6', {transition: "slide"}, {reloadPage: true});
                     }
 
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat < 2) {
@@ -3595,8 +3595,8 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-//                        $.mobile.changePage('#test5Rep', {transition: "flip"}, {reloadPage: true});
-                        $.mobile.changePage('#countdown5Rep', {transition: "flip"}, {reloadPage: true});
+//                        $.mobile.changePage('#test5Rep', {transition: "slide"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown5Rep', {transition: "slide"}, {reloadPage: true});
 
                     }
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat <= 2) {
@@ -3615,7 +3615,7 @@ function matchNumbers(numbElement) {
 //                    cancelFullscreen();
 //                    window.location = "Depressionsscreening.html";
 //jump to the end page 
-                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
 
                     clickCount = 1;
@@ -3645,7 +3645,7 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-                        $.mobile.changePage('#countdown7', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown7', {transition: "slide"}, {reloadPage: true});
                     }
                     else if (clickedNumbArray.toString() === numbersArray.toString() && sequenceReapeat === 2) {
                         taskCount++;
@@ -3660,7 +3660,7 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-                        $.mobile.changePage('#countdown7', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown7', {transition: "slide"}, {reloadPage: true});
                     }
 
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat < 2) {
@@ -3675,8 +3675,8 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-//                        $.mobile.changePage('#test6Rep', {transition: "flip"}, {reloadPage: true});
-                        $.mobile.changePage('#countdown6Rep', {transition: "flip"}, {reloadPage: true});
+//                        $.mobile.changePage('#test6Rep', {transition: "slide"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown6Rep', {transition: "slide"}, {reloadPage: true});
 
                     }
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat <= 2) {
@@ -3695,7 +3695,7 @@ function matchNumbers(numbElement) {
 //                    cancelFullscreen();
 //                    window.location = "Depressionsscreening.html";
 //jump to the end page 
-                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
 
                     clickCount = 1;
@@ -3729,7 +3729,7 @@ function matchNumbers(numbElement) {
 //                    cancelFullscreen();
 //                    window.location = "Depressionsscreening.html";
 //jump to the end page 
-                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
                     else if (clickedNumbArray.toString() === numbersArray.toString() && sequenceReapeat === 2) {
                         taskCount++;
@@ -3744,7 +3744,7 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
 
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat < 2) {
@@ -3759,8 +3759,8 @@ function matchNumbers(numbElement) {
                         };
                         numbersArray.clear();
                         clickedNumbArray.clear();
-//                        $.mobile.changePage('#test7Rep', {transition: "flip"}, {reloadPage: true});
-                        $.mobile.changePage('#countdown7Rep', {transition: "flip"}, {reloadPage: true});
+//                        $.mobile.changePage('#test7Rep', {transition: "slide"}, {reloadPage: true});
+                        $.mobile.changePage('#countdown7Rep', {transition: "slide"}, {reloadPage: true});
 
                     }
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat <= 2) {
@@ -3779,7 +3779,7 @@ function matchNumbers(numbElement) {
 //                    cancelFullscreen();
 //                    window.location = "Depressionsscreening.html";
 //jump to the end page 
-                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "flip"}, {reloadPage: true});
+                        $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
 
                     clickCount = 1;
@@ -3929,7 +3929,7 @@ function countV1() {
                 jQuery.jStorage.set("ClickIntervalsTMT1", clickIntervals1);
                 // clear timers
                 clearAllIntervals();
-                $.mobile.changePage('#intro2v2a', {transition: "flip"});
+                $.mobile.changePage('#intro2v2a', {transition: "slide"});
             }
         }, 1000);
 
@@ -3972,7 +3972,7 @@ function countV2() {
                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                 // clear timers
                 clearInterval(aktivV2);
-                $.mobile.changePage('#intro2v3a', {transition: "flip"});
+                $.mobile.changePage('#intro2v3a', {transition: "slide"});
             }
         }, 1000);
     }
@@ -4003,7 +4003,7 @@ function countV3() {
                 jQuery.jStorage.set("ClickIntervalsTMT3", clickIntervals3);
                 //clear timers
                 clearInterval(aktivV3);
-                $.mobile.changePage('#intro2v4a', {transition: "flip"});
+                $.mobile.changePage('#intro2v4a', {transition: "slide"});
             }
         }, 1000);
     }
@@ -4035,7 +4035,7 @@ function countV4() {
                 //clear timers
                 clearInterval(aktivV4);
 //            window.location = "Mosaiktest.html";
-                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "flip"});
+                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
             }
         }, 1000);
     }
@@ -4068,7 +4068,7 @@ function getAnswer1(answerRadio) {
     // make button "weiter" ready to switch
     isReadyToSwitch = true;
 
-//    $.mobile.changePage('#fragenTeil2', {transition: "flip"});
+//    $.mobile.changePage('#fragenTeil2', {transition: "slide"});
 }
 
 function goToFragenTeil2() {
@@ -4081,7 +4081,7 @@ function goToFragenTeil2() {
     }
 
     else {
-        $.mobile.changePage('#fragenTeil2', {transition: "flip"});
+        $.mobile.changePage('#fragenTeil2', {transition: "slide"});
         isReadyToSwitch = false;
     }
 }
@@ -4106,7 +4106,7 @@ function getAnswer2(answerRadio) {
 
 // make button "weiter" ready to switch
     isReadyToSwitch = true;
-//    $.mobile.changePage('#fragenTeil3', {transition: "flip"});
+//    $.mobile.changePage('#fragenTeil3', {transition: "slide"});
 }
 
 function goToFragenTeil3() {
@@ -4120,7 +4120,7 @@ function goToFragenTeil3() {
     }
 
     else {
-        $.mobile.changePage('#fragenTeil3', {transition: "flip"});
+        $.mobile.changePage('#fragenTeil3', {transition: "slide"});
         isReadyToSwitch = false;
     }
 }
@@ -4146,7 +4146,7 @@ function getAnswer3(answerRadio) {
 // make button "weiter" ready to switch
     isReadyToSwitch = true;
 
-//    $.mobile.changePage('#fragenTeil4', {transition: "flip"});
+//    $.mobile.changePage('#fragenTeil4', {transition: "slide"});
 }
 
 function goToFragenTeil4() {
@@ -4160,7 +4160,7 @@ function goToFragenTeil4() {
     }
 
     else {
-        $.mobile.changePage('#fragenTeil4', {transition: "flip"});
+        $.mobile.changePage('#fragenTeil4', {transition: "slide"});
         isReadyToSwitch = false;
     }
 }
@@ -4185,7 +4185,7 @@ function getAnswer4(answerRadio) {
 
 // make button "weiter" ready to switch
     isReadyToSwitch = true;
-//    $.mobile.changePage('#fragenTeil5', {transition: "flip"});
+//    $.mobile.changePage('#fragenTeil5', {transition: "slide"});
 }
 
 function goToFragenTeil5() {
@@ -4199,7 +4199,7 @@ function goToFragenTeil5() {
     }
 
     else {
-        $.mobile.changePage('#fragenTeil5', {transition: "flip"});
+        $.mobile.changePage('#fragenTeil5', {transition: "slide"});
         isReadyToSwitch = false;
     }
 }
@@ -4225,7 +4225,7 @@ function getAnswer5(answerRadio) {
     // make button "weiter" ready to switch
     isReadyToSwitch = true;
 
-//    $.mobile.changePage('#fragenTeil6', {transition: "flip"});
+//    $.mobile.changePage('#fragenTeil6', {transition: "slide"});
 }
 
 function goToFragenTeil6() {
@@ -4239,7 +4239,7 @@ function goToFragenTeil6() {
     }
 
     else {
-        $.mobile.changePage('#fragenTeil6', {transition: "flip"});
+        $.mobile.changePage('#fragenTeil6', {transition: "slide"});
         isReadyToSwitch = false;
     }
 }
@@ -4309,7 +4309,7 @@ function goToNextADL() {
 
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage2', {transition: "flip"});
+                    $.mobile.changePage('#frage2', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4323,7 +4323,7 @@ function goToNextADL() {
 
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage3', {transition: "flip"});
+                    $.mobile.changePage('#frage3', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4337,7 +4337,7 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage4', {transition: "flip"});
+                    $.mobile.changePage('#frage4', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4351,7 +4351,7 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage5', {transition: "flip"});
+                    $.mobile.changePage('#frage5', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4365,7 +4365,7 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage6', {transition: "flip"});
+                    $.mobile.changePage('#frage6', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4379,7 +4379,7 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage7', {transition: "flip"});
+                    $.mobile.changePage('#frage7', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4393,7 +4393,7 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage8', {transition: "flip"});
+                    $.mobile.changePage('#frage8', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4407,7 +4407,7 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage9', {transition: "flip"});
+                    $.mobile.changePage('#frage9', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4421,7 +4421,7 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage10', {transition: "flip"});
+                    $.mobile.changePage('#frage10', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4435,7 +4435,7 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage11', {transition: "flip"});
+                    $.mobile.changePage('#frage11', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4449,7 +4449,7 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage12', {transition: "flip"});
+                    $.mobile.changePage('#frage12', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4463,7 +4463,7 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage13', {transition: "flip"});
+                    $.mobile.changePage('#frage13', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4477,7 +4477,7 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage14', {transition: "flip"});
+                    $.mobile.changePage('#frage14', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4491,7 +4491,7 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage15', {transition: "flip"});
+                    $.mobile.changePage('#frage15', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4505,7 +4505,7 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage16', {transition: "flip"});
+                    $.mobile.changePage('#frage16', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4519,7 +4519,7 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage17', {transition: "flip"});
+                    $.mobile.changePage('#frage17', {transition: "slide"});
                     ADLQuest++;
                 }
                 break;
@@ -4539,7 +4539,7 @@ function goToNextADL() {
                     jQuery.jStorage.set("ADLQuestAnswerMap", ADLQuestAnswerMap);
 
                     // show the end of screening
-                    $.mobile.changePage('#screeningEnd', {transition: "flip"});
+                    $.mobile.changePage('#screeningEnd', {transition: "slide"});
                 }
                 break;
         }
@@ -4575,7 +4575,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#frage2', {transition: "flip"});
+//            $.mobile.changePage('#frage2', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 2:
@@ -4585,7 +4585,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#frage3', {transition: "flip"});
+//            $.mobile.changePage('#frage3', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 3:
@@ -4595,7 +4595,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#frage4', {transition: "flip"});
+//            $.mobile.changePage('#frage4', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 4:
@@ -4605,7 +4605,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#frage5', {transition: "flip"});
+//            $.mobile.changePage('#frage5', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 5:
@@ -4615,7 +4615,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#frage6', {transition: "flip"});
+//            $.mobile.changePage('#frage6', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 6:
@@ -4625,7 +4625,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 7:
@@ -4635,7 +4635,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 8:
@@ -4645,7 +4645,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 9:
@@ -4655,7 +4655,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 10:
@@ -4665,7 +4665,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 11:
@@ -4675,7 +4675,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 12:
@@ -4685,7 +4685,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 13:
@@ -4695,7 +4695,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 14:
@@ -4705,7 +4705,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 15:
@@ -4715,7 +4715,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 16:
@@ -4725,7 +4725,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
                 break;
             case 17:
@@ -4735,7 +4735,7 @@ function getChoice(answerRadio) {
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
 
-//            $.mobile.changePage('#intro2ADLs2', {transition: "flip"});
+//            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
                 break;
 
@@ -5056,20 +5056,20 @@ function login(id, password) {
 
 
             if (data.success === true) {
-                $.mobile.changePage('#startpage', {transition: "flip"});
+                $.mobile.changePage('#startpage', {transition: "slide"});
                 // store user test id
                 jQuery.jStorage.set("UserName", id);
                 console.log(data);
                 console.log("success");
             }
             else {
-                $.mobile.changePage('#forbiddenHint', {transition: "flip"});
+                $.mobile.changePage('#forbiddenHint', {transition: "slide"});
 
                 console.log("failed");
             }
 
         }).fail(function (data) {
-            $.mobile.changePage('#forbiddenHint', {transition: "flip"});
+            $.mobile.changePage('#forbiddenHint', {transition: "slide"});
             console.log(data);
             console.log("failed");
         });
@@ -5122,18 +5122,18 @@ function sendResults() {
                     console.log(data);
 
                     if (data.success === true) {
-                        $.mobile.changePage('#sendConfirmation', {transition: "flip"});
+                        $.mobile.changePage('#sendConfirmation', {transition: "slide"});
                     }
 
                     else if (data.success === false) {
-                        $.mobile.changePage('#sendFailed', {transition: "flip"});
+                        $.mobile.changePage('#sendFailed', {transition: "slide"});
                     }
 
                     console.log("success");
 
 
                 }).fail(function (data) {
-            $.mobile.changePage('#sendFailed', {transition: "flip"});
+            $.mobile.changePage('#sendFailed', {transition: "slide"});
             console.log("failed to load php script due to internet connection.");
             console.log(data);
         });
