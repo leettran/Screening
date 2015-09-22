@@ -9,12 +9,15 @@
 @media only screen and (orientation: landscape){
     /*nur wenn das tablet auf landscape gerichtet ist*/  
 
-    
+
     @font-face { font-family: Enigma_2; src: url('Enigma_2.ttf'); } 
     @font-face { font-family: EnigmaB_2; src: url('EnigmaB_2.ttf'); } 
     @font-face { font-family: Enigma_2i; src: url('Enigma_2i.ttf'); } 
     @font-face { font-family: QuattrocentoSans; src: url('QuattrocentoSans-Regular.otf'); }
+
+
     
+
 
     .startPage{
         background-image: url('images/bg/bg-wheels.png');
@@ -22,7 +25,7 @@
         background-size: 100%;
         width: 100%;
         height: 100%;
-        height: auto;
+        
         min-height:100%;
     }
 
@@ -32,7 +35,7 @@
         background-size: 100%;
         width: 100%;
         height: 100%;
-        height: auto;
+        
         min-height:100%;
     }
 
@@ -43,7 +46,7 @@
         background-size: 100%;
         width: 100%;
         height: 100%;
-        height: auto;
+        
         min-height:100%;
     }
 
@@ -70,8 +73,8 @@
         -webkit-box-shadow: none;
         box-shadow: none;
     }
-    
-    
+
+
     .startButton{
         background-size: 100%;
         background-repeat:no-repeat;       
@@ -95,8 +98,8 @@
         -webkit-box-shadow: none;
         box-shadow: none;
     }
-    
-    
+
+
     .startTaskButton{
         background-size: 100%;
         background-repeat:no-repeat;       
@@ -110,7 +113,7 @@
     }
 
 
-    .startTaskButton:active, .startTaskButton:focus, .startTaskButton.active{
+    .startTaskButton:active {
         background-image:url('images/btns-bg/bt-aufgabe-starten.png');
         position:absolute; 
         bottom: 1.7%;
@@ -120,9 +123,9 @@
         -webkit-box-shadow: none;
         box-shadow: none;
     }
-    
-    
-     .nextTaskButton{
+
+
+    .nextTaskButton{
         background-size: 100%;
         background-repeat:no-repeat;       
         height: 70px;
@@ -145,8 +148,8 @@
         -webkit-box-shadow: none;
         box-shadow: none;
     }
-    
-    
+
+
 
 
     .instructionLong{
@@ -161,7 +164,7 @@
 
     .wrap {
         width: 100%;
-        
+
         position: absolute;
         top: 90px;
         left: 1px;
@@ -173,7 +176,7 @@
         width: 50%;
         background-color: transparent;
         height: auto;
-        
+
     }
 
     .floatright {
@@ -181,9 +184,9 @@
         background-color: transparent;
         width: 50%;
         height: auto;
-        
+
     }
-    
+
     .instructionContent{
         float:left; 
         width: 45%;
@@ -192,10 +195,10 @@
         top: 40px;
         left: 10px;
         right: 10px;
-        
+
     }
 
- .instructionHeader{
+    .instructionHeader{
         font-size: 20px;
         font-family: Enigma_2;
         color: black;
@@ -205,9 +208,9 @@
         position: absolute;       
         left: 60px;
         top: 0px;
-        
+
     }
-    
+
     .exampleHeader{
         font-size: 20px;
         font-family: Enigma_2;
@@ -218,10 +221,10 @@
         position: absolute;       
         left: 51%;
         top: 0%;
-        
+
     }
-    
-    
+
+
     .selectionHintText{
         font-size: 30px;
         font-family: Enigma_2;
@@ -233,10 +236,10 @@
         left: 40px;
         top: 0px;
         bottom: 0px;
-        
-        
+
+
     }
-    
+
     .answerSelectionHintText{
         font-size: 30px;
         font-family: Enigma_2;
@@ -248,11 +251,11 @@
         left: 5px;
         top: 0px;
         bottom: 0px;
-        
-        
+
+
     }
-    
-    
+
+
     .instructionText{
         font-size: 20px;
         font-family: QuattrocentoSans;
@@ -263,7 +266,7 @@
         margin-left: 10px;
         margin-right: 10px;
     }
-    
+
     .instructionTextForExample{
         font-size: 20px;
         font-family: Quattrocento;
@@ -272,9 +275,9 @@
         text-align: center;
         font-weight: bold;       
     }
-    
 
- .infoIcon{
+
+    .infoIcon{
         background-size: 100%;
         background-repeat:no-repeat;       
         height: 35px;
@@ -284,8 +287,8 @@
         top: 3px;
 
     }
-    
-    
+
+
     .selectionHintIcon{
         background-size: 100%;
         background-repeat:no-repeat;       
@@ -296,7 +299,7 @@
         bottom: 10%;
 
     }
-    
+
     .answerSelectionHintIcon{
         background-size: 100%;
         background-repeat:no-repeat;       
@@ -307,8 +310,8 @@
         bottom: 10%;
 
     }
-    
-    
+
+
     .selectionHintDiv{
         visibility: hidden;
         position: absolute;
@@ -317,7 +320,7 @@
         width: 70%;
         height: Auto;
     }
-    
+
     .answerSelectionHintDiv{
         visibility: hidden;
         position: absolute;
@@ -326,10 +329,10 @@
         width: 90%;
         height: Auto;
     }
-    
-    
 
- .divWithRoundedCorners{
+
+
+    .divWithRoundedCorners{
         margin-left: auto;
         margin-right: auto;
         margin-top: 5px;
@@ -338,8 +341,8 @@
         border-radius: 10px;
         width: 90%;
     }
-    
-     .wordrectangleForExample{
+
+    .wordrectangleForExample{
         width: 110px;
         height: 40px;
         background: #57BB58;
@@ -352,9 +355,9 @@
         line-height: 50px;
 
     }
-    
-     .transitionPageText
-     {
+
+    .transitionPageText
+    {
         font-size: 45px;
         font-family: EnigmaB_2;
         color: black;
@@ -362,11 +365,11 @@
         position: absolute;
         top: 30%;
         left: 5%;
-     }
-     
-     
-      .numsViewHintText
-     {
+    }
+
+
+    .numsViewHintText
+    {
         font-size: 45px;
         font-family: EnigmaB_2;
         color: black;
@@ -374,11 +377,11 @@
         position: absolute;
         top: 10%;
         left: 1%;
-     }
-     
-     
-       .questionText
-     {
+    }
+
+
+    .questionText
+    {
         font-size: 30px;
         font-family: EnigmaB_2;
         color: black;
@@ -386,10 +389,10 @@
         position: absolute;
         top: 1%;
         left: 5%;
-     }
-    
-    
-    
+    }
+
+
+
     .bigview {
         display: inline;
         font-size: 110px;
@@ -398,16 +401,16 @@
         vertical-align: middle;
         margin-top: 70px;
     }
-    
-     h1{
+
+    h1{
         text-align: center;
         color: black;
         font-family: EnigmaB_2;
-        
+
     }
-    
-    
-     .firstword {
+
+
+    .firstword {
         font-size: 40px;
         font-weight: bold;
         background: #57BB58;
@@ -420,16 +423,16 @@
         text-shadow: none;
         border: solid 2px black;
     }
-    
-     .questionMark{
+
+    .questionMark{
         font-size: 50px;
         font-weight: bolder;
         font-family: EnigmaB_2;
         display: inline
     }
-    
-    
-      .wordstable {
+
+
+    .wordstable {
         border:black;
         border-spacing: 30px;
         width: 1000px;
@@ -444,9 +447,9 @@
     .wordstable tr:hover{
         cursor: pointer;
     }
-    
-    
-     .secondWord{
+
+
+    .secondWord{
         text-shadow: none;
         text-align: center;
         background: #57BB58;
@@ -456,10 +459,10 @@
         text-shadow: none;
         overflow: hidden;
         font-family: EnigmaB_2;
-        
+
     }
-    
-     .tippIconBig{
+
+    .tippIconBig{
         background-size: 100%;
         background-repeat:no-repeat;       
         height: 70px;
@@ -469,9 +472,9 @@
         top: 5%;
 
     }
-    
-    
-     .kreis{
+
+
+    .kreis{
         background-color: #57BB58;
         position: absolute;
         width: 100px;
@@ -486,9 +489,9 @@
         text-shadow: none;
 
     }
-    
-    
-     .starthint {
+
+
+    .starthint {
         background-color: transparent;
         position: absolute;
         width: 100px;
@@ -502,8 +505,8 @@
         font-family: EnigmaB_2;
         text-shadow: none;
     }
-    
-     #endhint {
+
+    #endhint {
         background-color: transparent;
         position: absolute;
         width: 100px;
@@ -516,9 +519,9 @@
         font-size: 40px;
         font-family: EnigmaB_2;
     }
-    
-    
-     .starthintleft{
+
+
+    .starthintleft{
         top: 2%;
         left: 1%;
         background-color: transparent;
@@ -543,15 +546,15 @@
         font-size: 40px;
         font-family: EnigmaB_2;
     }
-    
-     .countdownText{
+
+    .countdownText{
         font-size: 50px;
         text-shadow: none;
         font-family: EnigmaB_2;
     }
-    
-    
-     .countdown{
+
+
+    .countdown{
         text-align: center;
         width: 600px;
         display: block;
@@ -560,8 +563,8 @@
         background-color: transparent;
 
     }
-    
-    
+
+
     .zahlItem{
         font-size: 180px;
         font-family: EnigmaB_2;
@@ -572,9 +575,9 @@
         text-shadow: none;    
         color:black;
     }
-    
-    
-     .zahlFragment{
+
+
+    .zahlFragment{
         width: 70px;
         height: 100px;
         border: 2px solid;
@@ -591,8 +594,8 @@
         padding-bottom: 5px;
         margin-left: 20px;
     }
-    
-    
+
+
     .numbersarrayLenght{
         text-shadow: none;
         font-size: 40px;
@@ -603,9 +606,9 @@
         left: 70%;
         border: #57BB58 solid 1px;
     }
-    
-    
-     .underline{
+
+
+    .underline{
         /*text-decoration: underline;*/
         color: black;
         text-shadow: none;
@@ -613,8 +616,8 @@
         font-size: 25px;
 
     }
-    
-     .answerChoice{
+
+    .answerChoice{
         /*text-decoration: underline;*/
         color: black;
         text-shadow: none;
@@ -622,11 +625,11 @@
         font-size: 20px;
 
     }
-    
-    
-    
-   
-    
+
+
+
+
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -653,25 +656,25 @@
             background: #b9c68d;
         }*/
 
-/*    .whitePage{
-        background-image: url('images/bg/bg-white.png');
-        background-color: transparent;
-        background-size: 100%;
-        width: 100%;
-        height: 100%;
-        height: auto;
-        min-height:100%;
-    }*/
+    /*    .whitePage{
+            background-image: url('images/bg/bg-white.png');
+            background-color: transparent;
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+            height: auto;
+            min-height:100%;
+        }*/
 
     .testPage{
         background: #5092f4;
     }
 
-    
 
-   
 
-    
+
+
+
 
     .kreisItem{
         display: inline-block;
@@ -681,14 +684,14 @@
         text-align: center;
     }
 
-/*    .instructionText{
-        text-shadow: none;
-        text-align: center;
-        font-family: serif;
-        font-size: 40px;
-        margin-left: 20px;
-        margin-right: 20px;
-    }*/
+    /*    .instructionText{
+            text-shadow: none;
+            text-align: center;
+            font-family: serif;
+            font-size: 40px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }*/
     /*    .defaultButton{
             height: 60px;
             width: 270px;
@@ -697,9 +700,9 @@
             text-shadow: none;
         }*/
 
-   
 
-   
+
+
 
     .hint{
         font-weight: bold;
@@ -707,19 +710,19 @@
         text-decoration: none;
         text-shadow: none;
     }
-    
-
-  
 
 
-   
+
+
+
+
 
     .listitem {
         font-size: 25px;
         text-decoration: none;
     }
 
-   
+
 
 
     .smallKreis2{
@@ -761,9 +764,9 @@
         font-style: normal;
         font-weight: bold;
     }
-   
-   
-   
+
+
+
 
     #timestamp{
         font-size: 30px;
@@ -1088,7 +1091,7 @@
         border: 1px solid black;       
     }
 
-    
+
 
     .testname{
         width: 500px;
@@ -1140,13 +1143,13 @@
         font-weight: normal;       
     }
 
-/*    .divWithRoundedCorners{
-        margin-left: auto;
-        margin-right: auto;
-        background: lightblue;
-        border-radius: 10px;
-        width: 90%;
-    }*/
+    /*    .divWithRoundedCorners{
+            margin-left: auto;
+            margin-right: auto;
+            background: lightblue;
+            border-radius: 10px;
+            width: 90%;
+        }*/
 
     .instructionTextDescriptionBold{
         font-size: 40px;
@@ -1182,14 +1185,14 @@
                 overflow: hidden;*/
     }
 
-/*    .transitionPageText{
-        font-size: 45px;
-        color: black;
-        text-shadow: none;
-        position: absolute;
-        top: 30%;
-        left: 5%;
-    }*/
+    /*    .transitionPageText{
+            font-size: 45px;
+            color: black;
+            text-shadow: none;
+            position: absolute;
+            top: 30%;
+            left: 5%;
+        }*/
 
 
     .taskTitle{
@@ -1198,11 +1201,11 @@
         color: black;
     }
 
-   
 
-   
 
-   
+
+
+
 
     .alertText{
         font-size: 30px;
