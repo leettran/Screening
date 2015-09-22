@@ -128,6 +128,49 @@ var repeats;
 //global functions 
 
 
+// validate the login credentials
+function validateLogin(username, password) {
+    try
+    {
+        if (username === null || username === "")
+        {
+            $("#fillinHint").css("visibility", "visible");
+                setTimeout(function () {
+                    $("#fillinHint").css("visibility", "hidden");
+                }, 1000);
+                
+            return false;
+        }
+        
+        if (password === null || password === "")
+        {
+            $("#fillinHint").css("visibility", "visible");
+                setTimeout(function () {
+                    $("#fillinHint").css("visibility", "hidden");
+                }, 1000);
+                
+            return false;
+        }
+        
+        
+        // log in if credentials are entered
+        login(username,password);
+        
+        // reset values 
+        $("#username").val("");
+        $("#password").val("");
+        
+        
+        
+    }
+
+    catch (error) {
+        console.log("Error when validating login! " + error);
+    }
+}
+
+
+
 // shows given page after a given time interval
 function showFollowingPageDelayed(page, delay)
 {
@@ -1030,19 +1073,19 @@ function selectNumber(k) {
 
         // stopping timer and starting it for next click interval
 //        if (timerInterval1 !== 0 || timerInterval1 === 0) {
-            clearInterval(aktivTimerInterval1);
-            // store interval
-            if (!isFirstClickTMT1)
-                clickIntervals1.push(timerInterval1);
-            // toggle bool after first time clicking
-            if (isFirstClickTMT1)
-                isFirstClickTMT1 = false;
-            // reset
-            timerInterval1 = 0;
-            // count for new time
-            aktivTimerInterval1 = setInterval(function () {
-                timerInterval1++;
-            }, 1000);
+        clearInterval(aktivTimerInterval1);
+        // store interval
+        if (!isFirstClickTMT1)
+            clickIntervals1.push(timerInterval1);
+        // toggle bool after first time clicking
+        if (isFirstClickTMT1)
+            isFirstClickTMT1 = false;
+        // reset
+        timerInterval1 = 0;
+        // count for new time
+        aktivTimerInterval1 = setInterval(function () {
+            timerInterval1++;
+        }, 1000);
 //        }
 
 // get element id
@@ -1056,7 +1099,7 @@ function selectNumber(k) {
 
             // count for 40 sec
 //            countV1();
-            
+
             if (kreisId === "v11" && forwardCnt === 1) {
                 cleanRightHitsAndMistakes(kreisId);
                 mistakesV1 = 0;
@@ -1371,26 +1414,26 @@ function selectNumberOrLetter(k) {
 
         // stopping timer and starting it for next click interval
 //        if (timerInterval2 !== 0 || timerInterval2 === 0) {
-            clearInterval(aktivTimerInterval2);
-            if (!isFirstClickTMT2)
+        clearInterval(aktivTimerInterval2);
+        if (!isFirstClickTMT2)
             clickIntervals2.push(timerInterval2);
         // toggle bool after first time clicking
-            if (isFirstClickTMT2)
-                isFirstClickTMT2 = false;
-        
-            timerInterval2 = 0;
-            aktivTimerInterval2 = setInterval(function () {
-                timerInterval2++;
-            }, 1000);
+        if (isFirstClickTMT2)
+            isFirstClickTMT2 = false;
+
+        timerInterval2 = 0;
+        aktivTimerInterval2 = setInterval(function () {
+            timerInterval2++;
+        }, 1000);
 //        }
 
         var kreisId = k.id;
         // if made mistakes are less than 3
         if (mistakesV2 < 3) {
-            
+
             // count for 40 sec
 //            countV2();
-            
+
             switch (kreisId) {
                 case "v21":
                     if (numberCnt === 1 && letterCnt === 1) {
@@ -2163,17 +2206,17 @@ function selectOnlyNumber(k) {
 
         // stopping timer and starting it for next click interval
 //        if (timerInterval3 !== 0 || timerInterval3 === 0) {
-            clearInterval(aktivTimerInterval3);
-            if (!isFirstClickTMT3)
+        clearInterval(aktivTimerInterval3);
+        if (!isFirstClickTMT3)
             clickIntervals3.push(timerInterval3);
-         // toggle bool after first time clicking
-            if (isFirstClickTMT3)
-                isFirstClickTMT3 = false;
-        
-            timerInterval3 = 0;
-            aktivTimerInterval3 = setInterval(function () {
-                timerInterval3++;
-            }, 1000);
+        // toggle bool after first time clicking
+        if (isFirstClickTMT3)
+            isFirstClickTMT3 = false;
+
+        timerInterval3 = 0;
+        aktivTimerInterval3 = setInterval(function () {
+            timerInterval3++;
+        }, 1000);
 //        }
 
 
@@ -2182,10 +2225,10 @@ function selectOnlyNumber(k) {
         var arrayElement = numberArray[arrayPointer];
         // if mistakes made are less than 3
         if (mistakesV3 < 3) {
-            
+
             // count for 40 sec
 //            countV3();
-            
+
             switch (kreisId) {
                 case "v36":
                     if (arrayElement === "6" && arrayPointer === 0) {
@@ -2677,18 +2720,18 @@ function selectNumberOrLetterV4(k) {
 
         // stopping timer and starting it for next click interval
 //        if (timerInterval4 !== 0 || timerInterval4 === 0) {
-            clearInterval(aktivTimerInterval4);
-            if (!isFirstClickTMT4)
+        clearInterval(aktivTimerInterval4);
+        if (!isFirstClickTMT4)
             clickIntervals4.push(timerInterval4);
-        
+
         // toggle bool after first time clicking
-            if (isFirstClickTMT4)
-                isFirstClickTMT4 = false;
-        
-            timerInterval4 = 0;
-            aktivTimerInterval4 = setInterval(function () {
-                timerInterval4++;
-            }, 1000);
+        if (isFirstClickTMT4)
+            isFirstClickTMT4 = false;
+
+        timerInterval4 = 0;
+        aktivTimerInterval4 = setInterval(function () {
+            timerInterval4++;
+        }, 1000);
 //        }
 
 
@@ -2698,10 +2741,10 @@ function selectNumberOrLetterV4(k) {
         var arrayElementLt = letterArrayV4[letterPointer];
 // if mistakes less than 3
         if (mistakesV4 < 3) {
-            
+
             // count for 40 sec
 //            countV4();
-            
+
             switch (kreisId) {
                 case "v44":
                     if (arrayElementNr === "4" && numberPointer === 0 && letterPointer === 0) {
@@ -5056,7 +5099,8 @@ function login(id, password) {
 
 
             if (data.success === true) {
-                $.mobile.changePage('#startpage', {transition: "slide"});
+                window.location = "PaarassoziationstestTeil1.html";
+//                $.mobile.changePage('#startpage', {transition: "slide"});
                 // store user test id
                 jQuery.jStorage.set("UserName", id);
                 console.log(data);

@@ -6,8 +6,8 @@ and open the template in the editor.
 -->
 <html>
     <head>
-       <title>NeuroCare-Screening</title>
-       
+        <title>NeuroCare-Screening</title>
+
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0b1.min.css"/>
         <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
@@ -23,45 +23,64 @@ and open the template in the editor.
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     </head>
-    
-    
-    
-    
-    <body>
-        
-         <!--startpage for neurocare screenign-->
-        <div data-role="page" id="start" data-dom-cache=true class="startPage">
 
+
+
+
+    <body>
+
+        <!--         startpage for neurocare screenign
+                <div data-role="page" id="start" data-dom-cache=true class="startPage">
+        
+        
+                    <div data-role="content">
+        
+                         <div class="testname">NeuroCare<br>Screening</div>
+        
+        
+                    </div>
+        
+                    script used to show start page for few seconds and the to switch to intro page
+                    <script type="text/javascript">
+        
+                        $(document).delegate('#start', 'pageshow', function() {
+        
+                            function showJustForWhile() {
+                                setTimeout(function() {
+                                    window.location = "PaarassoziationstestTeil1.html";
+                                }, 2000);
+        
+                            }
+        
+                            showJustForWhile();
+        
+                        });
+                    </script>
+        
+        
+                </div>-->
+
+
+        <!--startpage for neurocare screenign-->
+        <div data-role="page" id="start" data-dom-cache=true class="startScreen">
 
             <div data-role="content">
 
-                 <div class="testname">NeuroCare<br>Screening</div>
-
+                <!--login button-->
+                <image src="css\images\btns-bg\bt-anmelden.png" class="loginButton"/> 
+                
+                
+                <!--app name--> 
+               <div class="appName">Screening</div>
+               
+               
+                <!--app version--> 
+               <div class="appVersion">v1.0</div>
 
             </div>
 
-            <!--script used to show start page for few seconds and the to switch to intro page-->
-            <script type="text/javascript">
-
-                $(document).delegate('#start', 'pageshow', function() {
-
-                    function showJustForWhile() {
-                        setTimeout(function() {
-                            window.location = "PaarassoziationstestTeil1.html";
-                        }, 2000);
-
-                    }
-
-                    showJustForWhile();
-
-                });
-            </script>
-
 
         </div>
-        
-        
-        
-        
+
     </body>
 </html>

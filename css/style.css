@@ -28,6 +28,30 @@
         
         min-height:100%;
     }
+    
+    
+    
+    .loginPage{
+        background-image: url('images/bg/bg-empty.png');
+        background-color: transparent;
+        background-size: 100%;
+        width: 100%;
+        height: 100%;
+        
+        min-height:100%;
+    }
+    
+    
+    
+    .startScreen{
+        background-image: url('images/bg/bg-startbildschirm.png');
+        background-color: transparent;
+        background-size: 100%;
+        width: 100%;
+        height: 100%;        
+        min-height:100%;
+    }
+    
 
     .whitePage{
         background-image: url('images/bg/bg-white.png');
@@ -63,7 +87,7 @@
     }
 
 
-    .defaultButton:active, .defaultButton:focus, .defaultButton.active{
+    .defaultButton:active{
         background-image:url('images/btns-bg/bt-weiter-hover.png');
         position:absolute; 
         bottom: 1.7%;
@@ -88,11 +112,59 @@
     }
 
 
-    .startButton:active, .startButton:focus, .startButton.active{
+    .startButton:active{
         background-image:url('images/btns-bg/bt-start.png');
         position:absolute; 
         bottom: 1.7%;
         right: 1.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
+    .loginButton{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 230px;
+        position: absolute;
+        Top: 5%;
+        right: 5%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+    
+    .loginButton:active{
+        background-image:url('images/btns-bg/bt-anmelden.png');
+        position:absolute; 
+        Top: 5.2%;
+        right: 4.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
+     .loginButtonBottom{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 230px;
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+    
+    .loginButtonBottom:active{
+        background-image:url('images/btns-bg/bt-anmelden.png');
+        position:absolute; 
+        bottom: 4.8%;
+        right: 4.8%;
         background-image: none;
         outline: none;
         -webkit-box-shadow: none;
@@ -138,7 +210,7 @@
     }
 
 
-    .nextTaskButton:active, .nextTaskButton:focus, .nextTaskButton.active{
+    .nextTaskButton:active{
         background-image:url('images/btns-bg/bt-next-task.png');
         position:absolute; 
         bottom: 1.7%;
@@ -239,6 +311,21 @@
 
 
     }
+    
+    .fillinHintText{
+        font-size: 30px;
+        font-family: Enigma_2;
+        color: red;
+        text-shadow: none;
+        text-align: left;
+        font-weight: bold;
+        position: relative;       
+        left: 7%;
+        text-shadow: none; 
+        display: inline;
+
+
+    }
 
     .answerSelectionHintText{
         font-size: 30px;
@@ -299,6 +386,19 @@
         bottom: 10%;
 
     }
+    
+    
+    .fillinHintIcon{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 35px;
+        width: 35px;
+        position: relative;       
+        left: 5%;
+        top: 5%;
+        
+
+    }
 
     .answerSelectionHintIcon{
         background-size: 100%;
@@ -319,6 +419,17 @@
         left: 5%; 
         width: 70%;
         height: Auto;
+    }
+    
+    
+    .fillinHintDiv{
+        visibility: hidden;
+        background-color: transparent;
+        position: absolute;
+        bottom: 8%;
+        left: 5%; 
+        width: 70%;
+        height: 10%;
     }
 
     .answerSelectionHintDiv{
@@ -1091,6 +1202,115 @@
         border: 1px solid black;       
     }
 
+    
+    
+    .loginDiv{
+        width: 100%;
+        height: 28%;
+        background-color: transparent;
+        position: absolute;
+        top:50%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        
+    }
+    
+    
+    .usernameDiv{
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        position: relative;
+        top:10%;
+        left: 2%;
+        margin: auto;
+        
+        
+    }
+    
+    .usernameHeader{
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        position: relative;
+        top:2%;
+        left: 2%;
+        margin: auto;
+        font-size: 20px;
+        font-family: EnigmaB_2;
+        color: #57bb58;
+        text-shadow: none;
+        display: inline;
+    }
+    
+    
+    .loginInput {
+        width: 80%;
+        height: 10%;
+        background-color: transparent;
+        position: relative;
+        top:20%;
+        left: 10%;
+        right: 2%;
+        margin: auto;
+    }
+    
+    
+    
+    .loginInstruction{
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        position: absolute;
+        top:42%;
+        left: 2%;
+        margin: auto;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: none;
+        font-family: EnigmaB_2;
+        color: #57bb58;
+    }
+    
+    
+    
+    
+    
+    .appName{
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        position: absolute;
+        bottom:2%;
+        right: 5%;
+        margin: auto;
+        font-size: 75px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: none;
+        font-family: EnigmaB_2;
+        color: white;
+    }
+    
+    
+    .appVersion{
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        position: absolute;
+        bottom:2%;
+        left:2%;
+        margin: auto;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: none;
+        font-family: EnigmaB_2;
+        color: white;
+    }
+    
 
 
     .testname{

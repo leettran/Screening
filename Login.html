@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>NeuroCare-Screening</title>
+
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0b1.min.css"/>
+        <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.0rc2.min.js"></script>
+        <link rel="stylesheet" href="css/style.css" media="screen and (orientation: landscape)" type="text/css">  
+        <link rel="stylesheet" href="css/style_none.css" media="screen and (orientation: portrait)" type="text/css">
+
+        <script type="text/javascript" src="js/jsfunctions.js"></script>
+        <script type="text/javascript" src="js/jstorage.js"></script>
+        <!-- to add only when to build app--> 
+        <!--<script type="text/javascript" src="cordova.js"></script>-->
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    </head>
+
+
+
+
+    <body>
+
+
+
+
+        <!--startpage for neurocare screenign-->
+        <div data-role="page" id="login" data-dom-cache=true class="loginPage">
+
+            <div data-role="content">
+
+
+                <!--login instruction--> 
+                <div class="loginInstruction">Bitte melden Sie sich mit Ihren Zugangsdaten an:</div>
+
+
+                <!--log in area-->
+                <div class="loginDiv">
+
+                    <!--user name-->
+                    <div class="usernameDiv">
+
+                        <p class="usernameHeader">Benutzer</p>
+                        
+                        
+                        <input type = "text" id="username" class="loginInput" placeholder="Ihr NeuroCare-Benutzername" required/>
+                        
+                    </div>
+                    
+                    
+                    </br></br>
+                    
+                    <!--password-->
+                     <div class="usernameDiv">
+
+                        <p class="usernameHeader">Passwort</p>
+                        
+                        
+                        <input type = "password" id="password" class="loginInput" placeholder="Ihr NeuroCare-Passwort" required/>
+                        
+                    </div>
+
+                </div>
+                
+                
+                <!--selection hint-->
+                <div class="fillinHintDiv" id="fillinHint">
+
+                    <image src="css\images\icons\info.png" class="fillinHintIcon"/>
+                    <h1 class="fillinHintText">Bitte füllen Sie beide Felder aus!</h1>
+
+                </div>
+
+
+
+                <!--login button-->
+                <image src="css\images\btns-bg\bt-anmelden.png" class="loginButtonBottom" onclick="validateLogin(document.getElementById('username').value,document.getElementById('password').value);"/> 
+
+                
+                <!--create user account link-->
+                
+
+            </div>
+
+
+        </div>
+        
+        
+        
+        
+        <!--forbidden page-->
+        <div data-role="page" id="forbiddenHint" data-dom-cache=true class="whitePage">
+
+            <div data-role="content">
+                <h1>Unberechtigter Zugang!</h1> 
+                <br><br>
+                <br><br>
+
+
+                <p class="instructionText">Sie haben entweder das falsche Passwort oder den falschen Benutzernamen eingegeben.<br> Bitte versuchen Sie es erneut.</p>
+                <br>
+
+                <br><br>
+                <center> <a href="#login" data-role="button" data-inline="true" class="defaultButton" >Nochmal</a> </center>
+            </div>
+        </div> 
+        
+
+    </body>
+</html>
