@@ -128,6 +128,22 @@ var repeats;
 //global functions 
 
 
+
+// forward to login page
+function goToLoginPage(){
+    
+    try
+    {
+        window.location = "Login.html";
+    }
+    
+    catch (error) {
+        console.log("Error when forwarding to login page! " + error);
+    }
+}
+
+
+
 // validate the login credentials
 function validateLogin(username, password) {
     try
