@@ -129,6 +129,20 @@ var repeats;
 
 
 
+function goToRegistration(){
+    
+    try
+    {
+      window.open('http://neurocare-aal.de', '_system');  
+    }
+    
+    catch (error) {
+        console.log("Error when forwarding to registration page! " + error);
+    }
+    
+}
+
+
 // forward to login page
 function goToLoginPage(){
     
