@@ -496,15 +496,35 @@ Component: Screening
 
                 <br> <br> <br>
 
-                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="goToADLs();"/>
+                <image src="css\images\btns-bg\bt-weiter.png" class="defaultButton" onclick="showFollowingPageDelayed('depressionScreeningEndPage',500);"/>
 
-                <!--<a data-role="button" data-inline="true" class="defaultButton" style="float: right;" onclick="goToADLs();">Weiter</a>-->
+               
 
             </div>
 
         </div>
 
 
+        
+        <div data-role="page" id="depressionScreeningEndPage" data-dom-cache=true class="whitePage">
+
+
+            <div data-role="content">
+                
+                <image src="css\images\icons\milestone6.png" class="milestoneIcon"/>
+                
+                <h1 id="repeatitionHint" class="endPageHint" >Die sechste Aufgabe haben Sie geschafft!</h1> 
+
+                <h2 class="progressbarHint">Ihr Fortschritt:</h1> 
+                
+                <progress class="executionProgress" value="60" max="70"></progress>
+
+                <image src="css\images\btns-bg\bt-next-task.png" class="nextTaskButton" onclick="goToADLs();"/>
+
+                
+            </div>
+        </div> 
+        
 
 
     </body>

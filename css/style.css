@@ -16,7 +16,7 @@
     @font-face { font-family: QuattrocentoSans; src: url('QuattrocentoSans-Regular.otf'); }
 
 
-    
+
 
 
     .startPage{
@@ -25,24 +25,24 @@
         background-size: 100%;
         width: 100%;
         height: 100%;
-        
+
         min-height:100%;
     }
-    
-    
-    
+
+
+
     .loginPage{
         background-image: url('images/bg/bg-empty.png');
         background-color: transparent;
         background-size: 100%;
         width: 100%;
         height: 100%;
-        
+
         min-height:100%;
     }
-    
-    
-    
+
+
+
     .startScreen{
         background-image: url('images/bg/bg-startbildschirm.png');
         background-color: transparent;
@@ -51,7 +51,7 @@
         height: 100%;        
         min-height:100%;
     }
-    
+
 
     .whitePage{
         background-image: url('images/bg/bg-white.png');
@@ -59,7 +59,7 @@
         background-size: 100%;
         width: 100%;
         height: 100%;
-        
+
         min-height:100%;
     }
 
@@ -70,7 +70,7 @@
         background-size: 100%;
         width: 100%;
         height: 100%;
-        
+
         min-height:100%;
     }
 
@@ -122,8 +122,8 @@
         -webkit-box-shadow: none;
         box-shadow: none;
     }
-    
-    
+
+
     .loginButton{
         background-size: 100%;
         background-repeat:no-repeat;       
@@ -135,7 +135,7 @@
         font-size: x-large;
         text-shadow: none;
     }
-    
+
     .loginButton:active{
         background-image:url('images/btns-bg/bt-anmelden.png');
         position:absolute; 
@@ -146,9 +146,9 @@
         -webkit-box-shadow: none;
         box-shadow: none;
     }
-    
-    
-     .loginButtonBottom{
+
+
+    .loginButtonBottom{
         background-size: 100%;
         background-repeat:no-repeat;       
         height: 70px;
@@ -159,7 +159,7 @@
         font-size: x-large;
         text-shadow: none;
     }
-    
+
     .loginButtonBottom:active{
         background-image:url('images/btns-bg/bt-anmelden.png');
         position:absolute; 
@@ -311,7 +311,7 @@
 
 
     }
-    
+
     .fillinHintText{
         font-size: 30px;
         font-family: Enigma_2;
@@ -374,6 +374,18 @@
         top: 3px;
 
     }
+    
+    
+    .milestoneIcon{
+        background-size: 100%;
+        background-repeat:no-repeat;   
+        width: 163px;
+        height: 211px;
+        position: absolute;       
+        left: 5%;
+        top: 5%;
+
+    }
 
 
     .selectionHintIcon{
@@ -386,8 +398,8 @@
         bottom: 10%;
 
     }
-    
-    
+
+
     .fillinHintIcon{
         background-size: 100%;
         background-repeat:no-repeat;       
@@ -396,7 +408,7 @@
         position: relative;       
         left: 5%;
         top: 5%;
-        
+
 
     }
 
@@ -420,8 +432,8 @@
         width: 70%;
         height: Auto;
     }
-    
-    
+
+
     .fillinHintDiv{
         visibility: hidden;
         background-color: transparent;
@@ -475,6 +487,29 @@
         text-shadow: none;
         position: absolute;
         top: 30%;
+        left: 5%;
+    }
+    
+    
+    .endPageHint
+    {
+        font-size: 45px;
+        font-family: EnigmaB_2;
+        color: black;
+        text-shadow: none;
+        position: absolute;
+        top: 30%;
+        left: 15%;
+    }
+    
+    .progressbarHint
+    {
+        font-size: 35px;
+        font-family: EnigmaB_2;
+        color: black;
+        text-shadow: none;
+        position: absolute;
+        top: 60%;
         left: 5%;
     }
 
@@ -1202,8 +1237,8 @@
         border: 1px solid black;       
     }
 
-    
-    
+
+
     .loginDiv{
         width: 90%;
         height: 28%;
@@ -1213,10 +1248,10 @@
         left: 0;
         right: 0;
         margin: auto;
-        
+
     }
-    
-    
+
+
     .usernameDiv{
         width: auto;
         height: auto;
@@ -1225,10 +1260,10 @@
         top:10%;
         left: 2%;
         margin: auto;
-        
-        
+
+
     }
-    
+
     .usernameHeader{
         width: auto;
         height: auto;
@@ -1243,8 +1278,70 @@
         text-shadow: none;
         display: inline;
     }
-    
-    
+
+
+    .failedLoginHint{
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        position: absolute;
+        top:55%;
+        left: 2%;
+        margin: auto;
+        font-size: 30px;
+        font-family: EnigmaB_2;
+        color: black;
+        text-shadow: none;
+        display: inline;
+    }
+
+
+    .createUserHint{
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        position: absolute;
+        top:70%;
+        left: 2%;
+        margin: auto;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: EnigmaB_2;
+        color: #57bb58;
+        text-shadow: none;
+        display: inline;
+    }
+
+
+    .executionProgress[value]{
+       
+        border: 2px;
+        border-radius: 10px;
+        width: 500px;
+        height: 50px;
+        position: absolute;
+        top: 63%;
+        left: 30%;
+
+    }
+
+    progress[value]::-webkit-progress-bar {
+        background-color: lightgray;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    }
+
+    progress[value]::-webkit-progress-value{
+        background-color: #57bb58;
+        border-radius: 5px; 
+
+    }
+
+
+
+
+
+
     .loginInput {
         width: 80%;
         height: 10%;
@@ -1255,9 +1352,9 @@
         right: 2%;
         margin: auto;
     }
-    
-    
-    
+
+
+
     .loginInstruction{
         width: auto;
         height: auto;
@@ -1273,11 +1370,11 @@
         font-family: EnigmaB_2;
         color: #57bb58;
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     .appName{
         width: auto;
         height: auto;
@@ -1293,8 +1390,8 @@
         font-family: EnigmaB_2;
         color: white;
     }
-    
-    
+
+
     .appVersion{
         width: auto;
         height: auto;
@@ -1310,7 +1407,7 @@
         font-family: EnigmaB_2;
         color: white;
     }
-    
+
 
 
     .testname{

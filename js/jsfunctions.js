@@ -143,6 +143,22 @@ function goToLoginPage(){
 }
 
 
+// forward to login page
+function goToLoginPageAgain(){
+    
+    try
+    {
+        setTimeout(function () {
+            $.mobile.changePage('#login', {transition: "slide"});
+        }, 100);
+    }
+    
+    catch (error) {
+        console.log("Error when forwarding to login page! " + error);
+    }
+}
+
+
 
 // validate the login credentials
 function validateLogin(username, password) {
@@ -3940,6 +3956,8 @@ function goToADLs() {
     }
 }
 
+
+
 // check if the hitten word was correspendant to the first word
 function isCorrectWord(leftwDiv, rightwTd) {
 
@@ -4598,7 +4616,7 @@ function goToNextADL() {
                     jQuery.jStorage.set("ADLQuestAnswerMap", ADLQuestAnswerMap);
 
                     // show the end of screening
-                    $.mobile.changePage('#screeningEnd', {transition: "slide"});
+                    $.mobile.changePage('#adlsEndPage', {transition: "slide"});
                 }
                 break;
         }
@@ -5123,13 +5141,14 @@ function login(id, password) {
                 console.log("success");
             }
             else {
-                $.mobile.changePage('#forbiddenHint', {transition: "slide"});
+                $.mobile.changePage('#loginFailedPage', {transition: "slide"});
 
                 console.log("failed");
             }
 
         }).fail(function (data) {
-            $.mobile.changePage('#forbiddenHint', {transition: "slide"});
+            $.mobile.changePage('#loginFailedPage', {transition: "slide"});
+            
             console.log(data);
             console.log("failed");
         });

@@ -81,13 +81,17 @@ and open the template in the editor.
 
                 </div>
 
+                
+                <!--create user account link to neurocare portal-->
+                <a href="http://www.neurocare-aal.de" class="createUserHint" target="_blank">Noch nicht registriert?</a>
+                
 
 
                 <!--login button-->
                 <image src="css\images\btns-bg\bt-anmelden.png" class="loginButtonBottom" onclick="validateLogin(document.getElementById('username').value,document.getElementById('password').value);"/> 
 
                 
-                <!--create user account link-->
+                
                 
 
             </div>
@@ -99,19 +103,22 @@ and open the template in the editor.
         
         
         <!--forbidden page-->
-        <div data-role="page" id="forbiddenHint" data-dom-cache=true class="whitePage">
+        <div data-role="page" id="loginFailedPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                <h1>Unberechtigter Zugang!</h1> 
-                <br><br>
-                <br><br>
-
-
-                <p class="instructionText">Sie haben entweder das falsche Passwort oder den falschen Benutzernamen eingegeben.<br> Bitte versuchen Sie es erneut.</p>
-                <br>
-
-                <br><br>
-                <center> <a href="#login" data-role="button" data-inline="true" class="defaultButton" >Nochmal</a> </center>
+                
+                
+                 <!--failed login instruction--> 
+                <div class="loginInstruction">Falsche Zugangsdaten!</div>
+                
+                
+                <p class="failedLoginHint">Sie haben leider den falschen Benutzernamen oder das falsche Passwort eingegeben! Bitte versuchen Sie es nochmal.</p>
+                
+                
+                <!--login button-->
+                <image src="css\images\btns-bg\bt-anmelden.png" class="loginButtonBottom" onclick="goToLoginPageAgain();"/>
+                
+                
             </div>
         </div> 
         

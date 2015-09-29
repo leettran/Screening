@@ -816,15 +816,19 @@ Component: Screening
 
 
             <div data-role="content">
-                <h1 id="repeatitionHint" class="transitionPageText" >Die zweite Aufgabe haben Sie geschafft!</h1> 
+                
+                <image src="css\images\icons\milestone2.png" class="milestoneIcon"/>
+                
+                <h1 id="repeatitionHint" class="endPageHint" >Die zweite Aufgabe haben Sie geschafft!</h1> 
 
-                <br>
-                <br>
-
+                <h2 class="progressbarHint">Ihr Fortschritt:</h1> 
+                
+                <progress class="executionProgress" value="20" max="70"></progress>
+                
+                
                 <image src="css\images\btns-bg\bt-next-task.png" class="nextTaskButton" onclick="goToMosaiktest();"/>
 
-                <!--                <a data-role="button" data-inline="true" class="defaultButton" onclick="goToMosaiktest();"
-                                   style="float: right;position: absolute;top: 70%;left: 70%">Nächste Aufgabe</a> -->
+                
             </div>
         </div> 
 
