@@ -122,7 +122,47 @@
         -webkit-box-shadow: none;
         box-shadow: none;
     }
+    
+    
+    .startScreeningButton{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 230px;
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        font-size: x-large;
+        text-shadow: none;
+    }
 
+
+    .startScreeningButton:active{
+        background-image:url('images/btns-bg/bt-start.png');
+        position:absolute; 
+        bottom: 4.8%;
+        right: 4.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    
+    .buttonLong{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 60px;
+        width: 95%;
+        position: relative;
+        top: 2%;
+        right: 1%;
+        left: 1%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+    
+    
 
     .loginButton{
         background-size: 100%;
@@ -165,6 +205,54 @@
         position:absolute; 
         bottom: 4.8%;
         right: 4.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
+    .loginButtonBottomRight{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 230px;
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+    .loginButtonBottomRight:active{
+        background-image:url('images/btns-bg/bt-anmelden.png');
+        position:absolute; 
+        bottom: 4.8%;
+        right: 4.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
+     .loginButtonBottomLeft{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 230px;
+        position: absolute;
+        bottom: 5%;
+        left: 5%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+    .loginButtonBottomLeft:active{
+        background-image:url('images/btns-bg/bt-zurueck.png');
+        position:absolute; 
+        bottom: 4.8%;
+        left: 4.8%;
         background-image: none;
         outline: none;
         -webkit-box-shadow: none;
@@ -1263,6 +1351,47 @@
 
 
     }
+    
+    
+    .divMiddle{
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+        position: absolute;
+        top:40%;
+        left: 1%;
+        right: 1%;
+        margin: auto;
+        
+
+    }
+    
+    .divLeft{
+        width: 18%;
+        height: auto;
+        background-color: transparent;
+        position: absolute;
+        top:40%;
+        left: 1%;
+        
+        margin: auto;
+
+
+    }
+    
+    
+    .divRight{
+        width: 80%;
+        height: auto;
+        background-color: transparent;
+        position: absolute;
+        top:40%;
+        right: 2%;
+        
+        margin: auto;
+
+
+    }
 
     .usernameHeader{
         width: auto;
@@ -1277,6 +1406,37 @@
         color: #57bb58;
         text-shadow: none;
         display: inline;
+    }
+    
+    
+    .userInfoHeader{
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        position: relative;
+        top:2%;
+        left: 2%;
+        margin: 0,5px,0,0;
+        font-size: 20px;
+        font-family: EnigmaB_2;
+        color: #57bb58;
+        text-shadow: none;
+        display: block;
+    }
+    
+    .userInfoContent{
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        position: relative;
+        top:2%;
+        left: 2%;
+        margin: 0,5px,0,0;
+        font-size: 20px;
+        font-family: EnigmaB_2;
+        color: black;
+        text-shadow: none;
+        display: block;
     }
 
 
@@ -1352,6 +1512,17 @@
         right: 2%;
         margin: auto;
     }
+    
+    .loginInput2 {
+        width: 80%;
+        height: 10%;
+        background-color: transparent;
+        position: relative;
+        top:20%;
+        left: 11.5%;
+        right: 2%;
+        margin: auto;
+    }
 
 
 
@@ -1371,6 +1542,24 @@
         color: #57bb58;
     }
 
+    
+    
+    .headerTopMiddle{
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        position: absolute;
+        top:25%;
+        left: 5%;
+        right: 5%;
+        margin: auto;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: none;
+        font-family: EnigmaB_2;
+        color: #57bb58;
+    }
 
 
 

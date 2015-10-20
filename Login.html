@@ -122,6 +122,223 @@ and open the template in the editor.
             </div>
         </div> 
         
+        
+        
+        
+        
+        
+         <!--patients' management page-->
+        <div data-role="page" id="patientsManagementPage" data-dom-cache=true class="loginPage">
+
+            <div data-role="content">
+                
+                
+                 <!--failed login instruction--> 
+                <div class="headerTopMiddle">Patienten verwalten</div>
+                
+                
+                <div class="divMiddle"> 
+                
+                <a href="#myPatientsPage" data-role="button" data-inline="true" class="buttonLong">Meine Patienten</a>
+                <a href="#newPatientPage" data-role="button" data-inline="true" class="buttonLong">Neuen Patienten anlegen</a>
+                
+                
+                </div>
+                
+                
+                
+            </div>
+        </div> 
+         
+         
+         
+         
+                
+         
+          <!--draw up new patient page-->
+        <div data-role="page" id="newPatientPage" data-dom-cache=true class="loginPage">
+
+            <div data-role="content">
+                
+                
+                 <!--failed login instruction--> 
+                <div class="headerTopMiddle">NeuroCare-Benutzer als neuen Patienten anlegen</div>
+                
+                
+                <div class="divMiddle"> 
+                
+                 <!--user name-->
+                    <div class="usernameDiv">
+
+                        <p class="usernameHeader">Benutzername</p>
+                        
+                        
+                        <input type = "text" id="byUsername" class="loginInput" placeholder="NeuroCare-Benutzernamen eingeben und suchen"/>
+                        
+                    </div>
+                    
+                    
+                    </br></br>
+                    
+                    <!--user id-->
+                     <div class="usernameDiv">
+
+                         <p class="usernameHeader">Benutzer-ID</p>
+                        
+                        
+                        <input type = "text" id="byUserId" class="loginInput" style="left: 11.5%;" placeholder="NeuroCare-Benutzer ID eingeben und suchen"/>
+                        
+                    </div>
+                
+                </div>
+                
+                
+                
+                <!--login button-->
+                <image src="css\images\btns-bg\bt-anmelden.png" class="loginButtonBottom" />
+                
+                
+                
+            </div>
+        </div> 
+          
+          
+          
+          
+          
+          
+           <!--patient's information page-->
+        <div data-role="page" id="patientInfoPage" data-dom-cache=true class="loginPage">
+
+            <div data-role="content">
+                
+                
+                 <!--failed login instruction--> 
+                <div class="headerTopMiddle">Patient-Informationen</div>
+                
+                
+                <div class="divMiddle"> 
+                
+                    <div class="divLeft">   
+                        
+                        <p class="userInfoHeader">Benutzer-ID</p>
+                        <p class="userInfoHeader">Benutzername</p>
+                        <p class="userInfoHeader">Name, Vorname</p>
+                        <p class="userInfoHeader">Geburtsdatum</p>
+                        <p class="userInfoHeader">Adresse</p>
+                        
+                        
+                    </div>
+                    
+                    
+                    <div class="divRight" >
+                        
+                        
+                        <p class="userInfoContent">012548755252</p>
+                        <p class="userInfoContent">neurocareUser</p>
+                        <p class="userInfoContent">Mustermann, Max</p>
+                        <p class="userInfoContent">01.01.1945</p>
+                        <p class="userInfoContent">Ellerstrasse 42, 40223 Düsseldorf</p>
+                        
+                    </div>
+                    
+                    
+                
+                
+                </div>
+                
+                
+                
+                <!--draw up button-->
+                <image src="css\images\btns-bg\bt-weiter.png" class="loginButtonBottomRight" onclick="showFollowingPageDelayed('myPatientsPage',100);"/>
+                
+                <!--back button-->
+                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomLeft" onclick="goToNewPatientPage();" />
+                
+            </div>
+        </div> 
+           
+           
+           
+            <!--my patients page-->
+        <div data-role="page" id="myPatientsPage" data-dom-cache=true class="loginPage">
+
+            <div data-role="content">
+                
+                
+                 <!--failed login instruction--> 
+                <div class="headerTopMiddle">Meine Patienten</div>
+                
+                
+                <div class="divMiddle"> 
+                
+                <a href="#patientProfilePage" data-role="button" data-inline="true" class="buttonLong">Max, Mustermann</a>
+                <a href="#" data-role="button" data-inline="true" class="buttonLong">Petra, Müller</a>
+                <a href="#" data-role="button" data-inline="true" class="buttonLong">Hans, Meier</a>
+                
+                
+                </div>
+                
+                
+                
+            </div>
+        </div> 
+        
+            
+            
+            
+             <!--patient's page-->
+        <div data-role="page" id="patientProfilePage" data-dom-cache=true class="loginPage">
+
+            <div data-role="content">
+                
+                
+                 <!--failed login instruction--> 
+                <div class="headerTopMiddle">Patient-Profil</div>
+                
+                
+                <div class="divMiddle"> 
+                
+                    <div class="divLeft">   
+                        
+                        <p class="userInfoHeader">Benutzer-ID</p>
+                        <p class="userInfoHeader">Benutzername</p>
+                        <p class="userInfoHeader">Name, Vorname</p>
+                        <p class="userInfoHeader">Geburtsdatum</p>
+                        <p class="userInfoHeader">Adresse</p>
+                        
+                        
+                    </div>
+                    
+                    
+                    <div class="divRight" >
+                        
+                        
+                        <p class="userInfoContent">012548755252</p>
+                        <p class="userInfoContent">neurocareUser</p>
+                        <p class="userInfoContent">Mustermann, Max</p>
+                        <p class="userInfoContent">01.01.1945</p>
+                        <p class="userInfoContent">Ellerstrasse 42, 40223 Düsseldorf</p>
+                        
+                    </div>
+                    
+                    
+                
+                
+                </div>
+                
+                
+                
+                <!--draw up button-->
+                <image src="css\images\btns-bg\bt-start.png" class="startScreeningButton" onclick="startScreeningSession();"/>
+                
+                <!--back button-->
+                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomLeft"/>
+                
+            </div>
+        </div>
+        
+        
 
     </body>
 </html>

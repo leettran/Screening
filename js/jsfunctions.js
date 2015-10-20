@@ -172,6 +172,21 @@ function goToLoginPageAgain(){
     }
 }
 
+// forward to new patient page
+function goToNewPatientPage(){
+    
+    try
+    {
+        setTimeout(function () {
+            $.mobile.changePage('#newPatientPage', {transition: "slide"});
+        }, 100);
+    }
+    
+    catch (error) {
+        console.log("Error when forwarding to new patient page! " + error);
+    }
+}
+
 
 
 // validate the login credentials
@@ -214,6 +229,25 @@ function validateLogin(username, password) {
         console.log("Error when validating login! " + error);
     }
 }
+
+
+
+// starts the screening session
+function startScreeningSession(){
+    try
+    {
+        
+       window.location = "PaarassoziationstestTeil1.html"; 
+    }
+    
+    catch (error) {
+        console.log("Error when starting screening! " + error);
+    }
+}
+
+
+
+
 
 
 
@@ -5135,7 +5169,7 @@ function login(id, password) {
     try {
         $.ajax({
             type: "POST",
-            url: "https://www.neurocare-aal.de/screening/functions/login.php",
+            url: "https://www.neurocare-aal.de/screening/functions/loginUser.php",
             data: {
                 userID: id,
                 userPassword: password
@@ -5147,8 +5181,8 @@ function login(id, password) {
 
 
             if (data.success === true) {
-                window.location = "PaarassoziationstestTeil1.html";
-//                $.mobile.changePage('#startpage', {transition: "slide"});
+//                window.location = "PaarassoziationstestTeil1.html";
+                $.mobile.changePage('#patientsManagementPage', {transition: "slide"});
                 // store user test id
                 jQuery.jStorage.set("UserName", id);
                 console.log(data);
