@@ -129,28 +129,28 @@ var repeats;
 
 
 
-function goToRegistration(){
-    
+function goToRegistration() {
+
     try
     {
-      window.open('http://neurocare-aal.de', '_system');  
+        window.open('http://neurocare-aal.de', '_system');
     }
-    
+
     catch (error) {
         console.log("Error when forwarding to registration page! " + error);
     }
-    
+
 }
 
 
 // forward to login page
-function goToLoginPage(){
-    
+function goToLoginPage() {
+
     try
     {
         window.location = "Login.html";
     }
-    
+
     catch (error) {
         console.log("Error when forwarding to login page! " + error);
     }
@@ -158,34 +158,21 @@ function goToLoginPage(){
 
 
 // forward to login page
-function goToLoginPageAgain(){
-    
+function goToLoginPageAgain() {
+
     try
     {
         setTimeout(function () {
             $.mobile.changePage('#login', {transition: "slide"});
         }, 100);
     }
-    
+
     catch (error) {
         console.log("Error when forwarding to login page! " + error);
     }
 }
 
-// forward to new patient page
-function goToNewPatientPage(){
-    
-    try
-    {
-        setTimeout(function () {
-            $.mobile.changePage('#newPatientPage', {transition: "slide"});
-        }, 100);
-    }
-    
-    catch (error) {
-        console.log("Error when forwarding to new patient page! " + error);
-    }
-}
+
 
 
 
@@ -196,33 +183,33 @@ function validateLogin(username, password) {
         if (username === null || username === "")
         {
             $("#fillinHint").css("visibility", "visible");
-                setTimeout(function () {
-                    $("#fillinHint").css("visibility", "hidden");
-                }, 1000);
-                
+            setTimeout(function () {
+                $("#fillinHint").css("visibility", "hidden");
+            }, 1000);
+
             return false;
         }
-        
+
         if (password === null || password === "")
         {
             $("#fillinHint").css("visibility", "visible");
-                setTimeout(function () {
-                    $("#fillinHint").css("visibility", "hidden");
-                }, 1000);
-                
+            setTimeout(function () {
+                $("#fillinHint").css("visibility", "hidden");
+            }, 1000);
+
             return false;
         }
-        
-        
+
+
         // log in if credentials are entered
-        login(username,password);
-        
+        login(username, password);
+
         // reset values 
         $("#username").val("");
         $("#password").val("");
-        
-        
-        
+
+
+
     }
 
     catch (error) {
@@ -232,14 +219,59 @@ function validateLogin(username, password) {
 
 
 
-// starts the screening session
-function startScreeningSession(){
+
+
+// validate the user credentials
+function validateUserCredentials(username, userId) {
     try
     {
-        
-       window.location = "PaarassoziationstestTeil1.html"; 
+        if (username === null || username === "")
+        {
+            $("#fillinHint").css("visibility", "visible");
+            setTimeout(function () {
+                $("#fillinHint").css("visibility", "hidden");
+            }, 1000);
+
+            return false;
+        }
+
+        if (userId === null || userId === "")
+        {
+            $("#fillinHint").css("visibility", "visible");
+            setTimeout(function () {
+                $("#fillinHint").css("visibility", "hidden");
+            }, 1000);
+
+            return false;
+        }
+
+
+        // log in if credentials are entered
+        searchUser(username, userId);
+
+        // reset values 
+        $("#byUsername").val("");
+        $("#byUserId").val("");
+
+
+
     }
-    
+
+    catch (error) {
+        console.log("Error when validating user credentials! " + error);
+    }
+}
+
+
+
+// starts the screening session
+function startScreeningSession() {
+    try
+    {
+
+        window.location = "PaarassoziationstestTeil1.html";
+    }
+
     catch (error) {
         console.log("Error when starting screening! " + error);
     }
@@ -5162,8 +5194,457 @@ function getArray() {
 
 
 
+// to get all patients of a professinal user
+function getMyPatients() {
 
-// to log in user
+
+
+    try {
+        $.ajax({
+            type: "POST",
+            url: "https://www.neurocare-aal.de/screening/functions/getAllPatients.php",
+            data: {
+                AdminId: jQuery.jStorage.get("AdminUserId")
+
+            }
+
+
+           // request successfull
+        }).success(function (data) {
+  // null was received
+            if (data === null) {
+
+                $.mobile.changePage('#requestFailedPage', {transition: "slide"});
+
+                console.log("null data received!");
+            }
+
+ // patients' list is empty
+            if (data === "nopatients") {
+
+                $.mobile.changePage('#noPatientFoundPage', {transition: "slide"});
+
+                console.log("no patients");
+
+            }
+// a petients list was received
+            else if (data.patientsObject !== null) {
+
+                // create a button for each found patient user
+                viewPatients(data.patientsObject);
+//                // show my patients page
+//                $.mobile.changePage('#myPatientsPage', {transition: "slide"});
+
+                console.log("patients list received");
+                console.log(data.patientsObject);
+            }
+
+// post data was empty
+            else if (data === "postempty") {
+
+                $.mobile.changePage('#requestFailedPage', {transition: "slide"});
+
+                console.log("Post empty");
+            }
+
+
+// request failed
+        }).fail(function (data) {
+
+            if (data === null) {
+
+                console.log("data is null!");
+
+            }
+
+            else if (data !== null) {
+
+
+                console.log(data);
+                console.log("failed request");
+
+            }
+
+            $.mobile.changePage('#requestFailedPage', {transition: "slide"});
+
+
+            
+        });
+    }
+    catch (error) {
+        console.log("error when retrieving patients list: " + error);
+    }
+}
+
+
+
+
+
+
+// shows patients entries as buttons on the view patients page
+function viewPatients(patientsArray) {
+
+    try
+    {
+        
+      // empty patients list
+      $("#myPatientsDiv").empty();
+      
+      
+        
+        for (var i = 0; i < patientsArray.length; i++) {
+            
+            
+            
+
+            $("<a>").attr("data-inline", true)
+                    .attr("data-role", "button")
+                    .attr("id", patientsArray[i])
+                    .addClass("buttonLong")
+                    .text(patientsArray[i])
+
+                    .appendTo("#myPatientsDiv");
+
+            // add on click event
+            $("#"+patientsArray[i]).live("click", function () {
+                
+                var userId = $(this).attr("id");
+                searchUserProfile(userId);
+               
+            });
+
+        }
+        
+        // show my patients page
+        setTimeout(function () {
+           
+             $.mobile.changePage('#myPatientsPage', {transition: "slide"});
+        
+     }, 200);
+    }
+
+    catch (error) {
+        console.log("Error when creating buttons for patients: " + error);
+    }
+
+}
+
+
+
+
+// fills in patient info
+function fillInPatientInfo(patientObject){
+    
+    try
+    {
+        
+         // fill in info page
+                $("#profileUserId").html(patientObject['userId']);
+                $("#profileUserName").html(patientObject['userName']);
+                $("#profileUserFullName").html(patientObject['userName']);
+                $("#profileUserBirthday").html(patientObject['birthDay']);
+                $("#profileUserAddress").html(patientObject['address']);
+
+                $.mobile.changePage('#patientProfilePage', {transition: "slide"});
+    }
+    
+    catch (error) {
+        console.log("Error when filling patient info: " + error);
+    }
+}
+
+
+
+
+// to delete a patient from the patients list
+function deletePatient(patientElementId) {
+
+   // get user id from the p tag
+    var patientUserId = $("#" + patientElementId).text();
+    
+
+    try {
+        $.ajax({
+            type: "POST",
+            url: "https://www.neurocare-aal.de/screening/functions/deletePatient.php",
+            data: {
+                AdminId: jQuery.jStorage.get("AdminUserId"),
+                patientUserId: patientUserId
+
+
+            }
+
+// request successfull
+        }).success(function (data) {
+
+// nodata received
+            if (data === null) {
+
+                $.mobile.changePage('#failedDeletePage', {transition: "slide"});
+
+                console.log("null received!");
+            }
+
+// patient already exists
+            if (data === "notexist") {
+
+                $.mobile.changePage('#patientNotExistingPage', {transition: "slide"});
+
+                console.log("patient doesn't exist");
+
+            }
+            
+            // patient was successfully created
+            else if (data === "removed") {
+
+  // show my patients page (reload patients list)
+               getMyPatients();
+
+                console.log("patient removed");
+            }
+
+// patietn couldn't be created
+            else if (data === "notremoved") {
+
+                $.mobile.changePage('#failedDeletePage', {transition: "slide"});
+
+                console.log("patient removing failed");
+            }
+
+ // one or all posted data was empty
+            else if (data === "postempty") {
+
+                $.mobile.changePage('#failedDeletePage', {transition: "slide"});
+
+                console.log("post empty");
+            }
+
+
+// request failes
+        }).fail(function (data) {
+
+            
+
+            $.mobile.changePage('#failedDeletePage', {transition: "slide"});
+
+
+            console.log("failed request");
+        });
+    }
+    catch (error) {
+        console.log("error when deleting patient patient: " + patientUserId + error);
+    }
+}
+
+
+
+
+
+// to search a user and show his profile
+function searchUserProfile(id) {
+
+    try {
+        $.ajax({
+            type: "POST",
+            url: "https://www.neurocare-aal.de/screening/functions/findPatient.php",
+            data: {
+                
+                userID: id
+
+            }
+
+
+ // request successfull
+        }).success(function (data) {
+
+
+ // patient found, then fill in info page
+            if (data.userObject !== null) {
+
+                // set patient info
+                fillInPatientInfo(data.userObject);
+                
+                console.log(data);
+                console.log("patient user found");
+            }
+            
+            // no patient found
+            else {
+                $.mobile.changePage('#patientNotExistingPage', {transition: "slide"});
+
+                console.log("patient not existing");
+            }
+ // failed request
+        }).fail(function (data) {
+            $.mobile.changePage('#requestFailedPage', {transition: "slide"});
+
+            console.log(data);
+            console.log("failed request!");
+        });
+    }
+    catch (error) {
+        console.log("error when looking for following patient: " + id + error);
+    }
+}
+
+
+
+
+// to add new patient to the list of professinal user
+function addPatientToList(patientElementId) {
+
+   // get user id from the p tag
+    var patientUserId = $("#" + patientElementId).text();
+    
+
+    try {
+        $.ajax({
+            type: "POST",
+            url: "https://www.neurocare-aal.de/screening/functions/drawUpNewPatient.php",
+            data: {
+                AdminId: jQuery.jStorage.get("AdminUserId"),
+                patientUserId: patientUserId
+
+
+            }
+
+// request successfull
+        }).success(function (data) {
+
+// nodata received
+            if (data === null) {
+
+                $.mobile.changePage('#failedDrawUpPage', {transition: "slide"});
+
+                console.log("null received!");
+            }
+
+// patient already exists
+            if (data === "exists") {
+
+                $.mobile.changePage('#patientAlreadyExistsPage', {transition: "slide"});
+
+                console.log("patient already exists");
+
+            }
+            
+            // patient was successfully created
+            else if (data === "created") {
+
+  // show my patients page (reload patients list)
+               getMyPatients();
+
+                console.log("patient created");
+            }
+
+// patietn couldn't be created
+            else if (data === "notcreated") {
+
+                $.mobile.changePage('#failedDrawUpPage', {transition: "slide"});
+
+                console.log("patient creation failed");
+            }
+
+ // one or all posted data was empty
+            else if (data === "postempty") {
+
+                $.mobile.changePage('#failedDrawUpPage', {transition: "slide"});
+
+                console.log("post empty");
+            }
+
+
+// request failes
+        }).fail(function (data) {
+
+            
+
+            $.mobile.changePage('#failedDrawUpPage', {transition: "slide"});
+
+
+            console.log("failed request");
+        });
+    }
+    catch (error) {
+        console.log("error when drawing up new patient: " + patientUserId + error);
+    }
+}
+
+
+
+
+// show patients profile
+function showPatientProfile(patientObject){
+    
+    try
+    {
+        // set patient info
+                $("#returnedUserId").html(patientObject['userId']);
+                $("#returnedUserName").html(patientObject['userName']);
+                $("#returnedUserFullName").html(patientObject['userName']);
+                $("#returnedUserBirthday").html(patientObject['birthDay']);
+                $("#returnedUserAddress").html(patientObject['address']);
+ // go to patient info page
+                $.mobile.changePage('#patientInfoPage', {transition: "slide"});
+    }
+    
+    catch (error) {
+        console.log("error when showing patient profile: " + error);
+    }
+}
+
+
+
+// to search a user
+function searchUser(name, id) {
+
+    try {
+        $.ajax({
+            type: "POST",
+            url: "https://www.neurocare-aal.de/screening/functions/searchPatient.php",
+            data: {
+                userName: name,
+                userID: id
+
+            }
+
+
+// request successfull
+        }).success(function (data) {
+
+
+// when patient was found
+            if (data.userObject !== null) {
+
+                // set patient info
+                showPatientProfile(data.userObject);
+                console.log(data);
+                console.log("patient found");
+            }
+            else {
+                $.mobile.changePage('#userNotFoundPage', {transition: "slide"});
+
+                console.log("failed to find patient!");
+            }
+
+// request failed
+        }).fail(function (data) {
+            $.mobile.changePage('#userNotFoundPage', {transition: "slide"});
+
+            console.log(data);
+            console.log("request failed");
+        });
+    }
+    catch (error) {
+        console.log("error when searching following patient: " + id + name + error);
+    }
+}
+
+
+
+
+
+// to log in admin user
 function login(id, password) {
 
     try {
@@ -5176,33 +5657,38 @@ function login(id, password) {
 
             }
 
+               // request successfull
         }).success(function (data) {
 
 
-
+              // if user is authenticated
             if (data.success === true) {
-//                window.location = "PaarassoziationstestTeil1.html";
+
                 $.mobile.changePage('#patientsManagementPage', {transition: "slide"});
                 // store user test id
-                jQuery.jStorage.set("UserName", id);
+                jQuery.jStorage.set("AdminUserId", id);
                 console.log(data);
-                console.log("success");
+                console.log("admin user successfully authenticated");
             }
+            
+             // failed to authenticate
             else {
                 $.mobile.changePage('#loginFailedPage', {transition: "slide"});
 
-                console.log("failed");
+                console.log("failed to authenticate admin user!");
             }
 
+
+  // request failed
         }).fail(function (data) {
             $.mobile.changePage('#loginFailedPage', {transition: "slide"});
-            
+
             console.log(data);
-            console.log("failed");
+            console.log("failed to authenticate admin user!");
         });
     }
     catch (error) {
-        console.log("Fehler beim Einloggen!: " + id + password + error);
+        console.log("error when authenticating admin user: " + id + password + error);
     }
 }
 

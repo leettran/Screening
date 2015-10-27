@@ -147,11 +147,39 @@
         -webkit-box-shadow: none;
         box-shadow: none;
     }
+    
+    
+    
+    .bottomMiddleButton{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 230px;
+        position: absolute;
+        bottom: 5%;
+        left: 39%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+
+    .bottomMiddleButton:active{
+        background-image:url('images/btns-bg/bt-start.png');
+        position:absolute; 
+        bottom: 4.8%;
+        left: 38.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
 
     
     .buttonLong{
         background-size: 100%;
-        background-repeat:no-repeat;       
+        background-repeat:no-repeat;  
+        background: #57BB58;
+        color: white;
         height: 60px;
         width: 95%;
         position: relative;
@@ -236,7 +264,32 @@
     }
     
     
-     .loginButtonBottomLeft{
+    
+    .loginButtonBackBottomRight{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 230px;
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+    .loginButtonBackBottomRight:active{
+        background-image:url('images/btns-bg/bt-zurueck.png');
+        position:absolute; 
+        bottom: 4.8%;
+        right: 4.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
+     .loginButtonBottomBackLeft{
         background-size: 100%;
         background-repeat:no-repeat;       
         height: 70px;
@@ -248,7 +301,7 @@
         text-shadow: none;
     }
 
-    .loginButtonBottomLeft:active{
+    .loginButtonBottomBackLeft:active{
         background-image:url('images/btns-bg/bt-zurueck.png');
         position:absolute; 
         bottom: 4.8%;
@@ -1356,6 +1409,7 @@
     .divMiddle{
         width: 100%;
         height: auto;
+        
         background-color: transparent;
         position: absolute;
         top:40%;
@@ -1365,6 +1419,23 @@
         
 
     }
+    
+    
+    .divMiddleScrollable{
+        width: 100%;
+        height: 50%;
+        overflow: -moz-scrollbars-vertical;
+        overflow-y: scroll;
+        background-color: transparent;
+        position: absolute;
+        top:40%;
+        left: 1%;
+        right: 1%;
+        margin: auto;
+        
+
+    }
+    
     
     .divLeft{
         width: 18%;
