@@ -111,6 +111,10 @@ and open the template in the editor.
             <div data-role="content">
                 
                 
+                <!--log out button-->
+                <image src="css\images\btns-bg\bt-beenden.png" class="logoutButtonTopRight" onclick="logoutUser();"/>
+                
+                
                  <!--failed login instruction--> 
                 <div class="headerTopMiddle">Patienten verwalten</div>
                 
@@ -138,6 +142,9 @@ and open the template in the editor.
 
             <div data-role="content">
                 
+                
+                <!--home button-->
+                <image src="css\images\btns-bg\bt-home.png" class="homeButtonTopRight" onclick="showFollowingPageDelayed('patientsManagementPage',100);"/>
                 
                  <!--failed login instruction--> 
                 <div class="headerTopMiddle">NeuroCare-Benutzer als neuen Patienten anlegen</div>
@@ -168,6 +175,15 @@ and open the template in the editor.
                         
                     </div>
                 
+                </div>
+                
+                
+                 <!--selection hint-->
+                <div class="fillinHintDiv" id="fillinUserHint">
+
+                    <image src="css\images\icons\info.png" class="fillinHintIcon"/>
+                    <h1 class="fillinHintText">Bitte füllen Sie beide Felder aus!</h1>
+
                 </div>
                 
                 
@@ -204,6 +220,7 @@ and open the template in the editor.
                         <p class="userInfoHeader">Name, Vorname</p>
                         <p class="userInfoHeader">Geburtsdatum</p>
                         <p class="userInfoHeader">Adresse</p>
+                        <p class="userInfoHeader">Erstellungsdatum</p>
                         
                         
                     </div>
@@ -217,6 +234,7 @@ and open the template in the editor.
                         <p class="userInfoContent" id="returnedUserFullName"></p>
                         <p class="userInfoContent" id="returnedUserBirthday"></p>
                         <p class="userInfoContent" id="returnedUserAddress"></p>
+                        <p class="userInfoContent" id="returnedCreationDate"></p>
                         
                     </div>
                     
@@ -242,6 +260,10 @@ and open the template in the editor.
         <div data-role="page" id="myPatientsPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
+                
+                
+                <!--home button-->
+                <image src="css\images\btns-bg\bt-home.png" class="homeButtonTopRight" onclick="showFollowingPageDelayed('patientsManagementPage',100);"/>
                 
                 
                  <!--failed login instruction--> 
@@ -283,6 +305,7 @@ and open the template in the editor.
                         <p class="userInfoHeader" > Name, Vorname</p>
                         <p class="userInfoHeader" > Geburtsdatum</p>
                         <p class="userInfoHeader" > Adresse</p>
+                        <p class="userInfoHeader" > Erstellungsdatum</p>
                         
                         
                     </div>
@@ -296,6 +319,7 @@ and open the template in the editor.
                         <p class="userInfoContent" id="profileUserFullName"></p>
                         <p class="userInfoContent" id="profileUserBirthday"></p>
                         <p class="userInfoContent" id="profileUserAddress"></p>
+                        <p class="userInfoContent" id="profileCreationDate"></p>
                         
                     </div>
                     
@@ -307,7 +331,7 @@ and open the template in the editor.
                 
                 
                 <!--start screening button-->
-                <image src="css\images\btns-bg\bt-start.png" class="startScreeningButton" onclick="startScreeningSession();"/>
+                <image src="css\images\btns-bg\bt-start.png" class="startScreeningButton" onclick="startScreeningSession('profileUserId');"/>
                 
                 <!--delete patient button-->
                 <image src="css\images\btns-bg\bt-start.png" class="bottomMiddleButton" onclick="deletePatient('profileUserId');"/>
@@ -512,7 +536,7 @@ and open the template in the editor.
                 
                 
                 <!--try again button-->
-                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBackBottomRight" onclick="showFollowingPageDelayed('patientsManagementPage',100);"/>
+                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBackBottomRight" onclick="getMyPatients();"/>
                 
                                 
                 

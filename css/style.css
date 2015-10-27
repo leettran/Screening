@@ -188,6 +188,7 @@
         left: 1%;
         font-size: x-large;
         text-shadow: none;
+        display: inline-block;
     }
     
     
@@ -281,6 +282,55 @@
         background-image:url('images/btns-bg/bt-zurueck.png');
         position:absolute; 
         bottom: 4.8%;
+        right: 4.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
+    
+     .logoutButtonTopRight{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 230px;
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+    .logoutButtonTopRight:active{
+        background-image:url('images/btns-bg/bt-beenden.png');
+        position:absolute; 
+        top: 2.2%;
+        right: 1.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
+    .homeButtonTopRight{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 81px;
+        width: 77px;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+    .homeButtonTopRight:active{
+        background-image:url('images/btns-bg/bt-home.png');
+        position:absolute; 
+        top: 5.2%;
         right: 4.8%;
         background-image: none;
         outline: none;

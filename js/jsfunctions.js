@@ -227,9 +227,9 @@ function validateUserCredentials(username, userId) {
     {
         if (username === null || username === "")
         {
-            $("#fillinHint").css("visibility", "visible");
+            $("#fillinUserHint").css("visibility", "visible");
             setTimeout(function () {
-                $("#fillinHint").css("visibility", "hidden");
+                $("#fillinUserHint").css("visibility", "hidden");
             }, 1000);
 
             return false;
@@ -237,9 +237,9 @@ function validateUserCredentials(username, userId) {
 
         if (userId === null || userId === "")
         {
-            $("#fillinHint").css("visibility", "visible");
+            $("#fillinUserHint").css("visibility", "visible");
             setTimeout(function () {
-                $("#fillinHint").css("visibility", "hidden");
+                $("#fillinUserHint").css("visibility", "hidden");
             }, 1000);
 
             return false;
@@ -265,9 +265,14 @@ function validateUserCredentials(username, userId) {
 
 
 // starts the screening session
-function startScreeningSession() {
+function startScreeningSession(patientElementId) {
     try
     {
+        // get user id from the p tag
+    var patientUserId = $("#" + patientElementId).text();
+        
+        // save user name in local storage
+        jQuery.jStorage.set("UserName",patientUserId);
 
         window.location = "PaarassoziationstestTeil1.html";
     }
@@ -5293,17 +5298,19 @@ function viewPatients(patientsArray) {
       
         
         for (var i = 0; i < patientsArray.length; i++) {
-            
-            
+                      
             
 
-            $("<a>").attr("data-inline", true)
+          var button =  $("<a>").attr("data-inline", true)
                     .attr("data-role", "button")
                     .attr("id", patientsArray[i])
-                    .addClass("buttonLong")
-                    .text(patientsArray[i])
+                    .removeClass("buttonLong")
+                    .addClass("buttonLong ui-btn ui-btn-inline ui-btn-corner-all ui-shadow ui-btn-up-c")
+                    .text(patientsArray[i]);
+            
+            $("#myPatientsDiv").append(button);
 
-                    .appendTo("#myPatientsDiv");
+                   
 
             // add on click event
             $("#"+patientsArray[i]).live("click", function () {
@@ -5314,6 +5321,8 @@ function viewPatients(patientsArray) {
             });
 
         }
+        
+        
         
         // show my patients page
         setTimeout(function () {
@@ -5331,6 +5340,25 @@ function viewPatients(patientsArray) {
 
 
 
+// to log out the main user
+function logoutUser(){
+    
+    try
+    {
+        // delete the mainuser id from local storage
+        jQuery.jStorage.set("AdminUserId","");
+        // forward to login page
+        window.location = "index.html";
+        
+    }
+    
+    catch (error) {
+        console.log("Error when logging out the main user: " + error);
+    }
+}
+
+
+
 
 // fills in patient info
 function fillInPatientInfo(patientObject){
@@ -5341,9 +5369,10 @@ function fillInPatientInfo(patientObject){
          // fill in info page
                 $("#profileUserId").html(patientObject['userId']);
                 $("#profileUserName").html(patientObject['userName']);
-                $("#profileUserFullName").html(patientObject['userName']);
+                $("#profileUserFullName").html(patientObject['userFullName']);
                 $("#profileUserBirthday").html(patientObject['birthDay']);
                 $("#profileUserAddress").html(patientObject['address']);
+                $("#profileCreationDate").html(patientObject['creationDate']);
 
                 $.mobile.changePage('#patientProfilePage', {transition: "slide"});
     }
@@ -5581,9 +5610,10 @@ function showPatientProfile(patientObject){
         // set patient info
                 $("#returnedUserId").html(patientObject['userId']);
                 $("#returnedUserName").html(patientObject['userName']);
-                $("#returnedUserFullName").html(patientObject['userName']);
+                $("#returnedUserFullName").html(patientObject['userFullName']);
                 $("#returnedUserBirthday").html(patientObject['birthDay']);
                 $("#returnedUserAddress").html(patientObject['address']);
+                $("#returnedCreationDate").html(patientObject['creationDate']);
  // go to patient info page
                 $.mobile.changePage('#patientInfoPage', {transition: "slide"});
     }
