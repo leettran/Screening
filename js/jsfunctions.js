@@ -225,7 +225,7 @@ function validateLogin(username, password) {
 function validateUserCredentials(username, userId) {
     try
     {
-        if (username === null || username === "")
+        if ((username === null || username === "") && (userId === null || userId === ""))
         {
             $("#fillinUserHint").css("visibility", "visible");
             setTimeout(function () {
@@ -273,6 +273,8 @@ function startScreeningSession(patientElementId) {
         
         // save user name in local storage
         jQuery.jStorage.set("UserName",patientUserId);
+        
+        
 
         window.location = "PaarassoziationstestTeil1.html";
     }
@@ -5515,6 +5517,87 @@ function searchUserProfile(id) {
         console.log("error when looking for following patient: " + id + error);
     }
 }
+
+
+
+// to send testbatterie results to backend
+function sendTestbatterieResults() {
+
+   
+    try {
+        
+        
+        $.ajax({
+            type: "POST",
+            url: "https://www.neurocare-aal.de/screening/functions/sendResults.php",
+            data: {
+                
+                userID: jQuery.jStorage.get("UserName")
+
+
+            }
+
+// request successfull
+        }).success(function (data) {
+
+// nodata received
+            if (data === null) {
+
+                $.mobile.changePage('#sendFailed', {transition: "slide"});
+
+                console.log("null received!");
+            }
+
+// patient doesn't exist
+            if (data === "notexist") {
+
+                $.mobile.changePage('#sendFailed', {transition: "slide"});
+
+                console.log("patient not exists");
+
+            }
+            
+            // results were successfully received and stored
+            else if (data === "received") {
+
+  $.mobile.changePage('#sendConfirmation', {transition: "slide"});
+  
+                console.log("results transmitted");
+            }
+
+// patient id from testbatterie and patient id on backend aren't the same 
+            else if (data === "notidentical") {
+
+                $.mobile.changePage('#sendFailed', {transition: "slide"});
+
+                console.log("id isn't the same");
+            }
+
+ // results couldn't be transmitted
+            else if (data === "notreceived") {
+
+                $.mobile.changePage('#sendFailed', {transition: "slide"});
+
+                console.log("results couldn't be transmitted!");
+            }
+
+
+// request failes
+        }).fail(function (data) {
+
+            
+
+            $.mobile.changePage('#sendFailed', {transition: "slide"});
+
+
+            console.log("failed request");
+        });
+    }
+    catch (error) {
+        console.log("error when transmitting results of patient: " + jQuery.jStorage.get("UserName") + error);
+    }
+}
+
 
 
 

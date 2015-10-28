@@ -1472,7 +1472,7 @@
     
     
     .divMiddleScrollable{
-        width: 100%;
+        width: 98%;
         height: 50%;
         overflow: -moz-scrollbars-vertical;
         overflow-y: scroll;
@@ -1482,7 +1482,7 @@
         left: 1%;
         right: 1%;
         margin: auto;
-        
+        border:1px solid gray;
 
     }
     
