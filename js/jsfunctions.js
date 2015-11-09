@@ -5520,6 +5520,7 @@ function searchUserProfile(id) {
 
 
 
+
 // to send testbatterie results to backend
 function sendTestbatterieResults() {
 
@@ -5532,7 +5533,31 @@ function sendTestbatterieResults() {
             url: "https://www.neurocare-aal.de/screening/functions/sendResults.php",
             data: {
                 
-                userID: jQuery.jStorage.get("UserName")
+                userID: jQuery.jStorage.get("UserName"),
+                RightClickedWords1: jQuery.jStorage.get("RightClickedWords1"), WrongClickedWords1: jQuery.jStorage.get("WrongClickedWords1"),
+                RightClickedWords2: jQuery.jStorage.get("RightClickedWords2"), WrongClickedWords2: jQuery.jStorage.get("WrongClickedWords2"),
+                RightClickedWords3: jQuery.jStorage.get("RightClickedWords3"), WrongClickedWords3: jQuery.jStorage.get("WrongClickedWords3"),
+                RightClickedWordsDelay: jQuery.jStorage.get("RightClickedWordsDelay"), WrongClickedWordsDelay: jQuery.jStorage.get("WrongClickedWordsDelay"),
+                RightNumFieldsTMT1: jQuery.jStorage.get("RightNumFieldsTMT1"), WrongNumFieldsTMT1: jQuery.jStorage.get("WrongNumFieldsTMT1"), TimeToSolveTMT1: jQuery.jStorage.get("TimeToSolveTMT1"), ClickIntervalsTMT1: jQuery.jStorage.get("ClickIntervalsTMT1"),
+                RightNumFieldsTMT2: jQuery.jStorage.get("RightNumFieldsTMT2"), WrongNumFieldsTMT2: jQuery.jStorage.get("WrongNumFieldsTMT2"), TimeToSolveTMT2: jQuery.jStorage.get("TimeToSolveTMT2"), ClickIntervalsTMT2: jQuery.jStorage.get("ClickIntervalsTMT2"),
+                RightNumFieldsTMT3: jQuery.jStorage.get("RightNumFieldsTMT3"), WrongNumFieldsTMT3: jQuery.jStorage.get("WrongNumFieldsTMT3"), TimeToSolveTMT3: jQuery.jStorage.get("TimeToSolveTMT3"), ClickIntervalsTMT3: jQuery.jStorage.get("ClickIntervalsTMT3"),
+                RightNumFieldsTMT4: jQuery.jStorage.get("RightNumFieldsTMT4"), WrongNumFieldsTMT4: jQuery.jStorage.get("WrongNumFieldsTMT4"), TimeToSolveTMT4: jQuery.jStorage.get("TimeToSolveTMT4"), ClickIntervalsTMT4: jQuery.jStorage.get("ClickIntervalsTMT4"),
+                WrongClickedTilesP1: jQuery.jStorage.get("WrongClickedTilesP1"), RightClickedTilesP1: jQuery.jStorage.get("RightClickedTilesP1"), PuzzleSolvedP1: jQuery.jStorage.get("PuzzleSolvedP1"), TimeToSolveP1: jQuery.jStorage.get("TimeToSolveP1"),
+                WrongClickedTilesP2: jQuery.jStorage.get("WrongClickedTilesP2"), RightClickedTilesP2: jQuery.jStorage.get("RightClickedTilesP2"), PuzzleSolvedP2: jQuery.jStorage.get("PuzzleSolvedP2"), TimeToSolveP2: jQuery.jStorage.get("TimeToSolveP2"),
+                WrongClickedTilesP3: jQuery.jStorage.get("WrongClickedTilesP3"), RightClickedTilesP3: jQuery.jStorage.get("RightClickedTilesP3"), PuzzleSolvedP3: jQuery.jStorage.get("PuzzleSolvedP3"), TimeToSolveP3: jQuery.jStorage.get("TimeToSolveP3"),
+                WrongClickedTilesP4: jQuery.jStorage.get("WrongClickedTilesP4"), RightClickedTilesP4: jQuery.jStorage.get("RightClickedTilesP4"), PuzzleSolvedP4: jQuery.jStorage.get("PuzzleSolvedP4"), TimeToSolveP4: jQuery.jStorage.get("TimeToSolveP4"),
+                WrongClickedTilesP5: jQuery.jStorage.get("WrongClickedTilesP5"), RightClickedTilesP5: jQuery.jStorage.get("RightClickedTilesP5"), PuzzleSolvedP5: jQuery.jStorage.get("PuzzleSolvedP5"), TimeToSolveP5: jQuery.jStorage.get("TimeToSolveP5"),
+                WrongClickedTilesP6: jQuery.jStorage.get("WrongClickedTilesP6"), RightClickedTilesP6: jQuery.jStorage.get("RightClickedTilesP6"), PuzzleSolvedP6: jQuery.jStorage.get("PuzzleSolvedP6"), TimeToSolveP6: jQuery.jStorage.get("TimeToSolveP6"),
+                WrongClickedTilesP7: jQuery.jStorage.get("WrongClickedTilesP7"), RightClickedTilesP7: jQuery.jStorage.get("RightClickedTilesP7"), PuzzleSolvedP7: jQuery.jStorage.get("PuzzleSolvedP7"), TimeToSolveP7: jQuery.jStorage.get("TimeToSolveP7"),
+                ToAchieveArrayT1: jQuery.jStorage.get("ToAchieveArrayT1"), ClickedArrayT1: jQuery.jStorage.get("ClickedArrayT1"), ToAchieveArrayT1Rep: jQuery.jStorage.get("ToAchieveArrayT1Rep"), ClickedArrayT1Rep: jQuery.jStorage.get("ClickedArrayT1Rep"),
+                ToAchieveArrayT2: jQuery.jStorage.get("ToAchieveArrayT2"), ClickedArrayT2: jQuery.jStorage.get("ClickedArrayT2"), ToAchieveArrayT2Rep: jQuery.jStorage.get("ToAchieveArrayT2Rep"), ClickedArrayT2Rep: jQuery.jStorage.get("ClickedArrayT2Rep"),
+                ToAchieveArrayT3: jQuery.jStorage.get("ToAchieveArrayT3"), ClickedArrayT3: jQuery.jStorage.get("ClickedArrayT3"), ToAchieveArrayT3Rep: jQuery.jStorage.get("ToAchieveArrayT3Rep"), ClickedArrayT3Rep: jQuery.jStorage.get("ClickedArrayT3Rep"),
+                ToAchieveArrayT4: jQuery.jStorage.get("ToAchieveArrayT4"), ClickedArrayT4: jQuery.jStorage.get("ClickedArrayT4"), ToAchieveArrayT4Rep: jQuery.jStorage.get("ToAchieveArrayT4Rep"), ClickedArrayT4Rep: jQuery.jStorage.get("ClickedArrayT4Rep"),
+                ToAchieveArrayT5: jQuery.jStorage.get("ToAchieveArrayT5"), ClickedArrayT5: jQuery.jStorage.get("ClickedArrayT5"), ToAchieveArrayT5Rep: jQuery.jStorage.get("ToAchieveArrayT5Rep"), ClickedArrayT5Rep: jQuery.jStorage.get("ClickedArrayT5Rep"),
+                ToAchieveArrayT6: jQuery.jStorage.get("ToAchieveArrayT6"), ClickedArrayT6: jQuery.jStorage.get("ClickedArrayT6"), ToAchieveArrayT6Rep: jQuery.jStorage.get("ToAchieveArrayT6Rep"), ClickedArrayT6Rep: jQuery.jStorage.get("ClickedArrayT6Rep"),
+                ToAchieveArrayT7: jQuery.jStorage.get("ToAchieveArrayT7"), ClickedArrayT7: jQuery.jStorage.get("ClickedArrayT7"), ToAchieveArrayT7Rep: jQuery.jStorage.get("ToAchieveArrayT7Rep"), ClickedArrayT7Rep: jQuery.jStorage.get("ClickedArrayT7Rep"),
+                DepressionQuestionAnswerMap: jQuery.jStorage.get("DepressionQuestionAnswerMap"),
+                ADLQuestAnswerMap: jQuery.jStorage.get("ADLQuestAnswerMap")
 
 
             }

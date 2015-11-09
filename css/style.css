@@ -128,20 +128,20 @@
         background-size: 100%;
         background-repeat:no-repeat;       
         height: 70px;
-        width: 230px;
+        width: 330px;
         position: absolute;
         bottom: 5%;
-        right: 5%;
+        right: 1%;
         font-size: x-large;
         text-shadow: none;
     }
 
 
     .startScreeningButton:active{
-        background-image:url('images/btns-bg/bt-start.png');
+        background-image:url('images/btns-bg/bt-screening-starten.png');
         position:absolute; 
         bottom: 4.8%;
-        right: 4.8%;
+        right: 1.2%;
         background-image: none;
         outline: none;
         -webkit-box-shadow: none;
@@ -173,6 +173,31 @@
         -webkit-box-shadow: none;
         box-shadow: none;
     }
+    
+    
+    .removePatientButton{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 330px;
+        position: absolute;
+        bottom: 5%;
+        left: 33.5%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+
+    .removePatientButton:active{
+        background-image:url('images/btns-bg/bt-patient-entfernen.png');
+        position:absolute; 
+        bottom: 4.8%;
+        left: 33.3%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
 
     
     .buttonLong{
@@ -180,6 +205,7 @@
         background-repeat:no-repeat;  
         background: #57BB58;
         color: white;
+        font-family: EnigmaB_2;
         height: 60px;
         width: 95%;
         position: relative;
@@ -241,6 +267,30 @@
     }
     
     
+    .searchUserButton{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 330px;
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+    .searchUserButton:active{
+        background-image:url('images/btns-bg/bt-benutzer-finden.png');
+        position:absolute; 
+        bottom: 4.8%;
+        right: 4.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
     .loginButtonBottomRight{
         background-size: 100%;
         background-repeat:no-repeat;       
@@ -255,6 +305,31 @@
 
     .loginButtonBottomRight:active{
         background-image:url('images/btns-bg/bt-anmelden.png');
+        position:absolute; 
+        bottom: 4.8%;
+        right: 4.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
+    
+    .tryAgainRight{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 330px;
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+    .tryAgainRight:active{
+        background-image:url('images/btns-bg/bt-nochmal-versuchen.png');
         position:absolute; 
         bottom: 4.8%;
         right: 4.8%;
@@ -356,6 +431,30 @@
         position:absolute; 
         bottom: 4.8%;
         left: 4.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
+     .showResultsButton{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 330px;
+        position: absolute;
+        bottom: 5%;
+        left: 1%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+    .showResultsButton:active{
+        background-image:url('images/btns-bg/bt-ergebnisse-anzeigen.png');
+        position:absolute; 
+        bottom: 4.8%;
+        left: 0.8%;
         background-image: none;
         outline: none;
         -webkit-box-shadow: none;

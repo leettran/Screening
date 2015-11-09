@@ -198,7 +198,7 @@ and open the template in the editor.
                 
                 
                 <!--search user button-->
-                <image src="css\images\btns-bg\bt-anmelden.png" class="loginButtonBottom" onclick="validateUserCredentials(document.getElementById('byUsername').value,document.getElementById('byUserId').value);"/>
+                <image src="css\images\btns-bg\bt-benutzer-finden.png" class="searchUserButton" onclick="validateUserCredentials(document.getElementById('byUsername').value,document.getElementById('byUserId').value);"/>
                 
                 
                 
@@ -300,6 +300,9 @@ and open the template in the editor.
 
             <div data-role="content">
                 
+                <!--home button-->
+                <image src="css\images\btns-bg\bt-home.png" class="homeButtonTopRight" onclick="showFollowingPageDelayed('patientsManagementPage',100);"/>
+                
                 
                  <!--failed login instruction--> 
                 <div class="headerTopMiddle">Patient-Profil</div>
@@ -340,13 +343,13 @@ and open the template in the editor.
                 
                 
                 <!--start screening button-->
-                <image src="css\images\btns-bg\bt-start.png" class="startScreeningButton" onclick="startScreeningSession('profileUserId');"/>
+                <image src="css\images\btns-bg\bt-screening-starten.png" class="startScreeningButton" onclick="startScreeningSession('profileUserId');"/>
                 
                 <!--delete patient button-->
-                <image src="css\images\btns-bg\bt-start.png" class="bottomMiddleButton" onclick="deletePatient('profileUserId');"/>
+                <image src="css\images\btns-bg\bt-patient-entfernen.png" class="removePatientButton" onclick="deletePatient('profileUserId');"/>
                 
-                <!--back button-->
-                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="showFollowingPageDelayed('patientsManagementPage',100)"/>
+                <!--show screening results button-->
+                <image src="css\images\btns-bg\bt-ergebnisse-anzeigen.png" class="showResultsButton" onclick=""/>
                 
             </div>
         </div>
@@ -395,7 +398,7 @@ and open the template in the editor.
                 
                 
                 <!--try again button-->
-                <image src="css\images\btns-bg\bt-weiter.png" class="loginButtonBottomRight" onclick="showFollowingPageDelayed('newPatientPage',100);"/>
+                <image src="css\images\btns-bg\bt-nochmal-versuchen.png" class="tryAgainRight" onclick="showFollowingPageDelayed('newPatientPage',100);"/>
                 
                 <!--back button-->
                 <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="showFollowingPageDelayed('patientsManagementPage',100);" />
