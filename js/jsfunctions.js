@@ -5527,6 +5527,7 @@ function sendTestbatterieResults() {
    
     try {
         
+        alert(jQuery.jStorage.get("UserName"));
         
         $.ajax({
             type: "POST",
