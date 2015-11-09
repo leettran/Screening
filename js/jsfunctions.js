@@ -5526,8 +5526,9 @@ function sendTestbatterieResults() {
 
    
     try {
-        
+         // test
         alert(jQuery.jStorage.get("UserName"));
+        // !test
         
         $.ajax({
             type: "POST",
@@ -5571,6 +5572,9 @@ function sendTestbatterieResults() {
 
                 $.mobile.changePage('#sendFailed', {transition: "slide"});
 
+        // test
+        alert("null received!");
+        // !test
                 console.log("null received!");
             }
 
@@ -5578,7 +5582,9 @@ function sendTestbatterieResults() {
             if (data === "notexist") {
 
                 $.mobile.changePage('#sendFailed', {transition: "slide"});
-
+// test
+        alert("patient not exists");
+        // !test
                 console.log("patient not exists");
 
             }
@@ -5587,7 +5593,9 @@ function sendTestbatterieResults() {
             else if (data === "received") {
 
   $.mobile.changePage('#sendConfirmation', {transition: "slide"});
-  
+  // test
+        alert("results transmitted");
+        // !test
                 console.log("results transmitted");
             }
 
@@ -5595,7 +5603,9 @@ function sendTestbatterieResults() {
             else if (data === "notidentical") {
 
                 $.mobile.changePage('#sendFailed', {transition: "slide"});
-
+// test
+        alert("id isn't the same");
+        // !test
                 console.log("id isn't the same");
             }
 
@@ -5603,7 +5613,9 @@ function sendTestbatterieResults() {
             else if (data === "notreceived") {
 
                 $.mobile.changePage('#sendFailed', {transition: "slide"});
-
+// test
+        alert("results couldn't be transmitted!");
+        // !test
                 console.log("results couldn't be transmitted!");
             }
 
@@ -5615,7 +5627,9 @@ function sendTestbatterieResults() {
 
             $.mobile.changePage('#sendFailed', {transition: "slide"});
 
-
+// test
+        alert("failed request");
+        // !test
             console.log("failed request");
         });
     }
