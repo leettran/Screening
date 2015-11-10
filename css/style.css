@@ -88,7 +88,31 @@
 
 
     .defaultButton:active{
-        background-image:url('images/btns-bg/bt-weiter-hover.png');
+        background-image:url('images/btns-bg/bt-weiter.png');
+        position:absolute; 
+        bottom: 1.7%;
+        right: 1.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+     .sendResultsButton{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 330px;
+        position: absolute;
+        bottom: 2%;
+        right: 2%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+
+    .sendResultsButton:active{
+        background-image:url('images/btns-bg/bt-ergebnisse-senden.png');
         position:absolute; 
         bottom: 1.7%;
         right: 1.8%;
@@ -305,6 +329,30 @@
 
     .loginButtonBottomRight:active{
         background-image:url('images/btns-bg/bt-anmelden.png');
+        position:absolute; 
+        bottom: 4.8%;
+        right: 4.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
+    .addPatientButton{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 330px;
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+    .addPatientButton:active{
+        background-image:url('images/btns-bg/bt-patient-anlegen.png');
         position:absolute; 
         bottom: 4.8%;
         right: 4.8%;

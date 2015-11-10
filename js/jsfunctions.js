@@ -530,7 +530,7 @@ function choosed() {
                             wordSelected = false;
                             // enable weiter btn
                             weiterIsActive = true;
-                        }, 300);
+                        }, 200);
                         cnt++;
                         break;
                     case 1:
@@ -548,7 +548,7 @@ function choosed() {
                             wordSelected = false;
                             // enable weiter btn
                             weiterIsActive = true;
-                        }, 300);
+                        }, 200);
                         cnt++;
                         break;
                     case 2:
@@ -566,7 +566,7 @@ function choosed() {
                             wordSelected = false;
                             // enable weiter btn
                             weiterIsActive = true;
-                        }, 300);
+                        }, 200);
                         cnt++;
                         break;
                     case 3:
@@ -584,7 +584,7 @@ function choosed() {
                             wordSelected = false;
                             // enable weiter btn
                             weiterIsActive = true;
-                        }, 300);
+                        }, 200);
                         cnt++;
                         break;
                     case 4:
@@ -602,7 +602,7 @@ function choosed() {
                             wordSelected = false;
                             // enable weiter btn
                             weiterIsActive = true;
-                        }, 300);
+                        }, 200);
                         cnt++;
                         break;
                     case 5:
@@ -628,7 +628,7 @@ function choosed() {
                             // enable weiter btn
                             weiterIsActive = true;
 
-                        }, 300);
+                        }, 200);
 
 
 
@@ -702,7 +702,7 @@ function choosedOrdered1() {
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
                         $.mobile.changePage('#wordpair2Ordered1', {transition: "slide"});
-                    }, 300);
+                    }, 200);
                     cnt++;
                     break;
                 case 1:
@@ -717,7 +717,7 @@ function choosedOrdered1() {
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
                         $.mobile.changePage('#wordpair3Ordered1', {transition: "slide"});
-                    }, 300);
+                    }, 200);
                     cnt++;
                     break;
                 case 2:
@@ -732,7 +732,7 @@ function choosedOrdered1() {
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
                         $.mobile.changePage('#wordpair4Ordered1', {transition: "slide"});
-                    }, 300);
+                    }, 200);
                     cnt++;
                     break;
                 case 3:
@@ -747,7 +747,7 @@ function choosedOrdered1() {
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
                         $.mobile.changePage('#wordpair5Ordered1', {transition: "slide"});
-                    }, 300);
+                    }, 200);
                     cnt++;
                     break;
                 case 4:
@@ -762,7 +762,7 @@ function choosedOrdered1() {
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
                         $.mobile.changePage('#wordpair6Ordered1', {transition: "slide"});
-                    }, 300);
+                    }, 200);
                     cnt++;
                     break;
                 case 5:
@@ -785,7 +785,7 @@ function choosedOrdered1() {
                         $(".selectionHintDiv").css("visibility", "hidden");
                         $.mobile.changePage('#wordpairsTransit2', {transition: "slide"});
 
-                    }, 300);
+                    }, 200);
 
 
                     break;
@@ -853,7 +853,7 @@ function choosedOrdered2() {
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
                         $.mobile.changePage('#wordpair2Ordered2', {transition: "slide"});
-                    }, 300);
+                    }, 200);
                     cnt++;
                     break;
                 case 1:
@@ -868,7 +868,7 @@ function choosedOrdered2() {
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
                         $.mobile.changePage('#wordpair3Ordered2', {transition: "slide"});
-                    }, 300);
+                    }, 200);
                     cnt++;
                     break;
                 case 2:
@@ -883,7 +883,7 @@ function choosedOrdered2() {
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
                         $.mobile.changePage('#wordpair4Ordered2', {transition: "slide"});
-                    }, 300);
+                    }, 200);
                     cnt++;
                     break;
                 case 3:
@@ -898,7 +898,7 @@ function choosedOrdered2() {
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
                         $.mobile.changePage('#wordpair5Ordered2', {transition: "slide"});
-                    }, 300);
+                    }, 200);
                     cnt++;
                     break;
                 case 4:
@@ -913,7 +913,7 @@ function choosedOrdered2() {
                         }
                         $(".selectionHintDiv").css("visibility", "hidden");
                         $.mobile.changePage('#wordpair6Ordered2', {transition: "slide"});
-                    }, 300);
+                    }, 200);
                     cnt++;
                     break;
                 case 5:
@@ -936,7 +936,7 @@ function choosedOrdered2() {
                         $(".selectionHintDiv").css("visibility", "hidden");
                         $.mobile.changePage('#wordpairsTransit3', {transition: "slide"});
 
-                    }, 300);
+                    }, 200);
 
 
                     break;
@@ -1020,7 +1020,7 @@ function choosedDelayed() {
                             wordSelected = false;
                             // enable weiter btn
                             weiterDelayedIsActive = true;
-                        }, 300);
+                        }, 200);
                         cntDelayed++;
                         break;
 
@@ -1040,7 +1040,7 @@ function choosedDelayed() {
                             wordSelected = false;
                             // enable weiter btn
                             weiterDelayedIsActive = true;
-                        }, 300);
+                        }, 200);
                         cntDelayed++;
                         break;
                     case 2:
@@ -1059,7 +1059,7 @@ function choosedDelayed() {
                             wordSelected = false;
                             // enable weiter btn
                             weiterDelayedIsActive = true;
-                        }, 300);
+                        }, 200);
                         cntDelayed++;
                         break;
                     case 3:
@@ -1078,7 +1078,7 @@ function choosedDelayed() {
                             wordSelected = false;
                             // enable weiter btn
                             weiterDelayedIsActive = true;
-                        }, 300);
+                        }, 200);
                         cntDelayed++;
                         break;
                     case 4:
@@ -1097,7 +1097,7 @@ function choosedDelayed() {
                             wordSelected = false;
                             // enable weiter btn
                             weiterDelayedIsActive = true;
-                        }, 300);
+                        }, 200);
                         cntDelayed++;
                         break;
                     case 5:
@@ -5526,9 +5526,7 @@ function sendTestbatterieResults() {
 
    
     try {
-         // test
-        alert(jQuery.jStorage.get("UserName"));
-        // !test
+         
         
         $.ajax({
             type: "POST",
@@ -5607,6 +5605,19 @@ function sendTestbatterieResults() {
         alert("id isn't the same");
         // !test
                 console.log("id isn't the same");
+            }
+            
+            else if (data === "nullresponse"){
+                $.mobile.changePage('#sendFailed', {transition: "slide"});
+// test
+        alert("null response!");
+        
+            }
+            
+            else if (data === "noupdate"){
+                 $.mobile.changePage('#sendFailed', {transition: "slide"});
+// test
+        alert("no update!");
             }
 
  // results couldn't be transmitted
