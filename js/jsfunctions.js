@@ -5564,6 +5564,11 @@ function sendTestbatterieResults() {
 
 // request successfull
         }).success(function (data) {
+            
+            
+            //test
+            
+            alert(data);
 
 // nodata received
             if (data === null) {
