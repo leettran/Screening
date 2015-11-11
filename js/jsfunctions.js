@@ -275,9 +275,9 @@ function startScreeningSession(patientElementId) {
         jQuery.jStorage.set("UserName",patientUserId);
         
         
-        window.location = "ADLs.html";
+//        window.location = "ADLs.html";
 
-//        window.location = "PaarassoziationstestTeil1.html";
+        window.location = "PaarassoziationstestTeil1.html";
     }
 
     catch (error) {
