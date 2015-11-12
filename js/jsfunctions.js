@@ -275,7 +275,6 @@ function startScreeningSession(patientElementId) {
         jQuery.jStorage.set("UserName",patientUserId);
         
         
-//        window.location = "ADLs.html";
 
         window.location = "PaarassoziationstestTeil1.html";
     }
@@ -5567,18 +5566,14 @@ function sendTestbatterieResults() {
         }).success(function (data) {
             
             
-            //test
-            
-            alert(data);
+           
 
 // nodata received
             if (data === null) {
 
                 $.mobile.changePage('#sendFailed', {transition: "slide"});
 
-        // test
-        alert("null received!");
-        // !test
+        
                 console.log("null received!");
             }
 
@@ -5586,9 +5581,7 @@ function sendTestbatterieResults() {
             if (data === "notexist") {
 
                 $.mobile.changePage('#sendFailed', {transition: "slide"});
-// test
-        alert("patient not exists");
-        // !test
+
                 console.log("patient not exists");
 
             }
@@ -5597,9 +5590,7 @@ function sendTestbatterieResults() {
             else if (data === "received") {
 
   $.mobile.changePage('#sendConfirmation', {transition: "slide"});
-  // test
-        alert("results transmitted");
-        // !test
+  
                 console.log("results transmitted");
             }
 
@@ -5607,32 +5598,26 @@ function sendTestbatterieResults() {
             else if (data === "notidentical") {
 
                 $.mobile.changePage('#sendFailed', {transition: "slide"});
-// test
-        alert("id isn't the same");
-        // !test
+
                 console.log("id isn't the same");
             }
             
             else if (data === "nullresponse"){
                 $.mobile.changePage('#sendFailed', {transition: "slide"});
-// test
-        alert("null response!");
+
         
             }
             
             else if (data === "noupdate"){
                  $.mobile.changePage('#sendFailed', {transition: "slide"});
-// test
-        alert("no update!");
+
             }
 
  // results couldn't be transmitted
             else if (data === "notreceived") {
 
                 $.mobile.changePage('#sendFailed', {transition: "slide"});
-// test
-        alert("results couldn't be transmitted!");
-        // !test
+
                 console.log("results couldn't be transmitted!");
             }
 
@@ -5644,9 +5629,7 @@ function sendTestbatterieResults() {
 
             $.mobile.changePage('#sendFailed', {transition: "slide"});
 
-// test
-        alert("failed request");
-        // !test
+
             console.log("failed request");
         });
     }
