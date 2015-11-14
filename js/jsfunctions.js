@@ -108,11 +108,13 @@ var clickedNumbArray = new Array();
 //variablen für depressionsscreening
 var mentalQuest = 1;
 var questAnswerMap = {};
+var depressionQuestions = new Array();
 var isReadyToSwitch = false;
 
 //variablen für ADLs
 var ADLQuest = 1;
 var ADLQuestAnswerMap = {};
+var adlQuestions = new Array();
 
 
 // andere variablen
@@ -264,6 +266,10 @@ function validateUserCredentials(username, userId) {
 
 
 
+
+
+
+
 // starts the screening session
 function startScreeningSession(patientElementId) {
     try
@@ -285,7 +291,12 @@ function startScreeningSession(patientElementId) {
 }
 
 
-
+function goToPreviousPage(){
+   
+   history.back();
+	return false;
+//    $.mobile.changePage('#patientsManagementPage', {transition: "pop",allowSamePageTransition: true});
+}
 
 
 
@@ -3404,6 +3415,10 @@ function matchNumbers(numbElement) {
                         taskCount++;
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT1", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT1", clickedNumbArray);
                         //clear arrays for next use
@@ -3420,6 +3435,10 @@ function matchNumbers(numbElement) {
                         taskCount++;
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT1Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT1Rep", clickedNumbArray);
                         //clear arrays for next use
@@ -3434,6 +3453,10 @@ function matchNumbers(numbElement) {
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat < 2) {
                         sequenceReapeat++;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT1", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT1", clickedNumbArray);
                         //clear arrays for next use
@@ -3450,6 +3473,10 @@ function matchNumbers(numbElement) {
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat === 2) {
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT1Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT1Rep", clickedNumbArray);
                         //clear arrays for next use
@@ -3462,6 +3489,33 @@ function matchNumbers(numbElement) {
                         //deactivate fullscreen
 //                    cancelFullscreen();
 //                    window.location = "Depressionsscreening.html";
+//                    
+                    //fill remaining arrays with place holder
+                    jQuery.jStorage.set("ToAchieveArrayT2", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT2", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT2Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT2Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT3", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT3", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT3Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT3Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT4", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT4", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT4Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT4Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT5", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT5", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT5Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT5Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT6", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT6", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT6Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT6Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT7", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT7", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT7Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT7Rep", ["Keine"]);
+                    
                         //jump to the end page 
                         $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
@@ -3482,6 +3536,10 @@ function matchNumbers(numbElement) {
                         taskCount++;
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT2", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT2", clickedNumbArray);
                         //clear arrays for next use
@@ -3497,6 +3555,10 @@ function matchNumbers(numbElement) {
                         taskCount++;
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT2Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT2Rep", clickedNumbArray);
                         //clear arrays for next use
@@ -3511,6 +3573,10 @@ function matchNumbers(numbElement) {
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat < 2) {
                         sequenceReapeat++;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT2", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT2", clickedNumbArray);
                         //clear arrays for next use
@@ -3527,6 +3593,10 @@ function matchNumbers(numbElement) {
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat <= 2) {
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT2Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT2Rep", clickedNumbArray);
                         //clear arrays for next use
@@ -3539,6 +3609,29 @@ function matchNumbers(numbElement) {
                         //deactivate fullscreen
 //                    cancelFullscreen();
 //                    window.location = "Depressionsscreening.html";
+//                    
+//                    fill in remaining arrays
+                    jQuery.jStorage.set("ToAchieveArrayT3", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT3", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT3Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT3Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT4", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT4", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT4Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT4Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT5", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT5", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT5Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT5Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT6", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT6", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT6Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT6Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT7", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT7", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT7Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT7Rep", ["Keine"]);
+//                    
 //jump to the end page 
                         $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
@@ -3558,6 +3651,10 @@ function matchNumbers(numbElement) {
                         taskCount++;
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT3", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT3", clickedNumbArray);
                         //clear arrays for next use
@@ -3573,6 +3670,10 @@ function matchNumbers(numbElement) {
                         taskCount++;
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT3Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT3Rep", clickedNumbArray);
                         //clear arrays for next use
@@ -3588,6 +3689,10 @@ function matchNumbers(numbElement) {
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat < 2) {
                         sequenceReapeat++;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT3", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT3", clickedNumbArray);
                         //clear arrays for next use
@@ -3604,6 +3709,10 @@ function matchNumbers(numbElement) {
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat <= 2) {
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT3Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT3Rep", clickedNumbArray);
                         //clear arrays for next use
@@ -3616,6 +3725,24 @@ function matchNumbers(numbElement) {
                         //deactivate fullscreen
 //                    cancelFullscreen();
 //                    window.location = "Depressionsscreening.html";
+//  fill in remaining arrays
+                    jQuery.jStorage.set("ToAchieveArrayT4", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT4", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT4Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT4Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT5", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT5", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT5Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT5Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT6", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT6", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT6Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT6Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT7", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT7", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT7Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT7Rep", ["Keine"]);
+                    
 //jump to the end page 
                         $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
@@ -3638,6 +3765,10 @@ function matchNumbers(numbElement) {
                         taskCount++;
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT4", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT4", clickedNumbArray);
                         //clear arrays for next use
@@ -3653,6 +3784,10 @@ function matchNumbers(numbElement) {
                         taskCount++;
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT4Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT4Rep", clickedNumbArray);
                         //clear arrays for next use
@@ -3668,6 +3803,10 @@ function matchNumbers(numbElement) {
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat < 2) {
                         sequenceReapeat++;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT4", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT4", clickedNumbArray);
                         //clear arrays for next use
@@ -3684,6 +3823,10 @@ function matchNumbers(numbElement) {
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat <= 2) {
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT4Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT4Rep", clickedNumbArray);
                         //clear arrays for next use
@@ -3695,7 +3838,22 @@ function matchNumbers(numbElement) {
                         clickedNumbArray.clear();
                         //deactivate fullscreen
 //                    cancelFullscreen();
+// 
 //                    window.location = "Depressionsscreening.html";
+//    fill in rem. arrays
+                    jQuery.jStorage.set("ToAchieveArrayT5", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT5", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT5Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT5Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT6", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT6", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT6Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT6Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT7", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT7", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT7Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT7Rep", ["Keine"]);
+                   
 //jump to the end page 
                         $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
@@ -3718,6 +3876,10 @@ function matchNumbers(numbElement) {
                         taskCount++;
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT5", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT5", clickedNumbArray);
                         //clear arrays for next use
@@ -3733,6 +3895,10 @@ function matchNumbers(numbElement) {
                         taskCount++;
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT5Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT5Rep", clickedNumbArray);
                         //clear arrays for next use
@@ -3748,6 +3914,10 @@ function matchNumbers(numbElement) {
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat < 2) {
                         sequenceReapeat++;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT5", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT5", clickedNumbArray);
                         //clear arrays for next use
@@ -3764,6 +3934,10 @@ function matchNumbers(numbElement) {
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat <= 2) {
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT5Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT5Rep", clickedNumbArray);
                         //clear arrays for next use
@@ -3776,6 +3950,15 @@ function matchNumbers(numbElement) {
                         //deactivate fullscreen
 //                    cancelFullscreen();
 //                    window.location = "Depressionsscreening.html";
+//                    fill in rem. arrays
+                    jQuery.jStorage.set("ToAchieveArrayT6", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT6", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT6Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT6Rep", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT7", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT7", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT7Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT7Rep", ["Keine"]);
 //jump to the end page 
                         $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
@@ -3798,6 +3981,10 @@ function matchNumbers(numbElement) {
                         taskCount++;
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT6", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT6", clickedNumbArray);
                         //clear arrays for next use
@@ -3813,6 +4000,10 @@ function matchNumbers(numbElement) {
                         taskCount++;
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT6Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT6Rep", clickedNumbArray);
                         //clear arrays for next use
@@ -3828,6 +4019,10 @@ function matchNumbers(numbElement) {
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat < 2) {
                         sequenceReapeat++;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT6", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT6", clickedNumbArray);
                         //clear arrays for next use
@@ -3844,6 +4039,10 @@ function matchNumbers(numbElement) {
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat <= 2) {
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT6Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT6Rep", clickedNumbArray);
                         //clear arrays for next use
@@ -3856,6 +4055,11 @@ function matchNumbers(numbElement) {
                         //deactivate fullscreen
 //                    cancelFullscreen();
 //                    window.location = "Depressionsscreening.html";
+//                    fill in rem. arrays
+                    jQuery.jStorage.set("ToAchieveArrayT7", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT7", ["Keine"]);
+                    jQuery.jStorage.set("ToAchieveArrayT7Rep", ["Keine"]);
+                    jQuery.jStorage.set("ClickedArrayT7Rep", ["Keine"]);
 //jump to the end page 
                         $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
@@ -3878,6 +4082,10 @@ function matchNumbers(numbElement) {
                         taskCount++;
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT7", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT7", clickedNumbArray);
                         //clear arrays for next use
@@ -3897,6 +4105,10 @@ function matchNumbers(numbElement) {
                         taskCount++;
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT7Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT7Rep", clickedNumbArray);
                         //clear arrays for next use
@@ -3912,6 +4124,10 @@ function matchNumbers(numbElement) {
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat < 2) {
                         sequenceReapeat++;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT7", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT7", clickedNumbArray);
                         //clear arrays for next use
@@ -3928,6 +4144,10 @@ function matchNumbers(numbElement) {
                     else if (clickedNumbArray !== numbersArray && sequenceReapeat <= 2) {
                         sequenceReapeat = 1;
                         // store both arrays (to-achieve and clicked array)
+                        if (!numbersArray.length)
+                            numbersArray.push('Keine');
+                        if (!clickedNumbArray.length)
+                            clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT7Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT7Rep", clickedNumbArray);
                         //clear arrays for next use
@@ -4036,6 +4256,7 @@ function goToADLs() {
         isReadyToSwitch = false;
         // store map
         jQuery.jStorage.set("DepressionQuestionAnswerMap", questAnswerMap);
+        jQuery.jStorage.set("DepressionQuestions", depressionQuestions);
 
         //deactivate fullscreen
         cancelFullscreen();
@@ -4226,6 +4447,7 @@ function getAnswer1(answerRadio) {
 
     var answer = $("#" + answerId).text();
     questAnswerMap[question] = answer;
+    depressionQuestions.push(question);
 
 
 
@@ -4266,6 +4488,7 @@ function getAnswer2(answerRadio) {
     }, 1000);
     var answer = $("#" + answerId).text();
     questAnswerMap[question] = answer;
+    depressionQuestions.push(question);
 
 
 // make button "weiter" ready to switch
@@ -4305,6 +4528,7 @@ function getAnswer3(answerRadio) {
     }, 1000);
     var answer = $("#" + answerId).text();
     questAnswerMap[question] = answer;
+    depressionQuestions.push(question);
 
 
 // make button "weiter" ready to switch
@@ -4345,6 +4569,7 @@ function getAnswer4(answerRadio) {
     }, 1000);
     var answer = $("#" + answerId).text();
     questAnswerMap[question] = answer;
+    depressionQuestions.push(question);
 
 
 // make button "weiter" ready to switch
@@ -4384,6 +4609,7 @@ function getAnswer5(answerRadio) {
     }, 1000);
     var answer = $("#" + answerId).text();
     questAnswerMap[question] = answer;
+    depressionQuestions.push(question);
 
 
     // make button "weiter" ready to switch
@@ -4423,6 +4649,7 @@ function getAnswer6(answerRadio) {
     }, 1000);
     var answer = $("#" + answerId).text();
     questAnswerMap[question] = answer;
+    depressionQuestions.push(question);
 
 
     // make button "weiter" ready to switch
@@ -4701,6 +4928,7 @@ function goToNextADL() {
                     ADLQuest = 0;
                     // store map
                     jQuery.jStorage.set("ADLQuestAnswerMap", ADLQuestAnswerMap);
+                    jQuery.jStorage.set("ADLQuestions", adlQuestions);
 
                     // show the end of screening
                     $.mobile.changePage('#adlsEndPage', {transition: "slide"});
@@ -4738,6 +4966,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#frage2', {transition: "slide"});
 //            ADLQuest++;
@@ -4748,6 +4977,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#frage3', {transition: "slide"});
 //            ADLQuest++;
@@ -4758,6 +4988,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#frage4', {transition: "slide"});
 //            ADLQuest++;
@@ -4768,6 +4999,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#frage5', {transition: "slide"});
 //            ADLQuest++;
@@ -4778,6 +5010,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#frage6', {transition: "slide"});
 //            ADLQuest++;
@@ -4788,6 +5021,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
@@ -4798,6 +5032,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
@@ -4808,6 +5043,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
@@ -4818,6 +5054,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
@@ -4828,6 +5065,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
@@ -4838,6 +5076,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
@@ -4848,6 +5087,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
@@ -4858,6 +5098,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
@@ -4868,6 +5109,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
@@ -4878,6 +5120,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
@@ -4888,6 +5131,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
@@ -4898,6 +5142,7 @@ function getChoice(answerRadio) {
 //            var answerId = $('label[for="' + radioId + '"]').attr('id');
                 var answer = $("#" + answerId).text();
                 ADLQuestAnswerMap[question] = answer;
+                adlQuestions.push(question);
 
 //            $.mobile.changePage('#intro2ADLs2', {transition: "slide"});
 //            ADLQuest++;
@@ -5386,6 +5631,155 @@ function fillInPatientInfo(patientObject){
 
 
 
+// to show screening results 
+function showResults(patientElementId){
+    
+    try
+    {
+        // get user id from the p tag
+    var patientUserId = $("#" + patientElementId).text();
+        
+        $.ajax({
+            type: "POST",
+            url: "https://www.neurocare-aal.de/screening/functions/getResults.php",
+            data: {
+                
+                userID: patientUserId
+
+
+            }
+
+// request successfull
+        }).success(function (data) {
+            
+            if (data===null || data.length===0){
+                
+                $.mobile.changePage('#resultsNotFoundPage', {transition: "slide"});
+                
+                console.log(data);
+            }
+            
+            else if (data!==null){
+
+             $("#rightWords1").html(data['rightClickedWords1']);
+             $("#rightWords2").html(data['rightClickedWords2']);
+             $("#rightWords3").html(data['rightClickedWords3']);
+             $("#rightWordsDelayed").html(data['rightClickedWordsDelay']);
+             $("#wrongWords1").html(data['wrongClickedWords1']);
+             $("#wrongWords2").html(data['wrongClickedWords2']);
+             $("#wrongWords3").html(data['wrongClickedWords3']);
+             $("#wrongWordsDelayed").html(data['wrongClickedWordsDelay']);
+             
+             $("#rightNumFieldsTMT1").html(data['rightNumFieldsTMT1']);
+             $("#wrongNumFieldsTMT1").html(data['wrongNumFieldsTMT1']);
+             $("#timeToSolveTMT1").html(data['timeToSolveTMT1']);
+             $("#clickIntervalsTMT1").html(data['clickIntervalsTMT1']);
+                 
+             $("#rightNumFieldsTMT2").html(data['rightNumFieldsTMT2']);
+             $("#wrongNumFieldsTMT2").html(data['wrongNumFieldsTMT2']);
+             $("#timeToSolveTMT2").html(data['timeToSolveTMT2']);
+             $("#clickIntervalsTMT2").html(data['clickIntervalsTMT2']);
+             
+             $("#rightNumFieldsTMT3").html(data['rightNumFieldsTMT3']);
+             $("#wrongNumFieldsTMT3").html(data['wrongNumFieldsTMT3']);
+             $("#timeToSolveTMT3").html(data['timeToSolveTMT3']);
+             $("#clickIntervalsTMT3").html(data['clickIntervalsTMT3']);
+             
+             $("#rightNumFieldsTMT4").html(data['rightNumFieldsTMT4']);
+             $("#wrongNumFieldsTMT4").html(data['wrongNumFieldsTMT4']);
+             $("#timeToSolveTMT4").html(data['timeToSolveTMT4']);
+             $("#clickIntervalsTMT4").html(data['clickIntervalsTMT4']);
+             
+             $("#rightPuzzlesP1").html(data['rightClickedTilesP1']);
+             $("#wrongPuzzlesP1").html(data['wrongClickedTilesP1']);
+             $("#puzzleSolvedP1").html(data['puzzleSolvedP1']);
+             $("#timeToSolveP1").html(data['timeToSolveP1']);
+             
+             $("#rightPuzzlesP2").html(data['rightClickedTilesP2']);
+             $("#wrongPuzzlesP2").html(data['wrongClickedTilesP2']);
+             $("#puzzleSolvedP2").html(data['puzzleSolvedP2']);
+             $("#timeToSolveP2").html(data['timeToSolveP2']);
+             
+             $("#rightPuzzlesP3").html(data['rightClickedTilesP3']);
+             $("#wrongPuzzlesP3").html(data['wrongClickedTilesP3']);
+             $("#puzzleSolvedP3").html(data['puzzleSolvedP3']);
+             $("#timeToSolveP3").html(data['timeToSolveP3']);
+             
+             $("#rightPuzzlesP4").html(data['rightClickedTilesP4']);
+             $("#wrongPuzzlesP4").html(data['wrongClickedTilesP4']);
+             $("#puzzleSolvedP4").html(data['puzzleSolvedP4']);
+             $("#timeToSolveP4").html(data['timeToSolveP4']);
+             
+             $("#rightPuzzlesP5").html(data['rightClickedTilesP5']);
+             $("#wrongPuzzlesP5").html(data['wrongClickedTilesP5']);
+             $("#puzzleSolvedP5").html(data['puzzleSolvedP5']);
+             $("#timeToSolveP5").html(data['timeToSolveP5']);
+             
+             $("#rightPuzzlesP6").html(data['rightClickedTilesP6']);
+             $("#wrongPuzzlesP6").html(data['wrongClickedTilesP6']);
+             $("#puzzleSolvedP6").html(data['puzzleSolvedP6']);
+             $("#timeToSolveP6").html(data['timeToSolveP6']);
+             
+             $("#targetArray1").html(data['toAchieveArrayT1']);
+             $("#clickedArray1").html(data['clickedArrayT1']);
+             $("#targetArrayRep1").html(data['toAchieveArrayT1Rep']);
+             $("#clickedArrayRep1").html(data['clickedArrayT1Rep']);
+             
+             $("#targetArray2").html(data['toAchieveArrayT2']);
+             $("#clickedArray2").html(data['clickedArrayT2']);
+             $("#targetArrayRep2").html(data['toAchieveArrayT2Rep']);
+             $("#clickedArrayRep2").html(data['clickedArrayT2Rep']);
+             
+             $("#targetArray3").html(data['toAchieveArrayT3']);
+             $("#clickedArray3").html(data['clickedArrayT3']);
+             $("#targetArrayRep3").html(data['toAchieveArrayT3Rep']);
+             $("#clickedArrayRep3").html(data['clickedArrayT3Rep']);
+             
+             $("#targetArray4").html(data['toAchieveArrayT4']);
+             $("#clickedArray4").html(data['clickedArrayT4']);
+             $("#targetArrayRep4").html(data['toAchieveArrayT4Rep']);
+             $("#clickedArrayRep4").html(data['clickedArrayT4Rep']);
+             
+             $("#targetArray5").html(data['toAchieveArrayT5']);
+             $("#clickedArray5").html(data['clickedArrayT5']);
+             $("#targetArrayRep5").html(data['toAchieveArrayT5Rep']);
+             $("#clickedArrayRep5").html(data['clickedArrayT5Rep']);
+             
+             $("#targetArray6").html(data['toAchieveArrayT6']);
+             $("#clickedArray6").html(data['clickedArrayT6']);
+             $("#targetArrayRep6").html(data['toAchieveArrayT6Rep']);
+             $("#clickedArrayRep6").html(data['clickedArrayT6Rep']);
+             
+             $("#depressionQuestions").html(data['depressionQuestions']);
+             $("#depressionAnswers").html(data['depressionQuestionAnswerMap']);
+             
+             $("#adlQuestions").html(data['ADLQuestions']);
+             $("#adlAnswers").html(data['ADLQuestAnswerMap']);
+             
+             
+             $.mobile.changePage('#resultsPage', {transition: "slide"});
+
+                console.log(data);
+                
+        }
+           
+        }).fail(function (data){
+            
+            $.mobile.changePage('#resultsRequestFailedPage', {transition: "slide"});
+                
+                console.log(data);
+                console.log("failed results request!");
+            
+        });
+        
+    }
+    catch (error) {
+        console.log("Error when getting results of user: "+ patientUserId + error);
+    }
+    
+}
+
+
 
 // to delete a patient from the patients list
 function deletePatient(patientElementId) {
@@ -5521,6 +5915,10 @@ function searchUserProfile(id) {
 
 
 
+
+
+
+
 // to send testbatterie results to backend
 function sendTestbatterieResults() {
 
@@ -5557,7 +5955,9 @@ function sendTestbatterieResults() {
                 ToAchieveArrayT6: jQuery.jStorage.get("ToAchieveArrayT6"), ClickedArrayT6: jQuery.jStorage.get("ClickedArrayT6"), ToAchieveArrayT6Rep: jQuery.jStorage.get("ToAchieveArrayT6Rep"), ClickedArrayT6Rep: jQuery.jStorage.get("ClickedArrayT6Rep"),
                 ToAchieveArrayT7: jQuery.jStorage.get("ToAchieveArrayT7"), ClickedArrayT7: jQuery.jStorage.get("ClickedArrayT7"), ToAchieveArrayT7Rep: jQuery.jStorage.get("ToAchieveArrayT7Rep"), ClickedArrayT7Rep: jQuery.jStorage.get("ClickedArrayT7Rep"),
                 DepressionQuestionAnswerMap: jQuery.jStorage.get("DepressionQuestionAnswerMap"),
-                ADLQuestAnswerMap: jQuery.jStorage.get("ADLQuestAnswerMap")
+                DepressionQuestions: jQuery.jStorage.get("DepressionQuestions"),
+                ADLQuestAnswerMap: jQuery.jStorage.get("ADLQuestAnswerMap"),
+                ADLQuestions: jQuery.jStorage.get("ADLQuestions")
 
 
             }

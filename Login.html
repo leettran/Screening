@@ -301,7 +301,7 @@ and open the template in the editor.
             <div data-role="content">
                 
                 <!--home button-->
-                <image src="css\images\btns-bg\bt-home.png" class="homeButtonTopRight" onclick="showFollowingPageDelayed('patientsManagementPage',200);"/>
+                <image src="css\images\btns-bg\bt-zurueck.png"  class="backButtonTopRight" onclick="goToPreviousPage();"/>
                 
                 
                  <!--failed login instruction--> 
@@ -349,13 +349,267 @@ and open the template in the editor.
                 <image src="css\images\btns-bg\bt-patient-entfernen.png" class="removePatientButton" onclick="deletePatient('profileUserId');"/>
                 
                 <!--show screening results button-->
-                <image src="css\images\btns-bg\bt-ergebnisse-anzeigen.png" class="showResultsButton" onclick=""/>
+                <image src="css\images\btns-bg\bt-ergebnisse-anzeigen.png" class="showResultsButton" onclick="showResults('profileUserId');"/>
                 
             </div>
         </div>
         
         
              
+             
+                 <!--results's page-->
+        <div data-role="page" id="resultsPage" data-dom-cache=true class="loginPage">
+
+            <div data-role="content">
+                
+                <!--home button-->
+                <image src="css\images\btns-bg\bt-zurueck.png"  class="backButtonTopRight" onclick="goToHomePage();"/>
+                
+                
+                 <!--failed login instruction--> 
+                <div class="headerTopMiddle">Screening-Ergebnisse</div>
+                
+                
+                <div class="divMiddle"> 
+                
+                    <div class="divLeft">   
+                        
+                        <p class="userInfoHeaderTitle" > Paarassoziationstest</p>
+                        <!--paarassoziationstest-->
+                        <p class="userInfoHeader" > Richtige Wörter 1.Durchlauf</p>
+                        <p class="userInfoHeader" > Falsche Wörter 1.Durchlauf</p>
+                        <p class="userInfoHeader" > Richtige Wörter 2.Durchlauf</p>
+                        <p class="userInfoHeader" > falsche Wörter 2.Durchlauf</p>
+                        <p class="userInfoHeader" > Richtige Wörter 3.Durchlauf</p>
+                        <p class="userInfoHeader" > Falsche Wörter 3.Durchlauf</p>
+                        <p class="userInfoHeader" > Richtige Wörter verzögerter Durchlauf</p>
+                        <p class="userInfoHeader" > Falsche Wörter verzögerter Durchlauf</p>
+                        
+                        <p class="userInfoHeaderTitle" > Trailmakingtest</p>
+                        <!--tmt-->
+                        <p class="userInfoHeader" > Richtige Zahlen TMT1</p>
+                        <p class="userInfoHeader" > Falsche Zahlen TMT1</p>
+                        <p class="userInfoHeader" > Gesamtzeit TMT1</p>
+                        <p class="userInfoHeader" > Klickintervalle TMT1</p>
+                        
+                        <p class="userInfoHeader" > Richtige Zahlen TMT2</p>
+                        <p class="userInfoHeader" > Falsche Zahlen TMT2</p>
+                        <p class="userInfoHeader" > Gesamtzeit TMT2</p>
+                        <p class="userInfoHeader" > Klickintervalle TMT2</p>   
+                        
+                        <p class="userInfoHeader" > Richtige Zahlen TMT3</p>
+                        <p class="userInfoHeader" > Falsche Zahlen TMT3</p>
+                        <p class="userInfoHeader" > Gesamtzeit TMT3</p>
+                        <p class="userInfoHeader" > Klickintervalle TMT3</p>  
+                        
+                        <p class="userInfoHeader" > Richtige Zahlen TMT4</p>
+                        <p class="userInfoHeader" > Falsche Zahlen TMT4</p>
+                        <p class="userInfoHeader" > Gesamtzeit TMT4</p>
+                        <p class="userInfoHeader" > Klickintervalle TMT4</p>  
+                        
+                        
+                        <p class="userInfoHeaderTitle" > Bilder bauen Test</p>
+                        <!--puzzle-->
+                        <p class="userInfoHeader" > Richtige Puzzles 1</p>
+                        <p class="userInfoHeader" > Falsche Puzzles 1</p>
+                        <p class="userInfoHeader" > Puzzletest absolviert 1</p>
+                        <p class="userInfoHeader" > Gesamtzeit 1</p>  
+                        
+                        <p class="userInfoHeader" > Richtige Puzzles 2</p>
+                        <p class="userInfoHeader" > Falsche Puzzles 2</p>
+                        <p class="userInfoHeader" > Puzzletest absolviert 2</p>
+                        <p class="userInfoHeader" > Gesamtzeit 2</p>  
+                        
+                        <p class="userInfoHeader" > Richtige Puzzles 3</p>
+                        <p class="userInfoHeader" > Falsche Puzzles 3</p>
+                        <p class="userInfoHeader" > Puzzletest absolviert 3</p>
+                        <p class="userInfoHeader" > Gesamtzeit 3</p>  
+                        
+                        <p class="userInfoHeader" > Richtige Puzzles 4</p>
+                        <p class="userInfoHeader" > Falsche Puzzles 4</p>
+                        <p class="userInfoHeader" > Puzzletest absolviert 4</p>
+                        <p class="userInfoHeader" > Gesamtzeit 4</p>  
+                        
+                        <p class="userInfoHeader" > Richtige Puzzles 5</p>
+                        <p class="userInfoHeader" > Falsche Puzzles 5</p>
+                        <p class="userInfoHeader" > Puzzletest absolviert 5</p>
+                        <p class="userInfoHeader" > Gesamtzeit 5</p>  
+                        
+                        <p class="userInfoHeader" > Richtige Puzzles 6</p>
+                        <p class="userInfoHeader" > Falsche Puzzles 6</p>
+                        <p class="userInfoHeader" > Puzzletest absolviert 6</p>
+                        <p class="userInfoHeader" > Gesamtzeit 6</p>  
+                        
+                        
+                        <p class="userInfoHeaderTitle" > Zahlen ordnen Test</p>
+                        <!--zahlen sortieren-->
+                        <p class="userInfoHeader" > Zielreihe 1</p>
+                        <p class="userInfoHeader" > Geklickte Reihe 1</p>
+                        <p class="userInfoHeader" > Zielreihe wied. 1</p>
+                        <p class="userInfoHeader" > Geklickte Reihe wied. 1</p>  
+                        
+                        <p class="userInfoHeader" > Zielreihe 2</p>
+                        <p class="userInfoHeader" > Geklickte Reihe 2</p>
+                        <p class="userInfoHeader" > Zielreihe wied. 2</p>
+                        <p class="userInfoHeader" > Geklickte Reihe wied. 2</p>  
+                        
+                        <p class="userInfoHeader" > Zielreihe 3</p>
+                        <p class="userInfoHeader" > Geklickte Reihe 3</p>
+                        <p class="userInfoHeader" > Zielreihe wied. 3</p>
+                        <p class="userInfoHeader" > Geklickte Reihe wied. 3</p>  
+                        
+                        <p class="userInfoHeader" > Zielreihe 4</p>
+                        <p class="userInfoHeader" > Geklickte Reihe 4</p>
+                        <p class="userInfoHeader" > Zielreihe wied. 4</p>
+                        <p class="userInfoHeader" > Geklickte Reihe wied. 4</p>  
+                        
+                        <p class="userInfoHeader" > Zielreihe 5</p>
+                        <p class="userInfoHeader" > Geklickte Reihe 5</p>
+                        <p class="userInfoHeader" > Zielreihe wied. 5</p>
+                        <p class="userInfoHeader" > Geklickte Reihe wied. 5</p>  
+                        
+                        <p class="userInfoHeader" > Zielreihe 6</p>
+                        <p class="userInfoHeader" > Geklickte Reihe 6</p>
+                        <p class="userInfoHeader" > Zielreihe wied. 6</p>
+                        <p class="userInfoHeader" > Geklickte Reihe wied. 6</p>  
+                        
+                        
+                        <p class="userInfoHeaderTitle" > Depressionsfragebogen</p>
+                        <!--depression fragen-->
+                        <p class="userInfoHeader" > Depressionfragen</p>
+                        <p class="userInfoHeader" style="top: 10%;"> Depressionfragen-Antworten</p>
+                        
+                        
+                        <p class="userInfoHeaderTitle" > ADLs Fragebogen</p>
+                         <!--adl fragen-->
+                        <p class="userInfoHeader" > ADLs fragen</p>
+                        <p class="userInfoHeader" > ADLs fragen-Antworten</p>
+                        
+                    </div>
+                    
+                    
+                    <div class="divRight" >
+                        
+                        
+                        <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>
+                        <!--paarassoziationstest-->
+                        <p class="userInfoContent" id="rightWords1"></p>
+                        <p class="userInfoContent" id="wrongWords1"></p>
+                        <p class="userInfoContent" id="rightWords2"></p>
+                        <p class="userInfoContent" id="wrongWords2"></p>
+                        <p class="userInfoContent" id="rightWords3"></p>
+                        <p class="userInfoContent" id="wrongWords3"></p>
+                        <p class="userInfoContent" id="rightWordsDelayed"> </p>
+                        <p class="userInfoContent" id="wrongWordsDelayed"> </p>
+                        
+                        <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>
+                        <!--tmt-->
+                        <p class="userInfoContent" id="rightNumFieldsTMT1"></p>
+                        <p class="userInfoContent" id="wrongNumFieldsTMT1"></p>
+                        <p class="userInfoContent" id="timeToSolveTMT1"></p>
+                        <p class="userInfoContent" id="clickIntervalsTMT1"></p>
+                        
+                        <p class="userInfoContent" id="rightNumFieldsTMT2"></p>
+                        <p class="userInfoContent" id="wrongNumFieldsTMT2"></p>
+                        <p class="userInfoContent" id="timeToSolveTMT2"></p>
+                        <p class="userInfoContent" id="clickIntervalsTMT2"></p>
+                        
+                        <p class="userInfoContent" id="rightNumFieldsTMT3"></p>
+                        <p class="userInfoContent" id="wrongNumFieldsTMT3"></p>
+                        <p class="userInfoContent" id="timeToSolveTMT3"></p>
+                        <p class="userInfoContent" id="clickIntervalsTMT3"></p>
+                        
+                        <p class="userInfoContent" id="rightNumFieldsTMT4"></p>
+                        <p class="userInfoContent" id="wrongNumFieldsTMT4"></p>
+                        <p class="userInfoContent" id="timeToSolveTMT4"></p>
+                        <p class="userInfoContent" id="clickIntervalsTMT4"></p>
+                        
+                        <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>
+                        <!--puzzle-->
+                        <p class="userInfoContent" id="rightPuzzlesP1"></p>
+                        <p class="userInfoContent" id="wrongPuzzlesP1"></p>
+                        <p class="userInfoContent" id="puzzleSolvedP1"></p>
+                        <p class="userInfoContent" id="timeToSolveP1"></p>
+                        
+                        <p class="userInfoContent" id="rightPuzzlesP2"></p>
+                        <p class="userInfoContent" id="wrongPuzzlesP2"></p>
+                        <p class="userInfoContent" id="puzzleSolvedP2"></p>
+                        <p class="userInfoContent" id="timeToSolveP2"></p>
+                        
+                        <p class="userInfoContent" id="rightPuzzlesP3"></p>
+                        <p class="userInfoContent" id="wrongPuzzlesP3"></p>
+                        <p class="userInfoContent" id="puzzleSolvedP3"></p>
+                        <p class="userInfoContent" id="timeToSolveP3"></p>
+                        
+                        <p class="userInfoContent" id="rightPuzzlesP4"></p>
+                        <p class="userInfoContent" id="wrongPuzzlesP4"></p>
+                        <p class="userInfoContent" id="puzzleSolvedP4"></p>
+                        <p class="userInfoContent" id="timeToSolveP4"></p>
+                        
+                        <p class="userInfoContent" id="rightPuzzlesP5"></p>
+                        <p class="userInfoContent" id="wrongPuzzlesP5"></p>
+                        <p class="userInfoContent" id="puzzleSolvedP5"></p>
+                        <p class="userInfoContent" id="timeToSolveP5"></p>
+                        
+                        <p class="userInfoContent" id="rightPuzzlesP6"></p>
+                        <p class="userInfoContent" id="wrongPuzzlesP6"></p>
+                        <p class="userInfoContent" id="puzzleSolvedP6"></p>
+                        <p class="userInfoContent" id="timeToSolveP6"></p>
+                        
+                        <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>
+                        <!--zahlen sortieren-->
+                        <p class="userInfoContent" id="targetArray1"></p>
+                        <p class="userInfoContent" id="clickedArray1"></p>
+                        <p class="userInfoContent" id="targetArrayRep1"></p>
+                        <p class="userInfoContent" id="clickedArrayRep1"></p>
+                        
+                        <p class="userInfoContent" id="targetArray2"></p>
+                        <p class="userInfoContent" id="clickedArray2"></p>
+                        <p class="userInfoContent" id="targetArrayRep2"></p>
+                        <p class="userInfoContent" id="clickedArrayRep2"></p>
+                        
+                        <p class="userInfoContent" id="targetArray3"></p>
+                        <p class="userInfoContent" id="clickedArray3"></p>
+                        <p class="userInfoContent" id="targetArrayRep3"></p>
+                        <p class="userInfoContent" id="clickedArrayRep3"></p>
+                        
+                        <p class="userInfoContent" id="targetArray4"></p>
+                        <p class="userInfoContent" id="clickedArray4"></p>
+                        <p class="userInfoContent" id="targetArrayRep4"></p>
+                        <p class="userInfoContent" id="clickedArrayRep4"></p>
+                        
+                        <p class="userInfoContent" id="targetArray5"></p>
+                        <p class="userInfoContent" id="clickedArray5"></p>
+                        <p class="userInfoContent" id="targetArrayRep5"></p>
+                        <p class="userInfoContent" id="clickedArrayRep5"></p>
+                        
+                        <p class="userInfoContent" id="targetArray6"></p>
+                        <p class="userInfoContent" id="clickedArray6"></p>
+                        <p class="userInfoContent" id="targetArrayRep6"></p>
+                        <p class="userInfoContent" id="clickedArrayRep6"></p>
+                        
+                        <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>
+                        <!--depression fragen-->
+                        <p class="userInfoContent" id="depressionQuestions"></p>
+                        <p class="userInfoContent" id="depressionAnswers"></p>
+                        
+                        <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>
+                        <!--adls-->
+                        <p class="userInfoContent" id="adlQuestions"></p>
+                        <p class="userInfoContent" id="adlAnswers"></p>
+                    </div>
+                    
+                    
+                
+                
+                </div>
+                
+                
+                
+               
+                
+            </div>
+        </div>
              
              
              
@@ -410,6 +664,32 @@ and open the template in the editor.
          
          
          
+         
+         <!--results not found page-->
+        <div data-role="page" id="resultsNotFoundPage" data-dom-cache=true class="loginPage">
+
+            <div data-role="content">
+                
+                
+                 <!--failed login instruction--> 
+                <div class="loginInstruction">Ergebnisse nicht gefunden!</div>
+                
+                
+                <p class="failedLoginHint">Leider existieren für diesen Benutzer noch keine Screening-Ergebnisse! </p>
+                
+                
+                
+                
+                <!--back button-->
+                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="goToPreviousPage();" />
+                
+                
+            </div>
+        </div> 
+         
+         
+         
+         
           <!--no patient found page-->
         <div data-role="page" id="noPatientFoundPage" data-dom-cache=true class="loginPage">
 
@@ -435,7 +715,7 @@ and open the template in the editor.
           
           
           
-           <!--no patient found page-->
+           <!--failed request page-->
         <div data-role="page" id="requestFailedPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
@@ -460,6 +740,29 @@ and open the template in the editor.
          
          
          
+           
+             <!--failed results request page-->
+        <div data-role="page" id="resultsRequestFailedPage" data-dom-cache=true class="loginPage">
+
+            <div data-role="content">
+                
+                
+                 <!--failed login instruction--> 
+                <div class="loginInstruction">Fehler bei der Abfrage von Ergebnissen!</div>
+                
+                
+                <p class="failedLoginHint">Die Abfrage konnte nicht durchgeführt werden! Bitte überprüfen Sie Ihre Netzwerkverbindung. </p>
+                
+                
+                
+                
+                <!--back button-->
+                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="goToPreviousPage();" />
+                
+                
+            </div>
+        </div>
+           
          
          
           <!--patient already exists page-->

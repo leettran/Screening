@@ -486,6 +486,31 @@
     }
     
     
+    .backButtonTopRight{
+        background-size: 100%;
+        background-repeat:no-repeat;       
+        height: 70px;
+        width: 230px;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        font-size: x-large;
+        text-shadow: none;
+    }
+
+    .backButtonTopRight:active{
+        background-image:url('images/btns-bg/bt-zurueck.png');
+        position:absolute; 
+        top: 5.2%;
+        right: 4.8%;
+        background-image: none;
+        outline: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    
+    
+    
      .showResultsButton{
         background-size: 100%;
         background-repeat:no-repeat;       
@@ -1635,7 +1660,7 @@
     
     
     .divLeft{
-        width: 18%;
+        width: 25%;
         height: auto;
         background-color: transparent;
         position: absolute;
@@ -1649,7 +1674,7 @@
     
     
     .divRight{
-        width: 80%;
+        width: 75%;
         height: auto;
         background-color: transparent;
         position: absolute;
@@ -1677,6 +1702,24 @@
     }
     
     
+    .userInfoHeaderTitle{
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        position: relative;
+       
+   
+        top:2%;
+        left: 2%;
+        margin: 0,5px,0,0;
+        font-size: 21px;
+        font-family: EnigmaB_2;
+        color: black;
+        text-shadow: none;
+        display: block;
+        text-decoration: underline;
+    }
+    
     .userInfoHeader{
         width: auto;
         height: auto;
@@ -1690,11 +1733,14 @@
         color: #57bb58;
         text-shadow: none;
         display: block;
+        
     }
     
     .userInfoContent{
         width: auto;
         height: auto;
+        
+       
         background-color: transparent;
         position: relative;
         top:2%;
