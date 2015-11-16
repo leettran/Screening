@@ -1591,7 +1591,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -1627,7 +1627,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -1662,7 +1662,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -1697,7 +1697,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -1732,7 +1732,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -1767,7 +1767,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -1802,7 +1802,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -1837,7 +1837,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -1872,7 +1872,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -1907,7 +1907,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -1942,7 +1942,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -1977,7 +1977,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -2012,7 +2012,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -2047,7 +2047,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -2082,7 +2082,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -2117,7 +2117,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -2152,7 +2152,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -2187,7 +2187,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -2222,7 +2222,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -2247,7 +2247,7 @@ function selectNumberOrLetter(k) {
                         setTimeout(function () {
                             clearAllIntervals();
                             cleanRightHitsAndMistakes(kreisId);
-                            $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                            $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
                         }, 1000);
                     }
 
@@ -2270,7 +2270,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                                $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                                $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
                         }
@@ -2297,7 +2297,7 @@ function selectNumberOrLetter(k) {
                             jQuery.jStorage.set("WrongNumFieldsTMT2", wrongNumFieldsTMT2);
                             jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                             jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
-                            $.mobile.changePage('#intro2v3a', {transition: "slide"});
+                            $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                         }
                     }
@@ -4714,8 +4714,9 @@ function goToNextADL() {
 
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage3', {transition: "slide"});
-                    ADLQuest++;
+                    $.mobile.changePage('#frage4', {transition: "slide"});
+                    // go to frage4
+                    ADLQuest+=2;
                 }
                 break;
             case 3:
@@ -4742,8 +4743,9 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage5', {transition: "slide"});
-                    ADLQuest++;
+                    $.mobile.changePage('#frage6', {transition: "slide"});
+                    // go to frage6
+                    ADLQuest+=2;
                 }
                 break;
             case 5:
@@ -4854,8 +4856,9 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage13', {transition: "slide"});
-                    ADLQuest++;
+                    $.mobile.changePage('#frage15', {transition: "slide"});
+                    // go to frage15
+                    ADLQuest+=3;
                 }
                 break;
             case 13:
@@ -4896,8 +4899,9 @@ function goToNextADL() {
                 }
                 else {
                     isReadyToSwitch = false;
-                    $.mobile.changePage('#frage16', {transition: "slide"});
-                    ADLQuest++;
+                    $.mobile.changePage('#frage17', {transition: "slide"});
+                    // go to frage17
+                    ADLQuest+=2;
                 }
                 break;
             case 16:

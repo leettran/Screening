@@ -408,7 +408,7 @@ function selectTargetTile1(trgTile) {
         // clear timers
         clearAllTimers();
 
-        $.mobile.changePage('#puzzle2', {transition: "slide"});
+        $.mobile.changePage('#puzzle3', {transition: "slide"});
         achievedTiles = 0;
 
     }
@@ -833,7 +833,7 @@ function selectTargetTile4(trgTile) {
         // clear timers
         clearAllTimers();
 
-        $.mobile.changePage('#puzzle5', {transition: "slide"});
+        $.mobile.changePage('#MosaiktestTransit', {transition: "slide"});
         achievedTiles = 0;
     }
 }
