@@ -1733,7 +1733,8 @@
         color: #57bb58;
         text-shadow: none;
         display: block;
-        
+        padding-right: 2px;
+        padding-left: 2px;
         
     }
     

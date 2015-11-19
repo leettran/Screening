@@ -5690,6 +5690,10 @@ function showResults(patientElementId){
 // request successfull
         }).success(function (data) {
             
+            
+            // remove old entries from tables
+            flushTablesEntries();
+            
             if (data===null || data.length===0){
                 
                 $.mobile.changePage('#resultsNotFoundPage', {transition: "slide"});
@@ -5818,6 +5822,66 @@ function showResults(patientElementId){
         console.log("Error when getting results of user: "+ patientUserId + error);
     }
     
+}
+
+
+function flushTablesEntries(){
+    
+    // flush entries from depression items table
+    $('#nie0').html("");
+    $('#vereinzelt0').html("");
+    $('#haelfte0').html("");
+    $('#jedentag0').html("");
+    $('#nie1').html("");
+    $('#vereinzelt1').html("");
+    $('#haelfte1').html("");
+    $('#jedentag1').html("");
+    $('#nie2').html("");
+    $('#vereinzelt2').html("");
+    $('#haelfte2').html("");
+    $('#jedentag2').html("");
+       
+    $('#ja3').html("");
+    $('#nein3').html("");
+    $('#taeglich3').html("");
+    $('#mehrmals3').html("");
+    $('#einmal3').html("");
+    $('#weniger3').html("");
+    $('#keine3').html("");
+    $('#etwas3').html("");
+    $('#grosse3').html("");
+    $('#sehrgrosse3').html("");
+    
+    $('#ja4').html("");
+    $('#nein4').html("");
+    $('#taeglich4').html("");
+    $('#mehrmals4').html("");
+    $('#einmal4').html("");
+    $('#weniger4').html("");
+    $('#keine4').html("");
+    $('#etwas4').html("");
+    $('#grosse4').html("");
+    $('#sehrgrosse4').html("");
+    
+    $('#ja5').html("");
+    $('#nein5').html("");
+    $('#taeglich5').html("");
+    $('#mehrmals5').html("");
+    $('#einmal5').html("");
+    $('#weniger5').html("");
+    $('#keine5').html("");
+    $('#etwas5').html("");
+    $('#grosse5').html("");
+    $('#sehrgrosse5').html("");
+    
+    // flush entries from adls table
+    for (var i=0; i<12;i++){
+        $('#adlsnie'+i).html("");
+        $('#selten'+i).html("");
+        $('#haeufig'+i).html("");
+        $('#sehrhaeufig'+i).html("");
+        
+    }
 }
 
 
