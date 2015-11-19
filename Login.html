@@ -711,8 +711,8 @@ and open the template in the editor.
                         </tr>
                         <tr>
                             <td> <p class="userInfoHeader" > Depressionsfragen-Antworten</p>  </td>
-                            <td> <p class="userInfoContent" id="depressionAnswers"></p>  </td>
-                        </tr>
+                            <td> <p class="userInfoContent" id="depressionAnswers"></p>  </td><!--
+                        </tr>-->
                         
                         <!--adls fragen-->
                         <tr>
@@ -733,233 +733,224 @@ and open the template in the editor.
                     
                     
                     
+                    <!--general depression items-->
+                    <table>
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Antworten in Bezug auf die letzten 2 Wochen</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Nie</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">An vereinzelten Tagen</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Mehr als die Hälfte der Tage</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Fast jeden Tag oder täglich</p> </td>
+                        </tr>
+                        
+                         <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Niederschlagenheit/Traurigkeit</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nie0"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="vereinzelt0"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haelfte0"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="jedentag0"></p> </td>
+                        </tr>
+                        
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Antriebslosigkeit/Erschöpfung</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nie1"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="vereinzelt1"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haelfte1"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="jedentag1"></p> </td>
+                        </tr>
+                        
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Interessenverlust</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nie2"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="vereinzelt2"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haelfte2"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="jedentag2"></p> </td>
+                        </tr>
+                        
+                    </table>
+                    
+                    
+                    
+                    <!--memory depression items-->
+                    
+                    
+                    <table>
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader"></p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Nein</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Ja</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Täglich</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Mehrmals die Woche</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Ca. 1x die Woche</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Weniger als 1x die Woche</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Keine</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Etwas</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Große</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Sehr große</p> </td>
+                            
+                        </tr>
+                        
+                         <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Gedächtnis schlechter geworden</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nein3"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="ja3"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="taeglich3"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="mehrmals3"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="einmal3"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="weniger3"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="keine3"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="etwas3"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="grosse3"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrgrosse3"></p> </td>
+                            
+                        </tr>
+                        
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Häufigkeit von Gedächtnisproblemen</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nein4"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="ja4"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="taeglich4"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="mehrmals4"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="einmal4"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="weniger4"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="keine4"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="etwas4"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="grosse4"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrgrosse4"></p> </td>
+                            
+                        </tr>
+                        
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Sorgen um Gedächtnisverschlechterung</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nein5"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="ja5"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="taeglich5"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="mehrmals5"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="einmal5"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="weniger5"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="keine5"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="etwas5"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="grosse5"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrgrosse5"></p> </td>
+                            
+                        </tr>
+                        
+                    </table>
+                    
+                    
+                    
+                     <!--general adls items-->
+                    <table>
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader"></p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Nie</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Selten</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Häufig</p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Sehr häufig</p> </td>
+                        </tr>
+                        
+                         <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Vergessen von Verabredungen oder wichtigen Terminen</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie0"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten0"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig0"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig0"></p> </td>
+                        </tr>
+                        
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Probleme beim Rechnen oder Geldabzählen</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie1"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten1"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig1"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig1"></p> </td>
+                        </tr>
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Wortfindungsschwierigkeiten</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie2"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten2"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig2"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig2"></p> </td>
+                        </tr>
+                        
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Erinnern der aktuellen Jahreszahl oder des Monats</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie3"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten3"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig3"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig3"></p> </td>
+                        </tr>
+                        
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Vergessen von bekannten Telefonnummern</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie4"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten4"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig4"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig4"></p> </td>
+                        </tr>
+                        
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Verlegen von Alltagsgegenständen</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie5"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten5"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig5"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig5"></p> </td>
+                        </tr>
+                        
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Probleme zwei Dinge gleichzeitig zu tun </p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie6"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten6"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig6"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig6"></p> </td>
+                        </tr>
+                        
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Erinnern an Reihenfolge bei alltäglichen Arbeiten</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie7"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten7"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig7"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig7"></p> </td>
+                        </tr>
+                        
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Probleme, bekannte Wege zu beschreiben</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie8"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten8"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig8"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig8"></p> </td>
+                        </tr>
+                        
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Verlaufen bei bekannten Wegen</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie9"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten9"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig9"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig9"></p> </td>
+                        </tr>
+                        
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Probleme bei Bedienung technischer Geräte</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie10"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten10"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig10"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig10"></p> </td>
+                        </tr>
+                        
+                        <tr style="border: 1px solid black;">
+                            <th style="border: 1px solid black;"> <p class="userInfoHeader">Probleme einer Unterhaltung zu folgen</p> </th>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie11"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten11"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig11"></p> </td>
+                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig11"></p> </td>
+                        </tr>
+                        
+                        
+                        
+                        
+                    </table>
+                    
                 
-<!--                    <div class="divLeft">   
-                        
-                        <p class="userInfoHeaderTitle" > Paarassoziationstest</p>   
-                        paarassoziationstest
-                        <p class="userInfoHeader" > Richtige Wörter 1.Durchlauf</p>
-                        <p class="userInfoHeader" > Falsche Wörter 1.Durchlauf</p>
-                        <p class="userInfoHeader" > Richtige Wörter 2.Durchlauf</p>
-                        <p class="userInfoHeader" > falsche Wörter 2.Durchlauf</p>
-                        <p class="userInfoHeader" > Richtige Wörter 3.Durchlauf</p>
-                        <p class="userInfoHeader" > Falsche Wörter 3.Durchlauf</p>
-                        <p class="userInfoHeader" > Richtige Wörter verzögerter Durchlauf</p>
-                        <p class="userInfoHeader" > Falsche Wörter verzögerter Durchlauf</p>
-                        
-                        <p class="userInfoHeaderTitle" > Trailmakingtest</p>
-                        tmt
-                        <p class="userInfoHeader" > Richtige Zahlen TMT1</p>
-                        <p class="userInfoHeader" > Falsche Zahlen TMT1</p>
-                        <p class="userInfoHeader" > Gesamtzeit TMT1</p>
-                        <p class="userInfoHeader" > Klickintervalle TMT1</p>
-                        
-                        <p class="userInfoHeader" > Richtige Zahlen TMT2</p>
-                        <p class="userInfoHeader" > Falsche Zahlen TMT2</p>
-                        <p class="userInfoHeader" > Gesamtzeit TMT2</p>
-                        <p class="userInfoHeader" > Klickintervalle TMT2</p>   
-                        
-                        <p class="userInfoHeader" > Richtige Zahlen TMT3</p>
-                        <p class="userInfoHeader" > Falsche Zahlen TMT3</p>
-                        <p class="userInfoHeader" > Gesamtzeit TMT3</p>
-                        <p class="userInfoHeader" > Klickintervalle TMT3</p>  
-                        
-                        <p class="userInfoHeader" > Richtige Zahlen TMT4</p>
-                        <p class="userInfoHeader" > Falsche Zahlen TMT4</p>
-                        <p class="userInfoHeader" > Gesamtzeit TMT4</p>
-                        <p class="userInfoHeader" > Klickintervalle TMT4</p>  
-                        
-                        
-                        <p class="userInfoHeaderTitle" > Bilder bauen Test</p>
-                        puzzle
-                        <p class="userInfoHeader" > Richtige Puzzles 1</p>
-                        <p class="userInfoHeader" > Falsche Puzzles 1</p>
-                        <p class="userInfoHeader" > Puzzletest absolviert 1</p>
-                        <p class="userInfoHeader" > Gesamtzeit 1</p>  
-                        
-                        <p class="userInfoHeader" > Richtige Puzzles 2</p>
-                        <p class="userInfoHeader" > Falsche Puzzles 2</p>
-                        <p class="userInfoHeader" > Puzzletest absolviert 2</p>
-                        <p class="userInfoHeader" > Gesamtzeit 2</p>  
-                        
-                        <p class="userInfoHeader" > Richtige Puzzles 3</p>
-                        <p class="userInfoHeader" > Falsche Puzzles 3</p>
-                        <p class="userInfoHeader" > Puzzletest absolviert 3</p>
-                        <p class="userInfoHeader" > Gesamtzeit 3</p>  
-                        
-                        <p class="userInfoHeader" > Richtige Puzzles 4</p>
-                        <p class="userInfoHeader" > Falsche Puzzles 4</p>
-                        <p class="userInfoHeader" > Puzzletest absolviert 4</p>
-                        <p class="userInfoHeader" > Gesamtzeit 4</p>  
-                        
-                        <p class="userInfoHeader" > Richtige Puzzles 5</p>
-                        <p class="userInfoHeader" > Falsche Puzzles 5</p>
-                        <p class="userInfoHeader" > Puzzletest absolviert 5</p>
-                        <p class="userInfoHeader" > Gesamtzeit 5</p>  
-                        
-                        <p class="userInfoHeader" > Richtige Puzzles 6</p>
-                        <p class="userInfoHeader" > Falsche Puzzles 6</p>
-                        <p class="userInfoHeader" > Puzzletest absolviert 6</p>
-                        <p class="userInfoHeader" > Gesamtzeit 6</p>  
-                        
-                        
-                        <p class="userInfoHeaderTitle" > Zahlen ordnen Test</p>
-                        zahlen sortieren
-                        <p class="userInfoHeader" > Zielreihe 1</p>
-                        <p class="userInfoHeader" > Geklickte Reihe 1</p>
-                        <p class="userInfoHeader" > Zielreihe wied. 1</p>
-                        <p class="userInfoHeader" > Geklickte Reihe wied. 1</p>  
-                        
-                        <p class="userInfoHeader" > Zielreihe 2</p>
-                        <p class="userInfoHeader" > Geklickte Reihe 2</p>
-                        <p class="userInfoHeader" > Zielreihe wied. 2</p>
-                        <p class="userInfoHeader" > Geklickte Reihe wied. 2</p>  
-                        
-                        <p class="userInfoHeader" > Zielreihe 3</p>
-                        <p class="userInfoHeader" > Geklickte Reihe 3</p>
-                        <p class="userInfoHeader" > Zielreihe wied. 3</p>
-                        <p class="userInfoHeader" > Geklickte Reihe wied. 3</p>  
-                        
-                        <p class="userInfoHeader" > Zielreihe 4</p>
-                        <p class="userInfoHeader" > Geklickte Reihe 4</p>
-                        <p class="userInfoHeader" > Zielreihe wied. 4</p>
-                        <p class="userInfoHeader" > Geklickte Reihe wied. 4</p>  
-                        
-                        <p class="userInfoHeader" > Zielreihe 5</p>
-                        <p class="userInfoHeader" > Geklickte Reihe 5</p>
-                        <p class="userInfoHeader" > Zielreihe wied. 5</p>
-                        <p class="userInfoHeader" > Geklickte Reihe wied. 5</p>  
-                        
-                        <p class="userInfoHeader" > Zielreihe 6</p>
-                        <p class="userInfoHeader" > Geklickte Reihe 6</p>
-                        <p class="userInfoHeader" > Zielreihe wied. 6</p>
-                        <p class="userInfoHeader" > Geklickte Reihe wied. 6</p>  
-                        
-                        
-                        <p class="userInfoHeaderTitle" > Depressionsfragebogen</p>
-                        depression fragen
-                        <p class="userInfoHeader" > Depressionfragen</p>
-                        <p class="userInfoHeader" style="top: 10%;"> Depressionfragen-Antworten</p>
-                        
-                        
-                        <p class="userInfoHeaderTitle" > ADLs Fragebogen</p>
-                         adl fragen
-                        <p class="userInfoHeader" > ADLs fragen</p>
-                        <p class="userInfoHeader" > ADLs fragen-Antworten</p>
-                        
-                    </div>
-                    
-                    
-                    <div class="divRight" >
-                        
-                        
-                        <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>
-                        paarassoziationstest
-                        <p class="userInfoContent" id="rightWords1"></p>
-                        <p class="userInfoContent" id="wrongWords1"></p>
-                        <p class="userInfoContent" id="rightWords2"></p>
-                        <p class="userInfoContent" id="wrongWords2"></p>
-                        <p class="userInfoContent" id="rightWords3"></p>
-                        <p class="userInfoContent" id="wrongWords3"></p>
-                        <p class="userInfoContent" id="rightWordsDelayed"> </p>
-                        <p class="userInfoContent" id="wrongWordsDelayed"> </p>
-                        
-                        <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>
-                        tmt
-                        <p class="userInfoContent" id="rightNumFieldsTMT1"></p>
-                        <p class="userInfoContent" id="wrongNumFieldsTMT1"></p>
-                        <p class="userInfoContent" id="timeToSolveTMT1"></p>
-                        <p class="userInfoContent" id="clickIntervalsTMT1"></p>
-                        
-                        <p class="userInfoContent" id="rightNumFieldsTMT2"></p>
-                        <p class="userInfoContent" id="wrongNumFieldsTMT2"></p>
-                        <p class="userInfoContent" id="timeToSolveTMT2"></p>
-                        <p class="userInfoContent" id="clickIntervalsTMT2"></p>
-                        
-                        <p class="userInfoContent" id="rightNumFieldsTMT3"></p>
-                        <p class="userInfoContent" id="wrongNumFieldsTMT3"></p>
-                        <p class="userInfoContent" id="timeToSolveTMT3"></p>
-                        <p class="userInfoContent" id="clickIntervalsTMT3"></p>
-                        
-                        <p class="userInfoContent" id="rightNumFieldsTMT4"></p>
-                        <p class="userInfoContent" id="wrongNumFieldsTMT4"></p>
-                        <p class="userInfoContent" id="timeToSolveTMT4"></p>
-                        <p class="userInfoContent" id="clickIntervalsTMT4"></p>
-                        
-                        <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>
-                        puzzle
-                        <p class="userInfoContent" id="rightPuzzlesP1"></p>
-                        <p class="userInfoContent" id="wrongPuzzlesP1"></p>
-                        <p class="userInfoContent" id="puzzleSolvedP1"></p>
-                        <p class="userInfoContent" id="timeToSolveP1"></p>
-                        
-                        <p class="userInfoContent" id="rightPuzzlesP2"></p>
-                        <p class="userInfoContent" id="wrongPuzzlesP2"></p>
-                        <p class="userInfoContent" id="puzzleSolvedP2"></p>
-                        <p class="userInfoContent" id="timeToSolveP2"></p>
-                        
-                        <p class="userInfoContent" id="rightPuzzlesP3"></p>
-                        <p class="userInfoContent" id="wrongPuzzlesP3"></p>
-                        <p class="userInfoContent" id="puzzleSolvedP3"></p>
-                        <p class="userInfoContent" id="timeToSolveP3"></p>
-                        
-                        <p class="userInfoContent" id="rightPuzzlesP4"></p>
-                        <p class="userInfoContent" id="wrongPuzzlesP4"></p>
-                        <p class="userInfoContent" id="puzzleSolvedP4"></p>
-                        <p class="userInfoContent" id="timeToSolveP4"></p>
-                        
-                        <p class="userInfoContent" id="rightPuzzlesP5"></p>
-                        <p class="userInfoContent" id="wrongPuzzlesP5"></p>
-                        <p class="userInfoContent" id="puzzleSolvedP5"></p>
-                        <p class="userInfoContent" id="timeToSolveP5"></p>
-                        
-                        <p class="userInfoContent" id="rightPuzzlesP6"></p>
-                        <p class="userInfoContent" id="wrongPuzzlesP6"></p>
-                        <p class="userInfoContent" id="puzzleSolvedP6"></p>
-                        <p class="userInfoContent" id="timeToSolveP6"></p>
-                        
-                        <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>
-                        zahlen sortieren
-                        <p class="userInfoContent" id="targetArray1"></p>
-                        <p class="userInfoContent" id="clickedArray1"></p>
-                        <p class="userInfoContent" id="targetArrayRep1"></p>
-                        <p class="userInfoContent" id="clickedArrayRep1"></p>
-                        
-                        <p class="userInfoContent" id="targetArray2"></p>
-                        <p class="userInfoContent" id="clickedArray2"></p>
-                        <p class="userInfoContent" id="targetArrayRep2"></p>
-                        <p class="userInfoContent" id="clickedArrayRep2"></p>
-                        
-                        <p class="userInfoContent" id="targetArray3"></p>
-                        <p class="userInfoContent" id="clickedArray3"></p>
-                        <p class="userInfoContent" id="targetArrayRep3"></p>
-                        <p class="userInfoContent" id="clickedArrayRep3"></p>
-                        
-                        <p class="userInfoContent" id="targetArray4"></p>
-                        <p class="userInfoContent" id="clickedArray4"></p>
-                        <p class="userInfoContent" id="targetArrayRep4"></p>
-                        <p class="userInfoContent" id="clickedArrayRep4"></p>
-                        
-                        <p class="userInfoContent" id="targetArray5"></p>
-                        <p class="userInfoContent" id="clickedArray5"></p>
-                        <p class="userInfoContent" id="targetArrayRep5"></p>
-                        <p class="userInfoContent" id="clickedArrayRep5"></p>
-                        
-                        <p class="userInfoContent" id="targetArray6"></p>
-                        <p class="userInfoContent" id="clickedArray6"></p>
-                        <p class="userInfoContent" id="targetArrayRep6"></p>
-                        <p class="userInfoContent" id="clickedArrayRep6"></p>
-                        
-                        <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>
-                        depression fragen
-                        <p class="userInfoContent" id="depressionQuestions"></p>
-                        <p class="userInfoContent" id="depressionAnswers"></p>
-                        
-                        <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>
-                        adls
-                        <p class="userInfoContent" id="adlQuestions"></p>
-                        <p class="userInfoContent" id="adlAnswers"></p>
-                    </div>-->
+
                     
                     
                 

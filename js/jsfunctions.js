@@ -27,6 +27,8 @@ var correctWordsDelay = 0;
 var wrongWordsDelay = 0;
 var cntDelayed = 0;
 
+
+
 // color values
 var selectionColor = "#8c8c8c";
 var normalColor = "#57bb58";
@@ -92,7 +94,7 @@ var wrongSelectionColor = "#ff0000";
 var nextToLastSelectionColor = "#f0ff00";
 
 
-//variablen für mosaiktest
+//variablen für mosaiktest in the mosaiktestFunctions.js file
 
 
 //variablen für zahlensortierentest
@@ -101,6 +103,7 @@ var sequenceReapeat = 1;
 var taskCount = 1;
 var numbersArray;
 var clickedNumbArray = new Array();
+var highestArrayLength = 0;
 
 
 
@@ -3383,6 +3386,7 @@ function matchNumbers(numbElement) {
             return a - b;
         });
         var allowedClicks = numbersArray.length;
+        highestArrayLength = allowedClicks;
         var clickedNumber = numbElement.innerHTML;
         var hoverItem;
         //hover clicked item
@@ -3421,6 +3425,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT1", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT1", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3441,6 +3446,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT1Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT1Rep", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3459,6 +3465,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT1", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT1", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3479,6 +3486,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT1Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT1Rep", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3516,6 +3524,7 @@ function matchNumbers(numbElement) {
                     jQuery.jStorage.set("ToAchieveArrayT7Rep", ["Keine"]);
                     jQuery.jStorage.set("ClickedArrayT7Rep", ["Keine"]);
                     
+                    
                         //jump to the end page 
                         $.mobile.changePage('#ZahlensortierenTransit', {transition: "slide"}, {reloadPage: true});
                     }
@@ -3542,6 +3551,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT2", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT2", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3561,6 +3571,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT2Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT2Rep", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3579,6 +3590,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT2", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT2", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3599,6 +3611,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT2Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT2Rep", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3657,6 +3670,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT3", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT3", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3676,6 +3690,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT3Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT3Rep", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3695,6 +3710,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT3", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT3", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3715,6 +3731,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT3Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT3Rep", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3771,6 +3788,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT4", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT4", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3790,6 +3808,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT4Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT4Rep", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3809,6 +3828,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT4", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT4", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3829,6 +3849,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT4Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT4Rep", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3882,6 +3903,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT5", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT5", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3901,6 +3923,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT5Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT5Rep", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3920,6 +3943,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT5", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT5", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3940,6 +3964,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT5Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT5Rep", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -3987,6 +4012,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT6", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT6", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -4006,6 +4032,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT6Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT6Rep", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -4025,6 +4052,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT6", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT6", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -4045,6 +4073,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT6Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT6Rep", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -4088,6 +4117,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT7", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT7", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -4111,6 +4141,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT7Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT7Rep", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -4130,6 +4161,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT7", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT7", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -4150,6 +4182,7 @@ function matchNumbers(numbElement) {
                             clickedNumbArray.push('Keine');
                         jQuery.jStorage.set("ToAchieveArrayT7Rep", numbersArray);
                         jQuery.jStorage.set("ClickedArrayT7Rep", clickedNumbArray);
+                         jQuery.jStorage.set("HighestArrayLength", highestArrayLength);
                         //clear arrays for next use
                         Array.prototype.clear = function ()
                         {
@@ -5640,6 +5673,7 @@ function showResults(patientElementId){
     
     try
     {
+        
         // get user id from the p tag
     var patientUserId = $("#" + patientElementId).text();
         
@@ -5760,6 +5794,9 @@ function showResults(patientElementId){
              $("#adlQuestions").html(data['ADLQuestions']);
              $("#adlAnswers").html(data['ADLQuestAnswerMap']);
              
+             // fill in question/answer tables
+             fillInDepressionItemsTables(data['depressionQuestions'],data['depressionQuestionAnswerMap']);
+             fillInAdlsItemsTable(data['ADLQuestions'],data['ADLQuestAnswerMap']);
              
              $.mobile.changePage('#resultsPage', {transition: "slide"});
 
@@ -5779,6 +5816,143 @@ function showResults(patientElementId){
     }
     catch (error) {
         console.log("Error when getting results of user: "+ patientUserId + error);
+    }
+    
+}
+
+
+// fill adls items table
+function fillInAdlsItemsTable(adlsQuestions, adlsAnswers){
+    
+        var adlsQuestArray = adlsQuestions.split(',');
+        var adlsAnswArray = adlsAnswers.split(',');
+        
+        // loop into adls items
+        for (var i=0; i < adlsQuestArray.length; i++){
+            
+                        
+            if (adlsAnswArray[i].indexOf('Nie') !== -1){
+                
+                $('#adlsnie'+i).html("X");
+            }
+            
+            else if (adlsAnswArray[i].indexOf('Selten') !== -1){
+                
+                $('#selten'+i).html("X");
+            }
+            
+            else if (adlsAnswArray[i].indexOf('Häufig') !== -1){
+                
+                $('#haeufig'+i).html("X");
+            }
+            
+             else if (adlsAnswArray[i].indexOf('Sehr häufig') !== -1){
+                
+                $('#sehrhaeufig'+i).html("X");
+            }
+            
+        }
+    
+    
+}
+
+
+
+
+// fill depression questions tables 
+function fillInDepressionItemsTables(depressionQuestions, depressionAnswers){
+    
+    try
+    {
+               
+        // convert to arrays
+        var depressionQuestArray = depressionQuestions.split(',');
+        var depressionAnswArray = depressionAnswers.split(',');
+       
+        
+        
+        
+        // loop into depression items
+        for (var i=0; i < depressionQuestArray.length; i++){
+            
+            if (depressionAnswArray[i].indexOf('Nie') !== -1){
+                
+                $('#nie'+i).html("X");
+            }
+            
+            else if (depressionAnswArray[i].indexOf('An vereinzelten Tagen') !== -1){
+                
+                $('#vereinzelt'+i).html("X");
+            }
+            
+            else if (depressionAnswArray[i].indexOf('An mehr als der Hälfte der letzten 14 Tagen') !== -1){
+                
+                $('#haelfte'+i).html("X");
+            }
+            
+            else if (depressionAnswArray[i].indexOf('Fast jeden Tag oder täglich') !== -1){
+                
+                $('#jedentag'+i).html("X");
+            }
+            
+            else if (depressionAnswArray[i].indexOf('Ja') !== -1){
+                
+                $('#ja'+i).html("X");
+            }
+            
+            else if (depressionAnswArray[i].indexOf('Nein') !== -1){
+                
+                $('#nein'+i).html("X");
+            }
+            
+            else if (depressionAnswArray[i].indexOf('Täglich') !== -1){
+                
+                $('#taeglich'+i).html("X");
+            }
+            
+            else if (depressionAnswArray[i].indexOf('Mehrmals die Woche') !== -1){
+                
+                $('#mehrmals'+i).html("X");
+            }
+            
+             else if (depressionAnswArray[i].indexOf('Ca. 1x die Woche') !== -1){
+                
+                $('#einmal'+i).html("X");
+            }
+            
+            else if (depressionAnswArray[i].indexOf('Weniger als 1x die Woche') !== -1){
+                
+                $('#weniger'+i).html("X");
+            }
+            
+            else if (depressionAnswArray[i].indexOf('Ich mache mir KEINE Sorgen') !== -1){
+                
+                $('#keine'+i).html("X");
+            }
+            
+            else if (depressionAnswArray[i].indexOf('Ich mache mir ETWAS Sorgen') !== -1){
+                
+                $('#etwas'+i).html("X");
+            }
+            
+            else if (depressionAnswArray[i].indexOf('Ich mache mir GROßE Sorgen') !== -1){
+                
+                $('#grosse'+i).html("X");
+            }
+            
+            else if (depressionAnswArray[i].indexOf('Ich mache mir SEHR GROße Sorgen') !== -1){
+                
+                $('#sehrgrosse'+i).html("X");
+            }
+        }
+        
+        
+        
+        
+    }
+    
+     catch (error) {
+        console.log("Error when filling tables of questions for depression screening! "+ error);
     }
     
 }
@@ -5915,6 +6089,9 @@ function searchUserProfile(id) {
         console.log("error when looking for following patient: " + id + error);
     }
 }
+
+
+
 
 
 

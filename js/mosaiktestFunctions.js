@@ -108,7 +108,7 @@ function countForTask(splittable) {
                     // clear timers
                     clearAllTimers();
 
-                    $.mobile.changePage('#puzzle2', {transition: "slide"});
+                    $.mobile.changePage('#puzzle3', {transition: "slide"});
                 }
             }, 1000);
 
@@ -191,8 +191,10 @@ function countForTask(splittable) {
                     jQuery.jStorage.set("PuzzleSolvedP4", isSolvedP4);
                     // clear timers
                     clearAllTimers();
-
-                    $.mobile.changePage('#puzzle5', {transition: "slide"});
+                    //deactivate fullscreen
+                    cancelFullscreen();
+                   // change to end page
+                    $.mobile.changePage('#MosaiktestTransit', {transition: "slide"});
                 }
             }, 1000);
             
