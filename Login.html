@@ -88,7 +88,7 @@ and open the template in the editor.
 
 
                 <!--create user account link to neurocare portal-->
-                <a href="http://neurocare-aal.de"  class="createUserHint" >Noch nicht registriert?</a>
+                <a href="#leaveScreeningPage" class="createUserHint" >Noch nicht registriert?</a>
 
 
 
@@ -104,18 +104,38 @@ and open the template in the editor.
 
             <script>
 
-                $(document).on('click', ".createUserHint", function (e) {
-                    e.preventDefault();
-                    var targetURL = $(this).attr("href");
-
-                    window.open(targetURL, "_system");
-                });
+               
 
             </script>
 
 
         </div>
 
+        
+        
+        <!--go to register page and leave screening app-->
+        <div data-role="page" id="leaveScreeningPage" data-dom-cache=true class="loginPage">
+
+            <div data-role="content">
+
+
+                <!--failed login instruction--> 
+                <div class="loginInstruction">Bitte bestätigen Sie die Weiterleitung </div>
+
+
+                <p class="failedLoginHint">Wenn Sie auf "Weiter" klicken werden Sie den Kontext diese App verlassen und auf das NeuroCare Portal zwecks einer Neuregistrierung weitergeleitet!
+                    Nach der Registrierung können Sie sich mit Ihren Benutzerdaten in die App einloggen.</p>
+
+
+                <!--try again button-->
+                <image src="css\images\btns-bg\bt-weiter.png" class="loginButtonBottomRight" onclick="goToPortal();"/>
+
+                <!--back button-->
+                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="goToPreviousPage();" />
+
+
+            </div>
+        </div> 
 
 
 

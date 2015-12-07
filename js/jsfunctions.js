@@ -305,6 +305,17 @@ function goToPreviousPage(){
 
 
 
+function goToPortal(){
+    try{
+    window.open("http://neurocare-aal.de", "_system");
+    }
+     catch (error) {
+        console.log("Error when redirecting to portal! " + error);
+    }
+    
+}
+
+
 
 // shows given page after a given time interval
 function showFollowingPageDelayed(page, delay)
@@ -1402,6 +1413,7 @@ function selectNumber(k) {
                 jQuery.jStorage.set("TimeToSolveTMT1", timerTMT1);
                 jQuery.jStorage.set("ClickIntervalsTMT1", clickIntervals1);
                 jQuery.jStorage.set("ClickedNumbersArrayTMT1", clickedNumsArrayTMT1);
+                jQuery.jStorage.set("TaskSolvedTMT1", "true");
                 setTimeout(function () {
                     clearAllIntervals();
                     $.mobile.changePage('#intro2v2a', {transition: "slide"});
@@ -1429,6 +1441,7 @@ function selectNumber(k) {
                         jQuery.jStorage.set("TimeToSolveTMT1", timerTMT1);
                         jQuery.jStorage.set("ClickIntervalsTMT1", clickIntervals1);
                         jQuery.jStorage.set("ClickedNumbersArrayTMT1", clickedNumsArrayTMT1);
+                        jQuery.jStorage.set("TaskSolvedTMT1", "false");
                         $.mobile.changePage('#intro2v2a', {transition: "slide"});
                         clearInterval(aktiv);
                     }
@@ -1603,6 +1616,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -1640,6 +1654,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -1676,6 +1691,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -1712,6 +1728,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -1748,6 +1765,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -1784,6 +1802,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -1820,6 +1839,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -1856,6 +1876,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -1892,6 +1913,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -1928,6 +1950,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -1964,6 +1987,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -2000,6 +2024,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -2036,6 +2061,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -2072,6 +2098,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -2108,6 +2135,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -2144,6 +2172,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -2180,6 +2209,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -2216,6 +2246,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -2252,6 +2283,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -2275,6 +2307,7 @@ function selectNumberOrLetter(k) {
                         jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                         jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                         jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                        jQuery.jStorage.set("TaskSolvedTMT2", "true");
                         setTimeout(function () {
                             clearAllIntervals();
                             cleanRightHitsAndMistakes(kreisId);
@@ -2302,6 +2335,7 @@ function selectNumberOrLetter(k) {
                                 jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                                 jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                                 jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                                jQuery.jStorage.set("TaskSolvedTMT2", "false");
                                 $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                             }
@@ -2330,6 +2364,7 @@ function selectNumberOrLetter(k) {
                             jQuery.jStorage.set("TimeToSolveTMT2", timerTMT2);
                             jQuery.jStorage.set("ClickIntervalsTMT2", clickIntervals2);
                             jQuery.jStorage.set("ClickedNumbersArrayTMT2", clickedNumsArrayTMT2);
+                            jQuery.jStorage.set("TaskSolvedTMT2", "false");
                             $.mobile.changePage('#TrailmakingtestTransit1', {transition: "slide"});
 
                         }
@@ -5733,12 +5768,19 @@ function showResults(patientElementId){
             
             else if (data!==null){
                 
+                // set user identification
+                $("#concernedUserId").html(patientUserId);
+                // set transformation points sum
+                $("#transfPointsSum").html(data['transfPointsSum']+ " (von 30)");
+                
                 // get whole evaluation result
                 var cognitiveImpaired = data['isCognitiveImpaired'];
                 if (cognitiveImpaired === 'true')
                     $("#cognitiveImpaired").html("Ja");
-                else
+                else if (cognitiveImpaired === 'false')
                     $("#cognitiveImpaired").html("Nein");
+                else 
+                    $("#cognitiveImpaired").html("undefined");
                 
                 // get all results
 
@@ -5755,13 +5797,15 @@ function showResults(patientElementId){
              $("#wrongNumFieldsTMT1").html(data['wrongNumFieldsTMT1']);
              $("#timeToSolveTMT1").html(data['timeToSolveTMT1']);
              $("#clickIntervalsTMT1").html(data['clickIntervalsTMT1']);
-             $("#clickedNumbersArrayTMT1").html(data['clickedNumbersArrayTMT1']);    
+             $("#clickedNumbersArrayTMT1").html(data['clickedNumbersArrayTMT1']); 
+             $("#taskSolvedTMT1").html(data['taskSolvedTMT1']);
                  
              $("#rightNumFieldsTMT2").html(data['rightNumFieldsTMT2']);
              $("#wrongNumFieldsTMT2").html(data['wrongNumFieldsTMT2']);
              $("#timeToSolveTMT2").html(data['timeToSolveTMT2']);
              $("#clickIntervalsTMT2").html(data['clickIntervalsTMT2']);
              $("#clickedNumbersArrayTMT2").html(data['clickedNumbersArrayTMT2']);
+             $("#taskSolvedTMT2").html(data['taskSolvedTMT2']);
              
 //             $("#rightNumFieldsTMT3").html(data['rightNumFieldsTMT3']);
 //             $("#wrongNumFieldsTMT3").html(data['wrongNumFieldsTMT3']);
@@ -6241,8 +6285,8 @@ function sendTestbatterieResults() {
                 RightClickedWords2: jQuery.jStorage.get("RightClickedWords2"), WrongClickedWords2: jQuery.jStorage.get("WrongClickedWords2"),
                 RightClickedWords3: jQuery.jStorage.get("RightClickedWords3"), WrongClickedWords3: jQuery.jStorage.get("WrongClickedWords3"),
                 RightClickedWordsDelay: jQuery.jStorage.get("RightClickedWordsDelay"), WrongClickedWordsDelay: jQuery.jStorage.get("WrongClickedWordsDelay"),
-                RightNumFieldsTMT1: jQuery.jStorage.get("RightNumFieldsTMT1"), WrongNumFieldsTMT1: jQuery.jStorage.get("WrongNumFieldsTMT1"), TimeToSolveTMT1: jQuery.jStorage.get("TimeToSolveTMT1"), ClickIntervalsTMT1: jQuery.jStorage.get("ClickIntervalsTMT1"),ClickedNumbersArrayTMT1: jQuery.jStorage.get("ClickedNumbersArrayTMT1"),
-                RightNumFieldsTMT2: jQuery.jStorage.get("RightNumFieldsTMT2"), WrongNumFieldsTMT2: jQuery.jStorage.get("WrongNumFieldsTMT2"), TimeToSolveTMT2: jQuery.jStorage.get("TimeToSolveTMT2"), ClickIntervalsTMT2: jQuery.jStorage.get("ClickIntervalsTMT2"),ClickedNumbersArrayTMT2: jQuery.jStorage.get("ClickedNumbersArrayTMT2"),
+                RightNumFieldsTMT1: jQuery.jStorage.get("RightNumFieldsTMT1"), WrongNumFieldsTMT1: jQuery.jStorage.get("WrongNumFieldsTMT1"), TimeToSolveTMT1: jQuery.jStorage.get("TimeToSolveTMT1"), ClickIntervalsTMT1: jQuery.jStorage.get("ClickIntervalsTMT1"),ClickedNumbersArrayTMT1: jQuery.jStorage.get("ClickedNumbersArrayTMT1"),TaskSolvedTMT1: jQuery.jStorage.get("TaskSolvedTMT1"),
+                RightNumFieldsTMT2: jQuery.jStorage.get("RightNumFieldsTMT2"), WrongNumFieldsTMT2: jQuery.jStorage.get("WrongNumFieldsTMT2"), TimeToSolveTMT2: jQuery.jStorage.get("TimeToSolveTMT2"), ClickIntervalsTMT2: jQuery.jStorage.get("ClickIntervalsTMT2"),ClickedNumbersArrayTMT2: jQuery.jStorage.get("ClickedNumbersArrayTMT2"),TaskSolvedTMT2: jQuery.jStorage.get("TaskSolvedTMT2"),
                 RightNumFieldsTMT3: jQuery.jStorage.get("RightNumFieldsTMT3"), WrongNumFieldsTMT3: jQuery.jStorage.get("WrongNumFieldsTMT3"), TimeToSolveTMT3: jQuery.jStorage.get("TimeToSolveTMT3"), ClickIntervalsTMT3: jQuery.jStorage.get("ClickIntervalsTMT3"),
                 RightNumFieldsTMT4: jQuery.jStorage.get("RightNumFieldsTMT4"), WrongNumFieldsTMT4: jQuery.jStorage.get("WrongNumFieldsTMT4"), TimeToSolveTMT4: jQuery.jStorage.get("TimeToSolveTMT4"), ClickIntervalsTMT4: jQuery.jStorage.get("ClickIntervalsTMT4"),
                 WrongClickedTilesP1: jQuery.jStorage.get("WrongClickedTilesP1"), RightClickedTilesP1: jQuery.jStorage.get("RightClickedTilesP1"), PuzzleSolvedP1: jQuery.jStorage.get("PuzzleSolvedP1"), TimeToSolveP1: jQuery.jStorage.get("TimeToSolveP1"),
