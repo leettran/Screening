@@ -15,7 +15,7 @@ and open the template in the editor.
     <preference name="DisallowOverscroll" value="true" />
     <preference name="fullscreen" value="true" />
     <preference name="loglevel" value="DEBUG" />  
-    <preference name="stay-in-webview" value="false" />   
+    
     <description>
        This is the Screening-App of the NeuroCare-System. This app will be used only for the testing phase. 
     </description>

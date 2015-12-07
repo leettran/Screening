@@ -23,11 +23,11 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        
-        
-        
-        
-        
+
+
+
+
+
 
     </head>
 
@@ -56,28 +56,28 @@ and open the template in the editor.
                     <div class="usernameDiv">
 
                         <p class="usernameHeader">Benutzer</p>
-                        
-                        
+
+
                         <input type = "text" id="username" class="loginInput" placeholder="Ihr NeuroCare-Benutzername" required/>
-                        
+
                     </div>
-                    
-                    
+
+
                     </br></br>
-                    
+
                     <!--password-->
-                     <div class="usernameDiv">
+                    <div class="usernameDiv">
 
                         <p class="usernameHeader">Passwort</p>
-                        
-                        
+
+
                         <input type = "password" id="password" class="loginInput" placeholder="Ihr NeuroCare-Passwort" required/>
-                        
+
                     </div>
 
                 </div>
-                
-                
+
+
                 <!--selection hint-->
                 <div class="fillinHintDiv" id="fillinHint">
 
@@ -86,376 +86,388 @@ and open the template in the editor.
 
                 </div>
 
-                
+
                 <!--create user account link to neurocare portal-->
-                <a href="#" onclick="window.open(encodeURI('http://www.neurocare-aal.de'), '_system','location=no');" class="createUserHint" >Noch nicht registriert?</a>
-                
+                <a href="http://neurocare-aal.de"  class="createUserHint" >Noch nicht registriert?</a>
+
 
 
                 <!--login button-->
-                <image src="css\images\btns-bg\bt-anmelden.png" class="loginButtonBottom" onclick="validateLogin(document.getElementById('username').value,document.getElementById('password').value);"/> 
+                <image src="css\images\btns-bg\bt-anmelden.png" class="loginButtonBottom" onclick="validateLogin(document.getElementById('username').value, document.getElementById('password').value);"/> 
 
-                
-                
-                
+
+
+
 
             </div>
+
+
+            <script>
+
+                $(document).on('click', ".createUserHint", function (e) {
+                    e.preventDefault();
+                    var targetURL = $(this).attr("href");
+
+                    window.open(targetURL, "_system");
+                });
+
+            </script>
 
 
         </div>
-        
-        
-        
-        
-        
-        
-        
-         <!--patients' management page-->
+
+
+
+
+
+
+
+        <!--patients' management page-->
         <div data-role="page" id="patientsManagementPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
-                
+
+
                 <!--log out button-->
                 <image src="css\images\btns-bg\bt-beenden.png" class="logoutButtonTopRight" onclick="logoutUser();"/>
-                
-                
-                 <!--failed login instruction--> 
+
+
+                <!--failed login instruction--> 
                 <div class="headerTopMiddle">Patienten verwalten</div>
-                
-                
+
+
                 <div class="divMiddle"> 
-                
-                <a data-role="button" data-inline="true" class="buttonLong" onclick="getMyPatients();" >Meine Patienten</a>
-                <a href="#newPatientPage" data-role="button" data-inline="true" class="buttonLong">Neuen Patienten anlegen</a>
-                
-                
+
+                    <a data-role="button" data-inline="true" class="buttonLong" onclick="getMyPatients();" >Meine Patienten</a>
+                    <a href="#newPatientPage" data-role="button" data-inline="true" class="buttonLong">Neuen Patienten anlegen</a>
+
+
                 </div>
-                
-                
-                
+
+
+
             </div>
         </div> 
-         
-         
-         
-         
-                
-         
-          <!--draw up new patient page-->
+
+
+
+
+
+
+        <!--draw up new patient page-->
         <div data-role="page" id="newPatientPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
-                
-                <!--home button-->
-                <image src="css\images\btns-bg\bt-home.png" class="homeButtonTopRight" onclick="showFollowingPageDelayed('patientsManagementPage',100);"/>
-                
-                 <!--failed login instruction--> 
-                <div class="headerTopMiddle">NeuroCare-Benutzer als neuen Patienten anlegen</div>
-                
-                
-                <div class="divMiddle"> 
-                
-                 <!--user id-->
-                     <div class="usernameDiv">
 
-                         <p class="usernameHeader">Benutzer-ID</p>
-                        
-                        
+
+                <!--home button-->
+                <image src="css\images\btns-bg\bt-home.png" class="homeButtonTopRight" onclick="showFollowingPageDelayed('patientsManagementPage', 100);"/>
+
+                <!--failed login instruction--> 
+                <div class="headerTopMiddle">NeuroCare-Benutzer als neuen Patienten anlegen</div>
+
+
+                <div class="divMiddle"> 
+
+                    <!--user id-->
+                    <div class="usernameDiv">
+
+                        <p class="usernameHeader">Benutzer-ID</p>
+
+
                         <input type = "text" id="byUserId" class="loginInput" style="left: 11.5%;" placeholder="NeuroCare-Benutzer ID eingeben und suchen"/>
-                        
+
                     </div>
-                    
-                    
+
+
                     </br></br>
-                    
-                    
+
+
                     <!--user name-->
                     <div class="usernameDiv">
 
                         <p class="usernameHeader">Benutzername</p>
-                        
-                        
+
+
                         <input type = "text" id="byUsername" class="loginInput" placeholder="NeuroCare-Benutzernamen eingeben und suchen"/>
-                        
+
                     </div>
-                    
-                                        
-                    
-                
+
+
+
+
                 </div>
-                
-                
-                 <!--selection hint-->
+
+
+                <!--selection hint-->
                 <div class="fillinHintDiv" id="fillinUserHint">
 
                     <image src="css\images\icons\info.png" class="fillinHintIcon"/>
                     <h1 class="fillinHintText">Bitte geben Sie die Benutzer-ID an!</h1>
 
                 </div>
-                
-                
-                
+
+
+
                 <!--search user button-->
-                <image src="css\images\btns-bg\bt-benutzer-finden.png" class="searchUserButton" onclick="validateUserCredentials(document.getElementById('byUsername').value,document.getElementById('byUserId').value);"/>
-                
-                
-                
+                <image src="css\images\btns-bg\bt-benutzer-finden.png" class="searchUserButton" onclick="validateUserCredentials(document.getElementById('byUsername').value, document.getElementById('byUserId').value);"/>
+
+
+
             </div>
         </div> 
-          
-          
-          
-          
-          
-          
-           <!--patient's information page-->
+
+
+
+
+
+
+        <!--patient's information page-->
         <div data-role="page" id="patientInfoPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
-                
-                 <!--failed login instruction--> 
+
+
+                <!--failed login instruction--> 
                 <div class="headerTopMiddle">Patient-Informationen</div>
-                
-                
+
+
                 <div class="divMiddle"> 
-                
+
                     <div class="divLeft">   
-                        
+
                         <p class="userInfoHeader">Benutzer-ID</p>
                         <p class="userInfoHeader">Benutzername</p>
                         <p class="userInfoHeader">Name, Vorname</p>
                         <p class="userInfoHeader">Geburtsdatum</p>
                         <p class="userInfoHeader">Adresse</p>
                         <p class="userInfoHeader">Erstellungsdatum</p>
-                        
-                        
+
+
                     </div>
-                    
-                    
+
+
                     <div class="divRight" >
-                        
-                        
+
+
                         <p class="userInfoContent" id="returnedUserId"></p>
                         <p class="userInfoContent" id="returnedUserName"></p>
                         <p class="userInfoContent" id="returnedUserFullName"></p>
                         <p class="userInfoContent" id="returnedUserBirthday"></p>
                         <p class="userInfoContent" id="returnedUserAddress"></p>
                         <p class="userInfoContent" id="returnedCreationDate"></p>
-                        
+
                     </div>
-                    
-                    
-                
-                
+
+
+
+
                 </div>
-                
-                
-                
+
+
+
                 <!--draw up button-->
                 <image src="css\images\btns-bg\bt-patient-anlegen.png" class="addPatientButton" onclick="addPatientToList('returnedUserId');"/>
-                
+
                 <!--back button-->
-                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="showFollowingPageDelayed('newPatientPage',100);" />
-                
+                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="showFollowingPageDelayed('newPatientPage', 100);" />
+
             </div>
         </div> 
-           
-           
-           
-            <!--my patients page-->
+
+
+
+        <!--my patients page-->
         <div data-role="page" id="myPatientsPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
-                
+
+
                 <!--home button-->
-                <image src="css\images\btns-bg\bt-home.png" class="homeButtonTopRight" onclick="showFollowingPageDelayed('patientsManagementPage',100);"/>
-                
-                
-                 <!--failed login instruction--> 
+                <image src="css\images\btns-bg\bt-home.png" class="homeButtonTopRight" onclick="showFollowingPageDelayed('patientsManagementPage', 100);"/>
+
+
+                <!--failed login instruction--> 
                 <div class="headerTopMiddle">Meine Patienten</div>
-                
-                
+
+
                 <div class="divMiddleScrollable" id="myPatientsDiv"> 
-                    
-                    
+
+
                     <!--div to host patients list-->                          
-                
-                
+
+
                 </div>
-                
-                
-                
+
+
+
             </div>
         </div> 
-        
-            
-            
-            
-             <!--patient's page-->
+
+
+
+
+        <!--patient's page-->
         <div data-role="page" id="patientProfilePage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
+
                 <!--home button-->
                 <image src="css\images\btns-bg\bt-zurueck.png"  class="backButtonTopRight" onclick="goToPreviousPage();"/>
-                
-                
-                 <!--failed login instruction--> 
+
+
+                <!--failed login instruction--> 
                 <div class="headerTopMiddle">Patient-Profil</div>
-                
-                
+
+
                 <div class="divMiddle"> 
-                
+
                     <div class="divLeft">   
-                        
+
                         <p class="userInfoHeader" > Benutzer-ID</p>
                         <p class="userInfoHeader" > Benutzername</p>
                         <p class="userInfoHeader" > Name, Vorname</p>
                         <p class="userInfoHeader" > Geburtsdatum</p>
                         <p class="userInfoHeader" > Adresse</p>
                         <p class="userInfoHeader" > Erstellungsdatum</p>
-                        
-                        
+
+
                     </div>
-                    
-                    
+
+
                     <div class="divRight" >
-                        
-                        
+
+
                         <p class="userInfoContent" id="profileUserId"></p>
                         <p class="userInfoContent" id="profileUserName"></p>
                         <p class="userInfoContent" id="profileUserFullName"></p>
                         <p class="userInfoContent" id="profileUserBirthday"></p>
                         <p class="userInfoContent" id="profileUserAddress"></p>
                         <p class="userInfoContent" id="profileCreationDate"></p>
-                        
+
                     </div>
-                    
-                    
-                
-                
+
+
+
+
                 </div>
-                
-                
-                
+
+
+
                 <!--start screening button-->
                 <image src="css\images\btns-bg\bt-screening-starten.png" class="startScreeningButton" onclick="startScreeningSession('profileUserId');"/>
-                
+
                 <!--delete patient button-->
                 <image src="css\images\btns-bg\bt-patient-entfernen.png" class="removePatientButton" onclick="deletePatient('profileUserId');"/>
-                
+
                 <!--show screening results button-->
                 <image src="css\images\btns-bg\bt-ergebnisse-anzeigen.png" class="showResultsButton" onclick="showResults('profileUserId');"/>
-                
+
             </div>
         </div>
-        
-        
-             
-             
-                 <!--results's page-->
+
+
+
+
+        <!--results's page-->
         <div data-role="page" id="resultsPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
+
                 <!--home button-->
                 <image src="css\images\btns-bg\bt-zurueck.png"  class="backButtonTopRight" onclick="goToPreviousPage();"/>
-                
-                
-                 <!--failed login instruction--> 
+
+
+                <!--failed login instruction--> 
                 <div class="headerTopMiddle">Screening-Ergebnisse</div>
-                
-                
+
+
                 <div class="divMiddle"> 
-                    
-                    
+
+
                     <table>
-                        
-                        
+
+
                         <!--user identification-->
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeader" > Benutzer-ID</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoContent" id="concernedUserId"></p>    </td>
-                                                     
+
                         </tr>
-                        
+
                         <!--transformation points sum-->
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeader" > Gesamtpunktzahl</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoContent" id="transfPointsSum"></p>   </td>
-                                                     
+
                         </tr>
-                        
+
                         <!--cognitive evaluation result-->
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeader" > Gesamtauswertung</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoHeaderTitle">Aussage (Ja/Nein)</p>    </td>
-                                                     
+
                         </tr>
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeader" > Kognitiv beeinträchtigt?</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoContent" id="cognitiveImpaired"> </p>    </td>
-                            
+
                         </tr>
-                        
+
                         <!--paarassoziationstest-->
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeaderTitle" > Paarassoziationstest</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>    </td>
-                                                     
+
                         </tr>
-                        
+
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeader" > Richtige Wörter 1.Durchlauf</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoContent" id="rightWords1"> </p>    </td>
-                            
+
                         </tr>
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeader" > Richtige Wörter 2.Durchlauf</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoContent" id="rightWords2"> </p>    </td>
-                            
+
                         </tr>
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeader" > Richtige Wörter 3.Durchlauf</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoContent" id="rightWords3"> </p>    </td>
-                            
+
                         </tr>
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeader" > Richtige Wörter verzögerter Durchlauf</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoContent" id="rightWordsDelayed"> </p>    </td>
-                            
+
                         </tr>
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeader" > Falsche Wörter 1.Durchlauf</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoContent" id="wrongWords1"> </p>    </td>
-                            
+
                         </tr>
-                         <tr>
+                        <tr>
                             <td style="width: 40%;">  <p class="userInfoHeader" > Falsche Wörter 2.Durchlauf</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoContent" id="wrongWords2"> </p>    </td>
-                            
+
                         </tr>
-                         <tr>
+                        <tr>
                             <td style="width: 40%;">  <p class="userInfoHeader" > Falsche Wörter 3.Durchlauf</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoContent" id="wrongWords3"> </p>    </td>
-                            
+
                         </tr>
-                         <tr>
+                        <tr>
                             <td style="width: 40%;">  <p class="userInfoHeader" > Falsche Wörter verzögerter Durchlauf</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoContent" id="wrongWordsDelayed"> </p>    </td>
-                            
+
                         </tr>
                         <!--trailmakingtest-->
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeaderTitle" > Trailmakingtest</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>    </td>
-                                                     
+
                         </tr>
-                        
+
                         <tr>
                             <td> <p class="userInfoHeader" > Richtige Zahlen TMT1</p>  </td>
                             <td> <p class="userInfoContent" id="rightNumFieldsTMT1"></p>  </td>
@@ -500,48 +512,48 @@ and open the template in the editor.
                             <td> <p class="userInfoHeader" > Geklickte Felder TMT2</p>  </td>
                             <td> <p class="userInfoContent" id="clickedNumbersArrayTMT2"></p>  </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td> <p class="userInfoHeader" > Task gelöst TMT2</p>  </td>
                             <td> <p class="userInfoContent" id="taskSolvedTMT2"></p>  </td>
                         </tr>
-<!--                        <tr>
-                            <td> <p class="userInfoHeader" > Richtige Zahlen TMT3</p>  </td>
-                            <td> <p class="userInfoContent" id="rightNumFieldsTMT3"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Falsche Zahlen TMT3</p>  </td>
-                            <td> <p class="userInfoContent" id="wrongNumFieldsTMT3"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Gesamtzeit TMT3</p>  </td>
-                            <td> <p class="userInfoContent" id="timeToSolveTMT3"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Klickintervalle TMT3</p>  </td>
-                            <td> <p class="userInfoContent" id="clickIntervalsTMT3"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Richtige Zahlen TMT4</p>  </td>
-                            <td> <p class="userInfoContent" id="rightNumFieldsTMT4"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Falsche Zahlen TMT4</p>  </td>
-                            <td> <p class="userInfoContent" id="wrongNumFieldsTMT4"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Gesamtzeit TMT4</p>  </td>
-                            <td> <p class="userInfoContent" id="timeToSolveTMT4"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Klickintervalle TMT4</p>  </td>
-                            <td> <p class="userInfoContent" id="clickIntervalsTMT4"></p>  </td>
-                        </tr>-->
-                    
+                        <!--                        <tr>
+                                                    <td> <p class="userInfoHeader" > Richtige Zahlen TMT3</p>  </td>
+                                                    <td> <p class="userInfoContent" id="rightNumFieldsTMT3"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Falsche Zahlen TMT3</p>  </td>
+                                                    <td> <p class="userInfoContent" id="wrongNumFieldsTMT3"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Gesamtzeit TMT3</p>  </td>
+                                                    <td> <p class="userInfoContent" id="timeToSolveTMT3"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Klickintervalle TMT3</p>  </td>
+                                                    <td> <p class="userInfoContent" id="clickIntervalsTMT3"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Richtige Zahlen TMT4</p>  </td>
+                                                    <td> <p class="userInfoContent" id="rightNumFieldsTMT4"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Falsche Zahlen TMT4</p>  </td>
+                                                    <td> <p class="userInfoContent" id="wrongNumFieldsTMT4"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Gesamtzeit TMT4</p>  </td>
+                                                    <td> <p class="userInfoContent" id="timeToSolveTMT4"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Klickintervalle TMT4</p>  </td>
+                                                    <td> <p class="userInfoContent" id="clickIntervalsTMT4"></p>  </td>
+                                                </tr>-->
+
                         <!--puzzles-->
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeaderTitle" > Bilerbauen Test</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>    </td>
-                                                     
+
                         </tr>
                         <tr>
                             <td> <p class="userInfoHeader" > Richtige Puzzles 1</p>  </td>
@@ -559,23 +571,23 @@ and open the template in the editor.
                             <td> <p class="userInfoHeader" > Gesamtzeit 1</p>  </td>
                             <td> <p class="userInfoContent" id="timeToSolveP1"></p>  </td>
                         </tr>
-<!--                        <tr>
-                            <td> <p class="userInfoHeader" > Richtige Puzzles 2</p>  </td>
-                            <td> <p class="userInfoContent" id="rightPuzzlesP2"></p>  </td>
-                        </tr>
+                        <!--                        <tr>
+                                                    <td> <p class="userInfoHeader" > Richtige Puzzles 2</p>  </td>
+                                                    <td> <p class="userInfoContent" id="rightPuzzlesP2"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Falsche Puzzles 2</p>  </td>
+                                                    <td> <p class="userInfoContent" id="wrongPuzzlesP2"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Puzzle absolviert 2</p>  </td>
+                                                    <td> <p class="userInfoContent" id="puzzleSolvedP2"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Gesamtzeit 2</p>  </td>
+                                                    <td> <p class="userInfoContent" id="timeToSolveP2"></p>  </td>
+                                                </tr>-->
                         <tr>
-                            <td> <p class="userInfoHeader" > Falsche Puzzles 2</p>  </td>
-                            <td> <p class="userInfoContent" id="wrongPuzzlesP2"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Puzzle absolviert 2</p>  </td>
-                            <td> <p class="userInfoContent" id="puzzleSolvedP2"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Gesamtzeit 2</p>  </td>
-                            <td> <p class="userInfoContent" id="timeToSolveP2"></p>  </td>
-                        </tr>-->
-                    <tr>
                             <td> <p class="userInfoHeader" > Richtige Puzzles 3</p>  </td>
                             <td> <p class="userInfoContent" id="rightPuzzlesP3"></p>  </td>
                         </tr>
@@ -607,44 +619,44 @@ and open the template in the editor.
                             <td> <p class="userInfoHeader" > Gesamtzeit 4</p>  </td>
                             <td> <p class="userInfoContent" id="timeToSolveP4"></p>  </td>
                         </tr>
-<!--                        <tr>
-                            <td> <p class="userInfoHeader" > Richtige Puzzles 5</p>  </td>
-                            <td> <p class="userInfoContent" id="rightPuzzlesP5"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Falsche Puzzles 5</p>  </td>
-                            <td> <p class="userInfoContent" id="wrongPuzzlesP5"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Puzzle absolviert 5</p>  </td>
-                            <td> <p class="userInfoContent" id="puzzleSolvedP5"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Gesamtzeit 5</p>  </td>
-                            <td> <p class="userInfoContent" id="timeToSolveP5"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Richtige Puzzles 6</p>  </td>
-                            <td> <p class="userInfoContent" id="rightPuzzlesP6"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Falsche Puzzles 6</p>  </td>
-                            <td> <p class="userInfoContent" id="wrongPuzzlesP6"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Puzzle absolviert 6</p>  </td>
-                            <td> <p class="userInfoContent" id="puzzleSolvedP6"></p>  </td>
-                        </tr>
-                        <tr>
-                            <td> <p class="userInfoHeader" > Gesamtzeit 6</p>  </td>
-                            <td> <p class="userInfoContent" id="timeToSolveP6"></p>  </td>
-                        </tr>-->
-                        
+                        <!--                        <tr>
+                                                    <td> <p class="userInfoHeader" > Richtige Puzzles 5</p>  </td>
+                                                    <td> <p class="userInfoContent" id="rightPuzzlesP5"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Falsche Puzzles 5</p>  </td>
+                                                    <td> <p class="userInfoContent" id="wrongPuzzlesP5"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Puzzle absolviert 5</p>  </td>
+                                                    <td> <p class="userInfoContent" id="puzzleSolvedP5"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Gesamtzeit 5</p>  </td>
+                                                    <td> <p class="userInfoContent" id="timeToSolveP5"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Richtige Puzzles 6</p>  </td>
+                                                    <td> <p class="userInfoContent" id="rightPuzzlesP6"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Falsche Puzzles 6</p>  </td>
+                                                    <td> <p class="userInfoContent" id="wrongPuzzlesP6"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Puzzle absolviert 6</p>  </td>
+                                                    <td> <p class="userInfoContent" id="puzzleSolvedP6"></p>  </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <p class="userInfoHeader" > Gesamtzeit 6</p>  </td>
+                                                    <td> <p class="userInfoContent" id="timeToSolveP6"></p>  </td>
+                                                </tr>-->
+
                         <!--zahlen ordnen-->
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeaderTitle" > Zahlen ordnen Test</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>    </td>
-                                                     
+
                         </tr>
                         <tr>
                             <td> <p class="userInfoHeader" > Zielreihe 1</p>  </td>
@@ -742,12 +754,12 @@ and open the template in the editor.
                             <td> <p class="userInfoHeader" > Geklickte Reihe wied. 6</p>  </td>
                             <td> <p class="userInfoContent" id="clickedArrayRep6"></p>  </td>
                         </tr>
-                        
+
                         <!--depression fragen-->
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeaderTitle" > Depressionsfragebogen</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>    </td>
-                                                     
+
                         </tr>
                         <tr>
                             <td> <p class="userInfoHeader" > Depressionsfragen</p>  </td>
@@ -757,14 +769,14 @@ and open the template in the editor.
                             <td> <p class="userInfoHeader" > Depressionsfragen-Antworten</p>  </td>
                             <td> <p class="userInfoContent" id="depressionAnswers"></p>  </td>
                         </tr>
-                        
+
                         <!--adls fragen-->
                         <tr>
                             <td style="width: 40%;">  <p class="userInfoHeaderTitle" > ADL-Fragebogen</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoHeaderTitle">Erzielte Ergebnisse</p>    </td>
-                                                     
+
                         </tr>
-                         <tr>
+                        <tr>
                             <td> <p class="userInfoHeader" > ADLs-Fragen</p>  </td>
                             <td> <p class="userInfoContent" id="adlQuestions"></p>  </td>
                         </tr>
@@ -772,500 +784,500 @@ and open the template in the editor.
                             <td> <p class="userInfoHeader" > ADLs-Fragen Antworten</p>  </td>
                             <td> <p class="userInfoContent" id="adlAnswers"></p>  </td>
                         </tr>
-                    
+
                     </table>
-                    
-                    
-                    
+
+
+
                     <p class="userInfoHeaderTitle" > Depressionsfragen-Tabelle</p>
-                    
+
                     <!--general depression items-->
                     <table style="width: 100%;">
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Antworten in Bezug auf die letzten 2 Wochen</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Nie</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">An vereinzelten Tagen</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Mehr als die Hälfte der Tage</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Fast jeden Tag oder täglich</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Nie</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">An vereinzelten Tagen</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Mehr als die Hälfte der Tage</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Fast jeden Tag oder täglich</p> </td>
                         </tr>
-                        
-                         <tr style="border: 1px solid black;">
+
+                        <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Niederschlagenheit/Traurigkeit</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nie0"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="vereinzelt0"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haelfte0"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="jedentag0"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nie0"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="vereinzelt0"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haelfte0"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="jedentag0"></p> </td>
                         </tr>
-                        
+
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Antriebslosigkeit/Erschöpfung</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nie1"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="vereinzelt1"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haelfte1"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="jedentag1"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nie1"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="vereinzelt1"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haelfte1"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="jedentag1"></p> </td>
                         </tr>
-                        
+
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Interessenverlust</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nie2"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="vereinzelt2"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haelfte2"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="jedentag2"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nie2"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="vereinzelt2"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haelfte2"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="jedentag2"></p> </td>
                         </tr>
-                        
+
                     </table>
-                    
-                    
+
+
                     </br>
-                    
+
                     <!--memory depression items-->
-                    
-                    
+
+
                     <table style="width: 100%;">
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader"></p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Nein</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Ja</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Täglich</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Mehrmals die Woche</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Ca. 1x die Woche</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Weniger als 1x die Woche</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Keine</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Etwas</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Große</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Sehr große</p> </td>
-                            
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Nein</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Ja</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Täglich</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Mehrmals die Woche</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Ca. 1x die Woche</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Weniger als 1x die Woche</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Keine</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Etwas</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Große</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Sehr große</p> </td>
+
                         </tr>
-                        
-                         <tr style="border: 1px solid black;">
+
+                        <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Gedächtnis schlechter geworden</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nein3"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="ja3"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="taeglich3"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="mehrmals3"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="einmal3"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="weniger3"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="keine3"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="etwas3"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="grosse3"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrgrosse3"></p> </td>
-                            
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nein3"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="ja3"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="taeglich3"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="mehrmals3"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="einmal3"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="weniger3"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="keine3"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="etwas3"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="grosse3"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrgrosse3"></p> </td>
+
                         </tr>
-                        
+
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Häufigkeit von Gedächtnisproblemen</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nein4"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="ja4"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="taeglich4"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="mehrmals4"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="einmal4"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="weniger4"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="keine4"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="etwas4"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="grosse4"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrgrosse4"></p> </td>
-                            
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nein4"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="ja4"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="taeglich4"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="mehrmals4"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="einmal4"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="weniger4"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="keine4"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="etwas4"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="grosse4"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrgrosse4"></p> </td>
+
                         </tr>
-                        
+
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Sorgen um Gedächtnisverschlechterung</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nein5"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="ja5"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="taeglich5"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="mehrmals5"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="einmal5"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="weniger5"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="keine5"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="etwas5"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="grosse5"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrgrosse5"></p> </td>
-                            
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="nein5"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="ja5"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="taeglich5"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="mehrmals5"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="einmal5"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="weniger5"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="keine5"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="etwas5"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="grosse5"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrgrosse5"></p> </td>
+
                         </tr>
-                        
+
                     </table>
-                    
-                    
+
+
                     <p class="userInfoHeaderTitle" > ADLs-Fragen-Tabelle</p>
-                    
-                     <!--general adls items-->
+
+                    <!--general adls items-->
                     <table style="width: 100%;">
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader"></p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Nie</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Selten</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Häufig</p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader">Sehr häufig</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Nie</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Selten</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Häufig</p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader">Sehr häufig</p> </td>
                         </tr>
-                        
-                         <tr style="border: 1px solid black;">
+
+                        <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Vergessen von Verabredungen oder wichtigen Terminen</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie0"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten0"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig0"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig0"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie0"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten0"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig0"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig0"></p> </td>
                         </tr>
-                        
+
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Probleme beim Rechnen oder Geldabzählen</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie1"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten1"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig1"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig1"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie1"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten1"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig1"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig1"></p> </td>
                         </tr>
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Wortfindungsschwierigkeiten</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie2"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten2"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig2"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig2"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie2"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten2"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig2"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig2"></p> </td>
                         </tr>
-                        
+
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Erinnern der aktuellen Jahreszahl oder des Monats</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie3"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten3"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig3"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig3"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie3"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten3"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig3"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig3"></p> </td>
                         </tr>
-                        
+
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Vergessen von bekannten Telefonnummern</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie4"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten4"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig4"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig4"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie4"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten4"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig4"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig4"></p> </td>
                         </tr>
-                        
+
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Verlegen von Alltagsgegenständen</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie5"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten5"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig5"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig5"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie5"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten5"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig5"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig5"></p> </td>
                         </tr>
-                        
+
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Probleme zwei Dinge gleichzeitig zu tun </p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie6"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten6"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig6"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig6"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie6"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten6"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig6"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig6"></p> </td>
                         </tr>
-                        
+
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Erinnern an Reihenfolge bei alltäglichen Arbeiten</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie7"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten7"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig7"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig7"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie7"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten7"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig7"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig7"></p> </td>
                         </tr>
-                        
+
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Probleme, bekannte Wege zu beschreiben</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie8"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten8"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig8"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig8"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie8"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten8"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig8"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig8"></p> </td>
                         </tr>
-                        
+
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Verlaufen bei bekannten Wegen</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie9"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten9"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig9"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig9"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie9"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten9"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig9"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig9"></p> </td>
                         </tr>
-                        
+
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Probleme bei Bedienung technischer Geräte</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie10"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten10"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig10"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig10"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie10"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten10"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig10"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig10"></p> </td>
                         </tr>
-                        
+
                         <tr style="border: 1px solid black;">
                             <th style="border: 1px solid black;"> <p class="userInfoHeader">Probleme einer Unterhaltung zu folgen</p> </th>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie11"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten11"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig11"></p> </td>
-                            <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig11"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="adlsnie11"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="selten11"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="haeufig11"></p> </td>
+                        <td style="border: 1px solid black;"> <p class="userInfoHeader" id="sehrhaeufig11"></p> </td>
                         </tr>
-                        
-                        
-                        
-                        
-                    </table>
-                    
-                
 
-                    
-                    
-                
-                
+
+
+
+                    </table>
+
+
+
+
+
+
+
                 </div>
-                
-                
-                
-               
-                
+
+
+
+
+
             </div>
         </div>
-             
-             
-             
-             
-             <!--error and notification pages-->
-             
-             <!--failed login page-->
+
+
+
+
+        <!--error and notification pages-->
+
+        <!--failed login page-->
         <div data-role="page" id="loginFailedPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
-                
-                 <!--failed login instruction--> 
+
+
+                <!--failed login instruction--> 
                 <div class="loginInstruction">Falsche Zugangsdaten!</div>
-                
-                
+
+
                 <p class="failedLoginHint">Sie haben leider den falschen Benutzernamen oder das falsche Passwort eingegeben! Bitte versuchen Sie es nochmal.</p>
-                
-                
+
+
                 <!--login button-->
                 <image src="css\images\btns-bg\bt-anmelden.png" class="loginButtonBottom" onclick="goToLoginPageAgain();"/>
-                
-                
+
+
             </div>
         </div> 
-        
-        
-        
-         <!--user not found page-->
+
+
+
+        <!--user not found page-->
         <div data-role="page" id="userNotFoundPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
-                
-                 <!--failed login instruction--> 
+
+
+                <!--failed login instruction--> 
                 <div class="loginInstruction">Benutzer nicht gefunden!</div>
-                
-                
+
+
                 <p class="failedLoginHint">Leider existiert kein Benutzer mit den eingegebenen Daten! </p>
-                
-                
+
+
                 <!--try again button-->
-                <image src="css\images\btns-bg\bt-nochmal-versuchen.png" class="tryAgainRight" onclick="showFollowingPageDelayed('newPatientPage',100);"/>
-                
+                <image src="css\images\btns-bg\bt-nochmal-versuchen.png" class="tryAgainRight" onclick="showFollowingPageDelayed('newPatientPage', 100);"/>
+
                 <!--back button-->
-                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="showFollowingPageDelayed('patientsManagementPage',100);" />
-                
-                
+                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="showFollowingPageDelayed('patientsManagementPage', 100);" />
+
+
             </div>
         </div> 
-         
-         
-         
-         
-         
-         <!--results not found page-->
+
+
+
+
+
+        <!--results not found page-->
         <div data-role="page" id="resultsNotFoundPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
-                
-                 <!--failed login instruction--> 
+
+
+                <!--failed login instruction--> 
                 <div class="loginInstruction">Ergebnisse nicht gefunden!</div>
-                
-                
+
+
                 <p class="failedLoginHint">Leider existieren für diesen Benutzer noch keine Screening-Ergebnisse! </p>
-                
-                
-                
-                
+
+
+
+
                 <!--back button-->
                 <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="goToPreviousPage();" />
-                
-                
+
+
             </div>
         </div> 
-         
-         
-         
-         
-          <!--no patient found page-->
+
+
+
+
+        <!--no patient found page-->
         <div data-role="page" id="noPatientFoundPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
-                
-                 <!--failed login instruction--> 
+
+
+                <!--failed login instruction--> 
                 <div class="loginInstruction">Keine Patienten gefunden!</div>
-                
-                
+
+
                 <p class="failedLoginHint">Sie haben noch keine Patienten angelegt! </p>
-                
-                
+
+
                 <!--try again button-->
-                <image src="css\images\btns-bg\bt-weiter.png" class="loginButtonBottomRight" onclick="showFollowingPageDelayed('newPatientPage',100);"/>
-                
+                <image src="css\images\btns-bg\bt-weiter.png" class="loginButtonBottomRight" onclick="showFollowingPageDelayed('newPatientPage', 100);"/>
+
                 <!--back button-->
-                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="showFollowingPageDelayed('patientsManagementPage',100);" />
-                
-                
+                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="showFollowingPageDelayed('patientsManagementPage', 100);" />
+
+
             </div>
         </div> 
-          
-          
-          
-           <!--failed request page-->
+
+
+
+        <!--failed request page-->
         <div data-role="page" id="requestFailedPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
-                
-                 <!--failed login instruction--> 
+
+
+                <!--failed login instruction--> 
                 <div class="loginInstruction">Fehler bei der Abfrage!</div>
-                
-                
+
+
                 <p class="failedLoginHint">Die Abfrage konnte nicht durchgeführt werden! Bitte überprüfen Sie Ihre Netzwerkverbindung. </p>
-                
-                
+
+
                 <!--try again button-->
-                <image src="css\images\btns-bg\bt-weiter.png" class="loginButtonBottomRight" onclick="showFollowingPageDelayed('newPatientPage',100);"/>
-                
+                <image src="css\images\btns-bg\bt-weiter.png" class="loginButtonBottomRight" onclick="showFollowingPageDelayed('newPatientPage', 100);"/>
+
                 <!--back button-->
-                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="showFollowingPageDelayed('patientsManagementPage',100);" />
-                
-                
+                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="showFollowingPageDelayed('patientsManagementPage', 100);" />
+
+
             </div>
         </div> 
-         
-         
-         
-           
-             <!--failed results request page-->
+
+
+
+
+        <!--failed results request page-->
         <div data-role="page" id="resultsRequestFailedPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
-                
-                 <!--failed login instruction--> 
+
+
+                <!--failed login instruction--> 
                 <div class="loginInstruction">Fehler bei der Abfrage von Ergebnissen!</div>
-                
-                
+
+
                 <p class="failedLoginHint">Die Abfrage konnte nicht durchgeführt werden! Bitte überprüfen Sie Ihre Netzwerkverbindung. </p>
-                
-                
-                
-                
+
+
+
+
                 <!--back button-->
                 <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="goToPreviousPage();" />
-                
-                
+
+
             </div>
         </div>
-           
-         
-         
-          <!--patient already exists page-->
+
+
+
+        <!--patient already exists page-->
         <div data-role="page" id="patientAlreadyExistsPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
-                
-                 <!--failed login instruction--> 
+
+
+                <!--failed login instruction--> 
                 <div class="loginInstruction">Patient bereits vorhanden!</div>
-                
-                
+
+
                 <p class="failedLoginHint">Dieser Patient ist bereits auf Ihrer Patientenliste! </p>
-                
-                
+
+
                 <!--try again button-->
-                <image src="css\images\btns-bg\bt-weiter.png" class="loginButtonBottomRight" onclick="showFollowingPageDelayed('newPatientPage',100);"/>
-                
+                <image src="css\images\btns-bg\bt-weiter.png" class="loginButtonBottomRight" onclick="showFollowingPageDelayed('newPatientPage', 100);"/>
+
                 <!--back button-->
-                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="showFollowingPageDelayed('patientsManagementPage',100);" />
-                
-                
+                <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBottomBackLeft" onclick="showFollowingPageDelayed('patientsManagementPage', 100);" />
+
+
             </div>
         </div> 
-          
-          
-           <!--failed to draw up patient page-->
+
+
+        <!--failed to draw up patient page-->
         <div data-role="page" id="failedDrawUpPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
-                
-                 <!--failed login instruction--> 
+
+
+                <!--failed login instruction--> 
                 <div class="loginInstruction">Operation fehlgeschlagen!</div>
-                
-                
+
+
                 <p class="failedLoginHint">Die Operation konnte nicht erfolgreich abgeschlossen werden! Bitte prüfen Sie Ihre Netzwerkverbindung. </p>
-                
-                
+
+
                 <!--try again button-->
-                <image src="css\images\btns-bg\bt-weiter.png" class="loginButtonBottomRight" onclick="showFollowingPageDelayed('newPatientPage',100);"/>
-                
-                                
-                
+                <image src="css\images\btns-bg\bt-weiter.png" class="loginButtonBottomRight" onclick="showFollowingPageDelayed('newPatientPage', 100);"/>
+
+
+
             </div>
         </div> 
-           
-           
-           
-           
-           
-           <!--failed to delete patient page-->
+
+
+
+
+
+        <!--failed to delete patient page-->
         <div data-role="page" id="failedDeletePage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
-                
-                 <!--failed login instruction--> 
+
+
+                <!--failed login instruction--> 
                 <div class="loginInstruction">Operation fehlgeschlagen!</div>
-                
-                
+
+
                 <p class="failedLoginHint">Die Operation konnte nicht erfolgreich abgeschlossen werden! Bitte prüfen Sie Ihre Netzwerkverbindung. </p>
-                
-                
+
+
                 <!--try again button-->
-                <image src="css\images\btns-bg\bt-weiter.png" class="loginButtonBottomRight" onclick="showFollowingPageDelayed('patientsManagementPage',100);"/>
-                
-                                
-                
+                <image src="css\images\btns-bg\bt-weiter.png" class="loginButtonBottomRight" onclick="showFollowingPageDelayed('patientsManagementPage', 100);"/>
+
+
+
             </div>
         </div>
-           
-           
-           
-              <!--patient no more existing page-->
+
+
+
+        <!--patient no more existing page-->
         <div data-role="page" id="patientNotExistingPage" data-dom-cache=true class="loginPage">
 
             <div data-role="content">
-                
-                
-                 <!--failed login instruction--> 
+
+
+                <!--failed login instruction--> 
                 <div class="loginInstruction">Patient nicht gefunden!</div>
-                
-                
+
+
                 <p class="failedLoginHint">Der Patient wurde nicht in der Datenbank gefunden! Evtl. wurde er/sie von der Datenbank entfernt. </p>
-                
-                
+
+
                 <!--try again button-->
                 <image src="css\images\btns-bg\bt-zurueck.png" class="loginButtonBackBottomRight" onclick="getMyPatients();"/>
-                
-                                
-                
+
+
+
             </div>
         </div> 
-        
-        
-        
-        
-             
-             
-             
-             
+
+
+
+
+
+
+
+
 
     </body>
 </html>
