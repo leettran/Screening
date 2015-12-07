@@ -88,7 +88,7 @@ and open the template in the editor.
 
                 
                 <!--create user account link to neurocare portal-->
-                <a href="#" onclick="window.open('http://www.neurocare-aal.de', '_blank', 'location=yes');" class="createUserHint" >Noch nicht registriert?</a>
+                <a href="#" onclick="window.open('http://www.neurocare-aal.de', '_system');" class="createUserHint" >Noch nicht registriert?</a>
                 
 
 
@@ -374,9 +374,25 @@ and open the template in the editor.
                     
                     
                     <table>
+                        
+                        
+                        <!--user identification-->
+                        <tr>
+                            <td style="width: 40%;">  <p class="userInfoHeader" > Benutzer-ID</p>  </td> 
+                            <td style="width: 55%;">  <p class="userInfoContent" id="concernedUserId"></p>    </td>
+                                                     
+                        </tr>
+                        
+                        <!--transformation points sum-->
+                        <tr>
+                            <td style="width: 40%;">  <p class="userInfoHeader" > Gesamtpunktzahl</p>  </td> 
+                            <td style="width: 55%;">  <p class="userInfoContent" id="transfPointsSum"></p>   </td>
+                                                     
+                        </tr>
+                        
                         <!--cognitive evaluation result-->
                         <tr>
-                            <td style="width: 40%;">  <p class="userInfoHeaderTitle" > Gesamtauswertung</p>  </td> 
+                            <td style="width: 40%;">  <p class="userInfoHeader" > Gesamtauswertung</p>  </td> 
                             <td style="width: 55%;">  <p class="userInfoHeaderTitle">Aussage (Ja/Nein)</p>    </td>
                                                      
                         </tr>
@@ -461,6 +477,10 @@ and open the template in the editor.
                             <td> <p class="userInfoContent" id="clickedNumbersArrayTMT1"></p>  </td>
                         </tr>
                         <tr>
+                            <td> <p class="userInfoHeader" > Task gelöst TMT1</p>  </td>
+                            <td> <p class="userInfoContent" id="taskSolvedTMT1"></p>  </td>
+                        </tr>
+                        <tr>
                             <td> <p class="userInfoHeader" > Richtige Zahlen TMT2</p>  </td>
                             <td> <p class="userInfoContent" id="rightNumFieldsTMT2"></p>  </td>
                         </tr>
@@ -479,6 +499,10 @@ and open the template in the editor.
                         <tr>
                             <td> <p class="userInfoHeader" > Geklickte Felder TMT2</p>  </td>
                             <td> <p class="userInfoContent" id="clickedNumbersArrayTMT2"></p>  </td>
+                        </tr>
+                         <tr>
+                            <td> <p class="userInfoHeader" > Task gelöst TMT2</p>  </td>
+                            <td> <p class="userInfoContent" id="taskSolvedTMT2"></p>  </td>
                         </tr>
 <!--                        <tr>
                             <td> <p class="userInfoHeader" > Richtige Zahlen TMT3</p>  </td>
