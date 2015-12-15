@@ -209,7 +209,8 @@ function validateLogin(username, password) {
 
 
         // log in if credentials are entered
-        login(username, password);
+//        login(username, password);
+        loginProband(username, password)
 
         // reset values 
         $("#username").val("");
@@ -6540,6 +6541,54 @@ function searchUser(name, id) {
     }
     catch (error) {
         console.log("error when searching following patient: " + id + name + error);
+    }
+}
+
+
+
+// old login method for testing with test persons
+function loginProband(id, password) {
+
+    try {
+        $.ajax({
+            type: "POST",
+            url: "https://www.neurocare-aal.de/screening/functions/login.php",
+            data: {
+                userID: id,
+                userPassword: password
+
+            }
+
+        }).success(function (data) {
+
+
+
+            if (data.success === true) {
+                
+                // save user name in local storage
+        jQuery.jStorage.set("UserName",id);
+        window.location = "PaarassoziationstestTeil1.html";
+                
+//                $.mobile.changePage('#startpage', {transition: "flip"});
+//                // store user test id
+//                jQuery.jStorage.set("UserName", id);
+                console.log(data);
+                console.log("success");
+            }
+            else {
+                $.mobile.changePage('#requestFailedPage', {transition: "flip"});
+
+                console.log("failed");
+            }
+
+        }).fail(function (data) {
+            $.mobile.changePage('#requestFailedPage', {transition: "flip"});
+            console.log(data);
+            console.log("failed");
+        });
+    }
+    catch (error) {
+        console.log("Fehler beim Einloggen!: " + id + password + error);
     }
 }
 
