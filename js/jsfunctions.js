@@ -209,8 +209,7 @@ function validateLogin(username, password) {
 
 
         // log in if credentials are entered
-//        login(username, password);
-        loginProband(username, password)
+        login(username, password);
 
         // reset values 
         $("#username").val("");
@@ -6546,54 +6545,6 @@ function searchUser(name, id) {
 
 
 
-// old login method for testing with test persons
-function loginProband(id, password) {
-
-    try {
-        $.ajax({
-            type: "POST",
-            url: "https://www.neurocare-aal.de/screening/functions/login.php",
-            data: {
-                userID: id,
-                userPassword: password
-
-            }
-
-        }).success(function (data) {
-
-
-
-            if (data.success === true) {
-                
-                // save user name in local storage
-        jQuery.jStorage.set("UserName",id);
-        window.location = "PaarassoziationstestTeil1.html";
-                
-//                $.mobile.changePage('#startpage', {transition: "flip"});
-//                // store user test id
-//                jQuery.jStorage.set("UserName", id);
-                console.log(data);
-                console.log("success");
-            }
-            else {
-                $.mobile.changePage('#resultsRequestFailedPage', {transition: "flip"});
-
-                console.log("failed");
-            }
-
-        }).fail(function (data) {
-            $.mobile.changePage('#resultsRequestFailedPage', {transition: "flip"});
-            console.log(data);
-            console.log("failed");
-        });
-    }
-    catch (error) {
-        console.log("Fehler beim Einloggen!: " + id + password + error);
-    }
-}
-
-
-
 
 
 // to log in admin user
@@ -6659,8 +6610,8 @@ function sendResults() {
                 RightClickedWords2: jQuery.jStorage.get("RightClickedWords2"), WrongClickedWords2: jQuery.jStorage.get("WrongClickedWords2"),
                 RightClickedWords3: jQuery.jStorage.get("RightClickedWords3"), WrongClickedWords3: jQuery.jStorage.get("WrongClickedWords3"),
                 RightClickedWordsDelay: jQuery.jStorage.get("RightClickedWordsDelay"), WrongClickedWordsDelay: jQuery.jStorage.get("WrongClickedWordsDelay"),
-                RightNumFieldsTMT1: jQuery.jStorage.get("RightNumFieldsTMT1"), WrongNumFieldsTMT1: jQuery.jStorage.get("WrongNumFieldsTMT1"), TimeToSolveTMT1: jQuery.jStorage.get("TimeToSolveTMT1"), ClickIntervalsTMT1: jQuery.jStorage.get("ClickIntervalsTMT1"),ClickedNumbersArrayTMT1: jQuery.jStorage.get("ClickedNumbersArrayTMT1"),
-                RightNumFieldsTMT2: jQuery.jStorage.get("RightNumFieldsTMT2"), WrongNumFieldsTMT2: jQuery.jStorage.get("WrongNumFieldsTMT2"), TimeToSolveTMT2: jQuery.jStorage.get("TimeToSolveTMT2"), ClickIntervalsTMT2: jQuery.jStorage.get("ClickIntervalsTMT2"),ClickedNumbersArrayTMT2: jQuery.jStorage.get("ClickedNumbersArrayTMT2"),
+                RightNumFieldsTMT1: jQuery.jStorage.get("RightNumFieldsTMT1"), WrongNumFieldsTMT1: jQuery.jStorage.get("WrongNumFieldsTMT1"), TimeToSolveTMT1: jQuery.jStorage.get("TimeToSolveTMT1"), ClickIntervalsTMT1: jQuery.jStorage.get("ClickIntervalsTMT1"),
+                RightNumFieldsTMT2: jQuery.jStorage.get("RightNumFieldsTMT2"), WrongNumFieldsTMT2: jQuery.jStorage.get("WrongNumFieldsTMT2"), TimeToSolveTMT2: jQuery.jStorage.get("TimeToSolveTMT2"), ClickIntervalsTMT2: jQuery.jStorage.get("ClickIntervalsTMT2"),
                 RightNumFieldsTMT3: jQuery.jStorage.get("RightNumFieldsTMT3"), WrongNumFieldsTMT3: jQuery.jStorage.get("WrongNumFieldsTMT3"), TimeToSolveTMT3: jQuery.jStorage.get("TimeToSolveTMT3"), ClickIntervalsTMT3: jQuery.jStorage.get("ClickIntervalsTMT3"),
                 RightNumFieldsTMT4: jQuery.jStorage.get("RightNumFieldsTMT4"), WrongNumFieldsTMT4: jQuery.jStorage.get("WrongNumFieldsTMT4"), TimeToSolveTMT4: jQuery.jStorage.get("TimeToSolveTMT4"), ClickIntervalsTMT4: jQuery.jStorage.get("ClickIntervalsTMT4"),
                 WrongClickedTilesP1: jQuery.jStorage.get("WrongClickedTilesP1"), RightClickedTilesP1: jQuery.jStorage.get("RightClickedTilesP1"), PuzzleSolvedP1: jQuery.jStorage.get("PuzzleSolvedP1"), TimeToSolveP1: jQuery.jStorage.get("TimeToSolveP1"),
