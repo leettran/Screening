@@ -6547,16 +6547,28 @@ function searchUser(name, id) {
 
 
 
+
+
+
+
+
+
 // to log in admin user
 function login(id, password) {
 
     try {
+        
+        // hash plain password
+        var hashedPassword = hashPassword(password);
+        
+        
+        
         $.ajax({
             type: "POST",
-            url: "https://www.neurocare-aal.de/screening/functions/loginUser.php",
+            url: "https://www.neurocare-aal.de/screening/functions/loginProfessionalUser.php",
             data: {
                 userID: id,
-                userPassword: password
+                userPassword: hashedPassword
 
             }
 
